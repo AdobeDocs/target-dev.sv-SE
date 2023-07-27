@@ -1,0 +1,101 @@
+---
+keywords: implementering, javascript-bibliotek, js, atjs, enhetsbeslut, enhetsbeslut, enhetsbeslut, funktioner som stöds, $8
+description: Lär dig vilka funktioner som stöds för [!UICONTROL on-device decisioning].
+title: Vilka funktioner som stöds i Enhetsbeslut
+feature: at.js
+exl-id: bdd65658-6c4a-41ae-a222-59c00a11bdac
+source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+workflow-type: tm+mt
+source-wordcount: '633'
+ht-degree: 0%
+
+---
+
+# Funktioner som stöds för [!UICONTROL on-device decisioning]
+
+The [!DNL Adobe Target] JS SDK ger kunderna flexibilitet att välja mellan prestanda och aktualitet för data för beslut. Med andra ord, om det viktigaste är att leverera det mest relevanta och engagerande personaliserade innehållet via maskininlärning, bör du ringa ett live-serversamtal. Men när prestanda är viktigare bör man fatta beslut på enheten och i minnet. För [!UICONTROL on-device decisioning] om du vill arbeta läser du i följande avsnitt som innehåller en lista över funktioner som stöds.
+
+## Aktivitetstyper som stöds
+
+I följande tabell visas vilka [aktivitetstyper](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) skapad av [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) eller [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC) stöds eller stöds inte för [!UICONTROL on-device decisioning].
+
+| Typ av aktivitet | Stöds? |
+| --- | --- |
+| [A/B-test](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html) | Ja |
+| [Automatisk allokering](https://experienceleague.adobe.com/docs/target/using/activities/auto-allocate/automated-traffic-allocation.html) | Nej |
+| [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html) ![Premium](../../../assets/premium.png) | Nej |
+| [Multivariata tester](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html) (MVT) | Nej |
+| [Experience Targeting](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html) (XT) | Ja |
+| [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html) ![Premium](../../../assets/premium.png) | Nej |
+| [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html) ![Premium](../../../assets/premium.png) | Nej |
+| [Aktiviteter som använder analys för Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?) (A4T) | Ja |
+
+## Målgruppsanpassning
+
+Tabellen nedan visar vilka målgruppsregler som stöds eller inte stöds för [!UICONTROL on-device decisioning].
+
+| Målgruppsregel | Stöds? |
+| --- | --- |
+| [Geo](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html) | Ja |
+| [Nätverk](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/network.html) | Nej |
+| [Mobil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html) | Nej |
+| [Egna parametrar](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/custom-parameters.html) | Ja |
+| [Operativsystem](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/operating-system.html) | Ja |
+| [Webbplatssidor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/site-pages.html) | Ja |
+| [Webbläsare](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/browser.html) | Ja |
+| [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html) | Nej |
+| [Trafikkällor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/traffic-sources.html) | Nej |
+| [Tidsram](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/time-frame.html) | Ja |
+| Adobe Experience Cloud-målgrupper<P>([!DNL Audiences from Adobe Analytics], [!DNL Adobe Audience Manager]och [!DNL Adobe Experience Manager]) | Nej |
+
+### Geografisk anpassning för [!UICONTROL on-device decisioning]
+
+För att bevara minimal fördröjning för [!UICONTROL on-device decisioning] Adobe rekommenderar att du själv anger geovärdena i anropet till [getOffers](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md). Ange Geo-objektet i sammanhanget för begäran. Det innebär att webbläsaren ska avgöra var besökarna befinner sig. Du kan till exempel utföra en IP-till-Geo-sökning med en tjänst som du konfigurerar. Vissa värdtjänstleverantörer, som Google Cloud, tillhandahåller den här funktionen via anpassade rubriker i varje `HttpServletRequest`.
+
+```javascript {line-numbers="true"}
+window.adobe.target.getOffers({ 
+    decisioningMethod: "on-device", 
+    request: { 
+        context: { 
+            geo: { 
+                city: "SAN FRANCISCO", 
+                countryCode: "US", 
+                stateCode: "CA", 
+                latitude: 37.75, 
+                longitude: -122.4 
+            } 
+        }, 
+        execute: { 
+            pageLoad: {} 
+        } 
+    } 
+})
+```
+
+Om du inte kan utföra IP-till-Geo-sökningar på servern, men ändå vill utföra sökningen [!UICONTROL on-device decisioning] for [getOffers](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md) -förfrågningar som innehåller geobaserade målgrupper stöds också. Nackdelen med detta är att det använder en IP-till-Geo-sökning på fjärrbasis, vilket ger fördröjning för varje `getOffers` ring. Denna fördröjning bör vara lägre än en `getOffers` anropa med serversidesbeslut, eftersom det träffar ett CDN som ligger nära servern. Ange endast fältet&quot;ipAddress&quot; i Geo-objektet i kontexten för din begäran om att SDK ska hämta geoplatsen för din besökares IP-adress. Om något annat fält förutom&quot;ipAddress&quot; anges, visas [!DNL Target] SDK hämtar inte metadata för geopositionering för upplösning.
+
+```javascript {line-numbers="true"}
+window.adobe.target.getOffers({ 
+    decisioningMethod: "on-device", 
+    request: { 
+        context: { 
+            geo: { 
+                ipAddress: "127.0.0.1" 
+            } 
+        }, 
+        execute: { 
+            pageLoad: {} 
+        } 
+    } 
+})
+```
+
+### Allokeringsmetod
+
+Följande tabell visar vilka allokeringsmetoder som stöds eller inte stöds för [!UICONTROL on-device decisioning].
+
+| Allokeringsmetod | Stöds? |
+| --- | --- |
+| Manuell | Ja |
+| [Autoallokera till bästa upplevelse](https://experienceleague.adobe.com/docs/target/using/activities/auto-allocate/automated-traffic-allocation.html) | Nej |
+| [Automatisk målgruppsanpassning för personaliserade upplevelser](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html) | Nej |
