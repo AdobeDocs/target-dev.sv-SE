@@ -6,7 +6,7 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 5321ce43be26e8f0776da49e597ecb5f8dfb5984
+source-git-commit: 9b65380febf64896a3885c49f8bb79e4bb33f604
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Automatisk flimmerhantering som är tillgänglig med at.js är bara användbar o
 
 Stegnumren i följande bild motsvarar avsnitten nedan.
 
-![Rendera upplevelsediagram](/help/dev/patterns/assets/render-experiences-diagram.png){width="600" zoomable="yes"}
+![Rendera upplevelsediagram](/help/dev/patterns/assets/diagram-render-experiences.png){width="600" zoomable="yes"}
 
 Klicka på följande länkar för att navigera till önskade avsnitt:
 
