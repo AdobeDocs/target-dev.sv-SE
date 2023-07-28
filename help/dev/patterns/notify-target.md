@@ -6,16 +6,16 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 65cad3c558aa0f52c8007dcdb566c0ce3b29d8b7
+source-git-commit: 1291a095a7befed5f795f34099e0411930788e29
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '335'
 ht-degree: 0%
 
 ---
 
 # Meddela [!DNL Target]
 
-När du slutför det här steget ser du till att alla händelser som behöver skickas till [!DNL Adobe Target] skickas med `trackEvent` -metod.
+När du slutför det här steget ser du till att alla händelser som måste skickas till [!DNL Adobe Target] skickas med `trackEvent` -metod.
 
 Alla händelser som behöver spåras [!DNL Target] kan vara en primär konverteringshändelse eller ett framgångsmått.
 
@@ -31,13 +31,13 @@ Stegnumret i följande bild motsvarar avsnittet nedan.
 
 ## Eld [!DNL Adobe Target] Spår-API
 
-Det här steget hjälper dig att se till att alla händelser som behöver skickas till [!DNL Target] skickas med `trackEvent` -metod.
+Det här steget hjälper dig att se till att alla händelser som måste skickas till [!DNL Target] skickas med `trackEvent` -metod.
 
 +++Se information
 
 ![Fire Adobe Target Track API-diagram](/help/dev/patterns/assets/fire-adobe-target-track-api-diagram.png){width="100" zoomable="yes"}
 
-Du skickar de attribut för orderkonvertering som anges i avsnittet Krav nedan. Namnet på mbox spelar ingen roll, men konverteringen ska användas `orderConfirmPage`.
+Du skickar de attribut för orderkonvertering som anges i *Förutsättningar* nedan. Namnet på mbox spelar ingen roll, men konverteringen ska användas `orderConfirmPage`.
 
 Du behöver inte inkludera attribut för orderkonvertering i det här samtalet. Dessa anrop registrerar idealiskt framgångsmått som kan ses som mini-conversion-händelser före de huvudsakliga konverteringshändelserna. `CardIds` måste ingå i kundvagnsbaserade rekommendationer baserade på `Add to Cart` -händelse.
 
@@ -46,7 +46,7 @@ Du behöver inte inkludera attribut för orderkonvertering i det här samtalet. 
 * Träffa ert affärsteam för att identifiera alla händelser som kan anses vara konverterings- eller framgångsmått. Du måste också identifiera konverteringshändelsen som genererar intäkter så att informationen kan skickas till [!DNL Target] tillsammans med händelsedata.
 * Kontrollera att följande attribut är tillgängliga i datalagret så att du kan skicka dem med konverteringshändelsen. Konverteringshändelsen genererar intäkter, till exempel ett produktköp eller Lägg i kundvagnen.
 
-   * `productPurchaseId`: Produkt-ID som köptes som en del av ordern. Komma åtskilda produkter.
+   * `productPurchaseId`: Produkt-ID som köptes som en del av ordern. Separera flera produkter med kommatecken.
    * `orderTotal`: Ordersumma för köpet.
    * `orderId`: Inköpets beställnings-ID.
 
@@ -59,7 +59,7 @@ Du behöver inte inkludera attribut för orderkonvertering i det här samtalet. 
 
 **Åtgärder**
 
-* Använd `adobe.target-trackEvent()` metod för att skicka alla data som behöver skickas till [!DNL Target].
+* Använd `adobe.target-trackEvent()` metod för att skicka alla data som måste skickas till [!DNL Target].
 
 
 
