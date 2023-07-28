@@ -2,9 +2,9 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: 5321ce43be26e8f0776da49e597ecb5f8dfb5984
+source-git-commit: 65cad3c558aa0f52c8007dcdb566c0ce3b29d8b7
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '739'
 ht-degree: 3%
 
 ---
@@ -217,5 +217,6 @@ ht-degree: 3%
       + [Initiera SDK:er](/help/dev/patterns/initialize-sdk.md)
       + [Konfigurera datainsamling](/help/dev/patterns/data-collection.md)
       + [Återge upplevelser](/help/dev/patterns/render-experiences.md)
+      + [Meddela mål](/help/dev/patterns/notify-target.md)
 
 
