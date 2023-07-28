@@ -4,9 +4,9 @@ description: Visa en lista över värdar som kan hjälpa dig att tillåtslista [
 title: Hur Tillåtslista jag? [!DNL Target] Edge Nodes?
 feature: Privacy & Security
 exl-id: a7e5d2fc-da8e-414d-a3da-2441ea21503d
-source-git-commit: 55deb12a59dc228ec7dcec17fc0ecb43e2900613
+source-git-commit: 3f4147d521b1fb3ee12e879e52a48d459f6b24b9
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '516'
 ht-degree: 5%
 
 ---
@@ -27,11 +27,7 @@ Du kan tillåtslista [!DNL Target] kantnoder, om så önskas.
 >
 >[!DNL Adobe Target] Infrastrukturen uppdateras och kunder som vill tillåtslista adresser måste använda båda uppsättningarna IP-adresser. Om du inte gör det kommer det att påverka kunder som använder implementeringar på serversidan eller hybridimplementeringar där Target API-anrop för att hämta upplevelser kommer från ett nätverk bakom en brandvägg som är konfigurerad att använda en tillåtelselista.
 >
->Uppdateringen görs enligt följande schema:
->
->* 22-26 maj: Europa, Mellanöstern och Afrika (EMEA)
->* 22-26 maj: Asien-Stillahavsregionen (APAC)
->* 6-10 juni: Amerika
+>Alla Edge4 *x* Adresserna som anges i båda tabellerna nedan kommer att uppdateras den 9 augusti 2023.
 
 ## NAT-adresser (Network Address Translation) för [!DNL Target] kanter
 
