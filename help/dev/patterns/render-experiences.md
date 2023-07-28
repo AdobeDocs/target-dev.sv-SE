@@ -6,9 +6,9 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 18f070005685699e2d1feb12a31802faa17e35f3
+source-git-commit: ca3a3e5b8272c0db9e355abd2d16896251594b43
 workflow-type: tm+mt
-source-wordcount: '948'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 # Återge upplevelser
 
 Följ stegen i *Återge upplevelser* diagram för att säkerställa att alla nödvändiga uppgifter som behövs för att återge upplevelser utförs i rätt sekvens.
+
+>[!NOTE]
+>
+>Om du har aktiverat Automatisk sidinläsningsbegäran under [Konfigurera steg för automatisk sidinläsningsbegäran](/help/dev/patterns/initialize-sdk.md#automatic) in *Initiera SDKS* kan du hoppa över den här aktiviteten om du inte vill anropa Adobe Target SDK för att återge ytterligare upplevelser med hjälp av en begäran om regional plats.
 
 >[!TIP]
 >
@@ -58,7 +62,7 @@ Lägg till framhävda objekt och styr placeringen av dem i din Target Recommenda
 
 **Enhetsparametrar krävs**
 
-* Objektattribut i kampanjer måste skickas när du använder attributet &quot;Promoby&quot;.
+* Objektattribut i kampanjer måste skickas när du använder alternativet &quot;befordra efter attribut&quot;.
 
 +++
 
@@ -90,7 +94,7 @@ Utför rekommendationer baserat på användarens kundvagnsinnehåll.
 
 ## 3.3: Popularitetsbaserade kriterier {#popularity}
 
-Utför rekommendationer baserat på hur populärt ett objekt på webbplatsen är eller utifrån hur populärt det är att ha objekt inom en användares favoritkategori, varumärke, genre osv.
+Utför rekommendationer baserat på hur populärt ett objekt på webbplatsen är eller utifrån hur populärt det är att ha objekt inom en besökares favoritkategori eller mest visade kategori, varumärke, genre osv.
 
 +++Se information
 
@@ -107,7 +111,7 @@ Utför rekommendationer baserat på hur populärt ett objekt på webbplatsen är
 **Enhetsparametrar krävs**
 
 * `entity.categoryId` eller objektattributet för popularitet baserat på om villkoret är baserat på det aktuella attributet eller objektattributet.
-* Ingenting får skickas för Most Viewed/Top sålt på webbplatsen.
+* Inget måste skickas för Mest visade/Säljda över hela webbplatsen.
 
 **Läser**
 
@@ -168,7 +172,7 @@ Utför rekommendationer baserat på användarens beteende.
 
 ## 3.6: Anpassade kriterier {#custom}
 
-Utför rekommendationer baserat på en anpassad fil som du överför
+Utför rekommendationer baserat på en anpassad fil som du överför.
 
 +++Se information
 
@@ -222,7 +226,7 @@ Skicka enhets-ID:n för entiteter som du vill utesluta från dina rekommendation
 
 * [Entitetsattribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html){target=_blank}
 
-Du kan också utföra det här steget genom att skapa produktflöden med [!DNL Target] Gränssnitt för att uppdatera produktkatalogen för [!DNL Recommendations].
+Du kan också utföra det här steget genom att skapa [produktflöden](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/feeds.html){target=_blank} med [!DNL Target] Gränssnitt för att uppdatera produktkatalogen för [!DNL Recommendations].
 
 +++
 
@@ -244,7 +248,7 @@ Ange profilattributen som används som nycklar för inkluderingsregler i de Reco
 
 ## 3.11: Begäran om sidinläsning vid brand {#fire}
 
-Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `pageLoad` nyttolast i begäran. The `getOffers()` hämtar upplevelsen och `applyOffers()` återger upplevelsen på sidan. pageLoad-begäran behövs för återgivningsupplevelser som skapats i [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html){target=_blank} (VEC)
+Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `pageLoad` nyttolast i begäran. The `getOffers()` hämtar upplevelsen och `applyOffers()` återger upplevelsen på sidan. The `pageLoad` begäran behövs för att återge upplevelser som skapats i [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html){target=_blank} (VEC)
 
 +++Se information
 
