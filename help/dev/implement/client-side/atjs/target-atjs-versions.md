@@ -4,9 +4,9 @@ description: Visa information om ändringarna i varje version av [!DNL Adobe Tar
 title: Vad ingår i varje version av at.js?
 feature: at.js
 exl-id: 609dacba-2ab8-45e9-b189-928d59938c98
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: dc7831e4c3eb7dfc4a11d440e55b3a116b6e28fc
 workflow-type: tm+mt
-source-wordcount: '4531'
+source-wordcount: '4580'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,15 @@ ht-degree: 0%
 
 Information om ändringarna i varje version av [!DNL Adobe Target] at.js JavaScript-bibliotek.
 
->[!WARNING]
+>[!IMPORTANT]
 >
->[!DNL Adobe Target] stöder både at.js 1.*x* och at.js 2.*x*. Uppgradera till den senaste uppdateringen av någon större version av at.js för att vara säker på att du kör en version som stöds.
+>[!DNL Adobe Target] stöder både at.js 1.*x* och at.js 2.*x*.
+>
+>at.js 1.*x* har försatts i underhållsläge. The [!DNL Target] när det är nödvändigt kommer felkorrigeringar och säkerhetsuppdateringar att släppas.
+>
+>The [!DNL Target] team ger fullt stöd för at.js 2.*x* och ger kontinuerlig felkorrigeringar, säkerhetsuppdateringar, funktioner och prestandaoptimering.
+>
+>Du bör uppgradera till de senaste versionerna av antingen 1.*x* eller 2.*x* för att få buggfixar och säkerhetsuppdateringar för problem som upptäcks i tidigare mindre versioner av motsvarande större version.
 
 Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den bästa metoden att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tillägg - uppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html) i *Översikt över taggar* guide.
 
