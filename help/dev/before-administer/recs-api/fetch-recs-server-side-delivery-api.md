@@ -6,9 +6,9 @@ kt: 3815
 thumbnail: null
 author: Judy Kim
 exl-id: 9b391f42-2922-48e0-ad7e-10edd6125be6
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: ba53161b2ec51af3d90994773034790feb51099c
 workflow-type: tm+mt
-source-wordcount: '1507'
+source-wordcount: '1493'
 ht-degree: 0%
 
 ---
@@ -88,7 +88,6 @@ Följande resurser innehåller exempel på olika icke-HTML-inriktade implementer
 | --- | --- |
 | [Adobe Target Everywhere - Implementera serversidan eller i IoT](https://expleague.azureedge.net/labs/L733/index.html) | Adobe Summit 2019 Lab som ger dig en praktisk upplevelse av ett React-program som använder Adobe Target serversides-API:er. |
 | [Adobe Target i en mobilapp utan Adobe SDK](https://community.tealiumiq.com/t5/Universal-Data-Hub/Adobe-Target-in-a-Mobile-App-Without-the-Adobe-SDK/ta-p/26753) | Den här guiden visar hur du konfigurerar Adobe Target i din mobilapp utan att installera Adobe SDK. Den här lösningen använder Tealium SDK-webbvyn och Remote Commands-modulen för att skicka och ta emot begäranden till Adobe Visitor API (Experience Cloud) och Adobe Target API. |
-| [Så här fungerar Adobe Target i mobilappar](../../implement/mobile/how-target-works-mobile-apps.md) | Hur Target fungerar med Mobile SDK |
 | [Konfigurera Target-tillägget i Experience Platform Launch och implementera Target-API:er](https://developer.adobe.com/client-sdks/documentation/adobe-target/) | Steg för att konfigurera Target-tillägget i Experience Platform Launch, lägga till Target-tillägget i programmet och implementera Target-API:er för att begära aktiviteter, förhämta erbjudanden och ange visuellt förhandsgranskningsläge. |
 | [Adobe Target Node Client](https://www.npmjs.com/package/@adobe/target-nodejs-sdk) | Open-sourced Target Node.js SDK v1.0 |
 | [Serversida - översikt](../../implement/server-side/server-side-overview.md) | Information om Adobe Target Server Side Delivery APIs, Server Side Batch Delivery APIs, Node.js SDK och Adobe Target Recommendations APIs. |
