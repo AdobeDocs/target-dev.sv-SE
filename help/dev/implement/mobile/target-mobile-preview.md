@@ -4,9 +4,9 @@ description: Använd länkar för förhandsgranskning av mobiler för att utför
 title: Hur använder jag Mobile Preview-länken i [!DNL Target] Mobiler?
 feature: Implement Mobile
 exl-id: c0c4237a-de1f-4231-b085-f8f1e96afc13
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: cf39b35e208a99114b3f97df2e9ef7eb8a46e153
 workflow-type: tm+mt
-source-wordcount: '600'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -14,10 +14,6 @@ ht-degree: 0%
 # [!DNL Target] mobilförhandsgranskning
 
 Använd länken för förhandsgranskning av mobilmaterial för att enkelt skapa heltäckande QA för mobilappsaktiviteter och registrera dig för olika upplevelser direkt på din enhet utan några särskilda testenheter.
-
->[!NOTE]
->
->För funktionen för förhandsgranskning för mobila enheter krävs att du hämtar och installerar rätt version av version 4.14 (eller senare) av Adobe Mobile SDK.
 
 ## Ökning
 
@@ -27,69 +23,24 @@ Med funktionen för mobilförhandsgranskning kan du testa mobilappsaktiviteterna
 
 1. **Använd en version av SDK som stöds:** För funktionen för förhandsgranskning för mobila enheter måste du hämta och installera lämplig version av 4.14 (eller senare) av Adobe Mobile SDK i dina motsvarande program.
 
-   Anvisningar om hur du hämtar rätt SDK finns i:
-
-   * **iOS:** [Innan du börjar](https://experienceleague.adobe.com/docs/mobile-services/ios/getting-started-ios/requirements.html) i *Mobile Services iOS Help*.
-   * **Android:** [Innan du börjar](https://experienceleague.adobe.com/docs/mobile-services/android/getting-started-android/requirements.html) i *Hjälp för Android för mobiltjänster*.
+   Anvisningar om hur du hämtar rätt SDK finns i [Aktuella SDK-versioner](https://developer.adobe.com/client-sdks/documentation/current-sdk-versions/){target=_blank} i *[!DNL Adobe Experience Platform Mobile SDK]* dokumentation.
 
 1. **Konfigurera ett URL-schema:** Förhandsgranskningslänken använder ett URL-schema för att öppna programmet. Du måste ange ett unikt URL-schema för förhandsgranskningen.
 
-   Följande bild är ett exempel på iOS:
+   Mer information finns i [Visuell förhandsgranskning](https://developer.adobe.com/client-sdks/documentation/adobe-target/#visual-preview){target=_blank} in *Adobe Target* i *[!DNL Adobe Experience Platform Mobile SDK]* dokumentation.
 
-   ![alt-bild](assets/mobile-preview-url-scheme-ios.png)
+   Följande länkar innehåller mer information:
 
-   Följande bild är ett exempel på Android:
+   * **iOS**: Mer information om hur du anger URL-scheman för iOS finns i [Definiera ett anpassat URL-schema för din app](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app){target=_blank} på Apple Developer webbplats.
+   * **Android**: Mer information om hur du anger URL-scheman för Android finns i [Skapa djupa länkar till appinnehåll](https://developer.android.com/training/app-links/deep-linking){target=_blank} på Android Developers webbplats.
 
-   ![alt-bild](assets/Android_Deeplink.png)
+1. **Konfigurera `collectLaunchInfo` API**
 
-1. **Spåra Adobe DeepLink**
-
-   **iOS:** I appdelegaten ska du ringa `[ADBMobile trackAdobeDeepLink:url` när delegaten ombeds att öppna resursen med det URL-schema som angavs i föregående steg.
-
-   Följande kodfragment är ett exempel:
-
-   ```javascript {line-numbers="true"}
-   - (BOOL) application:(UIApplication *)app openURL:(NSURL *)url 
-                options:(NSDictionary<NSString *,id> *)options { 
-   
-       if ([[url scheme] isEqualToString:@"com.adobe.targetmobile"]) { 
-           [ADBMobile trackAdobeDeepLink:url]; 
-           return YES; 
-       } 
-       return NO; 
-   } 
-   ```
-
-   **Android:** I appen ringer du `Config.trackAdobeDeepLink(URL);` när anroparen uppmanas att öppna resursen med det URL-schema som angavs i föregående steg.
-
-   ```javascript {line-numbers="true"}
-    private Boolean shouldOpenDeeplinkUrl() { 
-        Intent appLinkIntent = getIntent(); 
-        String appLinkAction = appLinkIntent.getAction(); 
-        Uri appLinkData = appLinkIntent.getData; 
-        if (appLinkData.toString().startsWith("com.adobe.targetmobile")) { 
-            Config.trackAdobeDeepLink(appLinkData); 
-            return true; 
-        } 
-        return false; 
-     }
-   ```
-
-   Om du vill att Mobile Preview ska fungera för Android måste du även lägga till följande kodfragment i AndroidManifest.xml om du använder version 5 av Adobe Mobile SDK:
-
-   ```javascript {line-numbers="true"}
-   <activity android:name="com.adobe.marketing.mobile.FullscreenMessageActivity" />
-   ```
-
-   Om du använder version 4 av Adobe Mobile SDK använder du följande kodfragment:
-
-   ```javascript {line-numbers="true"}
-   <activity android:name="com.adobe.mobile.MessageFullScreenActivity" />
-   ```
+   Mer information finns i [Visuell förhandsgranskning](https://developer.adobe.com/client-sdks/documentation/adobe-target/#visual-preview){target=_blank} in *Adobe Target* i *[!DNL Adobe Experience Platform Mobile SDK]* dokumentation.
 
 ## Skapa en förhandsgranskningslänk
 
-1. I [!DNL Target] Gränssnitt, klicka på **[!UICONTROL More Options]** ikon (tre lodräta ellipser) och välj sedan **[!UICONTROL Create Mobile Preview]**.
+1. I [!DNL Target] Gränssnitt, klicka på **[!UICONTROL More Options]** ikonen (den lodräta ellipsen) och välj **[!UICONTROL Create Mobile Preview]**.
 
    ![alt-bild](assets/mobile-preview-create.png)
 
