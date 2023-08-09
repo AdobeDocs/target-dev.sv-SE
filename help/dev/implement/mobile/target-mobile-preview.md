@@ -4,9 +4,9 @@ description: Använd länkar för förhandsgranskning av mobiler för att utför
 title: Hur använder jag Mobile Preview-länken i [!DNL Target] Mobiler?
 feature: Implement Mobile
 exl-id: c0c4237a-de1f-4231-b085-f8f1e96afc13
-source-git-commit: b678b69624963b4bdbce230a05a0355da96469f1
+source-git-commit: 97c96e63f9121793a83b445ad3dc33c5d094509a
 workflow-type: tm+mt
-source-wordcount: '535'
+source-wordcount: '538'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ Med funktionen för mobilförhandsgranskning kan du testa mobilappsaktiviteterna
    * **iOS**: Mer information om hur du anger URL-scheman för iOS finns i [Definiera ett anpassat URL-schema för din app](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app){target=_blank} på Apple Developer webbplats.
    * **Android**: Mer information om hur du anger URL-scheman för Android finns i [Skapa djupa länkar till appinnehåll](https://developer.android.com/training/app-links/deep-linking){target=_blank} på Android Developers webbplats.
 
-1. **Konfigurera `collectLaunchInfo` API**
+1. **Konfigurera `collectLaunchInfo` API (endast i0S)**
 
    Mer information finns i [Visuell förhandsgranskning](https://developer.adobe.com/client-sdks/documentation/adobe-target/#visual-preview){target=_blank} in *Adobe Target* i *[!DNL Adobe Experience Platform Mobile SDK]* dokumentation.
 
