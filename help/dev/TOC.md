@@ -2,9 +2,9 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: eadb45877b13ac029dae6aaf172abebabb804983
+source-git-commit: 2d1b1829a8f794e29bb054d1bfdcb5047d6b4acb
 workflow-type: tm+mt
-source-wordcount: '707'
+source-wordcount: '721'
 ht-degree: 3%
 
 ---
@@ -168,6 +168,7 @@ ht-degree: 3%
    + [Förhandsvisning av målmobiler](implement/mobile/target-mobile-preview.md)
    + [Använd platstjänst](implement/mobile/use-location-service.md)
    + [Mål för mobilappar - frågor och svar](implement/mobile/mobile-faq.md)
+   + [Implementera Target med AEP Mobile SDK i en inbyggd app med webbvyer](/help/dev/implement/mobile/native-app.md)
 + E-postimplementering {#implement-email}
    + [E-post: implementera målöversikt](implement/email/overview.md)
    + [Skapa en Adbox för en bild](implement/email/testing-content-with-the-adbox.md)
