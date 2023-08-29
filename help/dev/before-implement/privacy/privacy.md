@@ -4,9 +4,9 @@ description: Lär dig mer [!DNL Adobe Target] följer gällande datasekretesslag
 title: Hur hanterar Target sekretessfrågor, inklusive PII?
 feature: Privacy & Security
 exl-id: 4330e034-2483-4a25-9c87-48dbef6fc9de
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: d9ac5bab3a09cf49b2178a62c06eebe733b9048d
 workflow-type: tm+mt
-source-wordcount: '707'
+source-wordcount: '850'
 ht-degree: 0%
 
 ---
@@ -38,6 +38,14 @@ Följande inställningar är tillgängliga i [!DNL Target] Gränssnitt genom att
   ![obfuscate-ip-options](assets/obfuscate-ip.png)
 
 [!DNL Target] tar emot den fullständiga IP-adressen och döljer den (om den är inställd på Last octet eller Hela IP) enligt specifikationen. [!DNL Target] lagrar sedan den dolda IP-adressen i minnet endast under den aktuella sessionen.
+
+### IP-obfuskation på datasterivå vid användning av [!DNL Adobe Experience Platform Web SDK]
+
+När du använder [!DNL Platform Web SDK] (version 23.4 eller senare) har IP-begränsningsinställningen på datastream-nivå företräde framför eventuella IP-begränsningsalternativ som anges i [!DNL Target]. Om till exempel alternativet IP-obfuktion på datastream-nivå är inställt på [!UICONTROL Full] och [!DNL Target] Alternativet för IP-förfalskning är inställt på [!UICONTROL Last octet obfuscation], [!DNL Target] får ett fullständigt dolt IP. På grund av att IP-förfalskning [!DNL Target] inträffar innan sökningen efter geopositionering har IP-begränsningsinställningen på datastream-nivå ingen effekt.
+
+Efter att IP-oklarheter har ställts in på datastream-nivå och dina data går igenom Edge Network kommer förfrågningar att [!DNL Target] och [!DNL Adobe Audience Manager] (AAM) innehåller endast den dolda IP-adressen och all logik som är baserad på IP-adressen för klienten påverkas av IP-begränsningsalternativet på datastream-nivå. Alla IP-ojämnheter som angetts i [!DNL Target] eller AAM tillämpas på den redan dolda IP-adressen.
+
+Mer information finns i [!UICONTROL IP Obfuscation] in [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html){target=_blank} i *[!DNL Adobe Experience Platfrom]Handbok för datastreams*.
 
 ## GeoSegmentation
 
