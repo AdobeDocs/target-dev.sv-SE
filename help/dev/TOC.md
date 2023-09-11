@@ -2,9 +2,9 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: 2d1b1829a8f794e29bb054d1bfdcb5047d6b4acb
+source-git-commit: 7a79eb1d263cf42529a5a1b1ca1f9de4db218a49
 workflow-type: tm+mt
-source-wordcount: '721'
+source-wordcount: '729'
 ht-degree: 3%
 
 ---
@@ -208,10 +208,11 @@ ht-degree: 3%
    + [API för Adobe Experience Platform Edge Network Server](/help/dev/before-implement/delivery-api-overview/aep-edge-network-server-api.md)
 + Implementeringsmönster {#implementation-patterns} {#hidden}
    + [Översikt över implementeringsmönster](/help/dev/patterns/pattern-overview.md)
-   + Målimplementeringsmönster {#target}
-      + [Initiera SDK:er](/help/dev/patterns/initialize-sdk.md)
-      + [Konfigurera datainsamling](/help/dev/patterns/data-collection.md)
-      + [Återge upplevelser](/help/dev/patterns/render-experiences.md)
-      + [Meddela mål](/help/dev/patterns/notify-target.md)
+   + Recommendations implementeringsmönster med at.js {#atjs}
+      + [Recommendations implementeringsmönster med översikten at.js](/help/dev/patterns/recs-atjs/recs-implementation-pattern-atjs.md)
+      + [Initiera SDK:er](/help/dev/patterns/recs-atjs/initialize-sdk.md)
+      + [Konfigurera datainsamling](/help/dev/patterns/recs-atjs/data-collection.md)
+      + [Återge upplevelser](/help/dev/patterns/recs-atjs/render-experiences.md)
+      + [Meddela mål](/help/dev/patterns/recs-atjs/notify-target.md)
 
 

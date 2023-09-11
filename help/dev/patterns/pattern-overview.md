@@ -6,9 +6,9 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: c4b9dfed19e5e4a56bfeae26c4310b997a2d617e
+source-git-commit: 7a79eb1d263cf42529a5a1b1ca1f9de4db218a49
 workflow-type: tm+mt
-source-wordcount: '145'
+source-wordcount: '148'
 ht-degree: 0%
 
 ---
@@ -34,10 +34,10 @@ Observera att siffrorna i bilden inte anger sekvensen av åtgärder:
 
 Varje mönster består av olika delar. Varje del motsvarar ett kritiskt implementeringskrav för [!DNL Target] implementering.
 
-Varje del förklaras på en separat sida i den här handboken. Till exempel [!DNL Target] implementeringsmönstret innehåller följande sidor:
+Varje del förklaras på en separat sida i den här handboken. Till exempel [[!DNL Recommendations] implementeringsmönster med at.js](/help/dev/patterns/recs-atjs/recs-implementation-pattern-atjs.md) innehåller följande sidor:
 
 * Initiera SDK
-* Förbättra profil
+* Konfigurera datainsamling
 * Återge upplevelser
 * Meddela [!DNL Target]
 
