@@ -6,9 +6,9 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 948ebe0c5011fb0327a7b5d45f3e7ac857fcb8ad
+source-git-commit: e15513f5c52240536ccf41f16ba7f4dc6dbf9a04
 workflow-type: tm+mt
-source-wordcount: '1690'
+source-wordcount: '1709'
 ht-degree: 0%
 
 ---
@@ -59,7 +59,7 @@ Detta steg hjälper till att säkerställa att `VisitorAPI.js` biblioteket har l
 **Förutsättningar**
 
 * Om du vill använda Visitor ID/API-tjänsten måste ditt företag vara aktiverat för [!DNL Adobe Experience Cloud] och har en [!UICONTROL Organization ID]. Mer information finns i [Krav för Experience Cloud: Organisations-ID](https://experienceleague.adobe.com/docs/id-service/using/reference/requirements.html?){target=_blank} i *Hjälp för identitetstjänst* guide.
-* Du behöver `VisitorAPI.js` -fil. Kontakta ert digitala marknadsföringsteam för att få fram den här filen.
+* Du behöver `VisitorAPI.js` -fil. Du bör redan ha filen om du har [!DNL Adobe Analytics] implementerat. Den här filen kan också läggas till via [[!DNL Adobe Experience Platform] taggtillägg](https://experienceleague.adobe.com/docs/tags.html){target=_blank} or can be downloaded from the [Adobe Analytics Code Manager](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-analytics.html){target=_blank}.
 
 **Konfigurera och referera till VisitorAPI.js**
 
@@ -431,7 +431,7 @@ Detta steg säkerställer att JavaScript-biblioteket at.js läses in och initier
 
 **Förutsättningar**
 
-* Ladda ned eller fråga ditt digitala marknadsföringsteam om Web SDK-biblioteksfilen: `at.js 2.*x*`
+* Ladda ned eller fråga ditt digitala marknadsföringsteam om `at.js 2.*x*` JavaScript-biblioteksfil.
 
 *Läser*
 
