@@ -6,7 +6,7 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 1349004b7da45b775b27a6ba119a26f77a9607fb
+source-git-commit: 6cd78f8e3cbdd97a09b0cb6ca3af55994e85f819
 workflow-type: tm+mt
 source-wordcount: '996'
 ht-degree: 0%
@@ -252,7 +252,7 @@ Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `pageLoad` 
 
 +++Se information
 
-![Begärandiagram för sidinläsning vid brand](/help/dev/patterns/recs-atjs/assets/fire-page-load-request.png){width="300" zoomable="yes"}
+![Begärandiagram för sidinläsning vid brand](/help/dev/patterns/recs-atjs/assets/fire-page-load-request.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -277,7 +277,7 @@ Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `mboxes` ny
 
 +++Se information
 
-![Diagram över begäran om lokal brandkrets](/help/dev/patterns/recs-atjs/assets/fire-regional-location-request.png){width="300" zoomable="yes"}
+![Diagram över begäran om lokal brandkrets](/help/dev/patterns/recs-atjs/assets/fire-regional-location-request.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 

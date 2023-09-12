@@ -6,7 +6,7 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: c6d779f14a53193ff423678ebe96fdaacc57be5d
+source-git-commit: 6cd78f8e3cbdd97a09b0cb6ca3af55994e85f819
 workflow-type: tm+mt
 source-wordcount: '386'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Detta steg hjälper till att säkerställa att alla data som måste skickas till
 
 +++Se information
 
-![Konfigurera datamappningsdiagram](/help/dev/patterns/recs-atjs/assets/cofigure-data-mapping.png){width="300" zoomable="yes"}
+![Konfigurera datamappningsdiagram](/help/dev/patterns/recs-atjs/assets/cofigure-data-mapping.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -90,7 +90,7 @@ Detta steg hjälper till att säkerställa att alla data som måste skickas till
 
 +++Se information
 
-![Fire Adobe Target Track API-diagram](/help/dev/patterns/recs-atjs/assets/fire-track-api.png){width="300" zoomable="yes"}
+![Fire Adobe Target Track API-diagram](/help/dev/patterns/recs-atjs/assets/fire-track-api.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 

@@ -6,7 +6,7 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: e15513f5c52240536ccf41f16ba7f4dc6dbf9a04
+source-git-commit: 6cd78f8e3cbdd97a09b0cb6ca3af55994e85f819
 workflow-type: tm+mt
 source-wordcount: '1709'
 ht-degree: 0%
@@ -54,7 +54,7 @@ Detta steg hjälper till att säkerställa att `VisitorAPI.js` biblioteket har l
 
 +++Se information
 
-![Läs in SDK-diagram för besökar-API](/help/dev/patterns/recs-atjs/assets/load-visitor-api-sdk.png){width="300" zoomable="yes"}
+![Läs in SDK-diagram för besökar-API](/help/dev/patterns/recs-atjs/assets/load-visitor-api-sdk.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -90,7 +90,7 @@ I det här steget kan du se till att dina besökares kända ID:n (CRM-ID, använ
 
 +++Se information
 
-![Ange kund-ID](/help/dev/patterns/recs-atjs/assets/set-customer-id.png){width="300" zoomable="yes"}
+![Ange kund-ID](/help/dev/patterns/recs-atjs/assets/set-customer-id.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -117,7 +117,7 @@ I det här steget kan at.js hämta alla upplevelser som måste återges på sida
 
 +++Se information
 
-![Konfigurera automatisk sidladdningsbegäran](/help/dev/patterns/recs-atjs/assets/configure-automatic-page-request.png){width="300" zoomable="yes"}
+![Konfigurera automatisk sidladdningsbegäran](/help/dev/patterns/recs-atjs/assets/configure-automatic-page-request.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -146,7 +146,7 @@ Detta steg hjälper till att säkerställa att det inte finns någon sidflimmer 
 
 +++Se information
 
-![Konfigurera flimmerhanteringsdiagram](/help/dev/patterns/recs-atjs/assets/flicker-handling.png){width="300" zoomable="yes"}
+![Konfigurera flimmerhanteringsdiagram](/help/dev/patterns/recs-atjs/assets/flicker-handling.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -179,7 +179,7 @@ Detta steg hjälper till att säkerställa att alla data som måste skickas till
 
 +++Se information
 
-![Datamappningsdiagram](/help/dev/patterns/recs-atjs/assets/data-mapping.png){width="300" zoomable="yes"}
+![Datamappningsdiagram](/help/dev/patterns/recs-atjs/assets/data-mapping.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -399,7 +399,7 @@ Detta steg säkerställer att alla data som måste skickas till [!DNL Target] ä
 
 +++Se information
 
-![Diagram över fjärrdatamappning](/help/dev/patterns/recs-atjs/assets/remote-data-mapping.png){width="300" zoomable="yes"}
+![Diagram över fjärrdatamappning](/help/dev/patterns/recs-atjs/assets/remote-data-mapping.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -427,7 +427,7 @@ Detta steg säkerställer att JavaScript-biblioteket at.js läses in och initier
 
 +++Se information
 
-![Läs in Adobe Target Web SDK-diagram](/help/dev/patterns/recs-atjs/assets/load-web-sdk.png){width="300" zoomable="yes"}
+![Läs in Adobe Target Web SDK-diagram](/help/dev/patterns/recs-atjs/assets/load-web-sdk.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
