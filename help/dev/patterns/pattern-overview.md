@@ -6,9 +6,9 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: ff9f626fcc8f4bfaa3305d6c8c8ba890c1b7e47f
+source-git-commit: 8707fb55d66cb7a28d311a03c749acb1a1d79cf8
 workflow-type: tm+mt
-source-wordcount: '359'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
@@ -21,53 +21,41 @@ Följande mönster är tillgängligt:
 
 * [[!DNL Recommendations] implementeringsmönster med at.js](/help/dev/patterns/recs-atjs/recs-implementation-pattern-atjs.md)
 
-## Föreslå idéer för nya mönster
+## Föreslå nya mönster eller korrigeringar av befintliga mönster
 
-The [!DNL Target] teamet planerar att skapa implementeringsmönster för olika ramverk, plattformar och integreringar.
+The [!DNL Target] teamet planerar att skapa implementeringsmönster för olika ramverk, plattformar och integreringar. Vi välkomnar också förslag till förbättringar av befintliga mönster.
 
-Använd **Alternativ för feedback** längst ned i artikeln.
+Använd **Alternativ för feedback** funktionen längst ned på alla artiklar i *[!DNL Adobe Experience League]*.
 
-1. Bläddra längst ned i den här artikeln för att visa alternativen för feedback modalt.
+1. Om du vill föreslå idéer för nya mönster bläddrar du längst ned i den här artikeln för att visa alternativen för feedback modalt.
+
+   eller
+
+   Om du vill föreslå förbättringar eller korrigeringar av befintliga mönster bläddrar du till nederkanten av den aktuella artikeln för att visa alternativen för feedback modalt.
 
    ![Modell för feedbackalternativ i Experience League](/help/dev/patterns/assets/feedback-options.png)
 
-1. Klicka **[!UICONTROL Detailed feedback options]** och sedan klicka **[!UICONTROL Report an issue]**.
+   >[!TIP]
+   >
+   >Du måste vara inloggad `github.com` för att öppna ett problem i [!DNL Experience League]. Granska riktlinjerna för bidrag och uppförandekoden om det är första gången du öppnar ett problem.
 
-   Du måste vara inloggad `github.com` för att öppna ett problem i [!DNL Experience League]. Granska riktlinjerna för bidrag och uppförandekoden om det är första gången du öppnar ett problem.
+1. (Villkorligt) Om du vill föreslå en idé om ett nytt mönster eller förbättringar av befintliga mönster klickar du på **[!UICONTROL Detailed feedback options]** och sedan klicka **[!UICONTROL Report an issue]**.
 
-1. Ge feedback en titel och använd sedan textrutan för att föreslå ett nytt mönster.
+   1. Ange en titel och skriv sedan dina kommentarer i textrutan.
 
-1. Klicka **[!UICONTROL Submit new issue]** när du är klar.
+   1. Klicka **[!UICONTROL Submit new issue]** när du är klar.
 
-The [!DNL Target] kan de kommunicera med dig med den här funktionen för att samla in ytterligare information eller för att få ytterligare klargöranden, om det behövs.
+1. (Villkorligt) Om du vill redigera en artikel för ett befintligt mönster klickar du på **[!UICONTROL Suggest an edit]** och klickar sedan på **[!UICONTROL Edit]** -ikonen (pennikonen).
 
->[!NOTE]
->
->Intern [!DNL Adobe] medarbetarna kan använda *Implementeringsmönster för [!DNL Adobe Target] Implementering* wiki för mer information om hur du bidrar till designmönster. Följ instruktionerna ovan och [!DNL Target] -teamet kan tillhandahålla en länk till wiki.
+   1. Redigera med markeringssyntax.
 
-## Förbättra befintliga mönster
+   1. Klicka **[!UICONTROL Commit changes]** när du är klar.
 
-Om du vill föreslå förbättringar eller korrigeringar av befintliga mönster använder du **Alternativ för feedback** i slutet av artikeln i [!DNL Experience League].
-
-1. Bläddra längst ned i den aktuella artikeln för att visa alternativen för feedback modalt.
-
-   ![Alternativen för feedback modalt i Experience League](/help/dev/patterns/assets/feedback-options-2.png)
-
-1. Klicka **[!UICONTROL Detailed feedback options]** och sedan klicka **[!UICONTROL Report an issue]**.
-
-   Du måste vara inloggad `github.com` för att öppna ett problem i [!DNL Experience League]. Granska riktlinjerna för bidrag och uppförandekoden om det är första gången du öppnar ett problem.
-
-1. Ange en titel för din feedback och använd sedan textrutan för att föreslå en förbättring eller korrigering av artikeln.
-
-1. (Villkorligt) Du kan också klicka **[!UICONTROL Suggest an edit]** klickar du sedan på ikonen Redigera (pennikonen) för att redigera sidan direkt.
-
-1. Klicka **[!UICONTROL Submit new issue]** när du är klar.
-
-The [!DNL Target] teamet kan sedan granska redigeringarna innan de publiceras.
+The [!DNL Target] kan du granska dina kommentarer eller ändringar och kommunicera med dig med den här funktionen för att samla in ytterligare information eller för att få ytterligare klargöranden, om det behövs.
 
 >[!NOTE]
 >
->Intern [!DNL Adobe] medarbetarna kan använda *Implementeringsmönster för [!DNL Adobe Target] Implementering* wiki för mer information om hur du redigerar designmönster. Följ instruktionerna ovan och [!DNL Target] -teamet kan tillhandahålla en länk till wiki.
+>[!DNL Adobe] medarbetarna kan använda *Implementeringsmönster för [!DNL Adobe Target] Implementering* wiki för mer information om hur du bidrar till designmönster. Följ instruktionerna ovan och fråga efter länken och [!DNL Target] -teamet kan tillhandahålla en länk till [!DNL Adobe] wiki.
 
 
 
