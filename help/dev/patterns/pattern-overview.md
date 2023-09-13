@@ -6,9 +6,9 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 8707fb55d66cb7a28d311a03c749acb1a1d79cf8
+source-git-commit: 3f97c3b38300ec4bbb0bffccfc0ff3f02457a0fc
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '390'
 ht-degree: 0%
 
 ---
@@ -17,13 +17,17 @@ ht-degree: 0%
 
 The [!DNL Adobe Target] implementeringsmönster ger vägledning om implementering [!DNL Target] följa bästa praxis och bidra till att minska implementeringsproblem för kunder och konsulter.
 
+På grund av implementeringsprocessen [!DNL Target] olika ramverk och plattformar, [!DNL Target] teamet planerar att skapa implementeringsmönster för olika ramverk, plattformar och integreringar.
+
 Följande mönster är tillgängligt:
 
 * [[!DNL Recommendations] implementeringsmönster med at.js](/help/dev/patterns/recs-atjs/recs-implementation-pattern-atjs.md)
 
+Dessa implementeringsmönster är avsedda att fokusera på vad du ska göra, när du ska göra det och var du ska göra det istället för hur du ska göra det. Detaljerade flödesdiagram hjälper dig att förstå sekvensen av åtgärder och länkar till relevant dokumentation som ger sammanhangsbaserade och stegvisa instruktioner.
+
 ## Föreslå nya mönster eller korrigeringar av befintliga mönster
 
-The [!DNL Target] teamet planerar att skapa implementeringsmönster för olika ramverk, plattformar och integreringar. Vi välkomnar också förslag till förbättringar av befintliga mönster.
+The [!DNL Target] teamet planerar att skapa olika implementeringsmönster för olika ramverk, plattformar och integreringar. Vi välkomnar också förslag till förbättringar av befintliga mönster.
 
 Använd **Alternativ för feedback** funktionen längst ned på alla artiklar i *[!DNL Adobe Experience League]*.
 
@@ -43,9 +47,11 @@ Använd **Alternativ för feedback** funktionen längst ned på alla artiklar i 
 
    1. Ange en titel och skriv sedan dina kommentarer i textrutan.
 
+      Bifoga filer eller skärmbilder vid behov.
+
    1. Klicka **[!UICONTROL Submit new issue]** när du är klar.
 
-1. (Villkorligt) Om du vill redigera en artikel för ett befintligt mönster klickar du på **[!UICONTROL Suggest an edit]** och klickar sedan på **[!UICONTROL Edit]** -ikonen (pennikonen).
+1. (Villkorligt) Om du vill redigera text för ett befintligt mönster går du till feedbackalternativmodellen i den aktuella artikeln och klickar på **[!UICONTROL Suggest an edit]** och klickar sedan på **[!UICONTROL Edit]** -ikonen (pennikonen).
 
    1. Redigera med markeringssyntax.
 
@@ -55,7 +61,7 @@ The [!DNL Target] kan du granska dina kommentarer eller ändringar och kommunice
 
 >[!NOTE]
 >
->[!DNL Adobe] medarbetarna kan använda *Implementeringsmönster för [!DNL Adobe Target] Implementering* wiki för mer information om hur du bidrar till designmönster. Följ instruktionerna ovan och fråga efter länken och [!DNL Target] -teamet kan tillhandahålla en länk till [!DNL Adobe] wiki.
+>[!DNL Adobe] medarbetarna kan använda *Implementeringsmönster för [!DNL Adobe Target] Implementering* wiki för mer information om hur du kan bidra till designmönster. Följ instruktionerna ovan om hur du föreslår en idé och fråga sedan efter länken och [!DNL Target] -teamet kan tillhandahålla en länk till [!DNL Adobe] wiki.
 
 
 
