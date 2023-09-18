@@ -6,7 +6,7 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 6cd78f8e3cbdd97a09b0cb6ca3af55994e85f819
+source-git-commit: f2587af68a76eb700378076ad9f20844061164ae
 workflow-type: tm+mt
 source-wordcount: '1709'
 ht-degree: 0%
@@ -54,7 +54,7 @@ Detta steg hjälper till att säkerställa att `VisitorAPI.js` biblioteket har l
 
 +++Se information
 
-![Läs in SDK-diagram för besökar-API](/help/dev/patterns/recs-atjs/assets/load-visitor-api-sdk.png){width="400" zoomable="yes"}
+![Läs in SDK-diagram för besökar-API](/help/dev/patterns/recs-atjs/assets/load-visitor-combined.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
