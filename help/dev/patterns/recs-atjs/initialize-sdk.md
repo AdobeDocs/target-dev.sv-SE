@@ -6,9 +6,9 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 60b986b4d956972714cb485057484ee5d6eed2bb
+source-git-commit: a87f9a13fc1feb12c62f1b772975958541f7523a
 workflow-type: tm+mt
-source-wordcount: '1709'
+source-wordcount: '1708'
 ht-degree: 0%
 
 ---
@@ -179,7 +179,7 @@ Detta steg hjälper till att säkerställa att alla data som måste skickas till
 
 +++Se information
 
-![Datamappningsdiagram](/help/dev/patterns/recs-atjs/assets/data-mapping.png){width="400" zoomable="yes"}
+![Datamappningsdiagram](/help/dev/patterns/recs-atjs/assets/data-mapping-combined.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -399,7 +399,7 @@ Detta steg säkerställer att alla data som måste skickas till [!DNL Target] ä
 
 +++Se information
 
-![Diagram över fjärrdatamappning](/help/dev/patterns/recs-atjs/assets/remote-data-mapping.png){width="400" zoomable="yes"}
+![Diagram över fjärrdatamappning](/help/dev/patterns/recs-atjs/assets/remote-data-mapping-combined.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -427,7 +427,7 @@ Detta steg säkerställer att JavaScript-biblioteket at.js läses in och initier
 
 +++Se information
 
-![Läs in Adobe Target Web SDK-diagram](/help/dev/patterns/recs-atjs/assets/load-web-sdk.png){width="400" zoomable="yes"}
+![Läs in Adobe Target at.js-diagram](/help/dev/patterns/recs-atjs/assets/load-atjs-combined.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
