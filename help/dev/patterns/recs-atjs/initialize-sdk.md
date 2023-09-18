@@ -6,7 +6,7 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: a3644cd06c01d7b0d996aabbcb67272e1712b70c
+source-git-commit: 60b986b4d956972714cb485057484ee5d6eed2bb
 workflow-type: tm+mt
 source-wordcount: '1709'
 ht-degree: 0%
@@ -117,7 +117,7 @@ I det här steget kan at.js hämta alla upplevelser som måste återges på sida
 
 +++Se information
 
-![Konfigurera automatisk sidladdningsbegäran](/help/dev/patterns/recs-atjs/assets/configure-automatic-page-request.png){width="400" zoomable="yes"}
+![Konfigurera automatisk sidladdningsbegäran](/help/dev/patterns/recs-atjs/assets/configure-automatic-page-request-combined.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
@@ -146,7 +146,7 @@ Detta steg hjälper till att säkerställa att det inte finns någon sidflimmer 
 
 +++Se information
 
-![Konfigurera flimmerhanteringsdiagram](/help/dev/patterns/recs-atjs/assets/flicker-handling.png){width="400" zoomable="yes"}
+![Konfigurera flimmerhanteringsdiagram](/help/dev/patterns/recs-atjs/assets/flicker-handling-combined.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
