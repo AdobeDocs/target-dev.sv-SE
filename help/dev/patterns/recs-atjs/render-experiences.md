@@ -6,9 +6,9 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: 85af1bad244dc0aa7665e2fbb627d82f6fabbf88
+source-git-commit: 266a8670a906e5be70f11bb05301b708f61a57d6
 workflow-type: tm+mt
-source-wordcount: '996'
+source-wordcount: '1020'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,9 @@ Följ stegen i *Återge upplevelser* diagram för att säkerställa att alla nö
 
 Automatisk flimmerhantering som är tillgänglig med at.js är bara användbar om du har [!UICONTROL Automatic Page Load Request] aktiverat. Det här alternativet döljer hela HTML-kroppen samtidigt som upplevelserna hämtas från [!DNL Target]. I det här fallet är det ditt ansvar att hantera flimmer. Sök efter implementeringsmönster som är tillgängliga för flimmerhantering för vägledning.
 
-Stegnumren i följande bild motsvarar avsnitten nedan.
+>[!NOTE]
+>
+>Stegnumren i följande bild motsvarar avsnitten nedan. Stegnumren är inte i någon speciell ordning och återspeglar inte ordningen på de steg som utförs i [!DNL Target] Gränssnitt när aktiviteten skapades.
 
 ![Rendera upplevelsediagram](/help/dev/patterns/recs-atjs/assets/diagram-render-experiences-new.png){width="600" zoomable="yes"}
 

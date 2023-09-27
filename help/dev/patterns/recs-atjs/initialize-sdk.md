@@ -6,9 +6,9 @@ level: Experienced
 role: Developer
 hide: true
 hidefromtoc: true
-source-git-commit: a87f9a13fc1feb12c62f1b772975958541f7523a
+source-git-commit: 266a8670a906e5be70f11bb05301b708f61a57d6
 workflow-type: tm+mt
-source-wordcount: '1708'
+source-wordcount: '1732'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,9 @@ Följ stegen i *Initiera SDK* diagram för att säkerställa att alla nödvändi
 
 För flersidiga program sker det här flödet varje gång sidan läses in igen, eller när besökaren navigerar till en ny sida på webbplatsen.
 
-Stegnumren i följande bild motsvarar avsnitten nedan.
+>[!NOTE]
+>
+>Stegnumren i följande bild motsvarar avsnitten nedan. Stegnumren är inte i någon speciell ordning och återspeglar inte ordningen på de steg som utförs i [!DNL Target] Gränssnitt när aktiviteten skapades.
 
 ![Initiera SDK-diagram](/help/dev/patterns/recs-atjs/assets/diagram-initiaze-sdk.png){width="600" zoomable="yes"}
 
