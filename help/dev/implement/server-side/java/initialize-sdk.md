@@ -3,9 +3,9 @@ title: Initiera Java SDK med metoden create
 description: Lär dig hur du använder metoden create för att initiera Java SDK och instansiera [!UICONTROL TargetClient] för att ringa [!DNL Adobe Target] för experiment och personaliserade upplevelser.
 feature: APIs/SDKs
 exl-id: 0e0ddead-7de8-4549-b81c-e72598558e4b
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 1d080b5e402e5d55039bf06611b44678cc6c36de
 workflow-type: tm+mt
-source-wordcount: '390'
+source-wordcount: '451'
 ht-degree: 1%
 
 ---
@@ -44,6 +44,9 @@ ClientConfigBuilder ClientConfig.builder()
 | socketTimeout | Nummer | Nej | 10000 | Sockettimeout för alla begäranden i millisekunder |
 | maxConnectionsPerHost | Nummer | Nej | 100 | Max antal anslutningar per [!DNL Target] värd |
 | maxConnectionsTotal | Nummer | Nej | 200 | Max antal anslutningar inklusive alla [!DNL Target] värdar |
+| connectionTtlms | Nummer | Nej | -1 | TTL (Total time to live) definierar maximal livstid för beständiga anslutningar i millisekunder. Som standard hålls anslutningar levande i oändlighet |
+| idleConnectionValidationms | Nummer | Nej | 1000 | Inaktivitetsperiod i millisekunder efter vilken beständiga anslutningar omvalideras innan de återanvänds |
+| evictIdleConnectionsAfterSecs | Nummer | Nej | 20 | Tiden i sekunder för att ta bort inaktiva anslutningar från anslutningspoolen |
 | enableRetries | Boolean | Nej | true | Automatiska försök för sockettimeout (max 4) |
 | logRequests | Boolean | Nej | false | Logg [!DNL Target] förfrågningar och svar i felsökning |
 | logRequestStatus | Boolean | Nej | false | Logg [!DNL Target] svarstid, status och URL |
