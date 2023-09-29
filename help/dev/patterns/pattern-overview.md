@@ -4,9 +4,7 @@ description: Förstå hur implementeringsmönster används
 feature: APIs/SDKs
 level: Experienced
 role: Developer
-hide: true
-hidefromtoc: true
-source-git-commit: 3f97c3b38300ec4bbb0bffccfc0ff3f02457a0fc
+source-git-commit: 723bb2f33a011995757009193ee9c48757ae1213
 workflow-type: tm+mt
 source-wordcount: '390'
 ht-degree: 0%

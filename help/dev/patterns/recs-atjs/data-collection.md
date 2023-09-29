@@ -4,11 +4,9 @@ description: Se till att alla nödvändiga åtgärder för datainsamling utförs
 feature: APIs/SDKs
 level: Experienced
 role: Developer
-hide: true
-hidefromtoc: true
-source-git-commit: 30634afc84877a4e88e08f3b2173d4c0727f4362
+source-git-commit: 723bb2f33a011995757009193ee9c48757ae1213
 workflow-type: tm+mt
-source-wordcount: '386'
+source-wordcount: '391'
 ht-degree: 0%
 
 ---
@@ -107,4 +105,6 @@ Använd [adobe.target.trackEvent(), metod](/help/dev/implement/client-side/atjs/
 +++
 
 [Återgå till diagrammet längst upp på den här sidan.](#diagram)
+
+Fortsätt till steg 3: [Återge upplevelser](/help/dev/patterns/recs-atjs/render-experiences.md)
 

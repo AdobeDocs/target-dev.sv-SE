@@ -4,11 +4,9 @@ description: Se till att alla händelser som behöver spåras av [!DNL Target] s
 feature: APIs/SDKs
 level: Experienced
 role: Developer
-hide: true
-hidefromtoc: true
-source-git-commit: 013a49b92357cfb5d45f7e595b46b1b12ce91c65
+source-git-commit: 723bb2f33a011995757009193ee9c48757ae1213
 workflow-type: tm+mt
-source-wordcount: '335'
+source-wordcount: '358'
 ht-degree: 0%
 
 ---
@@ -49,6 +47,10 @@ Du behöver inte inkludera attribut för orderkonvertering i det här samtalet. 
    * `productPurchaseId`: Produkt-ID som köptes som en del av ordern. Separera flera produkter med kommatecken.
    * `orderTotal`: Ordersumma för köpet.
    * `orderId`: Inköpets beställnings-ID.
+
+  Följande bild visar en [regel för [!DNL tags] in [!DNL Experience Platform]](https://experienceleague.adobe.com/docs/tags.html){target=_blank} som bara ska aktiveras på [!UICONTROL Confirmation] sida.
+
+  ![Sidan Åtgärdskonfiguration](/help/dev/patterns/recs-atjs/assets/action-configuration.png){width="400" zoomable="yes"}
 
 * Om du spårar en händelse för kundvagnstillägg skickar du `cartIds` som en parameter. En kommaavgränsad lista med produkt-ID:n kan skickas för `cardIds`.
 

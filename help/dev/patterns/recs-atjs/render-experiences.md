@@ -4,11 +4,9 @@ description: Se till att alla nödvändiga steg för återgivning utförs i rät
 feature: APIs/SDKs
 level: Experienced
 role: Developer
-hide: true
-hidefromtoc: true
-source-git-commit: 266a8670a906e5be70f11bb05301b708f61a57d6
+source-git-commit: 723bb2f33a011995757009193ee9c48757ae1213
 workflow-type: tm+mt
-source-wordcount: '1020'
+source-wordcount: '1040'
 ht-degree: 0%
 
 ---
@@ -52,7 +50,7 @@ Klicka på följande länkar för att navigera till önskade avsnitt:
 
 ## 3.1: Kampanj {#promotion}
 
-Lägg till framhävda objekt och styr placeringen av dem i din Target Recommendations [design](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-design/create-design.html){target=_blank}.
+Lägg till framhävda objekt och styr deras placering i din rekommendationsdesign genom att välja fram- eller bakåtreklam i [!DNL Target] Gränssnitt när aktiviteten skapades.
 
 +++Se information
 
@@ -65,6 +63,10 @@ Lägg till framhävda objekt och styr placeringen av dem i din Target Recommenda
 **Enhetsparametrar krävs**
 
 * Objektattribut i kampanjer måste skickas när du använder alternativet &quot;befordra efter attribut&quot;.
+
+**Läser**
+
+* [Lägg till kampanjer](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-activity/adding-promotions.html){target=_blank}
 
 +++
 
@@ -297,3 +299,5 @@ Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `mboxes` ny
 +++
 
 [Återgå till diagrammet längst upp på den här sidan.](#diagram)
+
+Fortsätt till steg 4: [Meddela mål](/help/dev/patterns/recs-atjs/notify-target.md).

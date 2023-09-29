@@ -4,11 +4,9 @@ description: Se till att alla nödvändiga steg för att läsa in [!DNL Adobe Ta
 feature: APIs/SDKs
 level: Experienced
 role: Developer
-hide: true
-hidefromtoc: true
-source-git-commit: 266a8670a906e5be70f11bb05301b708f61a57d6
+source-git-commit: 723bb2f33a011995757009193ee9c48757ae1213
 workflow-type: tm+mt
-source-wordcount: '1732'
+source-wordcount: '1738'
 ht-degree: 0%
 
 ---
@@ -448,6 +446,8 @@ Bädda in filen at.js på alla dina webbsidor där experimenterande, optimering,
 +++
 
 [Återgå till diagrammet längst upp på den här sidan.](#diagram)
+
+Fortsätt till steg 2: [Konfigurera datainsamling](/help/dev/patterns/recs-atjs/data-collection.md).
 
 
 
