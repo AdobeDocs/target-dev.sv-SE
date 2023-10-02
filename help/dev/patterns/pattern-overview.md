@@ -4,9 +4,9 @@ description: Förstå hur implementeringsmönster används
 feature: APIs/SDKs
 level: Experienced
 role: Developer
-source-git-commit: 723bb2f33a011995757009193ee9c48757ae1213
+source-git-commit: 09dafc7c85ea7f3600fceac4e673e8f1901771a4
 workflow-type: tm+mt
-source-wordcount: '390'
+source-wordcount: '381'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Följande mönster är tillgängligt:
 
 * [[!DNL Recommendations] implementeringsmönster med at.js](/help/dev/patterns/recs-atjs/recs-implementation-pattern-atjs.md)
 
-Dessa implementeringsmönster är avsedda att fokusera på vad du ska göra, när du ska göra det och var du ska göra det istället för hur du ska göra det. Detaljerade flödesdiagram hjälper dig att förstå sekvensen av åtgärder och länkar till relevant dokumentation som ger sammanhangsbaserade och stegvisa instruktioner.
+Dessa implementeringsmönster fokuserar på vad du ska göra, när du ska göra det och var du ska göra det. Detaljerade flödesdiagram hjälper dig att förstå sekvensen av åtgärder och länkar till relevant dokumentation som ger sammanhangsbaserade och stegvisa instruktioner.
 
 ## Föreslå nya mönster eller korrigeringar av befintliga mönster
 
