@@ -8,7 +8,7 @@ mini-toc-levels: 2
 git-repo: https://github.com/AdobeDocs/target-dev.sv-SE
 index: true
 role: Developer
-source-git-commit: 063d0574ee380bf76130fb0f17db89cd09efdb7d
+source-git-commit: 1d834edf4da94614e3a4be665ebd97399439ec98
 workflow-type: tm+mt
 source-wordcount: '63'
 ht-degree: 0%
