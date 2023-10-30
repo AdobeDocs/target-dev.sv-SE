@@ -4,9 +4,9 @@ description: Visa information om ändringarna i varje version av [!DNL Adobe Tar
 title: Vad ingår i varje version av at.js?
 feature: at.js
 exl-id: 609dacba-2ab8-45e9-b189-928d59938c98
-source-git-commit: 00c8391bf77a6a33157a85272ab9547d29f654ca
+source-git-commit: c5d1f477a2561a59efb3250e35563b48822fbe59
 workflow-type: tm+mt
-source-wordcount: '4655'
+source-wordcount: '4674'
 ht-degree: 0%
 
 ---
@@ -27,9 +27,13 @@ Information om ändringarna i varje version av [!DNL Adobe Target] at.js JavaScr
 
 Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den bästa metoden att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tillägg - uppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html) i *Översikt över taggar* guide.6+
 
-## at.js version 2.11.0 (26 oktober 2023)
+## at.js version 2.11.2 (26 oktober 2023)
 
 * Korrigerade ett problem som orsakade inkonsekvenser i svarstoken som skickades för anpassade händelser.
+
+## at.js version 2.11.1 (13 oktober 2023)
+
+* Ett problem som orsakade ohanterade fel när en sida som kör at.js är i felsäkert läge har åtgärdats.
 
 ## at.js version 2.11.0 (10 oktober 2023)
 
