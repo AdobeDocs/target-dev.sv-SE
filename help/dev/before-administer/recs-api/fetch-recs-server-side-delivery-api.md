@@ -6,9 +6,9 @@ kt: 3815
 thumbnail: null
 author: Judy Kim
 exl-id: 9b391f42-2922-48e0-ad7e-10edd6125be6
-source-git-commit: ba53161b2ec51af3d90994773034790feb51099c
+source-git-commit: d98c7b890f7456de0676cadce5d6c70bc62d6140
 workflow-type: tm+mt
-source-wordcount: '1493'
+source-wordcount: '1506'
 ht-degree: 0%
 
 ---
@@ -97,22 +97,22 @@ Följande resurser innehåller exempel på olika icke-HTML-inriktade implementer
 
 Rekommendationer konfigureras oftast i Adobe Target-gränssnittet och används eller nås via Target-API:erna, av skäl som de som nämns i avsnitten ovan. Denna API-samordning är vanlig. Ibland kanske användare vill utföra alla åtgärder via API:er, både konfiguration och användning av resultat. Även om det är mycket mindre vanligt att användare konfigurerar, kör, *och* utnyttja resultatet av rekommendationerna helt med API:erna.
 
-Vi lärde oss [tidigare avsnitt](manage-catalog.md) hur ni hanterar Adobe Target Recommendations-enheter och levererar dem på serversidan. På samma sätt är [Adobe Developer Console](https://developer.adobe.com/console/home) gör att du kan hantera kriterier, kampanjer, samlingar och designmallar utan att behöva logga in på Adobe Target. En fullständig lista över alla Recommendations API:er finns [här](http://developers.adobetarget.com/api/recommendations/), men här är en sammanfattning som du kan referera till.
+Vi lärde oss [tidigare avsnitt](manage-catalog.md) hur ni hanterar Adobe Target Recommendations-enheter och levererar dem på serversidan. På samma sätt är [Adobe Developer Console](https://developer.adobe.com/console/home) gör att du kan hantera kriterier, kampanjer, samlingar och designmallar utan att behöva logga in på Adobe Target. En fullständig lista över alla Recommendations API:er finns [här](https://developer.adobe.com/target/administer/recommendations-api/), men här är en sammanfattning som du kan referera till.
 
 | Resurs | Information |
 | --- | --- |
-| [Samlingar](http://developers.adobetarget.com/api/recommendations/#tag/Collections) | Visa, skapa, hämta, redigera och ta bort samlingar. |
-| [Kriterier](http://developers.adobetarget.com/api/recommendations/#tag/Criteria) | Lista och hämta villkor. |
-| [Designer](http://developers.adobetarget.com/api/recommendations/#tag/Designs) | Lista, skapa, hämta, redigera, ta bort och validera designer. |
-| [Enheter](http://developers.adobetarget.com/api/recommendations/#tag/Entities) | Spara, ta bort och hämta enheter. |
-| [Erbjudanden](http://developers.adobetarget.com/api/recommendations/#tag/Promotions) | Visa, skapa, hämta, redigera och ta bort kampanjer. |
-| [Kategorivillkor](http://developers.adobetarget.com/api/recommendations/#tag/Category-Criteria) | Visa, skapa, hämta, redigera och ta bort kategorivillkor. |
-| [Anpassade villkor](http://developers.adobetarget.com/api/recommendations/#tag/Custom-Criteria) | Visa, skapa, hämta, redigera och ta bort anpassade villkor. |
-| [Artikelvillkor](http://developers.adobetarget.com/api/recommendations/#tag/Item-Criteria) | Visa, skapa, hämta, redigera och ta bort objektvillkor. |
-| [Popularitetskriterier](http://developers.adobetarget.com/api/recommendations/#tag/Popularity-Criteria) | Visa, skapa, hämta, redigera och ta bort popularitetskriterier. |
-| [Kriterier för profilattribut](http://developers.adobetarget.com/api/recommendations/#tag/Profile-Attribute-Criteria) | Visa, skapa, hämta, redigera och ta bort villkor för profilattribut. |
-| [Senaste villkor](http://developers.adobetarget.com/api/recommendations/#tag/Recent-Criteria) | Lista, skapa, hämta, redigera och ta bort senaste villkor. |
-| [Sekvensvillkor](http://developers.adobetarget.com/api/recommendations/#tag/Sequence-Criteria) | Visa, skapa, hämta, redigera och ta bort sekvensvillkor. |
+| [Samlingar](https://developer.adobe.com/target/administer/recommendations-api/#tag/Collections) | Visa, skapa, hämta, redigera och ta bort samlingar. |
+| [Kriterier](https://developer.adobe.com/target/administer/recommendations-api/#tag/Criteria) | Lista och hämta villkor. |
+| [Designer](https://developer.adobe.com/target/administer/recommendations-api/#tag/Designs) | Lista, skapa, hämta, redigera, ta bort och validera designer. |
+| [Enheter](https://developer.adobe.com/target/administer/recommendations-api/#tag/Entities) | Spara, ta bort och hämta enheter. |
+| [Erbjudanden](https://developer.adobe.com/target/administer/recommendations-api/#tag/Promotions) | Visa, skapa, hämta, redigera och ta bort kampanjer. |
+| [Kategorivillkor](https://developer.adobe.com/target/administer/recommendations-api/#tag/Category-Criteria) | Visa, skapa, hämta, redigera och ta bort kategorivillkor. |
+| [Anpassade villkor](https://developer.adobe.com/target/administer/recommendations-api/#tag/Custom-Criteria) | Visa, skapa, hämta, redigera och ta bort anpassade villkor. |
+| [Artikelvillkor](https://developer.adobe.com/target/administer/recommendations-api/#tag/Item-Criteria) | Visa, skapa, hämta, redigera och ta bort objektvillkor. |
+| [Popularitetskriterier](https://developer.adobe.com/target/administer/recommendations-api/#tag/Popularity-Criteria) | Visa, skapa, hämta, redigera och ta bort popularitetskriterier. |
+| [Kriterier för profilattribut](https://developer.adobe.com/target/administer/recommendations-api/#tag/Profile-Attribute-Criteria) | Visa, skapa, hämta, redigera och ta bort villkor för profilattribut. |
+| [Senaste villkor](https://developer.adobe.com/target/administer/recommendations-api/#tag/Recent-Criteria) | Lista, skapa, hämta, redigera och ta bort senaste villkor. |
+| [Sekvensvillkor](https://developer.adobe.com/target/administer/recommendations-api/#tag/Sequence-Criteria) | Visa, skapa, hämta, redigera och ta bort sekvensvillkor. |
 
 ## Referensdokumentation
 
