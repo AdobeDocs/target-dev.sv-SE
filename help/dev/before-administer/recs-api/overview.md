@@ -6,9 +6,9 @@ kt: 3815
 thumbnail: null
 author: Judy Kim
 exl-id: 0d03c650-0b00-44b8-a794-10e5d738e42c
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 2fba03b3882fd23a16342eaab9406ae4491c9044
 workflow-type: tm+mt
-source-wordcount: '338'
+source-wordcount: '339'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ Använda målet [Leverans-API](../../implement/delivery-api/overview.md) Med Rec
 
 ## Beskrivning
 
-I den här handboken om Recommendations API:er får utvecklare hjälp med praktiska övningar där Recommendations API:er används för att konfigurera och hantera Recommendations-kataloger och anpassade villkor, samt hur man använder Delivery API för att hämta rekommendationer. Till slut kan du
+I den här handboken om Recommendations API:er får utvecklare hjälp med praktiska övningar med hjälp av Recommendations API:er för att konfigurera och hantera Recommendations-kataloger och anpassade villkor, samt med hjälp av API:t för leverans för att hämta rekommendationer. Till slut kan du
 
 * Konfigurera och hantera entiteter med Recommendations API
 * Konfigurera och hantera anpassade villkor med Recommendations API
@@ -47,4 +47,4 @@ Observera följande resurser som är nödvändiga för att du ska kunna förstå
 | Resurs | Information |
 | --- | --- |
 | Postman | Skaffa [Postman](https://www.postman.com/downloads/) för ditt operativsystem. Postman Basic är kostnadsfritt när man skapar konto. Postman är inte nödvändigt för att kunna använda Adobe Target API:er i allmänhet, men gör API-arbetsflöden enklare, och Adobe Target tillhandahåller flera Postman-samlingar som hjälper dig att köra API:erna och lära dig hur de fungerar. Resten av guiden förutsätter att man har kunskap om Postman. Om du behöver hjälp kan du läsa [Postman-dokumentation](https://learning.getpostman.com/). |
-| Referenser | Du bör känna till följande resurser under resten av den här guiden:<UL><li>[Adobe I/O Github](https://github.com/adobeio)</li><li>[Dokumentation för Target Admin och Profile API](../../administer/admin-api/admin-api-overview-new.md)</li><li>[Recommendations API-dokumentation](https://developers.adobetarget.com/api/recommendations/)</li></UL> |
+| Referenser | Du bör känna till följande resurser under resten av den här guiden:<UL><li>[Adobe I/O Github](https://github.com/adobeio)</li><li>[Dokumentation för Target Admin och Profile API](../../administer/admin-api/admin-api-overview-new.md)</li><li>[Recommendations API-dokumentation](https://developer.adobe.com/target/administer/recommendations-api/)</li></UL> |

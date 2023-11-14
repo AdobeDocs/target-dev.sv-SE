@@ -4,9 +4,9 @@ description: Lär dig implementera [!UICONTROL Recommendations] verksamhet i [!D
 title: Hur implementerar jag [!UICONTROL Recommendations] Verksamheter?
 feature: Recommendations
 exl-id: af1e8b60-6dbb-451b-aa4f-e167d1800d1c
-source-git-commit: 1e1bfb556005f7ea998caf97685c834825372bd6
+source-git-commit: 2fba03b3882fd23a16342eaab9406ae4491c9044
 workflow-type: tm+mt
-source-wordcount: '1402'
+source-wordcount: '1403'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ För att kunna leverera högkvalitativa rekommendationer [!UICONTROL Target] må
 | Metod | Vad det är | När ska den användas | Ytterligare information |
 | --- | --- | --- | --- |
 | Katalogfeed | Schemalägg en feed (CSV, Google Product XML eller Analytics Product Classifications) som ska överföras och importeras dagligen. | Om du vill skicka information om flera objekt samtidigt. För att skicka information som ändras sällan. | Se [Feeds](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/feeds.html). |
-| Entiteter-API | Anropa ett API för att skicka uppdateringar som är aktuella för ett enskilt objekt. | För att skicka uppdateringar när de inträffar, ungefär ett objekt i taget. För att skicka information som ändras ofta (till exempel pris, lager/lagernivå). | Se [Dokumentation för utvecklare av entitets-API](https://developers.adobetarget.com/api/recommendations/#tag/Entities). |
+| Entiteter-API | Anropa ett API för att skicka uppdateringar som är aktuella för ett enskilt objekt. | För att skicka uppdateringar när de inträffar, ungefär ett objekt i taget. För att skicka information som ändras ofta (till exempel pris, lager/lagernivå). | Se [Dokumentation för utvecklare av entitets-API](https://developer.adobe.com/target/administer/recommendations-api/#tag/Entities). |
 | Skicka uppdateringar på sidan | Skicka uppdateringarna till de allra senaste för ett enskilt objekt med JavaScript på sidan eller med hjälp av leverans-API:t. | För att skicka uppdateringar när de inträffar, ungefär ett objekt i taget. För att skicka information som ändras ofta (till exempel pris, lager/lagernivå). | Se [Artikelvyer/produktsidor](#item-views-or-product-pages) nedan. |
 
 De flesta kunder bör implementera minst en feed. Du kan sedan välja att komplettera din feed med uppdateringar för ofta ändrade attribut eller objekt med hjälp av antingen Entity API eller on-the-page method.

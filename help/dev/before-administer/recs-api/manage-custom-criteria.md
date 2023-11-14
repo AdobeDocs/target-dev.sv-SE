@@ -6,9 +6,9 @@ kt: 3815
 thumbnail: null
 author: Judy Kim
 exl-id: 51a67a49-a92d-4377-9a9f-27116e011ab1
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 2fba03b3882fd23a16342eaab9406ae4491c9044
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '921'
 ht-degree: 1%
 
 ---
@@ -25,7 +25,7 @@ Om du vill skapa anpassade villkor definierar du och importerar den önskade map
 
 ## Skapa anpassade villkor
 
-Skapa anpassade villkor med [Skapa API för anpassade kriterier](https://developers.adobetarget.com/api/recommendations/#operation/createCriteriaCustom)är syntaxen:
+Skapa anpassade villkor med [Skapa API för anpassade kriterier](https://developer.adobe.com/target/administer/recommendations-api/#operation/createCriteriaCustom)är syntaxen:
 
 `POST https://mc.adobe.io/{{TENANT_ID}}/target/recs/criteria/custom`
 
@@ -39,7 +39,7 @@ Fortsätt bara med följande steg när du har läst varningen ovan och är säke
 
    ![CreateCustomCriteria1](assets/CreateCustomCriteria1.png)
 
-1. Lägg till **Brödtext** as **råformat** JSON som definierar platsen för CSV-filen med anpassade villkor. Använd exemplet i [Skapa API för anpassade kriterier](https://developers.adobetarget.com/api/recommendations/#operation/getAllCriteriaCustom) som en mall, ange `environmentId` och andra värden efter behov. I det här exemplet använder vi LAST_PURCHASED som nyckel.
+1. Lägg till **Brödtext** as **råformat** JSON som definierar platsen för CSV-filen med anpassade villkor. Använd exemplet i [Skapa API för anpassade kriterier](https://developer.adobe.com/target/administer/recommendations-api/#operation/getAllCriteriaCustom) som en mall, ange `environmentId` och andra värden efter behov. I det här exemplet använder vi LAST_PURCHASED som nyckel.
 
    ![CreateCustomCriteria2](assets/CreateCustomCriteria2.png)
 
@@ -55,7 +55,7 @@ I det här fallet har vi ett fel. Låt oss undersöka felet närmare genom att u
 
 ## Lista anpassade villkor
 
-Använd [Lista anpassat villkor-API](https://developers.adobetarget.com/api/recommendations/#operation/getAllCriteriaCustom). Syntaxen:
+Använd [Lista anpassat villkor-API](https://developer.adobe.com/target/administer/recommendations-api/#operation/getAllCriteriaCustom). Syntaxen:
 
 `GET https://mc.adobe.io/{{TENANT_ID}}/target/recs/criteria/custom`
 
@@ -66,7 +66,7 @@ I det här fallet inträffade felet eftersom serverinformationen är felaktig, v
 
 ## Redigera anpassade villkor
 
-Om du vill ändra detaljerna för en anpassad villkorsdefinition använder du [Redigera API för anpassade villkor](https://developers.adobetarget.com/api/recommendations/#operation/updateCriteriaCustom). Syntaxen:
+Om du vill ändra detaljerna för en anpassad villkorsdefinition använder du [Redigera API för anpassade villkor](https://developer.adobe.com/target/administer/recommendations-api/#operation/updateCriteriaCustom). Syntaxen:
 
 `POST https://mc.adobe.io/{{TENANT_ID}}/target/recs/criteria/custom/:criteriaId`
 
@@ -86,7 +86,7 @@ Låt oss kontrollera om de uppdaterade anpassade villkoren har lyckats med **[!U
 
 ## Hämta anpassade villkor
 
-Om du vill visa information om anpassade villkor för ett specifikt anpassat villkor använder du [Hämta API för anpassade villkor](https://developers.adobetarget.com/api/recommendations/#operation/getCriteriaCustom). Syntaxen:
+Om du vill visa information om anpassade villkor för ett specifikt anpassat villkor använder du [Hämta API för anpassade villkor](https://developer.adobe.com/target/administer/recommendations-api/#operation/getCriteriaCustom). Syntaxen:
 
 `GET https://mc.adobe.io/{{TENANT_ID}}/target/recs/criteria/custom/:criteriaId`
 
@@ -99,7 +99,7 @@ Om du vill visa information om anpassade villkor för ett specifikt anpassat vil
 
 ## Ta bort anpassade villkor
 
-Ta bort dina anpassade villkor med hjälp av ID:t som nämndes tidigare med [Ta bort API för anpassade villkor](https://developers.adobetarget.com/api/recommendations/#operation/deleteCriteriaCustom). Syntaxen:
+Ta bort dina anpassade villkor med hjälp av ID:t som nämndes tidigare med [Ta bort API för anpassade villkor](https://developer.adobe.com/target/administer/recommendations-api/#operation/deleteCriteriaCustom). Syntaxen:
 
 `DELETE https://mc.adobe.io/{{TENANT_ID}}/target/recs/criteria/custom/:criteriaId`
 

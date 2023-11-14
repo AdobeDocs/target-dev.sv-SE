@@ -3,9 +3,9 @@ title: Konfigurera autentisering för [!DNL Adobe Target] API:er
 description: Hur skapar jag autentiseringstoken som behövs för att kunna interagera med [!DNL Adobe Target] API?
 feature: APIs/SDKs, Administration & Configuration
 exl-id: fc67363c-6527-40aa-aff1-350b5af884ab
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 2fba03b3882fd23a16342eaab9406ae4491c9044
 workflow-type: tm+mt
-source-wordcount: '1864'
+source-wordcount: '1865'
 ht-degree: 2%
 
 ---
@@ -36,7 +36,7 @@ Här följer de inledande stegen som krävs för att generera de äldre JWT-aute
 | Resurs | Information |
 | --- | --- |
 | Postman | Om du vill slutföra de här stegen måste du skaffa [Postman](https://www.postman.com/downloads/) för ditt operativsystem. Postman Basic är kostnadsfritt när man skapar konto. Krävs inte för att använda [!DNL Adobe Target] API:er i allmänhet gör Postman API-arbetsflöden enklare och [!DNL Adobe Target] innehåller flera Postman-samlingar som hjälper dig att köra API:erna och lära dig hur de fungerar. Resten av guiden förutsätter att man har kunskap om Postman. Om du behöver hjälp kan du läsa [Postman-dokumentation](https://learning.getpostman.com/). |
-| Referenser | Du bör känna till följande resurser under resten av den här guiden:<ul><li>[Adobe I/O Github](https://github.com/adobeio)</li><li>[Dokumentation för Target Admin och Profile API](../administer/admin-api/admin-api-overview-new.md)</li><li>[Recommendations API-dokumentation](https://developers.adobetarget.com/api/recommendations/)</li></ul> |
+| Referenser | Du bör känna till följande resurser under resten av den här guiden:<ul><li>[Adobe I/O Github](https://github.com/adobeio)</li><li>[Dokumentation för Target Admin och Profile API](../administer/admin-api/admin-api-overview-new.md)</li><li>[Recommendations API-dokumentation](https://developer.adobe.com/target/administer/recommendations-api/)</li></ul> |
 
 ## Skapa ett Adobe I/O-projekt
 

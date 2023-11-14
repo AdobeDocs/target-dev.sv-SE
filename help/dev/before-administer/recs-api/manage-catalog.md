@@ -6,9 +6,9 @@ kt: 3815
 thumbnail: null
 author: Judy Kim
 exl-id: aea82607-cde4-456a-8dfb-2967badce455
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 2fba03b3882fd23a16342eaab9406ae4491c9044
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '895'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 Samtidigt som du ser till att du uppfyller [krav för användning av Recommendations API](/help/dev/before-administer/recs-api/overview.md#prerequisites)lärde du dig att [generera en åtkomsttoken](/help/dev/before-administer/configure-authentication.md) med JWT-autentiseringsflödet för att använda [!DNL Adobe Target] Administratörs-API:er på [Adobe Developer Console](https://developer.adobe.com/console/home).
 
-Nu kan du använda [Recommendations API:er](https://developers.adobetarget.com/api/recommendations/) om du vill lägga till, uppdatera eller ta bort objekt i din rekommendationskatalog. Precis som med övriga Adobe Target Admin API:er kräver Recommendations API:er autentisering.
+Nu kan du använda [Recommendations API:er](https://developer.adobe.com/target/administer/recommendations-api/) om du vill lägga till, uppdatera eller ta bort objekt i din rekommendationskatalog. Precis som med övriga Adobe Target Admin API:er kräver Recommendations API:er autentisering.
 
 >[!NOTE]
 >
@@ -25,11 +25,11 @@ Nu kan du använda [Recommendations API:er](https://developers.adobetarget.com/a
 
 ![JWT3ff](assets/configure-io-target-jwt3ff.png)
 
-Innan du fortsätter kan du hämta [Recommendations Postman Collection](https://developers.adobetarget.com/api/recommendations/#section/Postman).
+Innan du fortsätter kan du hämta [Recommendations Postman Collection](https://developer.adobe.com/target/administer/recommendations-api/#section/Postman).
 
 ## Skapa och uppdatera objekt med API:t för att spara enheter
 
-Om du vill fylla i din Recommendations-produktdatabas med API:t i stället för en CSV-produktfeed eller Target-begäran som körs på produktsidor använder du [Spara entiteter-API](https://developers.adobetarget.com/api/recommendations/#operation/saveEntities). Den här begäran lägger till eller uppdaterar ett objekt i en enda målmiljö. Syntaxen:
+Om du vill fylla i din Recommendations-produktdatabas med API:t i stället för en CSV-produktfeed eller Target-begäran som körs på produktsidor använder du [Spara entiteter-API](https://developer.adobe.com/target/administer/recommendations-api/#operation/saveEntities). Den här begäran lägger till eller uppdaterar ett objekt i en enda målmiljö. Syntaxen:
 
 ```
 POST https://mc.adobe.io/{{TENANT_ID}}/target/recs/entities
@@ -124,7 +124,7 @@ De sista två objekten hör inte hemma. Låt oss inspektera dem med **[!UICONTRO
 
 ## Hämta objektinformation med Get Entity API
 
-Använd [Hämta enhets-API](https://developers.adobetarget.com/api/recommendations/#operation/getEntity). Syntaxen:
+Använd [Hämta enhets-API](https://developer.adobe.com/target/administer/recommendations-api/#operation/getEntity). Syntaxen:
 
 ```
 GET https://mc.adobe.io/{{TENANT_ID}}/target/recs/entities/[entity.id]
@@ -163,7 +163,7 @@ Anta att du måste ta bort de här entiteterna från katalogen. Låt oss använd
 
 ## Ta bort objekt med API:t Ta bort entiteter
 
-Om du vill ta bort objekt från katalogen använder du [API för att ta bort entiteter](https://developers.adobetarget.com/api/recommendations/#operation/deleteEntities). Syntaxen:
+Om du vill ta bort objekt från katalogen använder du [API för att ta bort entiteter](https://developer.adobe.com/target/administer/recommendations-api/#operation/deleteEntities). Syntaxen:
 
 ```
 DELETE https://mc.adobe.io/{{TENANT_ID}}/target/recs/entities?ids=[comma-delimited-entity-ids]&environment=[environmentId]
