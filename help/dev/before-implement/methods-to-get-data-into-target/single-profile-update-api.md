@@ -4,9 +4,9 @@ description: Hämta data till [!DNL Target] med API:t för uppdatering av en pro
 title: Hur får jag in data på [!DNL Target] Använda API:t för uppdatering av en profil?
 feature: Implementation
 exl-id: e6c394cb-74a3-4991-b656-5ae601f2d5e2
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 3ae2391dea9994c0ddc1df39d74cccf6e067c1a4
 workflow-type: tm+mt
-source-wordcount: '199'
+source-wordcount: '200'
 ht-degree: 0%
 
 ---
@@ -35,7 +35,7 @@ Gräns på 1 000 000 API-anrop (1 miljon) per 24-timmarsperiod
 
 Uppdaterar endast profiler. Det går inte att skapa en profil för en potentiell användare [!DNL Target] har ännu inte sett.
 
-Uppdateringar sker vanligtvis på mindre än 1 timme, men kan ta upp till 24 timmar att reflektera.
+Uppdateringar sker vanligtvis på mindre än en timme, men kan ta upp till 24 timmar att reflektera.
 
 ## Exempel på koder
 
