@@ -4,7 +4,7 @@ description: Hämta data till [!DNL Target] med uppdaterings-API:t för grupppro
 title: Hur får jag in data på [!DNL Target] Använda API:t för uppdatering av gruppprofil?
 feature: Implementation
 exl-id: 654b13b7-1683-4c44-80e6-7557b9d29f66
-source-git-commit: 3ae2391dea9994c0ddc1df39d74cccf6e067c1a4
+source-git-commit: 773f8a2f22cfbf740a5ce68809b38b33b621f3b5
 workflow-type: tm+mt
 source-wordcount: '396'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Profilattribut som skickas via webbplatsen kan uppdateras via API och vice versa
 
 Batchfilens storlek måste vara mindre än 50 MB. Dessutom bör det totala antalet rader inte överstiga 500 000 rader per överföring.
 
-Uppdateringar sker vanligtvis på mindre än en timme, men kan ta upp till 24 timmar att reflektera
+Uppdateringar sker vanligtvis på mindre än en timme, men kan ta upp till 24 timmar att reflektera.
 
 Det finns ingen gräns för hur många rader du kan överföra under 24 timmar i efterföljande batchar. Intag kan dock begränsas under kontorstid för att säkerställa att andra processer körs effektivt.
 
