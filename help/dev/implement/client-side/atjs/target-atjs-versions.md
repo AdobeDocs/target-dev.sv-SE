@@ -4,7 +4,7 @@ description: Visa information om ändringarna i varje version av [!DNL Adobe Tar
 title: Vad ingår i varje version av at.js?
 feature: at.js
 exl-id: 609dacba-2ab8-45e9-b189-928d59938c98
-source-git-commit: ccb87e1217b754b2d496308da35998882cbe2fb1
+source-git-commit: 09ecaa3be954fe5a002e09a422ceeb7a4ed0750a
 workflow-type: tm+mt
 source-wordcount: '4689'
 ht-degree: 0%
