@@ -4,9 +4,9 @@ description: Hämta data till [!DNL Target] med [!UICONTROL Bulk Profile Update 
 title: Hur får jag in data på [!DNL Target] Använda [!UICONTROL Bulk Profile Update API]?
 feature: Implementation
 exl-id: 654b13b7-1683-4c44-80e6-7557b9d29f66
-source-git-commit: 734bda64915a08f2edba37cbbb66b2de581c2237
+source-git-commit: af9db32d59bdf32f2b9fade267922803250377dd
 workflow-type: tm+mt
-source-wordcount: '395'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
@@ -44,12 +44,10 @@ I CRM-systemet eller andra interna system lagras värdefulla data om besökarna 
 * Batchfilens storlek måste vara mindre än 50 MB. Dessutom bör det totala antalet rader inte överstiga 500 000 rader per överföring.
 * Uppdateringar sker vanligtvis på mindre än en timme, men kan ta så lång tid som 24 timmar att reflektera.
 * Det finns ingen gräns för hur många rader du kan överföra under 24 timmar i efterföljande batchar. Intag kan dock begränsas under kontorstid för att säkerställa att andra processer körs effektivt.
-* Flera sekvenser [Uppdateringsanrop för V2-batch](https://developers.adobetarget.com/api/#updating-profiles) utan mbox-anrop däremellan för samma `thirdPartyIds` åsidosätt egenskaperna som uppdaterades i det första batchuppdateringsanropet.
+* Flera anrop till efterföljande V2-batchuppdatering utan mbox-anrop däremellan för samma `thirdPartyIds` åsidosätt egenskaperna som uppdaterades i det första batchuppdateringsanropet.
 
-## Exempel på koder
+## Resurs
 
-Se [Uppdaterar profiler](https://developers.adobetarget.com/api/#updating-profiles).
-
-### Länkar till relevant information
-
-[Uppdaterar profiler](https://developers.adobetarget.com/api/#updating-profiles)
+* [[!DNL Adobe Target Profile APIs overview]](/help/dev/administer/profile-api/profile-api-overview.md)
+* [[!DNL Adobe Target Single Profile Update API]](/help/dev/administer/profile-api/profile-single-api.md)
+* [[!DNL Adobe Target Bulk Profile Update API]](/help/dev/administer/profile-api/profile-bulk-api.md)

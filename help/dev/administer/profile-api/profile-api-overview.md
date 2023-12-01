@@ -1,18 +1,27 @@
 ---
-title: Adobe Target Profile API
-description: Adobe Target Profile API
+title: Adobe Target Profile APIs - översikt
+description: Lär dig hur du använder Adobe Target Profile API:er för att skicka besöksdata till [!DNL Target].
 contributors: https://github.com/icaraps
 exl-id: 482a4175-1d02-47e9-a5c0-dd00e8560773
 feature: APIs/SDKs
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: af9db32d59bdf32f2b9fade267922803250377dd
 workflow-type: tm+mt
-source-wordcount: '21'
+source-wordcount: '213'
 ht-degree: 0%
 
 ---
 
-# [!DNL Adobe Target Profile API]
+# [!DNL Adobe Target Profile APIs overview]
 
-The [!DNL Adobe Target Profiles API] finns här:
+En användarprofil innehåller demografisk information och beteendeinformation om en besökare på en webbsida, t.ex. ålder, kön, köpta produkter, sista besökstillfälle osv. [!DNL Adobe Target] använder den här informationen för att anpassa det innehåll som används för varje besökare.
 
-* [https://developers.adobetarget.com/api/#profiles](https://developers.adobetarget.com/api/#profiles){target=_blank}
+Profilinformationen för varje besökare lagras antingen i cookies eller i tredjepartsappar.
+
+Om webbsidan implementerar målkoden ([at.js](/help/dev/implement/client-side/atjs/how-atjs-works/overview.md) eller [Adobe Experience Platform Web SDK](/help/dev/implement/client-side/aep-web-sdk.md)) skickas profilinformationen från cookies till [!DNL Target] med profilparametrar. [!DNL Target] identifierar varje besökare unikt via en `pcID` att det genererar besökarens cookies. Du kan dock skicka profilparametrar från en extern app via mbox-anrop med `mbox3rdPartyIds`.
+
+Använd [!DNL Adobe Target] profil-API:er när du har profildata om besökarna att skicka till [!DNL Target] som du antingen inte kan eller inte vill skicka som en del av din sidbaserade integrering med [!DNL Target]. Det kan vara data från ett CRM- eller POS-system (Point of Sale) som inte finns på sidan, eller data av en mer känslig typ som inte går att skicka på sidan.
+
+Det finns två sätt att uppdatera profiler via API:
+
+* [API för enkel profiluppdatering](/help/dev/administer/profile-api/profile-single-api.md)
+* [Massprofiluppdatering via batch](/help/dev/administer/profile-api/profile-bulk-api.md)
