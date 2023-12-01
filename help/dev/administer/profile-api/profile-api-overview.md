@@ -4,9 +4,9 @@ description: Lär dig hur du använder Adobe Target Profile API:er för att skic
 contributors: https://github.com/icaraps
 exl-id: 482a4175-1d02-47e9-a5c0-dd00e8560773
 feature: APIs/SDKs
-source-git-commit: af9db32d59bdf32f2b9fade267922803250377dd
+source-git-commit: 81bff85a9d1fe28ca267c471a470da95568fd06d
 workflow-type: tm+mt
-source-wordcount: '213'
+source-wordcount: '216'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ En användarprofil innehåller demografisk information och beteendeinformation o
 
 Profilinformationen för varje besökare lagras antingen i cookies eller i tredjepartsappar.
 
-Om webbsidan implementerar målkoden ([at.js](/help/dev/implement/client-side/atjs/how-atjs-works/overview.md) eller [Adobe Experience Platform Web SDK](/help/dev/implement/client-side/aep-web-sdk.md)) skickas profilinformationen från cookies till [!DNL Target] med profilparametrar. [!DNL Target] identifierar varje besökare unikt via en `pcID` att det genererar besökarens cookies. Du kan dock skicka profilparametrar från en extern app via mbox-anrop med `mbox3rdPartyIds`.
+Om webbsidan implementerar [!DNL Target] kod ([at.js](/help/dev/implement/client-side/atjs/how-atjs-works/overview.md) eller [Adobe Experience Platform Web SDK](/help/dev/implement/client-side/aep-web-sdk.md)) skickas profilinformationen från cookies till [!DNL Target] med profilparametrar. [!DNL Target] identifierar varje besökare unikt via en `pcID` som genereras i besökarens cookies. Du kan dock skicka profilparametrar från en extern app via mbox-anrop med `mbox3rdPartyIds`.
 
-Använd [!DNL Adobe Target] profil-API:er när du har profildata om besökarna att skicka till [!DNL Target] som du antingen inte kan eller inte vill skicka som en del av din sidbaserade integrering med [!DNL Target]. Det kan vara data från ett CRM- eller POS-system (Point of Sale) som inte finns på sidan, eller data av en mer känslig typ som inte går att skicka på sidan.
+Använd [!DNL Adobe Target] profil-API:er när du har profildata om besökarna att skicka till [!DNL Target] som du antingen inte kan eller inte vill skicka som en del av din sidbaserade integrering med [!DNL Target]. Det kan vara data från ett CRM- eller POS-system (Customer Relationship Management) som inte är tillgängligt på sidan. Eller så kan dessa data vara mer känsliga och inte vettiga att skicka vidare på sidan.
 
 Det finns två sätt att uppdatera profiler via API:
 

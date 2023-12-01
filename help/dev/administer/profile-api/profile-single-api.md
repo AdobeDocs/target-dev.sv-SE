@@ -3,18 +3,32 @@ title: Adobe Target API för uppdatering av enstaka profil
 description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Single Profile Update API] för att skicka en enskild besökares profildata till [!DNL Target].
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
-source-git-commit: 6f7d9875e3b73352ead3a55e40a4b2f81f3d4400
+source-git-commit: 81bff85a9d1fe28ca267c471a470da95568fd06d
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '317'
 ht-degree: 0%
 
 ---
 
 # [!DNL Adobe Target Single Profile Update API]
 
-The [!DNL Adobe Target] [!UICONTROL Single Profile Update API] Med kan du skicka en profiluppdatering för en enskild användare. The [!UICONTROL Single Profile Update API] och används vanligtvis när en uppdatering måste ske i relation till en transaktion som inträffar i en kanal som inte har implementerats [!DNL Target].
+The [!DNL Adobe Target] [!UICONTROL Single Profile Update API] Med kan du skicka en profiluppdatering för en enskild användare. The [!UICONTROL Single Profile Update API] är nästan identisk med [!UICONTROL Bulk Profile Update API], men en besökarprofil uppdateras åt gången, i linje med API-anropet i stället för med en .cvs-fil.
 
-The [!UICONTROL Single Profile Update API] begränsas till att utföra 1 miljon uppdateringar under en 24-timmarsperiod. Uppdateringar sker vanligtvis på mindre än en timme, men kan ta så lång tid som 24 timmar att reflektera. Om du måste skicka fler uppdateringar, eller begära att uppdateringar ska behandlas inom kortare tidsramar, kan det vara bra att skicka uppdateringar av transaktionsprofiler via uppdatering på klientsidan (standard) eller via [!DNL Adobe Target] server-side [Leverans-API](/help/dev/implement/delivery-api/overview.md).
+The [!UICONTROL Single Profile Update API] och används vanligtvis när en uppdatering måste ske i relation till en transaktion som inträffar i en kanal som inte har implementerats [!DNL Target]. Du vill till exempel uppdatera profilen för en enskild besökare som utför en offlineåtgärd. Åtgärderna kan omfatta att nå en kundtjänst, ett lån finansieras, använda ett förmånskort i butik, få tillgång till en kioskdator och så vidare.
+
+Fördelar med [!UICONTROL Single Profile Update API] inkludera:
+
+* Det finns ingen gräns för antalet profilattribut.
+* Profilattribut som skickas via webbplatsen kan uppdateras via API och tvärtom.
+
+## Caveats
+
+* The [!UICONTROL Single Profile Update API] begränsas till att utföra 1 miljon uppdateringar under en 24-timmarsperiod.
+* Uppdateringar sker vanligtvis på mindre än en timme, men kan ta så lång tid som 24 timmar att reflektera.
+
+  Om du måste skicka fler uppdateringar, eller begära att uppdateringar ska behandlas inom kortare tidsramar, kan det vara bra att skicka uppdateringar av transaktionsprofiler via uppdatering på klientsidan (standard) eller via [!DNL Adobe Target] server-side [Leverans-API](/help/dev/implement/delivery-api/overview.md).
+
+## Format
 
 Ange profilparametrarna i formatet `profile.paramName=value`.
 
