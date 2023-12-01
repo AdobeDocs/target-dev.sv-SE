@@ -4,9 +4,9 @@ description: Hämta data till [!DNL Target] med [!UICONTROL Bulk Profile Update 
 title: Hur får jag in data på [!DNL Target] Använda [!UICONTROL Bulk Profile Update API]?
 feature: Implementation
 exl-id: 654b13b7-1683-4c44-80e6-7557b9d29f66
-source-git-commit: 43f4fb8345a77ccb0e112fe196e7e0944cc468c9
+source-git-commit: 946e9431e6bde30f564b4ba1a4cf0a78d8c5c6bf
 workflow-type: tm+mt
-source-wordcount: '215'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,11 @@ The [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] Med kan du uppdater
 
 Använda [!UICONTROL Bulk Profile Update API]kan du enkelt skicka detaljerade besökarprofildata i form av profilparametrar för många användare till [!DNL Target] från valfri extern källa. Externa källor kan vara CRM- eller POS-system (Point of Sale) som vanligtvis inte finns på en webbsida.
 
+Kontrast för [!UICONTROL Bulk Profile Update API] med [[!DNL Adobe Target Single Profile Update API]](/help/dev/administer/profile-api/profile-single-api.md).
+
 ## [!UICONTROL Customer attributes] kontra [!UICONTROL Bulk Profile Update API]
 
-Det här alternativet liknar [!UICONTROL customer attributes] med några skillnader:
+Det här alternativet liknar [[!UICONTROL customer attributes]](/help/dev/before-implement/methods-to-get-data-into-target/customer-attributes.md) med några skillnader:
 
 * [!UICONTROL Customer attributes] använda en FTP-överföring. The [!UICONTROL Target Bulk Profile Update API] använder ett API för HTTP-POST.
 * [!UICONTROL Customer attribute] data kan delas med [!DNL Analytics]. The [!UICONTROL Bulk Profile Update] är bara användbart i [!DNL Target].
@@ -31,6 +33,8 @@ Det här alternativet liknar [!UICONTROL customer attributes] med några skillna
 * Du kan inte skicka följande tecken i `mbox3rdPartyID`: plustecken (+) och snedstreck (/).
 
 ## Resurs
+
+Mer information finns i:
 
 * [[!DNL Adobe Target Profile APIs overview]](/help/dev/administer/profile-api/profile-api-overview.md)
 * [[!DNL Adobe Target Single Profile Update API]](/help/dev/administer/profile-api/profile-single-api.md)
