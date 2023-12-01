@@ -3,9 +3,9 @@ title: Adobe Target API för gruppprofilsuppdatering
 description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] för att skicka profildata till flera besökare [!DNL Target].
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
-source-git-commit: 6f7d9875e3b73352ead3a55e40a4b2f81f3d4400
+source-git-commit: 43f4fb8345a77ccb0e112fe196e7e0944cc468c9
 workflow-type: tm+mt
-source-wordcount: '661'
+source-wordcount: '693'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 The [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] Med kan du uppdatera användarprofiler för flera besökare på en webbplats i grupp med hjälp av en gruppfil.
 
-Använda [!UICONTROL Bulk Profile Update API]kan du enkelt skicka detaljerade besökarprofildata i form av profilparametrar för många användare till [!DNL Target] från valfri extern källa. Externa källor kan vara CRM- eller POS-system (Point of Sale), som vanligtvis inte finns på en webbsida.
+Använda [!UICONTROL Bulk Profile Update API]kan du enkelt skicka detaljerade besökarprofildata i form av profilparametrar för många användare till [!DNL Target] från valfri extern källa. Externa källor kan vara CRM- eller POS-system (Point of Sale) som vanligtvis inte finns på en webbsida.
 
 | Version | URL-exempel | Funktioner |
 | --- | --- | --- |
@@ -24,6 +24,11 @@ Använda [!UICONTROL Bulk Profile Update API]kan du enkelt skicka detaljerade be
 >[!NOTE]
 >
 >Version 2 (v2) av [!UICONTROL Bulk Profile Update API] är den aktuella versionen. Men [!DNL Target] stöder fortfarande version 1 (v1).
+
+## Fördelar med API:t för gruppprofilsuppdatering
+
+* Det finns ingen gräns för antalet profilattribut.
+* Profilattribut som skickas via webbplatsen kan uppdateras via API och tvärtom.
 
 ## Caveats
 
