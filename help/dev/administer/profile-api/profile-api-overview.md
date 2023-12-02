@@ -4,9 +4,9 @@ description: Lär dig hur du använder Adobe Target Profile API:er för att skic
 contributors: https://github.com/icaraps
 exl-id: 482a4175-1d02-47e9-a5c0-dd00e8560773
 feature: APIs/SDKs
-source-git-commit: 81bff85a9d1fe28ca267c471a470da95568fd06d
+source-git-commit: 1a1c3d96cf6ef5c337a63fdec8c700da695ff5d1
 workflow-type: tm+mt
-source-wordcount: '216'
+source-wordcount: '233'
 ht-degree: 0%
 
 ---
@@ -25,3 +25,5 @@ Det finns två sätt att uppdatera profiler via API:
 
 * [API för enkel profiluppdatering](/help/dev/administer/profile-api/profile-single-api.md)
 * [Massprofiluppdatering via batch](/help/dev/administer/profile-api/profile-bulk-api.md)
+
+Den äldre API-dokumentationen för profiler finns här: [https://developers.adobetarget.com/api/#profiles](https://developers.adobetarget.com/api/#profiles){target=_blank}
