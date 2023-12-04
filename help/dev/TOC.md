@@ -2,9 +2,9 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: af9db32d59bdf32f2b9fade267922803250377dd
+source-git-commit: 9707680ddcf0c373c635aa9f3cb5ba1b74cf90a3
 workflow-type: tm+mt
-source-wordcount: '740'
+source-wordcount: '744'
 ht-degree: 3%
 
 ---
@@ -193,8 +193,10 @@ ht-degree: 3%
    + Admin-API {#admin-api}
       + [API-översikt för administratörer](before-administer/admin-api-overview/admin-api-overview.md)
       + [Adobe Target Admin API](/help/dev/administer/admin-api/admin-api-overview-new.md)
-   + Profil-API:er {#profile-apis}
-      + [Översikt över profiler-API:er](/help/dev/administer/profile-api/profile-api-overview.md)
+   + Profil-API {#profile-apis}
+      + [API-översikt för profiler](/help/dev/administer/profile-api/profiles-api.md)
+      + [Hämta profiler](/help/dev/administer/profile-api/profile-fetch.md)
+      + [Uppdatera profiler](/help/dev/administer/profile-api/profile-api-overview.md)
       + [API för enkel profiluppdatering](/help/dev/administer/profile-api/profile-single-api.md)
       + [API för gruppprofiluppdatering](/help/dev/administer/profile-api/profile-bulk-api.md)
    + [Rapporterings-API](/help/dev/administer/reporting-api/reporting-api.md)
