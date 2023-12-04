@@ -3,9 +3,9 @@ title: Adobe Target API för gruppprofilsuppdatering
 description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] för att skicka profildata till flera besökare [!DNL Target].
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
-source-git-commit: 43f4fb8345a77ccb0e112fe196e7e0944cc468c9
+source-git-commit: 8bc819823462fae71335ac3b6c871140158638fe
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '698'
 ht-degree: 0%
 
 ---
@@ -61,7 +61,7 @@ Du refererar till den här filen i POSTENS anrop till [!DNL Target] servrar för
 Gör en HTTP-POST-förfrågan till [!DNL Target] edge-servrar för att bearbeta filen. Här följer ett exempel på en HTTP-POST-begäran för filen batch.txt med kommandot curl:
 
 ``````
-curl -X POST --data-binary @BATCH.TXT http://CLIENTCODE.tt.omtrdc.net/m2/ CLIENTCODE/v2/profile/batchUpdate
+curl -X POST --data-binary @BATCH.TXT http://CLIENTCODE.tt.omtrdc.net/m2/CLIENTCODE/v2/profile/batchUpdate
 ``````
 
 Var:
