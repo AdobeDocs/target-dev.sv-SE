@@ -1,11 +1,11 @@
 ---
 title: Adobe Target API för gruppprofilsuppdatering
-description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] för att skicka profildata till flera besökare [!DNL Target].
+description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] för att skicka profildata till flera besökare [!DNL Target] för målinriktning.
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
-source-git-commit: 38a5e82d3170fa64220bd63f505f1470af43e8a3
+source-git-commit: a6f47c99cfc419771c1a6674990c415a2035ab4e
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '796'
 ht-degree: 0%
 
 ---
