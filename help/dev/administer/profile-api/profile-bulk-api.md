@@ -3,9 +3,9 @@ title: Adobe Target API för gruppprofilsuppdatering
 description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] för att skicka profildata till flera besökare [!DNL Target].
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
-source-git-commit: b263fef6017dc6f840037cab9045c36b9e354cee
+source-git-commit: 38a5e82d3170fa64220bd63f505f1470af43e8a3
 workflow-type: tm+mt
-source-wordcount: '741'
+source-wordcount: '792'
 ht-degree: 0%
 
 ---
@@ -35,6 +35,7 @@ Använda [!UICONTROL Bulk Profile Update API]kan du enkelt skicka detaljerade be
 * Batchfilens storlek måste vara mindre än 50 MB. Dessutom bör det totala antalet rader inte överstiga 500 000 rader per överföring.
 * Det finns ingen gräns för hur många rader du kan överföra under 24 timmar i efterföljande batchar. Intag kan dock begränsas under kontorstid för att säkerställa att andra processer körs effektivt.
 * Flera anrop till efterföljande v2-batchuppdatering utan mbox-anrop däremellan för samma thirdPartyIds åsidosätter egenskaperna som uppdaterades i det första batchuppdateringsanropet.
+* [!DNL Adobe] garanterar inte att 100 % av gruppprofilsdata kommer att inkluderas och behållas i Target och därmed vara tillgängliga för användning vid målgruppsanpassning. I den aktuella designen finns det en möjlighet att en liten andel data (upp till 0,1 % av stora tillverkningssatser) inte tas med eller behålls.
 
 ## Gruppfil
 
