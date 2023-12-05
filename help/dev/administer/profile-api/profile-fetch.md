@@ -3,7 +3,7 @@ title: Hämta profiler
 description: Lär dig hur du använder Adobe Target Profile API:er för att hämta besöksdata som ska användas i [!DNL Target].
 contributors: https://github.com/icaraps
 feature: APIs/SDKs
-source-git-commit: e5a1c38d448cb7446b7b26cd0dc882976ba94dd3
+source-git-commit: ee53a8f0210480d9b70dc77a3a5cd8d92d2f2e3d
 workflow-type: tm+mt
 source-wordcount: '261'
 ht-degree: 0%
@@ -27,7 +27,7 @@ https://<your-client-code>.tt.omtrdc.net/rest/v1/profiles/your-tnt-id?client=<yo
 Ersätt `<your-client-code>` och `your-tnt-id` och skicka en GET-förfrågan. Här är ett exempel på ett profilhämtningsanrop som använder en `tntid`;
 
 ```
-http://<your-client-code>.tt.omtrdc.net/rest/v1/profiles/111492025094307-353046?client=<your-client-code>
+https://<your-client-code>.tt.omtrdc.net/rest/v1/profiles/111492025094307-353046?client=<your-client-code>
 ```
 
 ## Använda ett thirdPartyId
