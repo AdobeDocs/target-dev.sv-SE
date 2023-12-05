@@ -3,9 +3,9 @@ title: Adobe Target API för gruppprofilsuppdatering
 description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] för att skicka profildata till flera besökare [!DNL Target].
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
-source-git-commit: 8bc819823462fae71335ac3b6c871140158638fe
+source-git-commit: b263fef6017dc6f840037cab9045c36b9e354cee
 workflow-type: tm+mt
-source-wordcount: '698'
+source-wordcount: '741'
 ht-degree: 0%
 
 ---
@@ -72,27 +72,58 @@ Om du inte känner till din klientkod går du till [!DNL Target] användargräns
 
 ### Inspect svar
 
-v2 returnerar en profil-för-profil-status och v1 returnerar bara den övergripande statusen. Svaret innehåller en länk till en annan URL som innehåller ett meddelande om att profilen lyckades.
+Profiles API returnerar batchjobbets överföringsstatus för bearbetning tillsammans med en länk under&quot;batchStatus&quot; till en annan URL som visar det aktuella batchjobbets övergripande status.
 
-### Exempel på svar
+### Exempel på API-svar
+
+Följande kod är ett exempel på ett Profiles API-svar:
 
 ```
-true http://mboxedge19.tt.omtrdc.net/m2/demo/v2/profile/batchStatus?batchId=demo-1845664501&m2Node=00 Batch submitted for processing
+<response>
+    <success>true</success>
+    <batchStatus>http://mboxedge45.tt.omtrdc.net/m2/demo/profile/batchStatus?batchId=demo-1701473848678-13029383</batchStatus>
+    <message>Batch submitted for processing</message>
+</response>
 ```
 
 Om ett fel uppstår innehåller svaret `success=false` och ett detaljerat felmeddelande.
 
-Ett lyckat svar ser ut så här:
+### Standardbatchstatussvar
 
-``````
-demo-1845664501 1436187396849-250353.03_03 success 2403081156529-351655.03_03 success 2403081156529-351656.03_03 success 1436187396849-250351.01_00 success 
-``````
+Ett lyckat standardsvar när ovanstående `batchStatus` URL-länken som klickas ser ut så här:
+
+```
+<response><batchId>demo4-1701473848678-13029383</batchId><status>complete</status><batchSize>1</batchSize></response>
+```
 
 Förväntade värden för statusfälten är:
 
-**framgång**: Profilen uppdaterades. Om profilen inte hittas skapades en med värdena från gruppen.
-**fel**: Profilen uppdaterades eller skapades inte på grund av fel, undantag eller meddelandeförlust.
-**väntande**: Profilen har inte uppdaterats eller skapats ännu.
+| Status | Information |
+| --- | --- |
+| [!UICONTROL complete] | Begäran om uppdatering av profilbatch har slutförts. |
+| [!UICONTROL incomplete] | Begäran om uppdatering av profilbatch bearbetas fortfarande och slutförs inte. |
+| [!UICONTROL stuck] | Begäran om uppdatering av profilgrupp har fastnat och kunde inte slutföras. |
 
+### Detaljerat svar på batchstatus-URL
 
+Ett mer detaljerat svar kan hämtas genom att en parameter skickas `showDetails=true` till `batchStatus` url ovan.
 
+Exempel:
+
+```
+http://mboxedge45.tt.omtrdc.net/m2/demo/profile/batchStatus?batchId=demo-1701473848678-13029383&showDetails=true
+```
+
+#### Detaljerat svar
+
+```
+<response>
+    <batchId>demo4-1701473848678-13029383</batchId>
+    <status>complete</status>
+    <batchSize>1</batchSize>
+    <consumedCount>1</consumedCount>
+    <successfulUpdates>1</successfulUpdates>
+    <profilesNotFound>0</profilesNotFound>
+    <failedUpdates>0</failedUpdates>
+</response>
+```
