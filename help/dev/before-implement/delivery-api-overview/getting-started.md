@@ -4,9 +4,9 @@ description: Hur använder jag [!UICONTROL Adobe Target Delivery API]?
 keywords: leverans-API
 exl-id: 142ec3be-b017-4cdc-9079-b1cc173a710a
 feature: APIs/SDKs
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: e5a1c38d448cb7446b7b26cd0dc882976ba94dd3
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '96'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,3 @@ Innan du skapar en [!UICONTROL Target Delivery API] ring, följ dessa steg för 
 1. Skapa en [!DNL Target] (A/B, XT, AP eller Recommendations) med [Formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=en) eller [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
 1. Använd leverans-API:t för att få ett svar på de rutor som används i [!DNL Target] aktivitet som skapats i steg 2.
 1. Presentera upplevelsen för besökaren.
-
-## Postman Collection {#postman}
-
-Postman är ett program som gör det enkelt att utlösa API-anrop. [Den här Postman-samlingen](https://run.pstmn.io/button.svg) innehåller exempel på API-anrop för leverans.

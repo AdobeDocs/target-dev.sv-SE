@@ -3,9 +3,9 @@ title: Adobe Target Profiles API
 description: Lär dig hur du använder Adobe Target Profile API:er för att skicka besöksdata till [!DNL Target].
 contributors: https://github.com/icaraps
 feature: APIs/SDKs
-source-git-commit: 289299a52e5611c0da341f313aa4a447fcf3666a
+source-git-commit: e5a1c38d448cb7446b7b26cd0dc882976ba94dd3
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '104'
 ht-degree: 0%
 
 ---
@@ -13,14 +13,6 @@ ht-degree: 0%
 # [!DNL Adobe Target Profiles API] översikt
 
 [!DNL Adobe Target] skapar och underhåller en profil för varje enskild användare. Den här profilen lagras på [!DNL Target] Edge Cluster och uppdateras i realtid efter varje besök.
-
-## Profiler [!DNL Postman] samling
-
-[!DNL Postman] är ett program som gör det enkelt att utlösa API-anrop. Detta [!DNL Postman] samlingen innehåller alla [!DNL Profile API] samtal. Klicka [Kör i Postman](https://www.getpostman.com/collections/ec7376f9028977ccaa99){target=_blank} för att importera API-samlingen för profiler.
-
-## API-dokumentation för äldre profiler.
-
-Den äldre API-dokumentationen för profiler finns här: [https://developers.adobetarget.com/api/#profiles](https://developers.adobetarget.com/api/#profiles){target=_blank}
 
 ## Struktur för en [!DNL Target] profil
 
