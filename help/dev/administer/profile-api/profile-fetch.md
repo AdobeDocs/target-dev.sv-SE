@@ -3,16 +3,28 @@ title: Hämta profiler
 description: Lär dig hur du använder Adobe Target Profile API:er för att hämta besöksdata som ska användas i [!DNL Target].
 contributors: https://github.com/icaraps
 feature: APIs/SDKs
-source-git-commit: ee53a8f0210480d9b70dc77a3a5cd8d92d2f2e3d
+source-git-commit: 49acf92bbe06dbcee36fef2b7394acd7ce37baad
 workflow-type: tm+mt
-source-wordcount: '261'
+source-wordcount: '290'
 ht-degree: 0%
 
 ---
 
 # Uppdatera profiler
 
-A [!DNL Target] kan hämtas på två sätt: med en `tntid` eller en `thirdPartyId`.
+A [!DNL Target] kan hämtas på tre sätt: med en `[!DNL Experience Cloud Visitor ID]` (`ECID`), `tntid` eller `thirdPartyId`.
+
+## Använda [!DNL Experience Cloud Visitor ID] (ECID)
+
+Du kan hämta en profil baserat på `ECID`. HTTP-metoden måste vara GET.
+
+URL:en ser ut som i följande exempel:
+
+```
+https://<clientCode>.tt.omtrdc.net/rest/v1/profiles/marketingCloudVisitorId/<ECID>?client=<clientCode>
+```
+
+Ersätt `<clientCode>` med [!DNL Target] [!UICONTROL Client Code] och `<ECID>` med [!DNL Experience Cloud Visitor ID] ([!DNL Marketing Cloud Visitor ID]).
 
 ## Använda en ttid
 
@@ -24,7 +36,7 @@ I följande exempel visas begärandeformatet för att hämta en profil med en `t
 https://<your-client-code>.tt.omtrdc.net/rest/v1/profiles/your-tnt-id?client=<your-client-code>
 ```
 
-Ersätt `<your-client-code>` och `your-tnt-id` och skicka en GET-förfrågan. Här är ett exempel på ett profilhämtningsanrop som använder en `tntid`;
+Ersätt `<your-client-code>` och `your-tnt-id` och skicka en GET-förfrågan. Här är ett exempel på ett profilhämtningsanrop som använder en `tntid`:
 
 ```
 https://<your-client-code>.tt.omtrdc.net/rest/v1/profiles/111492025094307-353046?client=<your-client-code>
