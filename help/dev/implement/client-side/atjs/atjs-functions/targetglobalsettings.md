@@ -1,12 +1,12 @@
 ---
-keywords: serverstate, targetGlobalSettings, targetGlobalSettings, globalSettings, globalSettings, global settings, at.js, funktioner, clientCode, clientCode, serverDomain, serverdomain, cookieDomain, serverstate5, serverstate6, serverstate7, serverstate8, serverstate9, targetGlobalSettings0, targetGlobalSettings1, targetGlobalSettings2, targetGlobalSettings3, targetGlobalSettings4, targetGlobalSettings5, cookiedomain, crossDomain, crossdomain, timeout, globalMboxAutoCreate, visitorApiTimeout, defaultContentHiddenStyle, defaultContentVisibleStyle, bodyHiddenStyle, bodyHidingEnabled, imsOrgId, secureOnly, overrideMbox EdgeServer, overrideMboxEdgeServerTimeout, cookiedomain5, cookiedomain6, cookiedomain7, cookiedomain8, cookiedomain9, crossDomain0, crossDomain1, crossDomain2, crossDomain3, crossDomain4, crossDomain5, optoutEnabled, optout, opt out, selectorsPollingTimeout, dataProviders, Hybrid Personalization, deviceIdLifetime
+keywords: serverstate, targetGlobalSettings, targetingGlobalSettings, globalSettings, globalSettings, global settings, at.js, funktioner, clientCode, clientCode, serverDomain, serverdomain, cookieDomain, serverstate5, serverstate6, serverstate7, serverstate8, serverstate9, targetGlobalSettings0, targetGlobalSettings1, targetGlobalSettings2, targetGlobalSettings3, targetGlobalSettings4, targetGlobalSettings5, cookiedomain, crossDomain, crossdomain, timeout, globalMboxAutoCreate, visitorApiTimeout, defaultContentHiddenStyle, defaultContentVisibleStyle, bodyHiddenStyle, bodyHidingEnabled, imsOrgId, secureOnly, overrideMbox EdgeServer, overrideMboxEdgeServerTimeout, cookiedomain5, cookiedomain6, cookiedomain7, cookiedomain8, cookiedomain9, crossDomain0, crossDomain1, crossDomain2, crossDomain3, crossDomain4, crossDomain5, optoutEnabled, optout, opt out, selectorsPollingTimeout, dataProviders, Hybrid Personalization, deviceIdLifetime
 description: Använd [!UICONTROL targetGlobalSettings()] funktionen för [!DNL Adobe Target] at.js JavaScript-bibliotek som åsidosätter inställningar i stället för att använda [!DNL Target] API:er för användargränssnitt eller REST.
 title: Hur jag använder [!UICONTROL targetGlobalSettings()] Funktion?
 feature: at.js
 exl-id: f6218313-6a70-448e-8555-b7b039e64b2c
-source-git-commit: d5d25c6a559dafe446d26cca6c03d8e693cbd508
+source-git-commit: 12cf430b65695d38d1651f2a97df418d82d231f3
 workflow-type: tm+mt
-source-wordcount: '2518'
+source-wordcount: '2565'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,18 @@ Du kan åsidosätta inställningarna i at.js-biblioteket med `[!UICONTROL target
 ## Inställningar
 
 Du kan åsidosätta följande inställningar:
+
+### aepSandboxId
+
+* **Typ**: String
+* **Standardvärde**: null
+* **Beskrivning**: Valfri parameter som används för att skicka [!DNL Adobe Experience Platform] sandbox-ID att dela [!DNL Adobe Experience Platform] mål som skapats i icke-standardsandlådan med [!DNL Target]. If `aepSandboxId` inte är null, `aepSandboxName` måste också anges.
+
+### aepSandboxName
+
+* **Typ**: String
+* **Standardvärde**: null
+* **Beskrivning**: Valfri parameter som används för att skicka [!DNL Adobe Experience Platform] sandlådenamn att dela [!DNL Adobe Experience Platform] mål som skapats i icke-standardsandlådan med [!DNL Target]. If `aepSandboxName` inte är null, `aepSandboxId` måste också anges.
 
 ### artifactLocation
 
@@ -284,7 +296,7 @@ Varje dataleverantör har följande struktur:
 | name | Sträng | Leverantörens namn. |
 | version | Sträng | Providerversion. Den här nyckeln kommer att användas för leverantörens utveckling. |
 | timeout | Nummer | Representerar providerns timeout om det här är en nätverksbegäran.  Den här nyckeln är valfri. |
-| provider |  -funktion | Funktionen som innehåller logiken för hämtning av providerdata.<p>Funktionen har en enda obligatorisk parameter: `callback`. Callback-parametern är en funktion som bara ska anropas när data har hämtats eller när ett fel uppstår.<p>Återanropet förväntar sig två parametrar:<ul><li>fel: Anger om ett fel uppstod. Om allt är OK ska den här parametern anges till null.</li><li>parametrar: Ett JSON-objekt som representerar de parametrar som ska skickas i en [!DNL Target] begäran.</li></ul> |
+| provider | Funktion | Funktionen som innehåller logiken för hämtning av providerdata.<p>Funktionen har en enda obligatorisk parameter: `callback`. Callback-parametern är en funktion som bara ska anropas när data har hämtats eller när ett fel uppstår.<p>Återanropet förväntar sig två parametrar:<ul><li>fel: Anger om ett fel uppstod. Om allt är OK ska den här parametern anges till null.</li><li>parametrar: Ett JSON-objekt som representerar de parametrar som ska skickas i en [!DNL Target] begäran.</li></ul> |
 
 I följande exempel visas var dataleverantören använder synkroniseringskörning:
 
