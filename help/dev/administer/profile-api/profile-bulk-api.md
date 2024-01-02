@@ -3,7 +3,8 @@ title: Adobe Target API för gruppprofilsuppdatering
 description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Update API] för att skicka profildata till flera besökare [!DNL Target] för målinriktning.
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
-source-git-commit: a6f47c99cfc419771c1a6674990c415a2035ab4e
+exl-id: 0f38d109-5273-4f73-9488-80eca115d44d
+source-git-commit: 32a6d14c911b977aea96b0fb6832929892d70d5d
 workflow-type: tm+mt
 source-wordcount: '796'
 ht-degree: 0%
@@ -18,8 +19,8 @@ Använda [!UICONTROL Bulk Profile Update API]kan du enkelt skicka detaljerade be
 
 | Version | URL-exempel | Funktioner |
 | --- | --- | --- |
-| v1 | `http://CLIENTCODE.tt.omtrdc.net/m2/ CLIENTCODE/profile/batchUpdate` | Stöd endast för bulkprofiluppdatering. |
-| v2 | `http://CLIENTCODE.tt.omtrdc.net/m2/ CLIENTCODE/v2/profile/batchUpdate` | <ul><li>Skapa profil om den inte hittas.</li><li>Statusuppdatering per rad.</li></ul> |
+| v1 | `http://CLIENTCODE.tt.omtrdc.net/m2/CLIENTCODE/profile/batchUpdate` | Stöd endast för bulkprofiluppdatering. |
+| v2 | `http://CLIENTCODE.tt.omtrdc.net/m2/CLIENTCODE/v2/profile/batchUpdate` | <ul><li>Skapa profil om den inte hittas.</li><li>Statusuppdatering per rad.</li></ul> |
 
 >[!NOTE]
 >
