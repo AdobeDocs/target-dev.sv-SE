@@ -4,9 +4,9 @@ description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Upda
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
 exl-id: 0f38d109-5273-4f73-9488-80eca115d44d
-source-git-commit: 32a6d14c911b977aea96b0fb6832929892d70d5d
+source-git-commit: 3d90616b0a920abea380d4cfcd1227eafde86adb
 workflow-type: tm+mt
-source-wordcount: '796'
+source-wordcount: '814'
 ht-degree: 0%
 
 ---
@@ -34,6 +34,7 @@ Använda [!UICONTROL Bulk Profile Update API]kan du enkelt skicka detaljerade be
 ## Caveats
 
 * Batchfilens storlek måste vara mindre än 50 MB. Dessutom bör det totala antalet rader inte överstiga 500 000 rader per överföring.
+* Uppdateringar sker vanligtvis på mindre än en timme, men kan ta så lång tid som 24 timmar att reflektera.
 * Det finns ingen gräns för hur många rader du kan överföra under 24 timmar i efterföljande batchar. Intag kan dock begränsas under kontorstid för att säkerställa att andra processer körs effektivt.
 * Flera anrop till efterföljande v2-batchuppdatering utan mbox-anrop däremellan för samma thirdPartyIds åsidosätter egenskaperna som uppdaterades i det första batchuppdateringsanropet.
 * [!DNL Adobe] garanterar inte att 100 % av gruppprofilsdata kommer att inkluderas och behållas i Target och därmed vara tillgängliga för användning vid målgruppsanpassning. I den aktuella designen finns det en möjlighet att en liten andel data (upp till 0,1 % av stora tillverkningssatser) inte tas med eller behålls.
