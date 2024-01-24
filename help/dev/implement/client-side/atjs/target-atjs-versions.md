@@ -4,9 +4,9 @@ description: Visa information om ändringarna i varje version av [!DNL Adobe Tar
 title: Vad ingår i varje version av at.js?
 feature: at.js
 exl-id: 609dacba-2ab8-45e9-b189-928d59938c98
-source-git-commit: 09ecaa3be954fe5a002e09a422ceeb7a4ed0750a
+source-git-commit: 9999c1b5f603e6607bd81f6ad6a06a7f74e76acb
 workflow-type: tm+mt
-source-wordcount: '4689'
+source-wordcount: '4904'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,10 @@ Information om ändringarna i varje version av [!DNL Adobe Target] at.js JavaScr
 >Du bör uppgradera till de senaste versionerna av antingen 1.*x* eller 2.*x* för att få buggfixar och säkerhetsuppdateringar för problem som upptäcks i tidigare mindre versioner av motsvarande större version.
 
 Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den bästa metoden att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tillägg - uppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html) i *Översikt över taggar* guide.6+
+
+## at.js version 2.11.4 (24 januari 2024)
+
+* Uppdaterat at.js för att förhindra att ogiltiga geodata skickas till leverans-API:t.
 
 ## at.js version 2.11.3 (21 november 2023)
 
