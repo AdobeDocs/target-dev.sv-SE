@@ -4,9 +4,9 @@ description: Läs svar på vanliga frågor om [!DNL Adobe Target] at.js JavaScri
 title: Vad är vanliga frågor och svar om at.js?
 feature: at.js
 exl-id: 362ccc5b-8731-46c0-bc52-3e55c273e216
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 448c43c0c10e22ad054f4ee98bfc282f8c96cdcb
 workflow-type: tm+mt
-source-wordcount: '2884'
+source-wordcount: '2925'
 ht-degree: 0%
 
 ---
@@ -297,3 +297,7 @@ Syntaxen:
 `<!DOCTYPE html>`
 
 Dokumenttypen HTML 5 ser till att sidan läses in i standardläge. När du läser in i felsökningsläge inaktiveras vissa JS-API:er som at.js är beroende av. [!DNL Target] inaktiverar at.js i felsökningsläge.
+
+## Fungerar at.js i en Ionic-appmiljö.
+
+Implementeringen testades aldrig, som at.js inte var tänkt att fungera i en icke-webbmiljö. [!DNL Adobe] rekommenderar [SDK för mobilimplementeringar](/help/dev/implement/mobile/overview.md).
