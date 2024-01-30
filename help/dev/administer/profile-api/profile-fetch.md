@@ -3,14 +3,15 @@ title: Hämta profiler
 description: Lär dig hur du använder Adobe Target Profile API:er för att hämta besöksdata som ska användas i [!DNL Target].
 contributors: https://github.com/icaraps
 feature: APIs/SDKs
-source-git-commit: 49acf92bbe06dbcee36fef2b7394acd7ce37baad
+exl-id: b422ae68-49b3-4d60-9ea4-0fa67b6934b0
+source-git-commit: b8ccfdcaff6aa17a325727df0a9ffd716e44519b
 workflow-type: tm+mt
 source-wordcount: '290'
 ht-degree: 0%
 
 ---
 
-# Uppdatera profiler
+# Hämta profiler
 
 A [!DNL Target] kan hämtas på tre sätt: med en `[!DNL Experience Cloud Visitor ID]` (`ECID`), `tntid` eller `thirdPartyId`.
 
