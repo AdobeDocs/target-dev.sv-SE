@@ -3,9 +3,9 @@ title: Felsöka enhetsbeslut
 description: Lär dig hur du felsöker [!UICONTROL on-device decisioning]
 exl-id: e76f95ce-afae-48e0-9dbb-2097133574dc
 feature: APIs/SDKs
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 1d892d4d4d6f370f7772d0308ee0dd0d5c12e700
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1155'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ Om spårning aktiveras kommer ytterligare information att hämtas från [!DNL Ad
 
 ## 3. Verifiera [!UICONTROL on-device decisioning] *regelartefakt* har hämtats och cachelagrats enligt det definierade avsökningsintervallet.
 
-1. Vänta på avsökningsintervallets varaktighet (standardvärdet är 5 minuter) och kontrollera att artefakten hämtas av SDK:n. Samma terminalloggar genereras.
+1. Vänta på avsökningsintervallets varaktighet (standardvärdet är 20 minuter) och kontrollera att artefakten hämtas av SDK:n. Samma terminalloggar genereras.
 
    Dessutom finns information från[!DNL Target]Spårningen ska skickas till terminalen med information om regelartefakten.
 
