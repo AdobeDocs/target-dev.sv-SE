@@ -4,9 +4,9 @@ description: Integrering med Experience Cloud, Audience Manager
 keywords: delivery api, server-side, server-side, integration, målgruppshanterare, aam
 exl-id: c21e0200-23ba-4a0b-adf4-38e03c087f00
 feature: Implement Server-side
-source-git-commit: 09a50aa67ccd5c687244a85caad24df56c0d78f5
+source-git-commit: e3f14e97fa48ffb1f07b29aca5711d16e75faa80
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '417'
 ht-degree: 0%
 
 ---
@@ -298,4 +298,4 @@ public class TargetClientService {
 
 >[!ENDTABS]
 
-Mer information om TargetRequestUtils.java finns i [Verktygsmetoder (Java)](https://experienceleague.corp.adobe.com/docs/target-dev/developer/server-side/java/utility-methods.html){target=_blank}
+Mer information om `TargetRequestUtils.java`, se [Verktygsmetoder (Java)](https://experienceleague.adobe.com/docs/target-dev/developer/server-side/java/utility-methods.html){target=_blank}
