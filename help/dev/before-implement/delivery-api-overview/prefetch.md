@@ -4,9 +4,9 @@ description: Hur använder jag förhämtning i [!UICONTROL Adobe Target Delivery
 keywords: leverans-API
 exl-id: eab88e3a-442c-440b-a83d-f4512fc73e75
 feature: APIs/SDKs
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 91592a86957770c4d189115fd3ebda61ed52dd38
 workflow-type: tm+mt
-source-wordcount: '466'
+source-wordcount: '534'
 ht-degree: 0%
 
 ---
@@ -121,6 +121,51 @@ I `prefetch` fält, lägga till ett eller flera `mboxes` du vill förhämta för
 ```
 
 I svaret ser du `content` fält som innehåller den upplevelse som ska visas för användaren för en viss `mbox`. Detta är mycket användbart när det cache-lagras på servern, så att när en användare interagerar med ditt webb- eller mobilprogram under en session och besöker en `mbox` på en viss sida i programmet kan upplevelsen levereras från cacheminnet i stället för att göra en annan [!UICONTROL Adobe Target Delivery API] ring. Men när en upplevelse levereras till användaren från `mbox`, a `notification` skickas via ett meddelande om leverans-API för att det ska gå att logga in. Detta beror på svaret från `prefetch` anrop cachelagras, vilket innebär att användaren inte har sett upplevelserna vid den tidpunkt då `prefetch` samtal inträffar. För att lära dig mer om `notification` process, se [Meddelanden](notifications.md).
+
+## Förhämta kryssrutor med clickTrack-statistik när du använder [!UICONTROL Analytics for Target] (A4T)
+
+[[!UICONTROL Adobe Analytics for Target]](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html){target=_blank} (A4T) är en integrering med flera lösningar som gör att du kan skapa aktiviteter baserade på [!DNL Analytics] konverteringsstatistik och målgruppssegment.
+
+Med följande kodfragment kan du förhämta en mbox som innehåller `clickTrack` mätvärden som ska rapporteras [!DNL Analytics] att man klickat på ett erbjudande:
+
+```
+{
+  "prefetch": {
+    "mboxes": [
+      {
+        "index": 0,
+        "name": "<mboxName>",
+        "options": [
+           ...
+        ],
+        "metrics": [
+          {
+            "type": "click",
+            "eventToken": "<eventToken>",
+             "analytics": {
+               "payload": {
+                 "pe": "tnt",
+                 "tnta": "..."
+               }
+             }
+          },
+          }
+        ],
+        "analytics": {
+          "payload": {
+            "pe": "tnt",
+            "tnta": "347565:1:0|2,347565:1:0|1"
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+>[!NOTE]
+>
+>Förhämtningen för en mbox innehåller [!DNL Analytics] endast nyttolast för kvalificerade aktiviteter. Att förhämta framgångsmått för ännu ej kvalificerade aktiviteter leder till inkonsekvenser i rapporteringen.
 
 ## Förhämta vyer
 
