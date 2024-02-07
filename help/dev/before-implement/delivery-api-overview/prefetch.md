@@ -4,9 +4,9 @@ description: Hur använder jag förhämtning i [!UICONTROL Adobe Target Delivery
 keywords: leverans-API
 exl-id: eab88e3a-442c-440b-a83d-f4512fc73e75
 feature: APIs/SDKs
-source-git-commit: 91592a86957770c4d189115fd3ebda61ed52dd38
+source-git-commit: 803723d95d50cc39101d1646232446fbb0254385
 workflow-type: tm+mt
-source-wordcount: '534'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ I svaret ser du `content` fält som innehåller den upplevelse som ska visas fö
 
 [[!UICONTROL Adobe Analytics for Target]](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html){target=_blank} (A4T) är en integrering med flera lösningar som gör att du kan skapa aktiviteter baserade på [!DNL Analytics] konverteringsstatistik och målgruppssegment.
 
-Med följande kodfragment kan du förhämta en mbox som innehåller `clickTrack` mätvärden som ska rapporteras [!DNL Analytics] att man klickat på ett erbjudande:
+Följande kodfragment är ett svar från en förhämtning av en mbox som innehåller `clickTrack` mätvärden som ska rapporteras [!DNL Analytics] att man klickat på ett erbjudande:
 
 ```
 {
