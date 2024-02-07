@@ -4,9 +4,9 @@ description: Hur använder jag förhämtning i [!UICONTROL Adobe Target Delivery
 keywords: leverans-API
 exl-id: eab88e3a-442c-440b-a83d-f4512fc73e75
 feature: APIs/SDKs
-source-git-commit: 803723d95d50cc39101d1646232446fbb0254385
+source-git-commit: 9a3068b0765c238daa2f9af904c0f6f15b57cc24
 workflow-type: tm+mt
-source-wordcount: '537'
+source-wordcount: '538'
 ht-degree: 0%
 
 ---
