@@ -4,28 +4,28 @@ description: Hur använder jag förhämtning i [!UICONTROL Adobe Target Delivery
 keywords: leverans-API
 exl-id: eab88e3a-442c-440b-a83d-f4512fc73e75
 feature: APIs/SDKs
-source-git-commit: 9a3068b0765c238daa2f9af904c0f6f15b57cc24
+source-git-commit: 901b56a91c69c9c5a2bd322aa999d45c47058a5e
 workflow-type: tm+mt
-source-wordcount: '538'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
 
 # Förhämtning
 
-Med förhämtning kan klienter som mobilappar och servrar hämta innehåll för flera kryssrutor eller vyer i en begäran, cachelagra det lokalt och sedan meddela [!DNL Target] när användaren besöker dessa kryssrutor eller vyer.
+Med förhämtning kan klienter som mobilappar och servrar hämta innehåll för flera kryssrutor eller vyer i en begäran, cachelagra det lokalt och sedan meddela [!DNL Target] när besökaren besöker dessa kryssrutor eller vyer.
 
 När du använder förhämtning är det viktigt att du känner till följande termer:
 
 | Fältnamn | Beskrivning |
 | --- | --- |
-| `prefetch` | Lista med rutor och vyer som ska hämtas men inte markeras som besökta. The [!DNL Target] Kanten returnerar ett `eventToke`n för varje ruta eller vy som finns i förhämtningsarrayen. |
+| `prefetch` | Lista med rutor och vyer som ska hämtas men inte markeras som besökta. The [!DNL Target] Kanten returnerar ett `eventToken` för varje ruta eller vy som finns i förhämtningsarrayen. |
 | `notifications` | Lista med rutor och vyer som tidigare har förhämtats och ska markeras som besökta. |
 | `eventToken` | En hash-kodad krypterad token som returneras när innehållet är förhämtat. Denna token ska skickas tillbaka till [!DNL Target] i `notifications` array. |
 
 ## Förhämta kartonger
 
-Klienter som mobilappar och servrar kan förhämta flera rutor för en viss användare i en session och cachelagra den för att undvika flera anrop till [!UICONTROL Adobe Target Delivery API].
+Klienter, t.ex. mobilappar och servrar, kan förhämta flera rutor för en viss besökare i en session och cachelagra dem för att undvika flera anrop till [!UICONTROL Adobe Target Delivery API].
 
 ```
 curl -X POST \
@@ -69,7 +69,7 @@ curl -X POST \
 }'
 ```
 
-I `prefetch` fält, lägga till ett eller flera `mboxes` du vill förhämta för en användare i en session samtidigt. När du har förhämtat dem `mboxes` du får följande svar:
+I `prefetch` fält, lägga till ett eller flera `mboxes` du vill förhämta minst en gång för en besökare i en session. När du har förhämtat dem `mboxes`får du följande svar:
 
 ```
 {
@@ -120,9 +120,9 @@ I `prefetch` fält, lägga till ett eller flera `mboxes` du vill förhämta för
 }
 ```
 
-I svaret ser du `content` fält som innehåller den upplevelse som ska visas för användaren för en viss `mbox`. Detta är mycket användbart när det cache-lagras på servern, så att när en användare interagerar med ditt webb- eller mobilprogram under en session och besöker en `mbox` på en viss sida i programmet kan upplevelsen levereras från cacheminnet i stället för att göra en annan [!UICONTROL Adobe Target Delivery API] ring. Men när en upplevelse levereras till användaren från `mbox`, a `notification` skickas via ett meddelande om leverans-API för att det ska gå att logga in. Detta beror på svaret från `prefetch` anrop cachelagras, vilket innebär att användaren inte har sett upplevelserna vid den tidpunkt då `prefetch` samtal inträffar. För att lära dig mer om `notification` process, se [Meddelanden](notifications.md).
+I svaret ser du `content` fält som innehåller den upplevelse som ska visas för besökaren för en viss `mbox`. Detta är mycket användbart när det cache-lagras på servern, så att när en besökare interagerar med ditt webb- eller mobilprogram under en session och besöker en `mbox` på en viss sida i programmet kan upplevelsen levereras från cacheminnet i stället för att göra en annan [!UICONTROL Adobe Target Delivery API] ring. Men när en upplevelse levereras till besökaren från `mbox`, a `notification` skickas via ett anrop till Delivery API för att logga in. Detta beror på svaret från `prefetch` anrop cachelagras, vilket innebär att besökaren inte har sett upplevelserna vid den tidpunkt då `prefetch` samtal inträffar. Läs mer om `notification` process, se [Meddelanden](notifications.md).
 
-## Förhämta kryssrutor med clickTrack-statistik när du använder [!UICONTROL Analytics for Target] (A4T)
+## Förhämta mappar med `clickTrack` mätvärden när du använder [!UICONTROL Analytics for Target] (A4T)
 
 [[!UICONTROL Adobe Analytics for Target]](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html){target=_blank} (A4T) är en integrering med flera lösningar som gör att du kan skapa aktiviteter baserade på [!DNL Analytics] konverteringsstatistik och målgruppssegment.
 
