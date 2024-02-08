@@ -4,9 +4,9 @@ description: Hur använder jag förhämtning i [!UICONTROL Adobe Target Delivery
 keywords: leverans-API
 exl-id: eab88e3a-442c-440b-a83d-f4512fc73e75
 feature: APIs/SDKs
-source-git-commit: 901b56a91c69c9c5a2bd322aa999d45c47058a5e
+source-git-commit: 4ff2746b8b485fe3d845337f06b5b0c1c8d411ad
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ När du använder förhämtning är det viktigt att du känner till följande te
 
 Klienter, t.ex. mobilappar och servrar, kan förhämta flera rutor för en viss besökare i en session och cachelagra dem för att undvika flera anrop till [!UICONTROL Adobe Target Delivery API].
 
-```
+```shell shell-session
 curl -X POST \
 'https://demo.tt.omtrdc.net/rest/v1/delivery?client=demo&sessionId=7abf6304b2714215b1fd39a870f01afc#1555632114' \
 -H 'Content-Type: application/json' \
@@ -71,7 +71,7 @@ curl -X POST \
 
 I `prefetch` fält, lägga till ett eller flera `mboxes` du vill förhämta minst en gång för en besökare i en session. När du har förhämtat dem `mboxes`får du följande svar:
 
-```
+```JSON {line-numbers="true"}
 {
     "status": 200,
     "requestId": "5efee0d8-3779-4b12-a74e-e04848faf191",
@@ -128,7 +128,7 @@ I svaret ser du `content` fält som innehåller den upplevelse som ska visas fö
 
 Följande kodfragment är ett svar från en förhämtning av en mbox som innehåller `clickTrack` mätvärden som ska rapporteras [!DNL Analytics] att man klickat på ett erbjudande:
 
-```
+```JSON {line-numbers="true"}
 {
   "prefetch": {
     "mboxes": [
@@ -169,9 +169,9 @@ Följande kodfragment är ett svar från en förhämtning av en mbox som innehå
 
 ## Förhämta vyer
 
-Vyer stöder enkelsidiga program (SPA) och mobilprogram smidigare. Vyer kan ses som en logisk grupp av visuella element som tillsammans utgör en SPA eller mobil upplevelse. Via Delivery API skapade VEC nu AB- och XT-aktiviteter med modifieringar på [SPA](/help/dev/implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md) kan nu förhämtas.
+Vyer stöder enkelsidiga program (SPA) och mobilprogram smidigare. Vyer kan ses som en logisk grupp av visuella element som tillsammans utgör en SPA eller mobil upplevelse. Nu har VEC skapats med Delivery API [[!UICONTROL A/B Test]](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html){target=_blank} and [[!UICONTROL Experience Targeting]](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html){target=_blank} (X)T-verksamhet med modifieringar på [SPA](/help/dev/implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md) kan nu förhämtas.
 
-```
+```shell  {line-numbers="true"}
 curl -X POST \
   'https://demo.tt.omtrdc.net/rest/v1/delivery?client=demo&sessionId=a3e7368c62d944c0855d424cd7a03ab0' \
   -H 'Content-Type: application/json' \
@@ -199,9 +199,9 @@ curl -X POST \
 }'
 ```
 
-Exempelanropet ovan kommer att förhämta alla vyer som har skapats via SPA VEC for AB- och XT-aktiviteter för webben `channel`. Observera i anropet att vi vill hämta alla vyer från AB- eller XT-aktiviteter som en besökare har med `tntId`:`84e8d0e211054f18af365d65f45e902b.28_131` som besöker `url`:`https://target.enablementadobe.com/react/demo/#/` kvalificerar för.
+Exemplanropet ovan förhämtar alla vyer som skapats via SPA VEC för [!UICONTROL A/B Test] och XT-aktiviteter att visa för webben `channel`. Observera att anropet förhämtar alla vyer från [!UICONTROL A/B Test] eller XT-aktiviteter som en besökare med `tntId`:`84e8d0e211054f18af365d65f45e902b.28_131` som besöker `url`:`https://target.enablementadobe.com/react/demo/#/` kvalificerar för.
 
-```
+```JSON  {line-numbers="true"}
 {
     "status": 200,
     "requestId": "14ce028e-d2d2-4504-b3da-32740fa8dd61",
@@ -280,4 +280,4 @@ Exempelanropet ovan kommer att förhämta alla vyer som har skapats via SPA VEC 
 }
 ```
 
-I `content` svarsfält, anteckna metadata som `type`, `selector`, `cssSelector`och `content`, som används för att återge upplevelsen för slutanvändaren när en användare besöker sidan. Observera att `prefetched` innehåll kan cachelagras och återges för användaren när det behövs.
+I `content` svarsfält, anteckna metadata som `type`, `selector`, `cssSelector`och `content`, som används för att återge upplevelsen för besökaren när en användare besöker sidan. Observera att `prefetched` innehåll kan cachelagras och återges för användaren när det behövs.
