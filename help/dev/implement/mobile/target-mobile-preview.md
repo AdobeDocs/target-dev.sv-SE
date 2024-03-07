@@ -4,9 +4,9 @@ description: Använd länkar för förhandsgranskning av mobiler för att utför
 title: Hur använder jag Mobile Preview-länkar i [!DNL Adobe Target] Mobiler?
 feature: Implement Mobile
 exl-id: c0c4237a-de1f-4231-b085-f8f1e96afc13
-source-git-commit: 0bcfa16cb79644e7ce10e33daf6c8385104c197f
+source-git-commit: 15e42d0fb049f9243ff5468ff5f22a8e79c55c79
 workflow-type: tm+mt
-source-wordcount: '522'
+source-wordcount: '508'
 ht-degree: 0%
 
 ---
@@ -52,7 +52,7 @@ Med funktionen för mobilförhandsgranskning kan du testa mobilappsaktiviteterna
 
 1. Ange appens URL-schema.
 
-   Detta URL-schema måste vara samma som det som finns i din iOS- eller Android-app. Upprepa vid behov den här processen separat för iOS och Android.
+   URL-schemat måste vara samma som det som finns i din iOS- eller Android-app. Upprepa vid behov den här processen separat för iOS och Android.
 
    ![alt-bild](assets/mobile-preview-enter-url-scheme.png)
 
