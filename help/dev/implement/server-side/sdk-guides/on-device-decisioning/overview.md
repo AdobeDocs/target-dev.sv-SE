@@ -4,9 +4,9 @@ description: Lär dig använda [!UICONTROL [!UICONTROL on-device decisioning]] f
 title: Vad är On-Device Decision?
 feature: Implement Server-side
 exl-id: 22ed3072-56f0-4075-9d1a-d642afe3b649
-source-git-commit: 79ffa3f58d780f587fe1202b82d3860395504dfe
+source-git-commit: ff0becf3fe3a6fd6694e13243b6a93b910316434
 workflow-type: tm+mt
-source-wordcount: '1127'
+source-wordcount: '1022'
 ht-degree: 0%
 
 ---
@@ -105,7 +105,7 @@ Du kan även se alla aktiviteter som [!UICONTROL on-device decisioning] som klar
 
 >[!NOTE]
 >
->Efter att en aktivitet som [!UICONTROL on-device decisioning] kan det ta upp till 5-10 minuter innan det ingår i den regelartefakt som genereras och sprids till Akamai CDN PoPs.
+>Efter att en aktivitet som [!UICONTROL on-device decisioning] kan det ta upp till 20 minuter innan det ingår i den regelartefakt som genereras och sprids till Akamai CDN PoPs.
 
 ## Vad är sammanfattningen av de steg jag behöver följa för att säkerställa [!UICONTROL on-device decisioning] aktiviteter kan levereras via [!DNL Adobe Target]SDK på serversidan?
 
