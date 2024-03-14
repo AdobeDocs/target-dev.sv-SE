@@ -4,9 +4,9 @@ description: Läs mer om [!DNL Adobe Target] server-side Delivery APIs, SDKs och
 title: Var kan jag läsa mer om [!DNL Target] Leverans-API:er och SDK på serversidan?
 feature: Implement Server-side
 exl-id: 3eb0a789-cf1a-4d02-acf7-3c895bcb662f
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 75af30045684b95d5989b0a1f877ba95bb8cd883
 workflow-type: tm+mt
-source-wordcount: '545'
+source-wordcount: '569'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,12 @@ ht-degree: 0%
 # Serversida: implementera [!DNL Target]
 
 Information om [!DNL Adobe Target] server-side Delivery APIs, SDKs och [!DNL Target Recommendations] API.
+
+>[!NOTE]
+>
+>Om implementeringen använder at.js och [!DNL AppMeasurement] på klientsidan bör du använda [!UICONTROL Target Delivery API] och SDK:er på serversidan som beskrivs nedan.
+>
+>Om implementeringen använder [!UICONTROL Adobe Experience Platform Web SDK]bör du använda [[!UICONTROL Adobe Experience Platform] [!UICONTROL Edge Network Server API]](https://experienceleague.adobe.com/en/docs/experience-platform/edge-network-server-api/overview){target=_blank}.
 
 Följande process utförs i en implementering på serversidan av [!DNL Target]:
 
