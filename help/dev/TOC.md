@@ -2,7 +2,7 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: 49b6572c0d414ab304712691c97794bb0b1e3781
+source-git-commit: 54647001c4e5dc5ce208430c7fea103a720b0980
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 3%
@@ -22,7 +22,7 @@ ht-degree: 3%
       + [Sekretess- och dataskyddsbestämmelser](before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.md)
       + [Målcookies](before-implement/privacy/cookie-behavior.md)
       + [Ta bort målcookien](before-implement/privacy/cookie-deleting.md)
-      + [Inverkan av borttagning av cookies från tredje part på Target (at.js)](/help/dev/before-implement/privacy/third_party_cookie_deprecation)
+      + [Inverkan av borttagning av cookies från tredje part på Target (at.js)](/help/dev/before-implement/privacy/third-party-cookie-deprecation.md)
       + [Cookiprinciper för Google Chrome SameSite](before-implement/privacy/google-chrome-samesite-cookie-policies.md)
       + [Apple Intelligent Tracking Prevention (ITP) 2.x](before-implement/privacy/apple-itp-2x.md)
       + [CSP-direktiv (Content Security Policy)](before-implement/privacy/content-security-policy.md)
