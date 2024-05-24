@@ -4,9 +4,9 @@ description: Lär dig implementera [!UICONTROL Recommendations] verksamhet i [!D
 title: Hur implementerar jag [!UICONTROL Recommendations] Verksamheter?
 feature: Recommendations
 exl-id: af1e8b60-6dbb-451b-aa4f-e167d1800d1c
-source-git-commit: 2fba03b3882fd23a16342eaab9406ae4491c9044
+source-git-commit: 777c8b9aeb866e1b20ec24e85532a99f57d1fe72
 workflow-type: tm+mt
-source-wordcount: '1403'
+source-wordcount: '1365'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Information som kan hjälpa er att planera och implementera [!DNL Adobe Target R
 
 >[!NOTE]
 >
->Förutom den här artikeln finns följande [Adobe Target Business Practitioner Guide](https://experienceleague.adobe.com/docs/target/using/target-home.html){target=_blank} contains in-depth information about [Target Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html){target=_blank}.
+>Förutom den här artikeln finns följande [Adobe Target Business Practitioner Guide](https://experienceleague.adobe.com/docs/target/using/target-home.html){target=_blank} innehåller detaljerad information om [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html){target=_blank}.
 
 Innan du konfigurerar [!UICONTROL Recommendations] aktivitet i [!DNL Adobe Target]utför du följande steg:
 
@@ -137,7 +137,7 @@ Använd inställningarna för att hantera [!UICONTROL Recommendations] implement
 
 Så här öppnar du **[!UICONTROL Recommendations Settings]** alternativ, öppna Target i [!DNL Adobe Experience Cloud]och sedan klicka **[!UICONTROL Recommendations]** > **[!UICONTROL Settings]**.
 
-![alt-bild](assets/recs_settings.png)
+![Recommendations Settings page](/help/dev/implement/recommendations/assets/recs_settings.png)
 
 Följande alternativ är tillgängliga:
 
