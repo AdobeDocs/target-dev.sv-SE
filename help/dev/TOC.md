@@ -2,9 +2,9 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: 54647001c4e5dc5ce208430c7fea103a720b0980
+source-git-commit: c963a070a7a4c5e7dc2915eb5ac7d60895340705
 workflow-type: tm+mt
-source-wordcount: '753'
+source-wordcount: '756'
 ht-degree: 3%
 
 ---
@@ -164,6 +164,7 @@ ht-degree: 3%
       + [Logger (Python)](implement/server-side/python/logger.md)
 + [Hybrid-implementering](implement/hybrid/hybrid-overview.md)
 + [Implementering av Recommendations](implement/recommendations/recommendations.md)
++ [Recommendations implementation beta](/help/dev/implement/recommendations/recommendations-beta.md)
 + Implementering av mobilappar {#mobile-apps}
    + [Mål för mobilappar - översikt](implement/mobile/overview.md)
    + [Förhandsvisning av målmobiler](implement/mobile/target-mobile-preview.md)
