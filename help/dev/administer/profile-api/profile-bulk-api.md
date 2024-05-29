@@ -4,9 +4,9 @@ description: Lär dig använda [!DNL Adobe Target] [!UICONTROL Bulk Profile Upda
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
 exl-id: 0f38d109-5273-4f73-9488-80eca115d44d
-source-git-commit: 3d90616b0a920abea380d4cfcd1227eafde86adb
+source-git-commit: 2934fbaa1dc3cd92bc5a434937e5db9a617009a9
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '828'
 ht-degree: 0%
 
 ---
@@ -44,8 +44,16 @@ Använda [!UICONTROL Bulk Profile Update API]kan du enkelt skicka detaljerade be
 Om du vill uppdatera flera profildata samtidigt skapar du en gruppfil. Gruppfilen är en textfil med värden som avgränsas med kommatecken som liknar följande exempelfil.
 
 ``````
-batch=pcId, param1, param2, param3, param4 123, value1 124, value1,,, value4 125,, value2 126, value1, value2, value3, value4
+batch=pcId,param1,param2,param3,param4
+123,value1
+124,value1,,,value4
+125,,value2
+126,value1,value2,value3,value4
 ``````
+
+>[!NOTE]
+>
+>The `batch=` -parametern är obligatorisk och måste anges i början av filen.
 
 Du refererar till den här filen i POSTENS anrop till [!DNL Target] servrar för att bearbeta filen. Tänk på följande när du skapar gruppfilen:
 
