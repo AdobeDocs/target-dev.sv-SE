@@ -1,27 +1,28 @@
 ---
 title: Adobe Target Profiles API
-description: Lär dig hur du använder Adobe Target Profile API:er för att skicka besöksdata till [!DNL Target].
+description: Lär dig hur du använder Adobe Target Profile API:er för att skicka besöksdata till  [!DNL Target].
 contributors: https://github.com/icaraps
 feature: APIs/SDKs
-source-git-commit: e5a1c38d448cb7446b7b26cd0dc882976ba94dd3
+exl-id: 480cbbbe-4822-48c3-80d4-53628dee57b0
+source-git-commit: e2462d12cf58ab5a588c13a96df5e6abafb9d675
 workflow-type: tm+mt
 source-wordcount: '104'
 ht-degree: 0%
 
 ---
 
-# [!DNL Adobe Target Profiles API] översikt
+# [!DNL Adobe Target Profiles API] - översikt
 
-[!DNL Adobe Target] skapar och underhåller en profil för varje enskild användare. Den här profilen lagras på [!DNL Target] Edge Cluster och uppdateras i realtid efter varje besök.
+[!DNL Adobe Target] skapar och underhåller en profil för varje enskild användare. Den här profilen lagras på edge-klustret [!DNL Target] och uppdateras i realtid efter varje besök.
 
-## Struktur för en [!DNL Target] profil
+## Struktur för en [!DNL Target]-profil
 
 En målprofil består av följande objekt:
 
 | Objekt | Information |
 | --- | --- |
-| `clientcode` | The [!DNL Target] klientkod som profilen är associerad med. |
-| `visitorId` | Identifieraren för profilen. Det här kan vara en `tntid`, `thirdpartyid`, eller `marketingcloudvisitorid`. |
+| `clientcode` | Klientkoden [!DNL Target] som profilen är associerad med. |
+| `visitorId` | Identifieraren för profilen. Detta kan vara en `tntid`, `thirdpartyid` eller `marketingcloudvisitorid`. |
 | `modifiedAt` | Tidsstämpeln för när profilen senast uppdaterades. |
 | `profileAttributes` | Lista över alla profilattribut som lagras som nyckelvärdepar i den enskilda profilen. |
 

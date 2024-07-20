@@ -1,38 +1,38 @@
 ---
 keywords: mobilapp, mobilappsplats, målmobilapp, mobilmålplatser, mått för mobilappens framgång
-description: Se exempelkoden för att lära dig hur du skapar platser och framgångsmått i iOS-appar så att du kan använda [!DNL Adobe Target] för att personalisera och optimera appen.
-title: Hur skapar jag? [!DNL Target] Platser och Success Metrics i en iOS-app?
+description: Visa exempelkod för att lära dig hur du skapar platser och framgångsmått i iOS-appar så att du kan använda  [!DNL Adobe Target]  för att anpassa och optimera din app.
+title: Hur skapar jag  [!DNL Target] platser och framgångsmått i en iOS-app?
 feature: Implement Mobile
 exl-id: 755c8b26-5c60-48fc-9e7e-5e97a25edb78
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '442'
 ht-degree: 0%
 
 ---
 
-# iOS - skapa en [!DNL Target] mätvärden för position och framgång
+# iOS - skapa en [!DNL Target]-plats och ett framgångsmått
 
-Används [!DNL Target] i mobilappen, skapa en plats och ett framgångsmått.
+Om du vill använda [!DNL Target] i din mobilapp skapar du en plats och ett framgångsmått.
 
 >[!IMPORTANT]
 >
->Stöd för [!DNL Adobe Mobile] version 4.*x* SDK har upphört den 31 augusti 2021 och rekommenderas inte längre för [!DNL Adobe Target] mobilanvändare.
+>Stöd för version 4 av [!DNL Adobe Mobile].*x* SDK:er har upphört den 31 augusti 2021 och rekommenderas inte längre för [!DNL Adobe Target] mobila användare.
 >
->The [Adobe Experience Platform SDK för mobilappar](https://developer.adobe.com/client-sdks/documentation/){target=_blank} är den rekommenderade lösningen för strömförsörjning [!DNL Adobe Experience Cloud] lösningar och tjänster i era mobilappar.
+>[Adobe Experience Platform SDK för mobilappar](https://developer.adobe.com/client-sdks/documentation/){target=_blank} är den rekommenderade lösningen för att driva [!DNL Adobe Experience Cloud] lösningar och tjänster i dina mobilappar.
 
-Det här avsnittet innehåller exempelkod som kan användas som mall för ditt program. Exemplen i det här avsnittet innehåller kod för iOS. Samma mönster gäller för Android. Android-specifik syntax finns i [Android SDK 4.x för Experience Cloud Solutions](https://experienceleague.adobe.com/docs/mobile-services/android/target-android/target-main.html) guide.
+Det här avsnittet innehåller exempelkod som kan användas som mall för ditt program. Exemplen i det här avsnittet innehåller kod för iOS. Samma mönster gäller för Android. Android-specifik syntax finns i guiden [Android SDK 4.x för Experience Cloud Solutions](https://experienceleague.adobe.com/docs/mobile-services/android/target-android/target-main.html).
 
 >[!NOTE]
 >
->Se [Mobildokumentation](https://experienceleague.adobe.com/docs/mobile-services/ios/target-ios/c-target-methods.html) för en lista över alla tillgängliga [!DNL Target] metoder.
+>I [Mobile-dokumentationen](https://experienceleague.adobe.com/docs/mobile-services/ios/target-ios/c-target-methods.html) finns en lista med alla tillgängliga [!DNL Target]-metoder.
 
-Skapa en [!DNL Target] plats i appen och göra en förfrågan finns det två primära metoder:
+Det finns två primära metoder för att skapa en [!DNL Target]-plats i din app och göra en begäran:
 
 * `targetCreateRequestWithName`
 * `targetLoadRequest`
 
-1. Skapa en [!DNL Target] plats.
+1. Skapa en [!DNL Target]-plats.
 
    Här följer ett exempel på ett anrop för att skapa en begäran:
 
@@ -45,8 +45,8 @@ Skapa en [!DNL Target] plats i appen och göra en förfrågan finns det två pri
 
    | Parameter | Beskrivning |
    |---|---|
-   | `ADBTargetLocationRequest *myRequest` | Ersätt `myRequest` med ditt namn `targetLocation` i appen. |
-   | `targetCreateRequestWithName:@"heroBanner"` | Ersätt `heroBanner` med ditt namn `targetLocation` i Target. Detta är samma som mbox-namnet. Den här hjältebanderollen visas i Target-gränssnittet. |
+   | `ADBTargetLocationRequest *myRequest` | Ersätt `myRequest` med namnet på din `targetLocation` i appen. |
+   | `targetCreateRequestWithName:@"heroBanner"` | Ersätt `heroBanner` med namnet på `targetLocation` i Mål. Detta är samma som mbox-namnet. Den här hjältebanderollen visas i Target-gränssnittet. |
    | `defaultContent:@"default.png"` | Ersätt `default.png` med det värde som appen använder om Target inte svarar. |
    | `parameters:nil` | Ange profil- eller mbox-parametrar. Mer information finns i avsnittet&quot;Skicka anpassade data&quot;. |
 
@@ -62,13 +62,13 @@ Skapa en [!DNL Target] plats i appen och göra en förfrågan finns det två pri
 
    | Parameter | Beskrivning |
    |---|---|
-   | `targetLoadRequest:myRequest` | Ersätt `myRequest` med ditt namn `targetLocation` i appen. |
+   | `targetLoadRequest:myRequest` | Ersätt `myRequest` med namnet på din `targetLocation` i appen. |
    | `NSString *content` | Ersätt innehåll med det faktiska innehåll som kommer tillbaka från Adobe. Strängen kan vara XML, JSON eller en vanlig sträng. Använd det här avsnittet av koden för att definiera variabler, ange bildsökvägar, visa styrenhetsflöden, transaktionspunkter eller annat som du vill göra. Målet returnerar innehållet som anges i användargränssnittet i exakt samma format. |
    | `heroImage.image = [UIImage imageNamed:content];` | Till exempel: Ta innehåll och ange sökvägen till en hjältebild. |
 
 1. Skapa ett framgångsmått.
 
-   Metoden `targetCreateOrderConfirmRequestWithName` kan användas för att spåra en konverterings-/framgångsmätning i din app.
+   Metoden `targetCreateOrderConfirmRequestWithName` kan användas för att spåra ett konverterings-/framgångsmått i din app.
 
    ```
    ADBTargetLocationRequest *req = [ADBMobile targetCreateOrderConfirmRequestWithName: "orderConfirm" 

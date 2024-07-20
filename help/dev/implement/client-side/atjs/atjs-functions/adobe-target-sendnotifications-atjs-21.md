@@ -1,12 +1,12 @@
 ---
 keywords: adobe.target.sendNotifications, sendNotifications, sendNotifications, send Notification, notifications, at.js, functions, function, $9
-description: Använd [!UICONTROL adobe.target.sendNotifications()] for at.js to send notifications to the [!DNL Target] när en upplevelse inte återges med [!UICONTROL applyOffer]s. (at.js.2.1 +)
+description: Använd [!UICONTROL adobe.target.sendNotifications()] för at.js för att skicka meddelanden till  [!DNL Target] kanten när en upplevelse inte återges med [!UICONTROL applyOffer]. (at.js.2.1 +)
 title: Hur använder jag funktionen adobe.target.sendNotifications()?
 feature: at.js
 exl-id: 1a08da10-31a0-4b0b-af7d-91ed7d32c308
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '623'
+source-wordcount: '640'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ Den här funktionen skickar ett meddelande till [!DNL Target] när en upplevelse
 | Begäran > meddelanden > id | Sträng | Ja | `<=` 200 tecken. | Meddelande-ID returneras som svar och anger att meddelandet har bearbetats. |
 | Begäran > meddelanden > intryckt-ID | Sträng | Nej | `<= 128` tecken. | Impression-ID används för att sätta ihop (länka) det aktuella meddelandet med ett tidigare meddelande eller en körningsbegäran. Om båda matchar varandra kommer den andra och andra efterföljande förfrågningar inte att generera ett nytt intryck av aktiviteten eller upplevelsen. |
 | Request > notifications > type | Sträng | Ja | &quot;click&quot; eller &quot;display&quot; stöds. | Meddelandetyp. |
-| Begäran > meddelanden > tidsstämpel | Nummer`<int64>` | Ja |  | Tidsstämpel för meddelandet i millisekunder sedan UNIX-epoken. |
+| Begäran > meddelanden > tidsstämpel | Nummer `<int64>` | Ja |  | Tidsstämpel för meddelandet i millisekunder sedan UNIX-epoken. |
 | Begäran > meddelanden > token | Array med strängen | Ja |  | En lista med tokens för visat innehåll eller väljare som klickats, baserat på meddelandetypen. |
 | Begär > Meddelanden > Mbox | Objekt | Nej |  | Meddelanden för mbox. |
 | Request > notifications > mbox > name | Sträng | Nej | Inga tomma värden tillåts.<p>Tillåtna tecken: Se anmärkning efter denna tabell. | mbox name. |
@@ -53,10 +53,10 @@ Den här funktionen skickar ett meddelande till [!DNL Target] när en upplevelse
 | Begär > Meddelanden > Visa | Objekt | Nej |  |  |
 | Begäran > meddelanden > visa > id | Heltal `<int64>` | Nej |  | Visa-ID. Det id som tilldelats vyn när vyn skapades via vy-API:t. |
 | Begäran > meddelanden > visa > namn | Sträng | Nej | `<= 128` tecken. | Namn på vy. |
-| Begäran > meddelanden > visa > nyckel | Sträng | Nej | `<=` 512 tecken | Visa nyckel. Nyckeln som ställdes in med vyn via API:t. |
+| Begäran > meddelanden > visa > nyckel | Sträng | Nej | `<=` 512 tecken. | Visa nyckel. Nyckeln som ställdes in med vyn via API:t. |
 | Begäran > meddelanden > visa > läge | Sträng | Nej |  | Visa tillståndstoken. |
 
-**Anteckning**: Följande tecken är *not* tillåtna för `Request > notifications > mbox > name`:
+**Obs!**: Följande tecken är *inte* tillåtna för `Request > notifications > mbox > name`:
 
 ```
 - '-, ./=`:;&!@#$%^&*()+|?~[]{}'
@@ -118,4 +118,4 @@ adobe.target.getOffers({
 
 >[!NOTE]
 >
->Om du använder [!DNL Adobe Analytics], `[!UICONTROL getOffers()]` med endast förhämtning och `[!UICONTROL sendNotifications()]`, [!DNL Analytics] begäran måste utlösas efter `[!UICONTROL sendNotifications()]` körs. Syftet med detta är att säkerställa att det SDID som genereras av `[!UICONTROL sendNotifications()]` matchar det SDID som skickades till [!DNL Analytics] och [!DNL Target].
+>Om du använder [!DNL Adobe Analytics], `[!UICONTROL getOffers()]` med endast förhämtning och `[!UICONTROL sendNotifications()]` måste [!DNL Analytics]-begäran aktiveras när `[!UICONTROL sendNotifications()]` har körts. Syftet med detta är att säkerställa att SDID som genereras av `[!UICONTROL sendNotifications()]` matchar SDID som skickas till [!DNL Analytics] och [!DNL Target].

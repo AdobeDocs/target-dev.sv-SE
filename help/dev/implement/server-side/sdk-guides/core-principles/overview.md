@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Översikt över grundläggande principer
 
-[!DNL Adobe Target] arbetar enligt flera grundläggande principer som är viktiga att förstå för att kunna utföra effektiva experiment- eller personaliseringsaktiviteter. Dessa principer är följande:
+[!DNL Adobe Target] arbetar enligt flera huvudprinciper, som är viktiga att förstå för att kunna köra effektiva experiment- eller personaliseringsaktiviteter. Dessa principer är följande:
 
 * [Användaridentifiering och -spärr](user-identification-and-bucketing.md)
 

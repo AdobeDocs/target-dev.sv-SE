@@ -4,7 +4,7 @@ description: Integration med Experience Cloud
 keywords: leverans-API
 source-git-commit: f16903556954d2b1854acd429f60fbf6fc2920de
 workflow-type: tm+mt
-source-wordcount: '478'
+source-wordcount: '467'
 ht-degree: 0%
 
 ---
@@ -25,8 +25,8 @@ När ett Target Delivery API-anrop utlöses från servern returnerar Adobe Targe
 
 Adobe Target kan automatiskt vidarebefordra analysnyttolasten till Adobe Analytics via serversidan om följande identifierare anges:
 
-1. `supplementalDataId` - ID:t som används för att sammanfoga filer mellan Adobe Analytics och Adobe Target
-1. `trackingServer` - Adobe Analysserver För att Adobe Target och Adobe Analytics ska kunna sammanfoga data på ett korrekt sätt bör samma `supplementalDataId` måste skickas till både Adobe Target och Adobe Analytics.
+1. `supplementalDataId` - ID:t som används för att sammanfoga objekt mellan Adobe Analytics och Adobe Target
+1. `trackingServer` - Analaytics-servern Adobe För att Adobe Target och Adobe Analytics ska kunna sammanfoga data på rätt sätt måste samma `supplementalDataId` skickas till både Adobe Target och Adobe Analytics.
 
 ```
 curl -X POST \
@@ -73,7 +73,7 @@ curl -X POST \
 
 ### Hämta Analytics-nyttolast från Adobe Target
 
-Konsumenterna av Adobe Target Delivery API kan hämta Adobe Analytics-nyttolasten för en motsvarande ruta så att konsumenten kan skicka nyttolasten till Adobe Analytics via [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md). När ett Adobe Target-samtal på serversidan utlöses, skicka `client_side` till `logging` i begäran. Detta returnerar i sin tur en nyttolast om mbox finns i en aktivitet som använder Analytics som rapportkälla.
+Konsumenterna av Adobe Target Delivery API kan hämta Adobe Analytics-nyttolasten för en motsvarande ruta så att konsumenten kan skicka nyttolasten till Adobe Analytics via [API:t för datainmatning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md). När ett Adobe Target-anrop på serversidan utlöses skickar du `client_side` till fältet `logging` i begäran. Detta returnerar i sin tur en nyttolast om mbox finns i en aktivitet som använder Analytics som rapportkälla.
 
 ```
 curl -X POST \
@@ -121,7 +121,7 @@ curl -X POST \
     }'
 ```
 
-När du har angett `logging` = `client_side`, får du nyttolasten i `mbox` enligt nedan.
+När du har angett `logging` = `client_side` får du nyttolasten i fältet `mbox` enligt nedan.
 
 ```
 {
@@ -176,7 +176,7 @@ När du har angett `logging` = `client_side`, får du nyttolasten i `mbox` enlig
 }
 ```
 
-Om svaret från Target innehåller något i `analytics` -> `payload` -egenskapen, vidarebefordra den som den är till Adobe Analytics. Analyserna kan hantera den här nyttolasten. Detta kan göras i en GET-begäran i följande format:
+Om svaret från Target innehåller något i egenskapen `analytics` -> `payload` vidarebefordrar du det som det är till Adobe Analytics. Analyserna kan hantera den här nyttolasten. Detta kan göras i en GET-begäran i följande format:
 
 ```
 https://{datacollectionhost.sc.omtrdc.net}/b/ss/{rsid}/0/CODEVERSION?pe=tnt&tnta={payload}&mid={mid}&vid={vid}&aid={aid}
@@ -187,8 +187,8 @@ https://{datacollectionhost.sc.omtrdc.net}/b/ss/{rsid}/0/CODEVERSION?pe=tnt&tnta
 | Fältnamn | Obligatoriskt | Beskrivning |
 | --- | --- | --- |
 | `rsid` | Ja | Rapportsvitens ID |
-| `pe` | Ja | Sidhändelse. Alltid inställt på `tnt` |
-| `tnta` | Ja | Analysnyttolasten som returnerats av målservern i `analytics` -> `payload` -> `tnta` |
+| `pe` | Ja | Sidhändelse. Alltid inställd på `tnt` |
+| `tnta` | Ja | Analysnyttolasten returnerades av målservern i `analytics` -> `payload` -> `tnta` |
 | `mid` | Marketing Cloud Visitor-ID |
 
 ### Obligatoriska rubrikvärden

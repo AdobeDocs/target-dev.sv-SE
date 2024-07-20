@@ -1,6 +1,6 @@
 ---
-title: Så här använder du asynkrona begäranden i [!DNL Adobe Target] .NET SDK
-description: Lär dig mer [!DNL Target] Java SDK stöder asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
+title: Så här använder du asynkrona begäranden i  [!DNL Adobe Target] .NET SDK
+description: Lär dig hur  [!DNL Target] Java SDK stöder asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
 feature: APIs/SDKs
 exl-id: fd36cc7b-a884-4e57-93c2-8aff8256109a
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Beskrivning
 
-En fördel med integration på serversidan är att man kan utnyttja den enorma bandbredd och de datorresurser som finns på serversidan genom att använda parallellitet. [!DNL Target] .NET SDK har stöd för asynkrona begäranden, vilket gör det enkelt att integrera [!DNL Target] till ett programs befintliga asynkrona arbetsflöde.
+En fördel med integration på serversidan är att man kan utnyttja den enorma bandbredd och de datorresurser som finns på serversidan genom att använda parallellitet. [!DNL Target] .NET SDK har stöd för asynkrona begäranden, vilket gör det enkelt att integrera [!DNL Target] i ett programs befintliga asynkrona arbetsflöde.
 
 ## Metoder som stöds
 
@@ -53,4 +53,4 @@ var notificationRequest = new TargetDeliveryRequest.Builder()
 var notificationResponse = await this.targetClient.SendNotificationsAsync(notificationRequest);
 ```
 
-I det här exemplet antas du ha [initierade SDK](initialize-sdk.md).
+I det här exemplet antas att du har [initierat SDK](initialize-sdk.md).

@@ -1,20 +1,20 @@
 ---
-description: Ta reda på vad du bör tänka på innan du implementerar [!DNL Adobe Target].
+description: Ta reda på vad du bör tänka på innan du implementerar  [!DNL Adobe Target].
 title: Vad ska jag veta innan jag implementerar?
 feature: Implementation
 exl-id: b93579cf-e46f-464e-96b3-3bd4085f427f
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '110'
+source-wordcount: '109'
 ht-degree: 0%
 
 ---
 
 # Innan du implementerar
 
-Du bör tänka på vad du bör tänka på innan du implementerar [!DNL Adobe Target].
+Du bör ta hänsyn till detta innan du implementerar [!DNL Adobe Target].
 
-I det här avsnittet finns information för utvecklare som är specifika för implementeringen som de behöver samla in, integritetsfrågor, en diskussion om cookies, en lista över de olika metoder som kan användas för att hämta data till [!DNL Target], säkerhetsfrågor, information om TLS (Transport Layer Security)-kryptering, CNAME med mera.
+Det här avsnittet innehåller information för utvecklare som är specifika för implementeringen som de behöver samla in, sekretessfrågor, en diskussion om cookies, en lista över olika metoder som kan användas för att hämta data till [!DNL Target], säkerhetsfrågor, information om TLS (Transport Layer Security)-kryptering, CNAME med mera.
 
 >[!WARNING]
 >

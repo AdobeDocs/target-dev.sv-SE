@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Komma igång med [!UICONTROL Adobe Target Delivery API]
 
-A [!UICONTROL Target Delivery API] ring ser ut så här:
+Ett [!UICONTROL Target Delivery API]-samtal ser ut så här:
 
 ```
 curl -X POST \
@@ -45,10 +45,10 @@ curl -X POST \
     }'
 ```
 
-The `clientCode` kan hämtas från [!DNL Target] Gränssnitt genom att navigera till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**.
+`clientCode` kan hämtas från [!DNL Target]-gränssnittet genom att gå till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**.
 
-Innan du skapar en [!UICONTROL Target Delivery API] ring, följ dessa steg för att säkerställa att ett svar innehåller relevant upplevelse som visar slutanvändarna:
+Innan du gör ett [!UICONTROL Target Delivery API]-anrop följer du de här stegen för att se till att ett svar innehåller den relevanta upplevelsen för att visa slutanvändarna:
 
-1. Skapa en [!DNL Target] (A/B, XT, AP eller Recommendations) med [Formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=en) eller [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
-1. Använd leverans-API:t för att få ett svar på de rutor som används i [!DNL Target] aktivitet som skapats i steg 2.
+1. Skapa en [!DNL Target]-aktivitet (A/B, XT, AP eller Recommendations) med [formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=en) eller [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
+1. Använd leverans-API:t för att få ett svar för rutorna som används i aktiviteten [!DNL Target] som skapades i steg 2.
 1. Presentera upplevelsen för besökaren.

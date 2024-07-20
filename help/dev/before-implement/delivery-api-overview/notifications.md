@@ -1,6 +1,6 @@
 ---
 title: Adobe Target Delivery API Notifications
-description: Hur aktiverar jag meddelanden med hjälp av [!UICONTROL Adobe Target Delivery API]?
+description: Hur skickar jag meddelanden med [!UICONTROL Adobe Target Delivery API]?
 keywords: leverans-API
 exl-id: 711388fd-2c1f-4ca4-939f-c56dc4bdc04a
 feature: APIs/SDKs
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 Meddelanden ska utlösas när en förhämtad ruta eller vy har besökts eller renderats för slutanvändaren.
 
-För att meddelanden ska stängas av för rätt mbox eller vy måste du hålla reda på motsvarande `eventToken` för varje ruta eller vy. Meddelanden med rätt `eventToken` för motsvarande kryssrutor eller vyer måste aktiveras för att rapporteringen ska kunna speglas korrekt.
+Om du vill att meddelanden ska stängas av för rätt mbox eller vy måste du hålla reda på motsvarande `eventToken` för varje mbox eller vy. Meddelanden med rätt `eventToken` för motsvarande kryssrutor eller vyer måste utlösas för att rapporteringen ska kunna visas korrekt.
 
 ## Meddelanden för förhämtade kartor
 
-Ett eller flera meddelanden kan skickas via ett enda leveranssamtal. Avgör om mätvärdet som behöver spåras är antingen en `click` eller `display` för varje mbox så att `type` meddelandet kan återspeglas korrekt. Skicka dessutom en `id` för varje meddelande så att man kan avgöra om ett meddelande har skickats korrekt via[!UICONTROL  Adobe Target Delivery API]. The `timestamp` är också viktigt att vidarebefordra till [!DNL Target] för att ange när `click` eller `display` inträffade för en viss ruta för rapportering.
+Ett eller flera meddelanden kan skickas via ett enda leveranssamtal. Avgör om måttet som behöver spåras är antingen `click` eller `display` för varje mbox så att `type` i meddelandet kan återspeglas korrekt. Skicka dessutom en `id` för varje meddelande så att du kan avgöra om ett meddelande skickades korrekt via [!UICONTROL  Adobe Target Delivery API]. `timestamp` är också viktigt att vidarebefordras till [!DNL Target] för att ange när `click` eller `display` inträffade för en given mbox för rapportering.
 
 ```
 curl -X POST \
@@ -81,7 +81,7 @@ curl -X POST \
   }'
 ```
 
-Exempelanropet ovan resulterar i ett svar som anger `notifications` begäran har bearbetats.
+Exempelanropet ovan resulterar i ett svar som anger att `notifications`-begäran har bearbetats.
 
 ```
 {
@@ -106,11 +106,11 @@ Exempelanropet ovan resulterar i ett svar som anger `notifications` begäran har
 }
 ```
 
-Om alla `notifications` skickat till [!DNL Target] bearbetas korrekt, visas i `notifications` arrayen i svaret. Om en `notifications` `id` saknas, särskilt `notification` gick inte igenom. I det här scenariot kan en återförsökslogik implementeras tills en `notification` svar hämtas. Kontrollera att tidsgränsen för återförsökslogiken har angetts så att API-anropet inte blockerar och orsakar prestandafördröjningar.
+Om alla `notifications` som skickas till [!DNL Target] bearbetas korrekt visas de i arrayen `notifications` i svaret. Om `notifications` `id` saknas gick den speciella `notification` inte igenom. I det här scenariot kan en återförsökslogik användas tills ett `notification`-svar har hämtats. Kontrollera att tidsgränsen för återförsökslogiken har angetts så att API-anropet inte blockerar och orsakar prestandafördröjningar.
 
 ## Meddelanden för förhämtade vyer
 
-Ett eller flera meddelanden kan skickas via ett enda leveranssamtal. Avgör om mätvärdet som behöver spåras är antingen en `click` eller `display` för varje ruta så att meddelandetypen kan återspeglas korrekt. Skicka dessutom en `id` för varje meddelande så att man kan avgöra om ett meddelande har skickats korrekt via [!UICONTROL Adobe Target Delivery API]. Tidsstämpeln är också viktig att vidarebefordra till [!DNL Target] för att ange när `click` eller `display` inträffade för en viss vy för rapportering.
+Ett eller flera meddelanden kan skickas via ett enda leveranssamtal. Avgör om måttet som behöver spåras är antingen `click` eller `display` för varje mbox så att meddelandetypen kan återspeglas korrekt. Skicka dessutom en `id` för varje meddelande så att du kan avgöra om ett meddelande skickades korrekt via [!UICONTROL Adobe Target Delivery API]. Tidsstämpeln är också viktig att vidarebefordra till [!DNL Target] för att ange när `click` eller `display` inträffade för en viss vy i rapporteringssyfte.
 
 ```
 curl -X POST \
@@ -161,7 +161,7 @@ curl -X POST \
 }'
 ```
 
-Exempelanropet ovan resulterar i ett svar som anger `notifications` begäran har bearbetats.
+Exempelanropet ovan resulterar i ett svar som anger att `notifications`-begäran har bearbetats.
 
 ```
 {
@@ -186,4 +186,4 @@ Exempelanropet ovan resulterar i ett svar som anger `notifications` begäran har
 }
 ```
 
-Om alla `notifications` skickat till  [!DNL Target] bearbetas korrekt, visas i `notifications` arrayen i svaret. Om en `notifications` `id` saknas, det meddelandet inte gick igenom. I det här scenariot kan en återförsökslogik implementeras tills ett godkänt meddelandesvar hämtas. Kontrollera att tidsgränsen för återförsökslogiken har angetts så att API-anropet inte blockerar och orsakar prestandafördröjningar.
+Om alla `notifications` som skickas till [!DNL Target] bearbetas korrekt visas de i arrayen `notifications` i svaret. Om `notifications` `id` saknas gick dock det inte att slutföra det aktuella meddelandet. I det här scenariot kan en återförsökslogik implementeras tills ett godkänt meddelandesvar hämtas. Kontrollera att tidsgränsen för återförsökslogiken har angetts så att API-anropet inte blockerar och orsakar prestandafördröjningar.

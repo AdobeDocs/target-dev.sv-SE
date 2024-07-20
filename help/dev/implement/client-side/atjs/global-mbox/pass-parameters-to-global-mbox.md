@@ -1,29 +1,29 @@
 ---
 keywords: globala mbox-parametrar, targetPageParams, query string, array, json, dtm
-description: Lär dig använda [!UICONTROL targetPageParams] för att skicka ytterligare information om målinriktning eller kontext till [!DNL Adobe Target] global mbox.
+description: Lär dig hur du använder funktionen [!UICONTROL targetPageParams] för att skicka ytterligare mål- eller kontextinformation till  [!DNL Adobe Target] global mbox.
 title: Hur skickar jag parametrar till en global mbox?
 feature: at.js
 exl-id: 2a6be3e4-a618-4812-9e87-b01789705c40
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '371'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
 
 # Skicka parametrar till en global mbox
 
-JavaScript `targetPageParams` -funktionen används för att skicka parametrar till den globala mbox i [!DNL Adobe Target]. Detta behövs i alla situationer där ytterligare information om målinriktning/kontext ska skickas till [!DNL Target].
+Funktionen JavaScript `targetPageParams` används för att skicka parametrar till den globala mbox i [!DNL Adobe Target]. Detta behövs i alla scenarier där ytterligare mål-/kontextinformation ska skickas till [!DNL Target].
 
 I en Recommendations-aktivitet kan du till exempel använda parametrarna för att representera den aktuella produkten eller kategorin som visas.
 
-Koden som anropar JavaScript-funktionen måste komma före den globala mbox på sidan, oavsett om den globala mbox utlöses som en del av at.js eller inkluderas manuellt i sidkoden.
+Koden som ska anropa JavaScript-funktionen måste komma före den globala mbox på sidan, oavsett om den globala mbox utlöses som en del av at.js eller inkluderas manuellt i sidkoden.
 
 >[!NOTE]
 >
->Använd knappen [targetPageParamsAll()](/help/dev/implement/client-side/atjs/atjs-functions/targetpageparamsall.md) funktion.
+>Om du vill lägga till parametrar i alla mbox på sidan, inte bara i den globala mbox, använder du funktionen [targetPageParamsAll()](/help/dev/implement/client-side/atjs/atjs-functions/targetpageparamsall.md) .
 
-Du kan skicka in parametrar till `target-global-mbox` med `targetPageParams()` på något av följande sätt:
+Du kan skicka in parametrar till `target-global-mbox` med funktionen `targetPageParams()` på något av följande sätt:
 
 * En array
 * Ett JSON-objekt

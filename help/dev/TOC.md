@@ -17,17 +17,17 @@ ht-degree: 3%
    + Innan du implementerar {#before-implement}
       + [Innan du implementerar](before-implement/considerations-before-you-implement-target.md)
       + [Förbered implementering av Target](before-implement/prepare-to-implement-target.md)
-   + Integritet och säkerhet {#privacy}
+   + Sekretess och säkerhet {#privacy}
       + [Sekretessöversikt](before-implement/privacy/privacy.md)
       + [Sekretess- och dataskyddsbestämmelser](before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.md)
       + [Målcookies](before-implement/privacy/cookie-behavior.md)
       + [Ta bort målcookien](before-implement/privacy/cookie-deleting.md)
       + [Inverkan av borttagning av cookies från tredje part på Target (at.js)](/help/dev/before-implement/privacy/third-party-cookie-deprecation.md)
-      + [Cookiprinciper för Google Chrome SameSite](before-implement/privacy/google-chrome-samesite-cookie-policies.md)
+      + [Google Chrome SameSite cookie-principer](before-implement/privacy/google-chrome-samesite-cookie-policies.md)
       + [Apple Intelligent Tracking Prevention (ITP) 2.x](before-implement/privacy/apple-itp-2x.md)
       + [CSP-direktiv (Content Security Policy)](before-implement/privacy/content-security-policy.md)
       + [Tillåtelselista: Hörnkantsnoder](before-implement/privacy/allowlist-edges.md)
-   + Metoder för att hämta data till Target {#methods}
+   + Metoder för att hämta data till målet {#methods}
       + [Översikt över metoder](before-implement/methods-to-get-data-into-target/methods-to-get-data-into-target.md)
       + [Sidparametrar](before-implement/methods-to-get-data-into-target/page-parameters.md)
       + [Profilattribut på sidan](before-implement/methods-to-get-data-into-target/in-page-profile-attributes.md)
@@ -50,7 +50,7 @@ ht-degree: 3%
          + [How at.js works overview](implement/client-side/atjs/how-atjs-works/how-atjs-works.md)
          + [Hur at.js hanterar flimmer](implement/client-side/atjs/how-atjs-works/manage-flicker-with-atjs.md)
          + [at.js-integreringar](implement/client-side/atjs/how-atjs-works/target-atjs-integrations.md)
-      + Så här distribuerar du at.js {#deploy-at-js}
+      + Distribuera på.js {#deploy-at-js}
          + [Så här distribuerar du at.js](implement/client-side/atjs/how-to-deployatjs/how-to-deployatjs.md)
          + [Implementera mål med Adobe Experience Platform](implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md)
          + [Implementera mål utan tagghanterare](implement/client-side/atjs/how-to-deployatjs/implement-target-without-a-tag-manager.md)
@@ -61,7 +61,7 @@ ht-degree: 3%
          + [Funktioner som stöds](implement/client-side/atjs/on-device-decisioning/supported-features.md)
          + [Regelartefakt](implement/client-side/atjs/on-device-decisioning/rule-artifact.md)
          + [Felsökning](implement/client-side/atjs/on-device-decisioning/troubleshooting-on-device-decisioning.md)
-      + Funktionerna at.js {#functions-overview}
+      + at.js-funktioner {#functions-overview}
          + [at.js - funktionsöversikt](implement/client-side/atjs/atjs-functions/atjs-functions.md)
          + [adobe.target.getOffer()](implement/client-side/atjs/atjs-functions/adobe-target-getoffer.md)
          + [adobe.target.getOffers() - at.js 2.x](implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md)
@@ -165,13 +165,13 @@ ht-degree: 3%
 + [Hybrid-implementering](implement/hybrid/hybrid-overview.md)
 + [Implementering av Recommendations](implement/recommendations/recommendations.md)
 + [Recommendations implementation beta](/help/dev/implement/recommendations/recommendations-beta.md)
-+ Implementering av mobilappar {#mobile-apps}
++ Implementering av mobilapp {#mobile-apps}
    + [Mål för mobilappar - översikt](implement/mobile/overview.md)
    + [Förhandsvisning av målmobiler](implement/mobile/target-mobile-preview.md)
    + [Använd platstjänst](implement/mobile/use-location-service.md)
    + [Mål för mobilappar - frågor och svar](implement/mobile/mobile-faq.md)
    + [Implementera Target med AEP Mobile SDK i en inbyggd app med webbvyer](/help/dev/implement/mobile/native-app.md)
-+ E-postimplementering {#implement-email}
++ Implementering av e-post {#implement-email}
    + [E-post: implementera målöversikt](implement/email/overview.md)
    + [Skapa en Adbox för en bild](implement/email/testing-content-with-the-adbox.md)
    + [Testa en e-postbild i Adbox](implement/email/testing-email-image-adbox.md)
@@ -179,7 +179,7 @@ ht-degree: 3%
 + API-guider {#api}
    + [API-översikt för mål](/help/dev/before-administer/target-api-overview.md)
    + [Konfigurera autentisering för mål-API:er](/help/dev/before-administer/configure-authentication.md)
-   + Guide för leverans-API {#delivery-api}
+   + Leverans-API-guide {#delivery-api}
       + [Översikt över leverans-API](/help/dev/implement/delivery-api/overview.md)
       + [SDK för interaktion med leverans-API](/help/dev/before-implement/delivery-api-overview/sdks.md)
       + [Komma igång](/help/dev/before-implement/delivery-api-overview/getting-started.md)
@@ -202,17 +202,17 @@ ht-degree: 3%
       + [API för enkel profiluppdatering](/help/dev/administer/profile-api/profile-single-api.md)
       + [API för gruppprofiluppdatering](/help/dev/administer/profile-api/profile-bulk-api.md)
    + [Rapporterings-API](/help/dev/administer/reporting-api/reporting-api.md)
-   + RECOMMENDATIONS API {#recommendations-api}
+   + Recommendations API {#recommendations-api}
       + [Recommendations API - översikt](before-administer/recs-api/overview.md)
       + [Hantera katalogen med API:er](before-administer/recs-api/manage-catalog.md)
       + [Hantera anpassade villkor](before-administer/recs-api/manage-custom-criteria.md)
       + [Använda leverans-API:t med Recommendations](before-administer/recs-api/fetch-recs-server-side-delivery-api.md)
       + [RECOMMENDATIONS API](/help/dev/administer/recommendations-api/recommendations-api.md)
-   + API för modeller {#models-api}
+   + Models-API {#models-api}
       + [API-översikt för modeller (Blockeringslistning)](before-administer/models-api.md)
       + [API för modeller](/help/dev/administer/models-api/models-api-overview.md)
    + [Adobe Admin Console API:er](/help/dev/before-implement/delivery-api-overview/adobe-console-api.md)
-   + [API för Adobe Experience Platform Edge Network Server](/help/dev/before-implement/delivery-api-overview/aep-edge-network-server-api.md)
+   + [Adobe Experience Platform Edge Network Server-API](/help/dev/before-implement/delivery-api-overview/aep-edge-network-server-api.md)
 + Implementeringsmönster {#implementation-patterns}
    + [Översikt över implementeringsmönster](/help/dev/patterns/pattern-overview.md)
    + Recommendations implementeringsmönster med at.js {#atjs}

@@ -1,12 +1,12 @@
 ---
 keywords: Översikt och referens, webbkit, cookies, first-party, third-party, 1st-party, 3third-party,
-description: Läs mer om [!DNL Target] cookie-beteende (cookie från första part, cookie från tredje part med cookie från första part eller cookie från tredje part enbart).
-title: Var hittar jag information om [!DNL Target] Cookies?
+description: Lär dig mer om  [!DNL Target] cookie-beteende (cookie från första part, cookie från tredje part med cookie från första part eller cookie från tredje part enbart).
+title: Var hittar jag information om  [!DNL Target] cookies?
 feature: at.js
 exl-id: d44e02ce-8920-4130-bcad-699ca77c0dad
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1581'
 ht-degree: 0%
 
 ---
@@ -17,21 +17,21 @@ Cookie-beteendet beror på om det är en cookie från en annan leverantör, en c
 
 >[!NOTE]
 >
->Mer information om olika cookies som används av [!DNL Target], se [[!DNL Adobe Target] cookies](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-target.html){target=_blank} i *Handbok för gränssnittskomponenter i Experience Cloud Central*.
+>Mer information om de olika cookies som används av [!DNL Target] finns i [[!DNL Adobe Target] cookies](https://experienceleague.adobe.com/docs/core-services/interface/administration/ec-cookies/cookies-target.html){target=_blank} i *Experience Cloud Central Interface Components Guide*.
 >
 >Det här avsnittet innehåller information om `mboxSession` och `mboxPC`. Bästa praxis för implementering rekommenderar att du inte länkar eller lagrar känslig information med cookie-data: `mboxSession` eller `mboxPC`.
 
-Se även [Ta bort [!DNL Target] cookie](cookie-deleting.md).
+Se även [Ta bort [!DNL Target] cookien](cookie-deleting.md).
 
 ## När cookies från första part eller tredje part ska användas
 
-Platskonfigurationen avgör vilka cookies du vill använda. Det är till hjälp att förstå hur [!DNL Target] fungerar när du försöker förstå cookies från första part och tredje part. Se [Hur [!DNL Adobe] [!DNL Target] Works](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html) för mer information.
+Platskonfigurationen avgör vilka cookies du vill använda. Det är praktiskt att förstå hur [!DNL Target] fungerar när du försöker förstå cookies från första part och tredje part. Mer information finns i [Så här fungerar [!DNL Adobe] [!DNL Target]](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html).
 
 Det finns tre huvudsakliga användningsområden för cookies:
 
 1. En domän.
 
-   Alla testerna utförs i en toppnivådomän (`www.domain.com`, `store.domain.com`, `anysub.domain.com`och så vidare).
+   Alla dina tester utförs i en toppnivådomän (`www.domain.com`, `store.domain.com`, `anysub.domain.com` o.s.v.).
 
    Metod: Använd endast cookies från första part (standard).
 
@@ -41,9 +41,9 @@ Det finns tre huvudsakliga användningsområden för cookies:
 
    * Aktivera cookies från första och tredje part.
    * Aktivera endast tredjepartscookie (sällsynt, men har fördelen att inte ta bort mbox-cookien från din domän).
-   * Aktivera endast cookies och pass från första part `mboxSession` parameter när domänen korsas.
+   * Aktivera endast cookies från första part och skicka parametern `mboxSession` när du korsar domänen.
 
-     The `mboxSession` -parametern måste skickas till en landningssida och refereras från JavaScript-biblioteket (Adobe Experience Platform Web SDK eller at.js). Det kan inte vara en mellanliggande omdirigeringssida.
+     Parametern `mboxSession` måste skickas till en landningssida och refereras från JavaScript bibliotek (Adobe Experience Platform Web SDK eller at.js). Det kan inte vara en mellanliggande omdirigeringssida.
 
 1. Du använder bara adboxar eller FlashBox på en tredjepartswebbplats.
 
@@ -61,7 +61,7 @@ Det finns tre huvudsakliga användningsområden för cookies:
 
 Den första partens cookie lagras i clientdomain.com, där `clientdomain` är din domän.
 
-JavaScript-biblioteket genererar en `mboxSession ID` och sparar det i [!DNL Target] cookie. Det första mbox-svaret innehåller erbjudandet och JavaScript-koden som lagrar `mboxPC ID` som genereras av programmet, i mbox-cookien.
+JavaScript-biblioteket genererar en `mboxSession ID` och lagrar den i [!DNL Target]-cookien. Det första mbox-svaret innehåller erbjudandet och JavaScript som lagrar `mboxPC ID` som genereras av programmet i mbox-cookien.
 
 >[!NOTE]
 >
@@ -69,9 +69,9 @@ JavaScript-biblioteket genererar en `mboxSession ID` och sparar det i [!DNL Targ
 
 ## Cookie-beteende från tredje part
 
-Tredjepartscookie lagras i clientcode.tt.omtrdc.net och den första partens cookie lagras i clientdomain.com, där `clientdomain` är din domän.
+Tredjeparts-cookie lagras i clientcode.tt.omtrdc.net och den första partens cookie lagras i clientdomain.com, där `clientdomain` är din domän.
 
-JavaScript-biblioteket genererar en `mboxSession ID`. Den första platsbegäran returnerar HTTP-svarshuvuden som försöker ange cookies från tredje part med namnet `mboxSession` och `mboxPC` och en omdirigeringsbegäran skickas tillbaka med en extra parameter ( `mboxXDomainCheck=true`).
+JavaScript-biblioteket genererar en `mboxSession ID`. Den första platsbegäran returnerar HTTP-svarshuvuden som försöker ange cookies från tredje part med namnen `mboxSession` och `mboxPC` och en omdirigeringsbegäran skickas tillbaka med en extra parameter ( `mboxXDomainCheck=true`).
 
 Om webbläsaren accepterar cookies från tredje part inkluderar omdirigeringsbegäran dessa cookies och erbjudandet returneras.
 
@@ -83,13 +83,13 @@ Om webbläsaren avvisar cookies från tredje part inkluderar omdirigeringsbegär
 
 ## cookie-beteende från tredje part och första part
 
-Tredjepartscookie lagras i clientcode.tt.omtrdc.net och den första partens cookie lagras i clientdomain.com, där `clientdomain` är din domän.
+Tredjeparts-cookie lagras i clientcode.tt.omtrdc.net och den första partens cookie lagras i clientdomain.com, där `clientdomain` är din domän.
 
-JavaScript-biblioteket genererar en `mboxSession ID`. Den första platsbegäran returnerar HTTP-svarshuvuden som försöker ange cookies från tredje part med namnet `mboxSession` och `mboxPC`och en omdirigeringsbegäran skickas tillbaka med en extra parameter (`mboxXDomainCheck=true`).
+JavaScript-biblioteket genererar en `mboxSession ID`. Den första platsbegäran returnerar HTTP-svarshuvuden som försöker ange cookies från tredje part med namnen `mboxSession` och `mboxPC`, och en omdirigeringsbegäran skickas tillbaka med en extra parameter (`mboxXDomainCheck=true`).
 
 Om webbläsaren accepterar cookies från tredje part inkluderar omdirigeringsbegäran dessa cookies och erbjudandet returneras.
 
-Vissa webbläsare avvisar cookies från tredje part. Om cookie-filen från tredje part är blockerad fungerar fortfarande cookie-filen från den första parten. [!DNL Target] försöker ange cookie-filen från tredje part, och om den inte kan göra det [!DNL Target] kan bara spåra på klientens specifika domän. Spårning över domäner fungerar inte om cookie-filen från tredje part blockeras, såvida inte `mboxSession` läggs till i länken som korsar domäner. I det här fallet ställs en annan cookie in och synkroniseras med den tidigare domänens cookie.
+Vissa webbläsare avvisar cookies från tredje part. Om cookie-filen från tredje part är blockerad fungerar fortfarande cookie-filen från den första parten. [!DNL Target] försöker ange cookie-filen från tredje part, och om den inte kan det kan [!DNL Target] bara spåra på klientens specifika domän. Spårning över domäner fungerar inte om cookie-filen från tredje part blockeras, såvida inte `mboxSession` läggs till i länken som korsar domäner. I det här fallet ställs en annan cookie in och synkroniseras med den tidigare domänens cookie.
 
 ## Cookie-inställningar
 
@@ -99,7 +99,7 @@ Cookien har flera standardinställningar. Du kan ändra de här inställningarna
 |--- |--- |
 | Kaknamn | mbox. |
 | Cookie-domän | Den andra och den översta nivån i de domäner som du underhåller innehållet från. Eftersom cookie används av ditt företags domän är den en cookie från första part.<br />Exempel: `mycompany.com`. |
-| Serverdomän | `clientcode.tt.omtrdc.net`, med klientkoden för ditt konto. |
+| Serverdomän | `clientcode.tt.omtrdc.net`, använder klientkoden för ditt konto. |
 | Cookie-varaktighet | Cookien finns kvar i besökarens webbläsare två veckor efter den senaste inloggningen. Du kan inte ändra varaktighet för cookie-filen. |
 | P3P-princip | Cookien publiceras med en P3P-princip, vilket krävs enligt standardinställningen i de flesta webbläsare. En P3P-profil anger för en webbläsare som skickar cookien och hur informationen används. |
 
@@ -110,33 +110,33 @@ Denna cookie har olika värden för att hantera hur besökarna upplever kampanje
 | sessions-ID | Ett unikt ID för en användarsession. Detta ID varar som standard i 30 minuter. |
 | pc-ID | Ett halvpermanent ID för en besökares webbläsare. Varar 14 dagar. |
 | check | Ett enkelt testvärde som används för att avgöra om en besökare stöder cookies. Ange varje gång en besökare begär en sida. |
-| disable | Ange om besökarens inläsningstid överskrider den timeout som har konfigurerats i JavaScript-biblioteksfilen. Som standard varar det här värdet en timme. |
+| disable | Ange om besökarens inläsningstid överskrider den tidsgräns som konfigurerats i JavaScript biblioteksfil. Som standard varar det här värdet en timme. |
 
-## Påverkan på [!DNL Target] för Safari-besökare på grund av Apple WebKit-spårningsändringar
+## Påverkan på [!DNL Target] för Safari-besökare på grund av ändringar i Apple WebKit-spårning
 
-**Hur [!DNL Target] spårningsarbete?**
+**Hur fungerar [!DNL Target] spårning?**
 
 | Cookies | Information |
 |--- |--- |
-| Första parts domäner | Standardimplementering för [!DNL Target] kunder. &quot;mbox&quot;-cookies anges i kundens domän. |
-| Spårning från tredje part | Spårning från tredje part är viktigt för annonsering och målgruppsanvändning i [!DNL Target] och in [!DNL Adobe Audience Manager] AAM. Spårning från tredje part kräver serveröverskridande skripttekniker. [!DNL Target] använder två cookies, &quot;mboxSession&quot; och &quot;mboxPC&quot; som anges i `clientcode.tt.omtrd.net` domän. |
-**Vad är Apple tillvägagångssätt?**
+| Första parts domäner | Standardimplementeringen för [!DNL Target] kunder. &quot;mbox&quot;-cookies anges i kundens domän. |
+| Spårning från tredje part | Spårning från tredje part är viktigt för annonsering och målinriktning av användningsfall i [!DNL Target] och i [!DNL Adobe Audience Manager] (AAM). Spårning från tredje part kräver serveröverskridande skripttekniker. [!DNL Target] använder två cookies, &quot;mboxSession&quot; och &quot;mboxPC&quot;, som angetts i domänen `clientcode.tt.omtrd.net`. |
+**Vad innebär Apple?**
 
 Från Apple:
 
 &quot;Intelligent Tracking Prevention är en ny WebKit-funktion som minskar spårningen mellan webbplatser genom att ytterligare begränsa cookies och andra webbplatsdata.&quot;
 
-&quot;Det här kallas spårning på olika webbplatser och cookie-filen som används av `example-tracker.com` kallas en cookie från tredje part. I våra tester fann vi populära webbplatser med över 70 sådana spårare, som alla i tysthet samlar in data om användarna.&quot;
+&quot;Det här kallas för spårning mellan webbplatser och den cookie som används av `example-tracker.com` kallas för en cookie från tredje part. I våra tester fann vi populära webbplatser med över 70 sådana spårare, som alla i tysthet samlar in data om användarna.&quot;
 
 | Metod | Information |
 |--- |--- |
-| Förebyggande av intelligent spårning | Mer information finns i [Intelligent spårningsförebyggande](https://webkit.org/blog/7675/intelligent-tracking-prevention/) på webbplatsen WebKit Open Source Web Browser Engine. |
+| Förebyggande av intelligent spårning | Mer information finns i [Intelligent Tracking Prevention](https://webkit.org/blog/7675/intelligent-tracking-prevention/) på webbplatsen WebKit Öppna Source webbläsarmotor. |
 | Cookies | Hur Safari hanterar cookies:<ul><li>Cookies från tredje part som inte finns på en domän som användaren kommer åt direkt sparas aldrig. Det här beteendet är inte nytt. Cookies från tredje part stöds redan i Safari.</li><li>Tredjepartscookies som anges för en domän som användaren kommer åt direkt rensas efter 24 timmar.</li><li>cookies från första part rensas efter 30 dagar om den förstahandsdomänen har klassificerats som spårning av användare på olika webbplatser. Problemet kan gälla stora företag som skickar användare till olika domäner online. Apple har inte klargjort hur exakt dessa domäner klassificeras, eller hur en domän kan avgöra om de har klassificerats som spårning av användare på olika webbplatser.</li></ul> |
-| Maskininlärning för att identifiera domäner som är olika platser | Från Apple:<br />Maskininlärningsklassificering: En maskininlärningsmodell används för att klassificera vilka av de främsta privatkontrollerade domänerna som kan spåra användarens webbplats, baserat på insamlad statistik. Av de olika insamlade statistiken visade det sig att tre vektorer har en stark signal för klassificering baserat på aktuella spårningsmetoder: underresurs under antalet unika domäner, underbildruta under antalet unika domäner och antal unika domäner som omdirigeras till. All datainsamling och klassificering sker på enheten.<br />Men om användaren interagerar med `example.com` Som den översta domänen, som ofta kallas förstahandsdomän, anser Intelligent Tracking Prevention att det är en signal om att användaren är intresserad av webbplatsen och tillfälligt anpassar sitt beteende enligt den här tidslinjen:<br />Om användaren interagerade med `example.com` de senaste 24 timmarna är cookies tillgängliga när `example.com` är en tredje part. Den här metoden tillåter inloggning med mitt X-konto på Y.<ul><li>Domäner som besöktes som toppnivådomäner påverkas inte. Exempel på platser som OKTA</li><li>Identifierar domäner som är underdomäner eller underramar till den aktuella sidan över flera unika domäner.</li></ul> |
+| Maskininlärning för att identifiera domäner som är olika platser | Från Apple:<br />Maskinininlärningsklassificering: En maskininlärningsmodell används för att klassificera vilka av de främsta privatkontrollerade domänerna som kan spåra användarens webbplats, baserat på insamlad statistik. Av de olika insamlade statistiken visade det sig att tre vektorer har en stark signal för klassificering baserat på aktuella spårningsmetoder: underresurs under antalet unika domäner, underbildruta under antalet unika domäner och antal unika domäner som omdirigeras till. All datainsamling och klassificering sker på enheten.<br />Om användaren interagerar med `example.com` som den översta domänen, som ofta kallas förstahandsdomän, anser Intelligent Tracking Prevention att det är en signal om att användaren är intresserad av webbplatsen och tillfälligt justerar sitt beteende enligt beskrivningen i den här tidslinjen:<br />Om användaren interagerade med `example.com` de senaste 24 timmarna är dess cookies tillgängliga när `example.com` är en tredje part. Den här metoden tillåter inloggning med mitt X-konto på Y.<ul><li>Domäner som besöktes som toppnivådomäner påverkas inte. Exempel på platser som OKTA</li><li>Identifierar domäner som är underdomäner eller underramar till den aktuella sidan över flera unika domäner.</li></ul> |
 
-**Hur [!DNL Adobe] påverkad?**
+**Hur påverkas [!DNL Adobe]?**
 
 | Funktioner som påverkas | Information |
 |--- |--- |
-| Stöd för avanmälan | Stöd för avanmälan om ändringsbrytningar för Apple WebKit-spårning.<br />Målavanmälan använder en cookie i `clientcode.tt.omtrdc.net` domän. Mer information finns i [Integritet](privacy.md).<br />Målet har stöd för två avanmälningar:<ul><li>En per klient (klienten hanterar länken för avanmälan).</li><li>En via [!DNL Adobe] som gör användaren borta från alla [!DNL Target] för alla kunder.</li></ul>Båda metoderna använder cookie-filen från tredje part. |
-| Verksamhetens syfte? | Kunderna kan själva välja [livslängd för profil](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/visitor-profile-lifetime.html) för [!DNL Target] konton (upp till 90 dagar). Orsaken är att om kontots profillivslängd är längre än 30 dagar och cookie-filen rensas eftersom kundens domän har markerats som spårning av användare på alla webbplatser påverkas beteendet för Safari-besökare i följande områden i Target:<br />**Målrapporter**: Om en Safari-användare går in i en aktivitet returneras efter 30 dagar och konverteras sedan räknas användaren som två besökare och en konvertering.<br />Detta beteende är detsamma för aktiviteter som använder Analytics som rapportkälla (A4T).<br />**Profil- och aktivitetsmedlemskap**:<ul><li>Profildata raderas när cookie-filen från första part förfaller.</li><li>Aktivitetsmedlemskapet raderas när cookie-filen från första part förfaller.</li><li> [!DNL Target] fungerar inte i Safari för konton som använder en cookie-implementering från tredje part eller en cookie-implementering från första och tredje part. Det här beteendet är inte nytt. Safari har inte tillåtit cookies från tredje part på ett tag.</li></ul><br />**Förslag**: Om det finns en oro för att kunddomänen kan markeras som en spårningsbesökare som korssession är det säkraste att ange profilens livstid till 30 dagar eller mindre i Target. Den här gränsen gör att användare spåras på liknande sätt i Safari och alla andra webbläsare. |
+| Stöd för avanmälan | Stöd för avanmälan om ändringsbrytningar för Apple WebKit-spårning.<br />Målavanmälan använder en cookie i domänen `clientcode.tt.omtrdc.net`. Mer information finns i [Sekretess](privacy.md).<br />Målet har stöd för två avanmälningar:<ul><li>En per klient (klienten hanterar länken för avanmälan).</li><li>En via [!DNL Adobe] som gör att användaren inte har tillgång till alla [!DNL Target]-funktioner för alla kunder.</li></ul>Båda metoderna använder cookie-filen från tredje part. |
+| Verksamhetens syfte? | Kunder kan välja sin [profillivstid](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/visitor-profile-lifetime.html) för sina [!DNL Target]-konton (upp till 90 dagar). Orsaken är att om kontots profillivstid är längre än 30 dagar och cookie-filen rensas eftersom kundens domän har markerats som spårning av användare på alla webbplatser påverkas beteendet för Safari-besökare i följande områden i Target:<br />**Målrapporter**: Om en Safari-användare loggar in i en aktivitet returneras efter 30 dagar och sedan konverterar räknas användaren som två besökare och en konvertering.<br />Detta beteende är detsamma för aktiviteter som använder Analytics som rapportkälla (A4T).<br />**Profil- och aktivitetsmedlemskap**:<ul><li>Profildata raderas när cookie-filen från första part förfaller.</li><li>Aktivitetsmedlemskapet raderas när cookie-filen från första part förfaller.</li><li> [!DNL Target] fungerar inte i Safari för konton som använder en cookie-implementering från tredje part eller en cookie-implementering från första och tredje part. Det här beteendet är inte nytt. Safari har inte tillåtit cookies från tredje part på ett tag.</li></ul><br />**Förslag**: Om det finns en oro för att kunddomänen kan markeras som en spårningsbesökare som korssession är det säkraste att ange profilens livstid till 30 dagar eller mindre i Target. Den här gränsen gör att användare spåras på liknande sätt i Safari och alla andra webbläsare. |

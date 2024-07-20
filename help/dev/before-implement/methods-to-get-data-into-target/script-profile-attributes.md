@@ -1,32 +1,32 @@
 ---
 keywords: implementera, implementera, konfigurera, konfigurera, skriptprofilattribut
-description: Hämta data till [!DNL Target] med skriptprofilattribut.
-title: Hur får jag in data på [!DNL Target] Använda skriptprofilattribut?
+description: Hämta data till  [!DNL Target] med skriptprofilattribut.
+title: Hur hämtar jag data till  [!DNL Target] Använda skriptprofilattribut?
 feature: Implementation
 exl-id: ba11f1de-e68b-4505-8e3e-cd4d46ef59a2
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '283'
 ht-degree: 0%
 
 ---
 
 # Skriptprofilattribut
 
-Skriptprofilattributen är namn/värde-par som definieras i [!DNL Adobe Target] lösning. Värdet avgörs av om ett JavaScript-fragment körs på målservern per serveranrop.
+Skriptprofilattribut är namn/värde-par som definieras i lösningen [!DNL Adobe Target]. Värdet avgörs av om ett JavaScript-fragment körs på målservern per serveranrop.
 
 Användare skriver små kodfragment som körs per mbox-anrop och innan en besökare utvärderas för målgrupps- och aktivitetsmedlemskap.
 
 ## Format
 
-Skriptprofilattribut skapas i målgruppsavsnittet. Alla attributnamn är giltiga och värdet är resultatet av en JavaScript-funktion som skrivs av [!DNL Target] användare. Attributnamnet prefixeras automatiskt av användaren . &quot; in [!DNL Target] för att skilja dem från profilattribut på sidan.
+Skriptprofilattribut skapas i målgruppsavsnittet. Alla attributnamn är giltiga och värdet är resultatet av en JavaScript-funktion som skrivits av användaren [!DNL Target]. Attributnamnet prefixeras automatiskt av användaren . &quot; in [!DNL Target] för att skilja dem från profilattribut på sidan.
 
 Kodfragmentet är skrivet i JS-språket Rhino och kan referera till tokens och andra värden.
 
 ## Exempel på användningsfall
 
-* **Cart Abandonment**: När besökaren når kundvagnen anger du profilskriptet till 1. Återställ besökaren till 0 när besökaren konverterar. Om värdet = 1 har besökaren en artikel i kundvagnen.
-* **Besök antal**: Vid varje nytt besök ökar du antalet med 1 för att hålla reda på hur ofta en besökare återvänder till webbplatsen.
+* **Cart Abandonment**: När besökaren kommer till kundvagnen anger du profilskriptet till 1. Återställ besökaren till 0 när besökaren konverterar. Om värdet = 1 har besökaren en artikel i kundvagnen.
+* **Besök Antal**: Vid varje nytt besök ökar du antalet med 1 för att hålla reda på hur ofta en besökare återvänder till webbplatsen.
 
 ## Fördelar med metoden
 
@@ -38,7 +38,7 @@ Kan vara mycket robust. Upp till 2 000 instruktioner kan köras per skript.
 
 ## Caveats
 
-Kräver JavaScript-kunskaper.
+Kräver JavaScript kunskap.
 
 Körningsordningen för profilskript kan inte garanteras, så de kan inte vara beroende av varandra.
 

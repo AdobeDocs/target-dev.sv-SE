@@ -4,20 +4,21 @@ description: Se till att alla nödvändiga steg för återgivning utförs i rät
 feature: APIs/SDKs
 level: Experienced
 role: Developer
-source-git-commit: 723bb2f33a011995757009193ee9c48757ae1213
+exl-id: 7cf0c70b-a4bc-46f4-9b33-099bdb7dd9a9
+source-git-commit: 50ee7e66e30c0f8367763a63b6fde5977d30cfe7
 workflow-type: tm+mt
-source-wordcount: '1040'
+source-wordcount: '908'
 ht-degree: 0%
 
 ---
 
 # Återge upplevelser
 
-Följ stegen i *Återge upplevelser* diagram för att säkerställa att alla nödvändiga uppgifter som behövs för att återge upplevelser utförs i rätt sekvens.
+Följ stegen i diagrammet *Återge upplevelser* för att se till att alla nödvändiga åtgärder som behövs för att återge upplevelser utförs i rätt sekvens.
 
 >[!NOTE]
 >
->Om du har aktiverat Automatisk sidinläsningsbegäran under [Konfigurera steg för automatisk sidinläsningsbegäran](/help/dev/patterns/recs-atjs/initialize-sdk.md#automatic) in *Initiera SDKS* kan du hoppa över den här aktiviteten om du inte vill anropa Adobe Target SDK för att återge ytterligare upplevelser med hjälp av en begäran om regional plats.
+>Om du har aktiverat Automatisk sidinläsningsbegäran under steget [Konfigurera automatisk sidinläsningsbegäran](/help/dev/patterns/recs-atjs/initialize-sdk.md#automatic) i *Initiera SDKS* kan du hoppa över den här aktiviteten om du inte vill anropa Adobe Target SDK för att återge ytterligare upplevelser med hjälp av en begäran om regional plats.
 
 >[!TIP]
 >
@@ -25,13 +26,13 @@ Följ stegen i *Återge upplevelser* diagram för att säkerställa att alla nö
 
 ## Rendera upplevelsediagram {#diagram}
 
-Automatisk flimmerhantering som är tillgänglig med at.js är bara användbar om du har [!UICONTROL Automatic Page Load Request] aktiverat. Det här alternativet döljer hela HTML-kroppen samtidigt som upplevelserna hämtas från [!DNL Target]. I det här fallet är det ditt ansvar att hantera flimmer. Sök efter implementeringsmönster som är tillgängliga för flimmerhantering för vägledning.
+Automatisk flimmerhantering som är tillgänglig med at.js är bara användbar när du har [!UICONTROL Automatic Page Load Request] aktiverat. Det här alternativet döljer hela HTML-kroppen när upplevelserna hämtas från [!DNL Target]. I det här fallet är det ditt ansvar att hantera flimmer. Sök efter implementeringsmönster som är tillgängliga för flimmerhantering för vägledning.
 
 >[!NOTE]
 >
->Stegnumren i följande bild motsvarar avsnitten nedan. Stegnumren är inte i någon speciell ordning och återspeglar inte ordningen på de steg som utförs i [!DNL Target] Gränssnitt när aktiviteten skapades.
+>Stegnumren i följande bild motsvarar avsnitten nedan. Stegnumren är inte i någon speciell ordning och återspeglar inte ordningen på steg som vidtas i användargränssnittet för [!DNL Target] när aktiviteten skapas.
 
-![Rendera upplevelsediagram](/help/dev/patterns/recs-atjs/assets/diagram-render-experiences-new.png){width="600" zoomable="yes"}
+![Återge upplevelsediagram](/help/dev/patterns/recs-atjs/assets/diagram-render-experiences-new.png){width="600" zoomable="yes"}
 
 Klicka på följande länkar för att navigera till önskade avsnitt:
 
@@ -50,7 +51,7 @@ Klicka på följande länkar för att navigera till önskade avsnitt:
 
 ## 3.1: Kampanj {#promotion}
 
-Lägg till framhävda objekt och styr deras placering i din rekommendationsdesign genom att välja fram- eller bakåtreklam i [!DNL Target] Gränssnitt när aktiviteten skapades.
+Lägg till framhävda objekt och styr deras placering i din rekommendationsdesign genom att välja fram- eller bakåtriktade kampanjer i [!DNL Target]-gränssnittet när aktiviteten skapas.
 
 +++Se information
 
@@ -60,7 +61,7 @@ Lägg till framhävda objekt och styr deras placering i din rekommendationsdesig
 * [Befordra efter samling](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/collections.html){target=_blank}
 * [Befordra efter attribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html){target=_blank}
 
-**Enhetsparametrar krävs**
+**Entitetsparametrar krävs**
 
 * Objektattribut i kampanjer måste skickas när du använder alternativet &quot;befordra efter attribut&quot;.
 
@@ -84,13 +85,13 @@ Utför rekommendationer baserat på användarens kundvagnsinnehåll.
 * [!UICONTROL People Who Viewed These, Bought Those]
 * [!UICONTROL People Who Bought These, Bought Those]
 
-**Enhetsparametrar krävs**
+**Entitetsparametrar krävs**
 
 * cartIds
 
 **Läser**
 
-* [Cart-baserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Kundvagnsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -112,9 +113,9 @@ Utför rekommendationer baserat på hur populärt ett objekt på webbplatsen är
 * [!UICONTROL Top Sellers by Item Attribute]
 * [!UICONTROL Top by Analytics Metric]
 
-**Enhetsparametrar krävs**
+**Entitetsparametrar krävs**
 
-* `entity.categoryId` eller objektattributet för popularitet baserat på om villkoret är baserat på det aktuella attributet eller objektattributet.
+* `entity.categoryId` eller objektattributet för popularitet baserat på villkoret som baseras på det aktuella attributet eller objektattributet.
 * Inget måste skickas för Mest visade/Säljda över hela webbplatsen.
 
 **Läser**
@@ -138,7 +139,7 @@ Rekommendationer baserade på sökning efter liknande objekt för ett objekt som
 * [!UICONTROL People Who Bought This, Bought That]
 * [!UICONTROL Items with Similar Attributes]
 
-**Enhetsparametrar krävs**
+**Entitetsparametrar krävs**
 
 * `entity.id`
 * Om ett profilattribut används som nyckel
@@ -162,7 +163,7 @@ Utför rekommendationer baserat på användarens beteende.
 * [!UICONTROL Recently Viewed Items]
 * [!UICONTROL Recommended for You]
 
-**Enhetsparametrar krävs**
+**Entitetsparametrar krävs**
 
 * `entity.id`
 
@@ -184,13 +185,13 @@ Utför rekommendationer baserat på en anpassad fil som du överför.
 
 * [!UICONTROL Custom algorithm]
 
-**Enhetsparametrar krävs**
+**Entitetsparametrar krävs**
 
-`entity.id` eller attributet som används som nyckel för den anpassade algoritmen
+`entity.id` eller det attribut som används som nyckel för den anpassade algoritmen
 
 **Läser**
 
-* [Egna villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Anpassade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -230,7 +231,7 @@ Skicka enhets-ID:n för entiteter som du vill utesluta från dina rekommendation
 
 * [Entitetsattribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html){target=_blank}
 
-Du kan också utföra det här steget genom att skapa [produktflöden](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/feeds.html){target=_blank} med [!DNL Target] Gränssnitt för att uppdatera produktkatalogen för [!DNL Recommendations].
+Du kan också slutföra det här steget genom att skapa [produktflöden](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/feeds.html){target=_blank} med användargränssnittet i [!DNL Target] för att uppdatera produktkatalogen för [!DNL Recommendations].
 
 +++
 
@@ -252,15 +253,15 @@ Ange profilattributen som används som nycklar för inkluderingsregler i de Reco
 
 ## 3.11: Begäran om sidinläsning vid brand {#fire}
 
-Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `pageLoad` nyttolast i begäran. The `getOffers()` hämtar upplevelsen och `applyOffers()` återger upplevelsen på sidan. The `pageLoad` begäran behövs för att återge upplevelser som skapats i [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html){target=_blank} (VEC)
+Det här steget utlöser ett [!DNL Delivery API]-anrop med `execute` > `pageLoad` nyttolast i begäran. Metoden `getOffers()` hämtar upplevelsen och `applyOffers()` återger upplevelsen på sidan. `pageLoad`-begäran krävs för återgivning av upplevelser som har skapats i [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html){target=_blank} (VEC).
 
 +++Se information
 
-![Begärandiagram för sidinläsning vid brand](/help/dev/patterns/recs-atjs/assets/fire-page-load-request-combined.png){width="400" zoomable="yes"}
+![Starta sidladdningsbegärandediagram](/help/dev/patterns/recs-atjs/assets/fire-page-load-request-combined.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
-* All datamappning måste göras med `targetPageParams` funktion.
+* All datamappning måste utföras med funktionen `targetPageParams`.
 
 **Läser**
 
@@ -269,7 +270,7 @@ Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `pageLoad` 
 
 **Åtgärder**
 
-* Använd `getOffers` och `applyOffers` metoder för att hämta upplevelsen med hjälp av ett API-anrop för sidinläsningsbegäran.
+* Använd metoderna `getOffers` och `applyOffers` för att hämta upplevelsen med ett API-anrop för sidinläsningsbegäran.
 
 +++
 
@@ -277,15 +278,15 @@ Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `pageLoad` 
 
 ## 3.12: Eld regional location request (#location)
 
-Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `mboxes` nyttolast i sin begäran. The `getOffers` hämtar upplevelsen och `applyOffers` återger upplevelsen på sidan. Du kan skicka mer än en mbox under `execute` > `mboxes` nyttolast.
+Det här steget utlöser ett [!DNL Delivery API]-anrop med `execute` > `mboxes` nyttolast i sin begäran. Metoden `getOffers` hämtar upplevelsen och `applyOffers` återger upplevelsen på sidan. Du kan skicka mer än en mbox under `execute` > `mboxes`-nyttolasten.
 
 +++Se information
 
-![Diagram över begäran om lokal brandkrets](/help/dev/patterns/recs-atjs/assets/fire-regional-location-request-combined.png){width="400" zoomable="yes"}
+![Diagram över begäran om lokal branding](/help/dev/patterns/recs-atjs/assets/fire-regional-location-request-combined.png){width="400" zoomable="yes"}
 
 **Förutsättningar**
 
-* All datamappning måste göras med `targetPageParams` funktion.
+* All datamappning måste utföras med funktionen `targetPageParams`.
 
 **Läser**
 
@@ -294,7 +295,7 @@ Det här steget utlöser en [!DNL Delivery API] ring med `execute` > `mboxes` ny
 
 **Åtgärder**
 
-* Använd `getOffers` och `applyOffers` metoder för att hämta upplevelsen med hjälp av ett API-anrop för sidinläsningsbegäran.
+* Använd metoderna `getOffers` och `applyOffers` för att hämta upplevelsen med ett API-anrop för sidinläsningsbegäran.
 
 +++
 

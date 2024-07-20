@@ -1,6 +1,6 @@
 ---
 keywords: global mbox, target classic, use global mbox from target classic
-description: Lär dig hur du använder en äldre global mbox för [!DNL Adobe Target] -aktiviteter om du redan har skapat en global mbox på sidorna för dina tidigare implementeringar.
+description: Lär dig hur du använder en äldre global mbox för dina [!DNL Adobe Target] aktiviteter om du redan har skapat en global mbox på sidorna för dina tidigare implementeringar.
 title: Kan jag använda en global mbox från en äldre implementering?
 feature: at.js
 exl-id: fe608b5e-ff66-4ba2-a622-d4f7307a9ca9
@@ -13,19 +13,19 @@ ht-degree: 0%
 
 # Använd en global mbox från en äldre implementering
 
-Som standard [!DNL Target] skapar en global mbox med namnet target-global-mbox, som används för att köra aktiviteter som skapats i [!DNL Target]. Om du redan har skapat en global mbox på sidorna för dina tidigare implementeringar kan du använda den mbox för [!DNL Target] verksamhet.
+Som standard skapar [!DNL Target] en global mbox med namnet target-global-mbox, som används för att köra aktiviteter som skapats i [!DNL Target]. Om du redan har skapat en global mbox på dina sidor för dina tidigare implementeringar kan du använda den mbox för dina [!DNL Target]-aktiviteter.
 
 >[!NOTE]
 >
 >Du kan bara ha en global mbox per konto.
 
-Använd din befintliga globala mbox för båda [!DNL Target] och den gamla implementeringen måste du ange några parametrar.
+Om du vill använda din befintliga globala mbox för både [!DNL Target] och din tidigare implementering måste du ange några parametrar.
 
-1. Gå till [!DNL Target]och sedan klicka **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**.
+1. Gå till [!DNL Target] och klicka sedan på **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**.
 
-   Som standard **[!UICONTROL Page load enabled (Auto-create global mbox]** är aktiverat och den anpassade globala mbox namnges `target-global-mbox`.
+   Som standard är **[!UICONTROL Page load enabled (Auto-create global mbox]** aktiverad och den anpassade globala mbox heter `target-global-mbox`.
 
-1. Om du vill använda en befintlig mbox inaktiverar du **[!UICONTROL Page load enabled (Auto-create global mbox]** och ange namnet på en tidigare skapad global mbox i dialogrutan **[!UICONTROL Global Mbox]** fält.
+1. Om du vill använda en befintlig mbox inaktiverar du **[!UICONTROL Page load enabled (Auto-create global mbox]** och anger namnet på en tidigare skapad global mbox i fältet **[!UICONTROL Global Mbox]**.
 
    Listrutan Global Mbox visar alla kryssrutor i ditt konto. Om du vill använda en mbox som ännu inte finns skapar du mbox-filen.
 
@@ -43,4 +43,4 @@ Följande vanliga frågor och svar kan användas för att felsöka din globala m
 
 ### Varför läses inte den globala mbox in, eller varför finns det fördröjning i inläsningen av den globala mbox när sidan läses in?
 
-Kontrollera att referensen at.js är det första JavaScript-anropet på sidan. Andra lösningar på det här problemet finns i [Vanliga frågor och svar om Global Mbox](/help/dev/implement/client-side/atjs/global-mbox/global-mbox-faq.md).
+Kontrollera att referensen at.js är det första JavaScript-anropet på sidan. Andra lösningar på det här problemet finns i [Vanliga frågor och svar om den globala rutan](/help/dev/implement/client-side/atjs/global-mbox/global-mbox-faq.md).

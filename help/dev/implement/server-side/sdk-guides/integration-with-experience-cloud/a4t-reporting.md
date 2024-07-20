@@ -6,33 +6,33 @@ exl-id: 0d09d7a1-528d-4e6a-bc6c-f7ccd61f5b75
 feature: Implement Server-side
 source-git-commit: 09a50aa67ccd5c687244a85caad24df56c0d78f5
 workflow-type: tm+mt
-source-wordcount: '360'
+source-wordcount: '342'
 ht-degree: 0%
 
 ---
 
 # Analyser för målrapportering (A4T)
 
-[!DNL Adobe Target] har stöd för A4T-rapportering för både enhetsbeslut och Target-aktiviteter på serversidan. Det finns två konfigurationsalternativ för att aktivera A4T-rapportering:
+[!DNL Adobe Target] har stöd för A4T-rapportering för både enhetsbeslut och målaktiviteter på serversidan. Det finns två konfigurationsalternativ för att aktivera A4T-rapportering:
 
-* [!DNL Adobe Target] skickar analysens nyttolast automatiskt till [!DNL Adobe Analytics], eller
-* Användaren begär analysnyttolasten från [!DNL Adobe Target]. ([!DNL Adobe Target] returnerar [!DNL Adobe Analytics] nyttolast tillbaka till anroparen.)
+* [!DNL Adobe Target] vidarebefordrar automatiskt analysnyttolasten till [!DNL Adobe Analytics], eller
+* Användaren begär analysnyttolasten från [!DNL Adobe Target]. ([!DNL Adobe Target] returnerar [!DNL Adobe Analytics]-nyttolasten till anroparen.)
 
 >[!NOTE]
 >
->Enhetsbeslut stöder endast A4T-rapportering där [!DNL Adobe Target] skickar analysens nyttolast automatiskt till [!DNL Adobe Analytics]. Hämtar analysens nyttolast från [!DNL Adobe Target] stöds inte.
+>Enhetsbeslut stöder bara A4T-rapportering där [!DNL Adobe Target] automatiskt vidarebefordrar analysnyttolasten till [!DNL Adobe Analytics]. Hämtning av analysnyttolasten från [!DNL Adobe Target] stöds inte.
 
 ## Krav
 
-1. Konfigurera aktiviteten i [!DNL Adobe Target] Gränssnitt med [!DNL Adobe Analytics] som rapportkälla och kontrollera att konton är aktiverade för A4T.
+1. Konfigurera aktiviteten i [!DNL Adobe Target]-gränssnittet med [!DNL Adobe Analytics] som rapportkälla och kontrollera att kontona är aktiverade för A4T.
 1. API-användaren genererar Adobe Marketing Cloud Visitor-ID:t och ser till att detta ID är tillgängligt när Target-begäran körs.
 
-## [!DNL Adobe Target] vidarebefordrar Analytics-nyttolasten automatiskt
+## [!DNL Adobe Target] vidarebefordrar automatiskt Analytics-nyttolasten
 
 [!DNL Adobe Target] kan automatiskt vidarebefordra analysnyttolasten till [!DNL Adobe Analytics] om följande identifierare anges:
 
-1. `supplementalDataId`: Det ID som används för att sammanfoga [!DNL Adobe Analytics] och [!DNL Adobe Target]. För att [!DNL Adobe Target] och [!DNL Adobe Analytics] för att sammanfoga data på ett korrekt sätt `supplementalDataId` måste skickas till båda [!DNL Adobe Target] och [!DNL Adobe Analytics].
-1. `trackingServer`: [!DNL Adobe Analytics] Server.
+1. `supplementalDataId`: Det ID som används för att sammanfoga mellan [!DNL Adobe Analytics] och [!DNL Adobe Target]. För att [!DNL Adobe Target] och [!DNL Adobe Analytics] ska kunna sammanfoga data på rätt sätt måste samma `supplementalDataId` skickas till både [!DNL Adobe Target] och [!DNL Adobe Analytics].
+1. `trackingServer`: Servern [!DNL Adobe Analytics].
 
 >[!BEGINTABS]
 
@@ -115,7 +115,7 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 ## Användaren hämtar analysnyttolast från [!DNL Adobe Target]
 
-En användare kan hämta [!DNL Adobe Analytics] nyttolast för en given mbox och skicka den sedan till [!DNL Adobe Analytics] via [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md). När en [!DNL Adobe Target] begäran utlöses, skickas `client_side` till `logging` i begäran. Detta returnerar en nyttolast om den angivna rutan finns i en aktivitet som använder Analytics som rapportkälla.
+En användare kan hämta [!DNL Adobe Analytics]-nyttolasten för en given mbox och sedan skicka den till [!DNL Adobe Analytics] via [API:t för datainmatning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md). När en [!DNL Adobe Target]-begäran har utlösts skickar du `client_side` till fältet `logging` i begäran. Detta returnerar en nyttolast om den angivna rutan finns i en aktivitet som använder Analytics som rapportkälla.
 
 >[!BEGINTABS]
 
@@ -189,9 +189,9 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 >[!ENDTABS]
 
-När du har angett `logging = client_side`får du nyttolasten i mbox-fältet.
+När du har angett `logging = client_side` får du nyttolasten i mbox-fältet.
 
-Om svaret från Target innehåller något i `analytics -> payload` egenskap, vidarebefordra den som den är till [!DNL Adobe Analytics]. [!DNL Adobe Analytics] kan bearbeta den här nyttolasten. Detta kan göras i en GET-begäran i följande format:
+Om svaret från Target innehåller något i egenskapen `analytics -> payload` vidarebefordrar du det som det är till [!DNL Adobe Analytics]. [!DNL Adobe Analytics] vet hur den här nyttolasten behandlas. Detta kan göras i en GET-begäran i följande format:
 
 ```
 https://{datacollectionhost.sc.omtrdc.net}/b/ss/{rsid}/0/CODEVERSION?pe=tnt&tnta={payload}&mid={mid}&vid={vid}&aid={aid}
@@ -202,8 +202,8 @@ https://{datacollectionhost.sc.omtrdc.net}/b/ss/{rsid}/0/CODEVERSION?pe=tnt&tnta
 | Fältnamn | Obligatoriskt | Beskrivning |
 | --- | --- | --- |
 | `rsid` | Ja | Rapportsvitens ID |
-| `pe` | Ja | Sidhändelse. Alltid inställt på `tnt` |
-| `tnta` | Ja | Analysnyttolasten som returnerats av målservern i `analytics -> payload -> tnta` |
+| `pe` | Ja | Sidhändelse. Alltid inställd på `tnt` |
+| `tnta` | Ja | Analysnyttolasten returnerades av målservern i `analytics -> payload -> tnta` |
 | `mid` | Ja | Marketing Cloud Visitor-ID |
 
 ### Obligatoriska rubrikvärden

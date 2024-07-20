@@ -1,6 +1,6 @@
 ---
-title: Så här använder du asynkrona begäranden i [!DNL Adobe Target] Java SDK
-description: Lär dig mer [!DNL Target] Java SDK stöder asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
+title: Så här använder du asynkrona begäranden i  [!DNL Adobe Target] Java SDK
+description: Lär dig hur  [!DNL Target] Java SDK stöder asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
 feature: APIs/SDKs
 exl-id: e11f8d16-76f6-4d39-822a-34a1cf7f623f
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Beskrivning
 
-En fördel med integration på serversidan är att du kan utnyttja den enorma bandbredd och de datorresurser som finns tillgängliga på serversidan genom att använda parallellitet. [!DNL Target] Java SDK stöder asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
+En fördel med integration på serversidan är att du kan utnyttja den enorma bandbredd och de datorresurser som finns tillgängliga på serversidan genom att använda parallellitet. [!DNL Target] Java SDK har stöd för asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
 
 ## Metoder som stöds
 
@@ -28,7 +28,7 @@ CompletableFuture<Attributes> getAttributesAsync(TargetDeliveryRequest targetReq
 
 ## Exempel
 
-Ett exempel `Spring` Programstyrenheten kan se ut så här:
+Ett exempel på `Spring`-programstyrenhet kan se ut så här:
 
 ### Exempelstyrenhet
 
@@ -73,6 +73,6 @@ public class TargetRestController {
 }
 ```
 
-I det här exemplet antas du ha [initierade SDK](initialize-sdk.md) som vårböna och att du har [verktygsmetoder](utility-methods.md) tillgängliga.
+I det här exemplet antas att du har [initierat SDK](initialize-sdk.md) som en vårböna och att du har [verktygsmetoder](utility-methods.md) tillgängliga.
 
-The [!DNL Target] begäran utlöses innan `simulateIO` och när det körs ska målresultatet också vara klart. Även om så inte är fallet har ni stora besparingar i de flesta fall.
+[!DNL Target]-begäran utlöses före `simulateIO` och när den körs bör målresultatet också vara klart. Även om så inte är fallet har ni stora besparingar i de flesta fall.

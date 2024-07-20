@@ -3,7 +3,7 @@ title: Support - Adobe Analytics
 description: Det här är Adobe Analytics supportsida
 source-git-commit: a5bcf98b586c655a36a9ae8800a8f31978d68646
 workflow-type: tm+mt
-source-wordcount: '97'
+source-wordcount: '92'
 ht-degree: 0%
 
 ---
@@ -25,11 +25,11 @@ Du har en plats att börja diskutera.
 
 Öppna diskussioner och stöd med experter och personal från Adobe.
 
-[Experience leag](https://adobe.io)
+[Experience Leag](https://adobe.io)
 
 Tutorials och filmer för hela communityn.
 
-[Experience Forum](https://adobe.io)
+[Experience forum](https://adobe.io)
 
 Forum för att få hjälp och hjälp
 

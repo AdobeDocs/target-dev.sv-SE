@@ -6,7 +6,7 @@ feature: at.js
 exl-id: e0d87d95-ee95-4ca9-8632-222ae1fb9a91
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '1208'
+source-wordcount: '1162'
 ht-degree: 0%
 
 ---
@@ -31,13 +31,13 @@ Från den här användaragenten kan servern som tar emot begäran identifiera f�
 
 | Information | Information |
 | --- | --- |
-| Programvarunamn | Krom |
+| Programvarunamn | Chrome |
 | Programversion | 101 |
 | Fullversion | 101.0.4951.41 |
 | Namn på layoutmotor | AppleWebKit |
-| Layoutmotorversion | 537.36 |
+| Layoutmotorversion | 537,36 |
 | Operativsystem | Android |
-| Operativsystemversion | Android 12 (Snökon) |
+| Operativsystemversion | Android 12 (snökon) |
 | Enhet | SM-S908E (Samsung Galaxy S22 Ultra) |
 
 Under årens lopp har mängden webbläsarinformation och enhetsinformation som ingår i användaragentsträngen ökat.
@@ -146,7 +146,7 @@ Om du använder målgrupper och något av följande målgruppsattribut kräver T
 
 ### Profilskript
 
-Om du använder profilskript och refererar till `user.browser` attribute (som refererar till user-agent), you may need to update the profile script to also check one or more Client Hints. Du kan komma åt alla klienttips med funktionen `user.clientHint('sec-ch-ua-xxxxx')`. Namnet på klienttipshuvudet måste vara i gemener.
+Om du använder profilskript och refererar till attributet `user.browser` (som refererar till user-agent), kan du behöva uppdatera profilskriptet för att även kontrollera ett eller flera klienttips. Du kan komma åt alla klienttips med funktionen `user.clientHint('sec-ch-ua-xxxxx')`. Namnet på klienttipshuvudet måste vara i gemener.
 
 I följande exempel visas hur du korrekt identifierar ett Windows-operativsystem i ett profilskript:
 
@@ -163,7 +163,7 @@ Här är en tabell med klienttips och deras motsvarande användarsemantik för p
 | [Sec-CH-UA](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA) | Låg | Webbläsare | `user.clientHint('sec-ch-ua')` |
 | [Sec-CH-UA-Arch](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Arch) | Hög | Exponeras för användare via profilskript | `user.clientHint('sec-ch-ua-arch')` |
 | [Avsn-CH-UA-bitness](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Bitness) | Hög | Exponeras för användare via profilskript | `user.clientHint('sec-ch-ua-bitness')` |
-| [Sec-CH-UA-full-version-list](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Full-Version-List) | Hög | Webbläsare | `user.clientHint('sec-ch-ua-full-version-list')` |
+| [Sec-CH-UA-Full-Version-List](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Full-Version-List) | Hög | Webbläsare | `user.clientHint('sec-ch-ua-full-version-list')` |
 | [Sec-CH-UA-Mobile](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Mobile) | Låg | Mobil | `user.clientHint('sec-ch-ua-mobile')` |
 | [Sec-CH-UA-Model](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Model) | Hög | Mobil | `user.clientHint('sec-ch-ua-model')` |
 | [Sec-CH-UA-Platform](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA-Platform) | Låg | Operativsystem | `user.clientHint('sec-ch-ua-platform')` |
@@ -175,7 +175,7 @@ Följande avsnitt innehåller mer information om hur du skickar klienttips, bero
 
 ### at.js version 2.9.0 (eller senare)
 
-Från och med kl.js 2.9.0 kommer klienttips för användaragenten att samlas in automatiskt från webbläsaren och skickas till mål när `getOffer/getOffers()` anropas. Som standard samlar at.js bara in &quot;Low Entropy&quot;-klienttips. Om du utför målgruppssegmentering eller använder profilskript baserade på data som kategoriserats som&quot;High Entropy&quot; från de föregående avsnitten, måste du konfigurera at.js för att samla in&quot;High Entropy&quot;-klienttips från webbläsaren via `targetGlobalSettings`.
+Från och med at.js 2.9.0 kommer klienttips för användaragenten att samlas in automatiskt från webbläsaren och skickas till Target när `getOffer/getOffers()` anropas. Som standard samlar at.js bara in &quot;Low Entropy&quot;-klienttips. Om du utför målgruppssegmentering eller använder profilskript baserade på data som kategoriserats som High Entropy från de föregående avsnitten, måste du konfigurera at.js för att samla in High Entropy-klienttips från webbläsaren via `targetGlobalSettings`.
 
 ```
 window.targetGlobalSettings = { allowHighEntropyClientHints: true };

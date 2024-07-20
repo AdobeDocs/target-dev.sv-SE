@@ -2,11 +2,11 @@
 title: Adobe Admin Console API:er
 description: Lär dig hur du använder Adobe Admin Console API:er.
 keywords: Adobe Console-API;konsol;api
-exl-id: 18fb9c75-aa71-4902-bcb8-3ead9d2d087d
+exl-id: 515cb851-6553-42af-a1a9-e72c8952e210
 feature: APIs/SDKs, Recommendations, Administration & Configuration
-source-git-commit: 09a50aa67ccd5c687244a85caad24df56c0d78f5
+source-git-commit: 50ee7e66e30c0f8367763a63b6fde5977d30cfe7
 workflow-type: tm+mt
-source-wordcount: '52'
+source-wordcount: '50'
 ht-degree: 0%
 
 ---
@@ -15,4 +15,4 @@ ht-degree: 0%
 
 Hantera användare och produktbehörigheter via [!UICONTROL Adobe User Management] och [!UICONTROL User Sync API]s.
 
-Mer information finns i [Hantera användare och produktbehörigheter, API-sättet](https://developer.adobe.com/umapi/){target=_blank} på *Adobe Developer* webbplats.
+Mer information finns i [Hantera användare och produktbehörigheter, API-metoden ](https://developer.adobe.com/umapi/){target=_blank} på webbplatsen *Adobe Developer*.

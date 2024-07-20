@@ -1,11 +1,11 @@
 ---
-title: Så här använder du asynkrona begäranden i [!DNL Adobe Target] Python SDK
-description: Lär dig mer [!DNL Target] Python SDK har stöd för asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
+title: Så här använder du asynkrona begäranden i  [!DNL Adobe Target] Python SDK
+description: Lär dig hur  [!DNL Target] Python SDK stöder asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
 feature: APIs/SDKs
 exl-id: 44ab74e5-3c1a-49cf-9fff-fe523b0c2592
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '138'
+source-wordcount: '133'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ get_attributes(mbox_names, options)
 
 ## Exempel
 
-Ett exempelprogram som använder `asyncio` Modulens asynkrona/väntade i Python 3.9+ skulle kunna se ut så här:
+Ett exempelprogram som använder `asyncio`-modulens asynkrona/förväntade i Python 3.9+ kan se ut så här:
 
 ### Python
 
@@ -52,4 +52,4 @@ mboxes = [MboxRequest(name="a1-serverside-ab", index=1)]
 return asyncio.run(get_target_delivery_response(mboxes)
 ```
 
-I det här exemplet antas du använda Python 3.9+. Om du använder en äldre version av Python kan du fortfarande skicka asynkrona begäranden genom att skicka in `options.callback` till `get_offers`. Ta en titt på exempelappen Flash om du vill ha mer information om asynkron körning med antingen återanrop eller asynkron/await. [här](https://github.com/adobe/target-python-sdk/blob/main/samples/app.py).
+I det här exemplet antas du använda Python 3.9+. Om du använder en äldre version av Python kan du fortfarande skicka asynkrona begäranden genom att skicka in `options.callback` till `get_offers`. Titta i exempelappen Flash om du vill ha mer information om asynkron körning med antingen återanrop eller asynkron/await, [här](https://github.com/adobe/target-python-sdk/blob/main/samples/app.py).

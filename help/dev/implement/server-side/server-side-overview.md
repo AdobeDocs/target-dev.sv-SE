@@ -1,7 +1,7 @@
 ---
 keywords: serversida, server-side, api, sdk, node.js, nodats, node js, recommendations api, api, apis, server side1
-description: Läs mer om [!DNL Adobe Target] server-side Delivery APIs, SDKs och [!DNL Target Recommendations] API.
-title: Var kan jag läsa mer om [!DNL Target] Leverans-API:er och SDK på serversidan?
+description: Lär dig mer om  [!DNL Adobe Target] API:er för leverans på serversidan, SDK:er och [!DNL Target Recommendations] API:er.
+title: Var kan jag läsa mer om  [!DNL Target] API:er och SDK:er för serversideleverans?
 feature: Implement Server-side
 exl-id: 3eb0a789-cf1a-4d02-acf7-3c895bcb662f
 source-git-commit: 75af30045684b95d5989b0a1f877ba95bb8cd883
@@ -13,26 +13,26 @@ ht-degree: 0%
 
 # Serversida: implementera [!DNL Target]
 
-Information om [!DNL Adobe Target] server-side Delivery APIs, SDKs och [!DNL Target Recommendations] API.
+Information om [!DNL Adobe Target] leverans-API:er på serversidan, SDK:er och [!DNL Target Recommendations] API:er.
 
 >[!NOTE]
 >
->Om implementeringen använder at.js och [!DNL AppMeasurement] på klientsidan bör du använda [!UICONTROL Target Delivery API] och SDK:er på serversidan som beskrivs nedan.
+>Om implementeringen använder at.js och [!DNL AppMeasurement] på klientsidan bör du använda de SDK:er för [!UICONTROL Target Delivery API] och serversidan som beskrivs nedan.
 >
->Om implementeringen använder [!UICONTROL Adobe Experience Platform Web SDK]bör du använda [[!UICONTROL Adobe Experience Platform] [!UICONTROL Edge Network Server API]](https://experienceleague.adobe.com/en/docs/experience-platform/edge-network-server-api/overview){target=_blank}.
+>Om din implementering använder [!UICONTROL Adobe Experience Platform Web SDK] bör du använda [[!UICONTROL Adobe Experience Platform] [!UICONTROL Edge Network Server API]](https://experienceleague.adobe.com/en/docs/experience-platform/edge-network-server-api/overview){target=_blank}.
 
 Följande process utförs i en implementering på serversidan av [!DNL Target]:
 
 1. En klientenhet begär en upplevelse via servern.
-1. Servern skickar begäran till [!DNL Target].
+1. Servern skickar den begäran till [!DNL Target].
 1. [!DNL Target] skickar tillbaka svaret till servern.
 1. Servern bestämmer vilken upplevelse som ska levereras till klientenheten för att den ska kunna återges.
 
-Upplevelsen behöver inte visas i en webbläsare. Upplevelsen kan visas i ett e-postmeddelande eller i en kioskdator, via en röstassistent eller via någon annan icke-visuell upplevelse eller icke-webbläsarbaserad enhet. Eftersom servern är placerad mellan klienten och [!DNL Target]är den här typen av implementering också idealisk om du behöver större kontroll och säkerhet eller har komplexa serverprocesser som du vill köra på servern.
+Upplevelsen behöver inte visas i en webbläsare. Upplevelsen kan visas i ett e-postmeddelande eller i en kioskdator, via en röstassistent eller via någon annan icke-visuell upplevelse eller icke-webbläsarbaserad enhet. Eftersom servern finns mellan klienten och [!DNL Target] är den här typen av implementering också idealisk om du behöver större kontroll och säkerhet eller har komplexa serverprocesser som du vill köra på servern.
 
 >[!NOTE]
 >
->En förstagångsbesökare kan bara initieras på klientsidan. En förstagångsbesökare *inte* initieras på serversidan. Detta beror på ECID, som är beroende av en tredjeparts demdex-cookie och därför måste initieras via Visitor API.js på en implementering där webbläsaren är inblandad.
+>En förstagångsbesökare kan bara initieras på klientsidan. En förstagångsbesökare *kan inte* initieras på serversidan. Detta beror på ECID, som är beroende av en tredjeparts demdex-cookie och därför måste initieras via Visitor API.js på en implementering där webbläsaren är inblandad.
 
 I följande avsnitt finns mer information om de olika API:erna och SDK:erna på serversidan:
 
@@ -42,7 +42,7 @@ Länk: [API:er för leverans på serversidan](/help/dev/implement/delivery-api/o
 
 `/rest/v1/delivery`
 
-Via [!DNL Target] Delivery API, du kan:
+Via leverans-API:t för [!DNL Target] kan du:
 
 * Leverera upplevelser via webben, inklusive SPA, mobilkanaler och icke-webbläsarbaserade IoT-enheter, som anslutna tv-apparater, kioskdatorer eller digitala butiksskärmar.
 * Leverera upplevelser från alla plattformar eller applikationer på serversidan som kan ringa HTTP/s-samtal.
@@ -52,26 +52,26 @@ Via [!DNL Target] Delivery API, du kan:
 
 ## SDK på serversidan
 
-The [!DNL Adobe Target] SDK-dokumentation på serversidan hjälper dig att implementera [!DNL Target] på valfritt språk.
+Med hjälp av SDK-dokumentationen på serversidan [!DNL Adobe Target] kan du implementera [!DNL Target] på dina servrar på det språk du föredrar.
 
 * [Node.js](node-js/overview.md)
 * [Java](java/overview.md)
 * [.NET](net/overview.md)
 * [Python](python/overview.md)
 
-Via [!DNL Adobe Target]Med SDK:er på serversidan kan du
+Genom serversidessDK:er för [!DNL Adobe Target] kan du:
 
-* Kör **funktionsflaggning**, **rollouts** och **A/B-experiment** på **latens nära noll**.
-* Leverera upplevelser i **webb**, inklusive **SPA** och **mobilkanaler**, liksom icke-webbläsarbaserade **IoT-enheter (Internet of Things)** som en ansluten TV, kioskskärm eller digital butiksskärm.
-* Leverera **Maskininlärningsdrivna, personaliserade upplevelser** för en användare, oavsett vilken kanal eller enhet användaren har interagerat med företaget.
-* **Smidig integrering med Adobe Experience Cloud** produkter som **Adobe Analytics**, **Adobe Audience Manager** och **Experience Cloud ID-tjänst** från serversidan.
+* Kör och kör **funktionsflaggning**, **rollouts** och **A/B-experiment** vid **nära-noll-fördröjning**.
+* Leverera upplevelser på **webben**, inklusive **SPA** och **mobila kanaler**, liksom icke-webbläsarbaserade **sakernas Internet-enheter**, till exempel en ansluten TV, kioskskärm eller en digital butiksskärm.
+* Leverera **ML-drivna personaliserade upplevelser** till en användare, oavsett vilken kanal eller enhet användaren har interagerat med företaget.
+* **Integrera sömlöst med Adobe Experience Cloud**-produkter som **Adobe Analytics**, **Adobe Audience Manager** och **Experience Cloud ID-tjänsten** från serversidan.
 
-Se [Komma igång](sdk-guides/getting-started/getting-started.md) om du vill lära dig hur du kör en enkel funktion som flaggar [beslut på enheten](sdk-guides/on-device-decisioning/overview.md).
+Gå till sidan [Komma igång](sdk-guides/getting-started/getting-started.md) om du vill lära dig hur du kör en enkel funktion som flaggar användningsfall via [enhetsbeslut](sdk-guides/on-device-decisioning/overview.md).
 
-Kolla in vår [Exempelappar](sdk-guides/sample-apps/sample-apps.md) för att ha kul och leka!
+Kolla in våra [exempelappar](sdk-guides/sample-apps/sample-apps.md) för att ha kul och leka med!
 
 ## [!DNL Target Recommendations] API:er
 
-Länk: [Ange Recommendations API:er](https://developers.adobetarget.com/api/recommendations) och [Adobe Recommendations API - översikt](../../before-administer/recs-api/overview.md).
+Länk: [Mål-API:er för Recommendations](https://developers.adobetarget.com/api/recommendations) och [Adobe Recommendations API - översikt](../../before-administer/recs-api/overview.md).
 
-Med Recommendations API:er kan du programmässigt interagera med [!DNL Target] rekommendationsservrar. Dessa API:er kan integreras med en rad programstackar för att utföra funktioner som du vanligtvis gör via [!DNL Target] användargränssnitt.
+Med Recommendations API:er kan du programmässigt interagera med [!DNL Target] rekommendationsservrar. Dessa API:er kan integreras med en rad programstackar för att utföra funktioner som du vanligtvis gör via användargränssnittet i [!DNL Target].

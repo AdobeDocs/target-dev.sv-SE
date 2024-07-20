@@ -1,11 +1,11 @@
 ---
 title: Initiera .NET SDK med metoden create
-description: Lär dig hur du använder metoden create för att initiera Java SDK och instansiera [!UICONTROL TargetClient] för att ringa [!DNL Adobe Target] för experiment och personaliserade upplevelser.
+description: Lär dig hur du använder metoden create för att initiera Java SDK och instansiera [!UICONTROL TargetClient] för att ringa till  [!DNL Adobe Target] för experiment och personaliserade upplevelser.
 feature: APIs/SDKs
 exl-id: 501010c3-22f4-49a8-b2ac-c7307232d180
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '350'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,11 @@ ht-degree: 0%
 
 ## Beskrivning
 
-Använd `Create` för att initiera .NET SDK och instansiera [!UICONTROL Target Client] för att ringa [!DNL Adobe Target] för experiment och personaliserade upplevelser.
+Använd metoden `Create` för att initiera .NET SDK och instansiera [!UICONTROL Target Client] för att anropa [!DNL Adobe Target] för experiment och personaliserade upplevelser.
 
-När du använder .NET Dependency Injection lägger du bara till SDK vid tjänstkonfigurationssteget genom att anropa `services.AddTargetLibrary()`; injicera sedan `ITargetClient targetClient` i appens konstruktor.
+När du använder .NET Dependency Injection lägger du bara till SDK vid tjänstkonfigurationssteget genom att anropa `services.AddTargetLibrary()` och sedan mata in `ITargetClient targetClient` i appens konstruktor.
 
-Efter detta använder du `Initialize` SDK-metoden för att konfigurera SDK och därmed slutföra initieringssteget.
+Därefter använder du SDK-metoden `Initialize` för att konfigurera SDK och slutför därmed initieringssteget.
 
 ## Metod
 
@@ -49,13 +49,13 @@ TargetClientConfig.Builder TargetClientConfig.Builder()
 | Klient | string | Ja | Ingen | [!UICONTROL Target Client Id] |
 | OrganizationId | string | Ja | Ingen | [!UICONTROL Experience Cloud Organization ID] |
 | Timeout | int | Nej | 10000 | Timeout för alla begäranden i millisekunder |
-| Proxy |  | WebProxy | Nej | null | Proxy för alla [!DNL Target] förfrågningar |
-| RetryPolicy | Policy | Nej | null | Prova principen igen för alla [!DNL Target] förfrågningar |
-| AsyncRetryPolicy | AsyncPolicy | Nej | null | Asynkron återförsöksprincip för alla [!DNL Target] förfrågningar |
-| Logger | ILogger | Nej | null | Används för felsökningsloggning av [!DNL Target] förfrågningar och svar |
+| Proxy |  | WebProxy | Nej | null | Proxy för alla [!DNL Target]-begäranden |
+| RetryPolicy | Policy | Nej | null | Prova principen igen för alla [!DNL Target]-begäranden |
+| AsyncRetryPolicy | AsyncPolicy | Nej | null | Asynkron återförsöksprincip för alla [!DNL Target]-begäranden |
+| Logger | ILogger | Nej | null | Används för felsökningsloggning av [!DNL Target] begäranden och svar |
 | ServerDomain | string | Nej | `client.tt.omtrdc.net` | Åsidosätter standardvärdnamn |
 | Säker | bool | Nej | true | Avmarkerad för att tillämpa HTTP-schema |
-| DefaultPropertyToken | string | Nej | null | Anger standardegenskapstoken för varje `getOffers` ring |
+| DefaultPropertyToken | string | Nej | null | Anger standardegenskapstoken för varje `getOffers`-anrop |
 | TelemetryEnabled | bool | Nej | true | Skicka telemetridata för att förbättra SDK-upplevelsen |
 | DecisioningMethod | DecisioningMethod enum | Nej | ServerSide | Måste anges till OnDevice eller Hybrid för att enhetsbeslut ska kunna aktiveras |
 | OnDeviceDecisioningReady | Åtgärd | Nej | null | Delegera för Ready-händelse för enhetsbeslut (anropas en gång när enhetsbeslut är klart) |

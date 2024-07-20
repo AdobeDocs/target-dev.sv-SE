@@ -1,7 +1,7 @@
 ---
 keywords: adobe.target.applyOffers, applyOffers, applyoffers, apply offers, at.js, functions, function,
-description: Använd [!UICONTROL adobe.target.applyOffers()] funktionen för [!DNL Adobe Target] at.js JavaScript-bibliotek för att tillämpa flera erbjudanden i svaret. (at.js 2.x)
-title: Hur jag använder [!UICONTROL adobe.target.applyOffers()] Funktion?
+description: Använd funktionen [!UICONTROL adobe.target.applyOffers()] för JavaScript-biblioteket  [!DNL Adobe Target]  at.js för att tillämpa flera erbjudanden i svaret. (at.js 2.x)
+title: Hur använder jag funktionen [!UICONTROL adobe.target.applyOffers()]?
 feature: at.js
 exl-id: c391e3f4-fdf1-4e33-8dcb-6bf46e390538
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -21,26 +21,26 @@ Med den här funktionen kan du tillämpa mer än ett erbjudande som har hämtats
 
 | Nyckel | Typ | Obligatoriskt? | Beskrivning |
 | --- | --- | --- | --- |
-| väljare | Sträng | Nej | HTML-element eller CSS-väljare som används för att identifiera det HTML-element där [!DNL Target] bör lägga ut erbjudandeinnehållet. Om ingen väljare anges [!DNL Target] antar att elementet HTML som ska användas är HTML HEAD. |
-| Svar | Objekt | Ja | Svarsobjekt från `getOffers()`.<br />Se tabellen över förfrågningar nedan. |
+| väljare | Sträng | Nej | HTML-element eller CSS-väljare som används för att identifiera det HTML-element där [!DNL Target] ska placera erbjudandeinnehållet. Om ingen väljare anges antar [!DNL Target] att elementet HTML som ska användas är HTML HEAD. |
+| Svar | Objekt | Ja | Svarsobjekt från `getOffers()`.<br />Se tabellen Begäranden nedan. |
 
 ## Svar
 
 >[!NOTE]
 >
->Läs [Dokumentation för leverans-API](/help/dev/implement/delivery-api/overview.md) för information om godkända typer för alla fält som listas nedan.
+>Läs [dokumentationen för leverans-API](/help/dev/implement/delivery-api/overview.md) om du vill ha information om vilka typer som kan användas för alla fält som listas nedan.
 
 | Fältnamn | Beskrivning |
 | --- | --- |
 | svar > förhämtning > vyer > alternativ > innehåll | Observera att innehållet i alternativet inte är väldefinierat och är direkt beroende av alternativtypen/mallstrukturen. |
 | svar > förhämtning > vyer > alternativ > text | Alternativtyp. Återspeglar typ av&quot;innehåll&quot;-fält. Den typ som stöds är åtgärder. |
 | svar > förhämtning > vyer > läge | En token för ogenomskinligt visningsläge som ska vidarebefordras med visningsmeddelande för vyn |
-| response > prefetch > views > options > responseTokens | Innehåller kartan över `responseTokens` som har samlats in när det aktuella alternativet bearbetades. |
-| response > prefetch > views > analytics > payload | [!DNL Analytics] nyttolast för integrering på klientsidan som ska skickas till [!DNL Analytics] efter att vyn har använts. |
+| response > prefetch > views > options > responseTokens | Innehåller kartan med `responseTokens` som har samlats in när det aktuella alternativet bearbetades. |
+| response > prefetch > views > analytics > payload | [!DNL Analytics]-nyttolast för integrering på klientsidan som ska skickas till [!DNL Analytics] efter att vyn har tillämpats. |
 | response > prefetch > views > trace | Det objekt som innehåller alla spårningsdata för förhämtningsanropet per vy.<br />Spårningsobjektet kommer även att innehålla en version för spårningen.<br />Spårningsobjektet kommer även att innehålla information om den aktuella vyn. |
-| response > prefetch > views > options > eventToken | Händelseloggning görs per alternativ. För varje tillämpat alternativ ska respektive händelsetoken läggas till i listan över meddelandetokens. Observera att en vy består av flera alternativ. Om alla alternativ har tillämpats och visats, gäller alla `eventTokens` måste inkluderas i meddelandet. |
+| response > prefetch > views > options > eventToken | Händelseloggning görs per alternativ. För varje tillämpat alternativ ska respektive händelsetoken läggas till i listan över meddelandetokens. Observera att en vy består av flera alternativ. Om alla alternativ har tillämpats och setts måste alla `eventTokens` inkluderas i meddelandet. |
 | svar > förhämtning > vyer > namn | Vynamnet som kan läsas av människor. |
-| response > prefetch > views > metrics | Rapporteringsmått som ska bevakas och sedan meddelas [!DNL Target] om. För närvarande stöds bara klickmått. Om ett klick på elementet inträffar `eventTokens` bör samlas in och en anmälan skickas. |
+| response > prefetch > views > metrics | Rapporteringsmått som ska övervakas och sedan meddela [!DNL Target] om. För närvarande stöds bara klickmått. Om ett klick på elementet inträffar, bör rätt `eventTokens` samlas in och ett meddelande skickas. |
 | response > prefetch > views > key | Nyckeln eller fingeravtrycket som identifierar vyn. |
 | svar > förhämtning > vyer > id | ID för vyn. |
 | svar > meddelanden > id | Meddelande-ID. |
@@ -58,19 +58,19 @@ Med den här funktionen kan du tillämpa mer än ett erbjudande som har hämtats
 | response > execute > mboxes > mbox > options | Svarsalternativ. |
 | response > execute > mboxes > mbox > metrics > eventToken | Token för klickningshändelse. |
 | response > execute > mboxes > mbox > metrics > type | &quot;click&quot; |
-| response > execute > mboxes > mbox > metrics | Innehåller en lista med `clickThrough` mätvärden. |
+| response > execute > mboxes > mbox > metrics | Innehåller en lista med `clickThrough`-mått. |
 | response > execute > mboxes > mbox > mbox | Namnet på mbox. |
 | response > execute > mboxes > mbox >index | Anger att svaret är för mbox med detta index från begäran. |
-| response > execute > mboxes > mbox > analytics > payload | [!DNL Analytics] nyttolast för integrering på klientsidan som ska skickas till [!DNL Analytics] efter att mbox har använts. (Se avsnittet A4T-aktiverade kampanjer.) |
+| response > execute > mboxes > mbox > analytics > payload | [!DNL Analytics]-nyttolast för integrering på klientsidan som ska skickas till [!DNL Analytics] efter att mbox har tillämpats. (Se avsnittet A4T-aktiverade kampanjer.) |
 | response > execute > mbox | Lista över körda rutor. |
 | response > execute > pageLoad > options > content | Observera att innehållet i alternativet inte är väldefinierat och är direkt beroende av alternativtypen/mallstrukturen. |
 | response > execute > pageLoad > options > type | Alternativtyp. Återspeglar typ av&quot;innehåll&quot;-fält. Typer som stöds är: html, redirect, JSON, dynamic och actions. |
 | response > execute > pageLoad > options | Alternativ som inte grupperas efter vyer (target-global-mbox + alternativ från aktiviteter där vyer inte grupperats efter vyer). |
 | response > execute > pageLoad > metrics | Klicka på mätvärden som inte ställts in för att tillhöra en viss vy. |
 | response > execute > pageLoad > trace | Objektet som innehåller alla spårningsdata för pageLoad-begäran. |
-| response > execute > pageLoad > analytics > payload | [!DNL Analytics] nyttolast för integrering på klientsidan som ska skickas till [!DNL Analytics] när sidans inläsningsinnehåll har tillämpats. (Se avsnittet A4T-aktiverade kampanjer.) |
+| response > execute > pageLoad > analytics > payload | [!DNL Analytics]-nyttolast för integrering på klientsidan som ska skickas till [!DNL Analytics] efter att sidans inläsningsinnehåll har tillämpats. (Se avsnittet A4T-aktiverade kampanjer.) |
 
-## Exempel [!UICONTROL applyOffers()] ring
+## Exempel på [!UICONTROL applyOffers()]-samtal
 
 ```javascript {line-numbers="true"}
 adobe.target.applyOffers({response:{
@@ -107,7 +107,7 @@ adobe.target.applyOffers({response:{
 }});
 ```
 
-## Exempel på anrop till Lomise chaining med `[!UICONTROL getOffers()]` och `[!UICONTROL applyOffers()]`eftersom dessa funktioner är Promise-baserade
+## Exempel på anrop till Promise-kedja med `[!UICONTROL getOffers()]` och `[!UICONTROL applyOffers()]` eftersom dessa funktioner är Promise-baserade
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffers({...})
@@ -116,7 +116,7 @@ adobe.target.getOffers({...})
 .catch(error => console.log("Error", error));
 ```
 
-Mer exempel på hur du använder getOffers() finns i getOffers [dokumentation](adobe-target-getoffers-atjs-2.md)
+Mer exempel på hur du använder getOffers() finns i [dokumentationen](adobe-target-getoffers-atjs-2.md) för getOffers.
 
 ### Exempel på sidinläsningsbegäran
 

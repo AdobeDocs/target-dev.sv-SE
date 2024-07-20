@@ -1,11 +1,11 @@
 ---
 title: Installera Java SDK
-description: Lär dig hur du installerar [!DNL Adobe Target] Java SDK.
+description: Lär dig hur du installerar  [!DNL Adobe Target] Java SDK.
 feature: APIs/SDKs
 exl-id: 5828d5b3-c487-49bf-9458-7ef94374e32d
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '50'
+source-wordcount: '46'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Java SDK distribueras av [Maven Central](https://search.maven.org/artifact/com.a
 
 >[!BEGINTABS]
 
->[!TAB Gråta]
+>[!TAB Gradle]
 
 ```javascript {line-numbers="true"}
 compile 'com.adobe.target:java-sdk:1.0'

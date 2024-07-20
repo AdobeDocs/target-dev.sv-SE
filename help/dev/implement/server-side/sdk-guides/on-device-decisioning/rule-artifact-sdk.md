@@ -1,18 +1,18 @@
 ---
 title: Hämta, lagra och uppdatera automatiskt artefakten för beslutsregler på enheter
-description: Lär dig hur du arbetar med en beslutsregelartefakt på enheten när du initierar [!DNL Adobe Target] SDK.
+description: Lär dig hur du arbetar med den här artefakten för enhetsspecifika beslutsregler när du initierar  [!DNL Adobe Target] SDK.
 feature: APIs/SDKs
 exl-id: be41a723-616f-4aa3-9a38-8143438bd18a
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '344'
+source-wordcount: '347'
 ht-degree: 0%
 
 ---
 
-# Hämta, lagra och uppdatera regelfelaktigheten automatiskt via [!DNL Adobe Target] SDK
+# Hämtar, lagrar och uppdaterar regelfelaktigheten automatiskt via SDK:n [!DNL Adobe Target]
 
-Detta är bäst när du kan initiera [!DNL Adobe Target] SDK samtidigt som du initierar och startar webbservern. Regelartefakten hämtas av [!DNL Adobe Target] SDK och cachelagrat i minnet innan webbserverprogrammet börjar hantera begäranden. När webbprogrammet är igång är alla [!DNL Adobe Target] beslut verkställs med hjälp av artefakten i minnesregeln. Den cachelagrade regelartefakten uppdateras baserat på `pollingInterval` som du anger under SDK-initieringssteget.
+Det här arbetssättet är bäst när du kan initiera SDK:n för [!DNL Adobe Target] samtidigt som du initierar och startar webbservern. Regelartefakten hämtas av [!DNL Adobe Target] SDK och cachas i minnet innan webbserverprogrammet börjar bearbeta begäranden. När webbprogrammet är igång och körs kommer alla [!DNL Adobe Target]-beslut att köras med hjälp av minnesregelartefakten. Den cachelagrade regelartefakten uppdateras baserat på den `pollingInterval` som du angav under SDK-initieringssteget.
 
 ## Sammanfattning av steg
 
@@ -92,10 +92,10 @@ npm i @adobe/target-nodejs-sdk -P
    TargetClient targetClient = TargetClient.create(config);
    ```
 
-1. Både klient och organisationId kan hämtas från [!DNL Adobe Target] genom att navigera till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**, vilket visas här.
+1. Du kan hämta både klient- och OrganizationId från [!DNL Adobe Target] genom att gå till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**, vilket visas här.
 
    &lt;!— Insert image-client-code.png —>
-   ![Implementeringssida under Administration i Target](assets/asset-rule-artifact-3.png)
+   ![Implementeringssida under Administration i mål](assets/asset-rule-artifact-3.png)
 
 ## 3. Lagra och använda regelartefakt
 
@@ -146,9 +146,9 @@ TargetDeliveryResponse response = targetClient.getOffers(request);
 
 >[!NOTE]
 >
->I kodexemplet ovan är `TargetClient` -objektet innehåller en referens till artefakten i minnesregeln. När du använder det här objektet för att anropa SDK-standardmetoder används artefakten i minnet för att fatta beslut. Om ditt program är strukturerat så att du måste anropa SDK-metoderna i andra filer än den som initierar och lyssnar på klientförfrågningar, och om dessa filer inte har tillgång till TargetClient-objektet, kan du hämta JSON-nyttolasten och lagra den i en lokal JSON-fil som ska användas på andra filer som måste initiera SDK. Detta förklaras i nästa avsnitt om [hämta regelartefakt med en JSON-nyttolast](rule-artifact-json.md).
+>I kodexemplet ovan innehåller objektet `TargetClient` en referens till artefakten i minnesregeln. När du använder det här objektet för att anropa SDK-standardmetoder används artefakten i minnet för att fatta beslut. Om ditt program är strukturerat så att du måste anropa SDK-metoderna i andra filer än den som initierar och lyssnar på klientförfrågningar, och om dessa filer inte har tillgång till TargetClient-objektet, kan du hämta JSON-nyttolasten och lagra den i en lokal JSON-fil som ska användas på andra filer som måste initiera SDK. Detta förklaras i nästa avsnitt om att [hämta regelartefakten med JSON-nyttolast](rule-artifact-json.md).
 
-Här är ett exempel som startar ett webbprogram efter att du har initierat [!DNL Adobe Target] SDK.
+Här är ett exempel som startar ett webbprogram efter att SDK:n [!DNL Adobe Target] har initierats.
 
 >[!BEGINTABS]
 

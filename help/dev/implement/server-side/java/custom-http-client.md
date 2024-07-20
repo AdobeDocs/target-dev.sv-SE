@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # Anpassad Java (HTTP Client Configuration)
 
-Om programmet som kör SDK kräver en anpassad HTTP-klient, för att aktivera funktioner som att konfigurera SSL eller lägga till standardrubriker i begäranden, ska `TargetClient` måste konfigureras med `ClientConfig.builder().httpClient()`:
+Om programmet som kör SDK kräver en anpassad HTTP-klient måste `TargetClient` konfigureras med `ClientConfig.builder().httpClient()` för att funktioner som att konfigurera SSL eller lägga till standardhuvuden till begäranden ska kunna aktiveras:
 
 ## Grundläggande anpassad HTTP-klientkonfiguration
 
-SDK stöder för närvarande HTTP-klienter som implementerar `org.apache.http.client.HttpClient` gränssnitt.
+SDK stöder för närvarande HTTP-klienter som implementerar gränssnittet `org.apache.http.client.HttpClient`.
 
 ### Grundläggande implementering
 
@@ -32,7 +32,7 @@ TargetClient targetClient = TargetClient.create(clientConfig);
 
 ## Anpassad HTTP-klientkonfiguration med SSL-konfiguration
 
-Här är ett exempel på hur du konfigurerar SSL i `TargetClient` genom att anpassa `HttpClient` har skickats till `ClientConfig`. Följande kodfragment använder klasser från `org.apache.http.conn.ssl` paket för SSL-konfiguration.
+Här är ett exempel på hur du konfigurerar SSL i `TargetClient` genom att anpassa `HttpClient` som skickas till `ClientConfig`. Följande kodfragment använder klasser från paketet `org.apache.http.conn.ssl` för SSL-konfiguration.
 
 ### SSL-implementering
 

@@ -1,31 +1,31 @@
 ---
 keywords: flimmer, at.js, implementering, asynkront, asynkront, synkront, synkront, $8
-description: Läs mer om at.js och [!DNL Target] förhindra flimmer (standardinnehåll visas tillfälligt innan det ersätts av aktivitetsinnehåll) under sidinläsning eller appinläsning.
+description: Lär dig hur at.js och [!DNL Target] förhindrar flimmer (standardinnehåll visas tillfälligt innan det ersätts av aktivitetsinnehåll) under sidinläsning eller appinläsning.
 title: Hur hanterar At.js Flicker?
 feature: at.js
 exl-id: 8aacf254-ec3d-4831-89bb-db7f163b3869
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
 
 # Hur at.js hanterar flimmer
 
-Information om hur [!DNL Adobe Target] at.js JavaScript-biblioteket förhindrar flimmer vid inläsning av sidor eller appar.
+Information om hur JavaScript-biblioteket [!DNL Adobe Target] at.js förhindrar flimmer under sidinläsning eller appinläsning.
 
 Flimmer inträffar när standardinnehåll visas för besökare innan det ersätts av aktivitetsinnehållet. Flimmer är inte önskvärt eftersom det kan vara förvirrande för besökare.
 
 ## Använda en automatiskt skapad global mbox
 
-Om du aktiverar [Skapa global Mbox automatiskt](/help/dev/implement/client-side/atjs/global-mbox/customize-global-mbox.md) Vid konfigurering av at.js hanterar at.js flimmer genom att ändra opacitetsinställningen när sidan läses in. När at.js läses in ändras opacitetsinställningen för `<body>` -element till&quot;0&quot;, vilket gör sidan osynlig för besökare. Efter ett svar från [!DNL Target] tas emot - eller om ett fel med [!DNL Target] begäran har identifierats - at.js återställer opaciteten till &quot;1&quot;. Detta garanterar att besökaren bara ser sidan efter att innehållet i dina aktiviteter har tillämpats.
+Om du aktiverar inställningen [Skapa global Mbox automatiskt](/help/dev/implement/client-side/atjs/global-mbox/customize-global-mbox.md) när du konfigurerar at.js hanterar at.js flimmer genom att ändra opacitetsinställningen när sidan läses in. När at.js läses in ändras opacitetsinställningen för elementet `<body>` till &quot;0&quot;, vilket gör sidan osynlig för besökarna. När ett svar från [!DNL Target] har tagits emot, eller om ett fel med begäran [!DNL Target] upptäcks, återställer at opacitet till &quot;1&quot;. Detta garanterar att besökaren bara ser sidan efter att innehållet i dina aktiviteter har tillämpats.
 
-Om du aktiverar inställningen när du konfigurerar at.js anger at.js opaciteten för HTML BODY-formatet till 0. Efter ett svar från [!DNL Target] tas emot, at.js återställer HTML BODY-opacitet till 1.
+Om du aktiverar inställningen när du konfigurerar at.js anger at.js opaciteten för HTML BODY-formatet till 0. När ett svar från [!DNL Target] har tagits emot, återställer at.js opaciteten för HTML BODY till 1.
 
 Med Opacitet 0 döljs sidinnehållet för att förhindra flimmer, men webbläsaren återger sidan och läser in alla nödvändiga resurser som CSS, bilder osv.
 
-If `opacity: 0` fungerar inte i implementeringen, du kan också hantera flimmer genom att anpassa `bodyHiddenStyle` och ange `body {visibility:hidden !important}`. Du kan använda antingen `body {opacity:0 !important}` eller `body {visibility:hidden !important}`, det som fungerar bäst för just din situation.
+Om `opacity: 0` inte fungerar i din implementering kan du även hantera flimmer genom att anpassa `bodyHiddenStyle` och ange det som `body {visibility:hidden !important}`. Du kan använda antingen `body {opacity:0 !important}` eller `body {visibility:hidden !important}`, beroende på vilket som fungerar bäst för dina specifika omständigheter.
 
 Följande bild visar anropet Dölj brödtext och Visa brödtext i båda at.js 1.*x* och at.js 2.x.
 
@@ -33,15 +33,15 @@ Följande bild visar anropet Dölj brödtext och Visa brödtext i båda at.js 1.
 
 (Klicka på bilden för att expandera till full bredd.)
 
-![Målflöde: sidinläsningsbegäran at.js](/help/dev/implement/client-side/assets/atjs-20-flow-page-load-request.png "Målflöde: sidinläsningsbegäran at.js"){zoomable=&quot;yes&quot;}
+![Målflöde: at.js page load request](/help/dev/implement/client-side/assets/atjs-20-flow-page-load-request.png "Målflöde: at.js page load request"){zoomable="yes"}
 
 **at.js 1.*x***
 
 (Klicka på bilden för att expandera till full bredd.)
 
-![Målflöde: Automatiskt skapad global mbox](/help/dev/implement/client-side/atjs/how-atjs-works/assets/target-flow2.png "målflöde: Automatiskt skapad global mbox"){zoomable=&quot;yes&quot;}
+![Målflöde: Automatiskt skapad global mbox](/help/dev/implement/client-side/atjs/how-atjs-works/assets/target-flow2.png "målflöde: Automatiskt skapad global mbox"){zoomable="yes"}
 
-Mer information om `bodyHiddenStyle` åsidosätta, se [targetGlobalSettings()](/help/dev/implement/client-side/atjs/atjs-functions/targetglobalsettings.md).
+Mer information om åsidosättningen av `bodyHiddenStyle` finns i [targetGlobalSettings()](/help/dev/implement/client-side/atjs/atjs-functions/targetglobalsettings.md).
 
 ## Hantera flimmer vid inläsning av at.js asynkront
 
@@ -111,11 +111,11 @@ body {opacity: 0 !important}
 
 ## Hantera flimmer i at.js 2.x för triggerView()
 
-När du använder `triggerView()` Om du vill visa riktat innehåll i SPA får du hjälp direkt. Det innebär att fördold logik inte behöver läggas till manuellt. I stället döljer at.js 2.x platsen där din vy måste visas innan målinnehållet används.
+När du använder `triggerView()` för att visa målinnehåll i SPA anges hantering av flimmer direkt. Det innebär att fördold logik inte behöver läggas till manuellt. I stället döljer at.js 2.x platsen där din vy måste visas innan målinnehållet används.
 
 ## Hantera flimmer med getOffer() och applyOffer()
 
-Eftersom båda `getOffer()` och `applyOffer()` är lågnivå-API:er, det finns ingen inbyggd flimmerkontroll. Du kan skicka en väljare eller ett HTML-element som ett alternativ till `applyOffer()`, i detta fall `applyOffer()` lägger till aktivitetsinnehållet i det här specifika elementet, men du måste se till att elementet är fördolt innan du anropar det `getOffer()` och `applyOffer()`.
+Eftersom både `getOffer()` och `applyOffer()` är lågnivå-API:er finns det ingen inbyggd flimmerkontroll. Du kan skicka en väljare eller ett HTML-element som ett alternativ till `applyOffer()`. I det här fallet lägger `applyOffer()` till aktivitetsinnehållet i det här specifika elementet. Du måste dock se till att elementet är fördolt innan du anropar `getOffer()` och `applyOffer()`.
 
 ```
 document.documentElement.style.opacity = "0";
@@ -138,7 +138,7 @@ adobe.target.getOffer({
 
 ## Använda en regional mbox med mboxCreate() i at.js 1.x (stöds inte i at.js 2.x)
 
-Om du använder en regional mbox-implementering kan du använda `mboxCreate()` med din sida provisionerad på ungefär samma sätt som följande exempelkod:
+Om du använder en regional mbox-implementering kan du använda `mboxCreate()` med din sida som har etablerats på ungefär samma sätt som följande exempelkod:
 
 ```
 <div class="mboxDefault">

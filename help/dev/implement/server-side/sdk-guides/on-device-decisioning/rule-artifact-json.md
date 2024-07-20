@@ -5,14 +5,14 @@ feature: APIs/SDKs
 exl-id: 4ccfb455-f813-4bdb-a9c1-d576a110a9bb
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
 # Hämta, lagra och uppdatera regelartefakten via JSON-nyttolasten
 
-Detta är bäst om ditt program är strukturerat på ett sätt som kräver att SDK initieras för varje fil där SDK-metoder används. Innan ditt webbprogram kan använda JSON-nyttolasten för regelartefakten under SDK-initieringen bör du se till att JSON-nyttolasten hämtas och är tillgänglig så att ditt program kan användas.
+Detta är bäst om ditt program är strukturerat på ett sätt som kräver att SDK initieras för varje fil där SDK-metoder används. Innan ditt webbprogram kan använda JSON-nyttolasten för regelartefakten under SDK-initieringen bör du se till att JSON-nyttolasten laddas ned och är tillgänglig så att ditt program kan användas.
 
 ## Sammanfattning av steg
 
@@ -113,7 +113,7 @@ npm i @adobe/target-nodejs-sdk -P
    TargetClient targetClient = TargetClient.create(config);
    ```
 
-1. Både klient och `organizationId` kan hämtas från [!DNL Adobe Target]genom att navigera till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**, vilket visas här.
+1. Både klienten och `organizationId` kan hämtas från [!DNL Adobe Target] genom att navigera till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**, vilket visas här.
 
    &lt;!— Insert image-client-code.png —>
    ![alt-bild](assets/asset-rule-artifact-3.png)
@@ -162,7 +162,7 @@ TargetDeliveryResponse response = targetClient.getOffers(request);
 
 >[!NOTE]
 >
->Genom att starta [!DNL Adobe Target]SDK via JSON-nyttolasten är servern redo att omedelbart hantera begäranden med beslutsaktiviteter på enheten, eftersom [!DNL Adobe Target]SDK behöver inte vänta på att regelfelaktigheten ska hämtas.
+>Genom att initiera [!DNL Adobe Target]SDK via JSON-nyttolasten kan servern hantera begäranden direkt med enhetsspecifika beslutsaktiviteter eftersom [!DNL Adobe Target]SDK inte behöver vänta på att regelartefakten ska hämtas.
 
 Här är ett exempel som visar JSON-funktionen för nyttolastinitiering.
 

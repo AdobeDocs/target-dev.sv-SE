@@ -4,33 +4,34 @@ description: Förstå hur implementeringsmönstret för Recommendations används
 feature: APIs/SDKs
 level: Experienced
 role: Developer
-source-git-commit: 723bb2f33a011995757009193ee9c48757ae1213
+exl-id: d568cd1d-acc3-42e0-ae2c-5787e6f361f8
+source-git-commit: 50ee7e66e30c0f8367763a63b6fde5977d30cfe7
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 0%
 
 ---
 
-# [!DNL Recommendations] implementeringsmönster med hjälp av översikten at.js
+# [!DNL Recommendations] implementeringsmönster med översikten at.js
 
-Detta implementeringsmönster hjälper dig att förstå och skapa [!DNL Adobe Target Recommendations] implementering när du använder [at.js JavaScript-bibliotek](/help/dev/implement/client-side/atjs/how-atjs-works/overview.md).
+Det här implementeringsmönstret hjälper dig att förstå och skapa din [!DNL Adobe Target Recommendations]-implementering när du använder JavaScript-biblioteket [ at.js](/help/dev/implement/client-side/atjs/how-atjs-works/overview.md).
 
 Klicka på bilden för att expandera till helskärm.
 
-![Adobe Target - arkitektur](/help/dev/patterns/assets/architecture-chart.png){width="600" zoomable="yes"}
+![Adobe Target-arkitekturdiagram](/help/dev/patterns/assets/architecture-chart.png){width="600" zoomable="yes"}
 
 Observera att siffrorna i bilden inte anger sekvensen av åtgärder:
 
 1. SDK för klientsidan för [!DNL Adobe Target] och [!DNL Experience Cloud ID Service]
-1. [!DNL Target Delivery API] ring
-1. [!UICONTROL Experience Cloud ID] (ECID) kundvärvningssamtal
-1. API för gruppprofilsuppdatering och [!DNL Customer Attributes] (CA)-tjänst
-1. Intag av profildata från kundens datakällor till [!DNL Target] profilarkiv
+1. [!DNL Target Delivery API] samtal
+1. [!UICONTROL Experience Cloud ID] (ECID) förvärvssamtal
+1. API för gruppprofiluppdatering och tjänsten [!DNL Customer Attributes] (CA)
+1. Inmatning av profildata från kundens datakällor till profilarkivet [!DNL Target]
 1. Samla in profil- och beteendedata och bestämma vilken upplevelse som ska visas för besökaren
 1. Erfarenheter återges på sidan
 1. at.js återger upplevelserna på sidan
 
-Varje mönster består av olika delar, där varje del motsvarar ett kritiskt implementeringskrav för din [!DNL Target] implementering.
+Varje mönster består av olika delar, där varje del motsvarar ett kritiskt implementeringskrav för din [!DNL Target]-implementering.
 
 Varje del förklaras i en separat artikel i den här handboken:
 
@@ -38,4 +39,3 @@ Varje del förklaras i en separat artikel i den här handboken:
 * [Konfigurera datainsamling](/help/dev/patterns/recs-atjs/data-collection.md)
 * [Återge upplevelser](/help/dev/patterns/recs-atjs/render-experiences.md)
 * [Meddela mål](/help/dev/patterns/recs-atjs/notify-target.md)
-

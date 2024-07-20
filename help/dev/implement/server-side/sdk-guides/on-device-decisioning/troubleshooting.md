@@ -1,6 +1,6 @@
 ---
 title: Felsöka enhetsbeslut
-description: Lär dig hur du felsöker [!UICONTROL on-device decisioning]
+description: Lär dig felsöka [!UICONTROL on-device decisioning]
 exl-id: e76f95ce-afae-48e0-9dbb-2097133574dc
 feature: APIs/SDKs
 source-git-commit: 1d892d4d4d6f370f7772d0308ee0dd0d5c12e700
@@ -10,16 +10,16 @@ ht-degree: 0%
 
 ---
 
-# Felsökning [!UICONTROL on-device decisioning]
+# Felsökning av [!UICONTROL on-device decisioning]
 
 ## Verifierar konfiguration
 
 ### Sammanfattning av steg
 
-1. Kontrollera `logger` är konfigurerad
-1. Säkerställ [!DNL Target] spår är aktiverade
-1. Verifiera [!UICONTROL on-device decisioning] *regelartefakt* har hämtats och cachelagrats enligt det definierade avsökningsintervallet.
-1. Validera innehållsleverans via den cachelagrade regelartefakten genom att skapa ett test [!UICONTROL on-device decisioning] via den formulärbaserade upplevelsedispositionen.
+1. Kontrollera att `logger` är konfigurerad
+1. Kontrollera att [!DNL Target] spår är aktiverade
+1. Kontrollera att [!UICONTROL on-device decisioning] *rule-felaktigheten* har hämtats och cachelagrats enligt det definierade avsökningsintervallet.
+1. Validera innehållsleverans via den cachelagrade regelartefakten genom att skapa en [!UICONTROL on-device decisioning]-testaktivitet via den formulärbaserade upplevelsedispositionen.
 1. Meddelandefel för Inspect
 
 ## 1. Kontrollera att loggaren är konfigurerad
@@ -28,7 +28,7 @@ När du initierar SDK måste du aktivera loggning.
 
 **Node.js**
 
-För Node.js SDK a `logger` ska anges.
+Ett `logger`-objekt måste anges för Node.js SDK.
 
 ```js {line-numbers="true"}
 const CONFIG = {
@@ -40,7 +40,7 @@ const CONFIG = {
 
 **Java SDK**
 
-För Java SDK `logRequests` på `ClientConfig` ska vara aktiverat.
+Java SDK `logRequests` på `ClientConfig` ska aktiveras.
 
 ```js {line-numbers="true"}
 ClientConfig config = ClientConfig.builder()
@@ -56,19 +56,19 @@ Dessutom bör JVM startas med följande kommandoradsparameter:
 java -Dorg.slf4j.simpleLogger.defaultLogLevel=DEBUG ...
 ```
 
-## 2. Säkerställ[!DNL Target]Spår är aktiverade
+## 2. Kontrollera att [!DNL Target]Spår är aktiverat
 
-Om spårning aktiveras kommer ytterligare information att hämtas från [!DNL Adobe Target] när det gäller regelfelaktigheten.
+Om du aktiverar spårningar genereras ytterligare information från [!DNL Adobe Target] med avseende på regelartefakten.
 
-1. Navigera till[!DNL Target]Användargränssnitt i [!DNL Experience Cloud].
+1. Navigera till [!DNL Target]användargränssnittet i [!DNL Experience Cloud].
 
    ![alt-bild](assets/asset-target-ui-1.png)
 
-1. Navigera till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** och klicka **[!UICONTROL Generate New Authorization Token]**.
+1. Navigera till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** och klicka på **[!UICONTROL Generate New Authorization Token]**.
 
    ![alt-bild](assets/asset-target-ui-2.png)
 
-1. Kopiera den nyligen genererade auktoriseringstoken till Urklipp och lägg till den i[!DNL Target]begäran:
+1. Kopiera den nyligen genererade auktoriseringstoken till Urklipp och lägg till den i din [!DNL Target]begäran:
 
    **Node.js**
 
@@ -113,11 +113,11 @@ Om spårning aktiveras kommer ytterligare information att hämtas från [!DNL Ad
      AT: LD.ArtifactProvider artifact received - status=200
    ```
 
-## 3. Verifiera [!UICONTROL on-device decisioning] *regelartefakt* har hämtats och cachelagrats enligt det definierade avsökningsintervallet.
+## 3. Verifiera att [!UICONTROL on-device decisioning] *regelartefakt* har hämtats och cachelagrats enligt det definierade avsökningsintervallet.
 
 1. Vänta på avsökningsintervallets varaktighet (standardvärdet är 20 minuter) och kontrollera att artefakten hämtas av SDK:n. Samma terminalloggar genereras.
 
-   Dessutom finns information från[!DNL Target]Spårningen ska skickas till terminalen med information om regelartefakten.
+   Dessutom bör information från [!DNL Target]spårningen matas ut till terminalen med information om regelartefakten.
 
    ```text {line-numbers="true"}
    "trace": {
@@ -135,9 +135,9 @@ Om spårning aktiveras kommer ytterligare information att hämtas från [!DNL Ad
      },
    ```
 
-## 4. Validera innehållsleverans via den cachelagrade regelartefakten genom att skapa ett test [!UICONTROL on-device decisioning] via den formulärbaserade upplevelsedispositionen
+## 4. Validera innehållsleverans via den cachelagrade regelartefakten genom att skapa en [!UICONTROL on-device decisioning]-testaktivitet via den formulärbaserade upplevelsedispositionen
 
-1. Navigera till[!DNL Target]Gränssnitt i Experience Cloud
+1. Navigera till användargränssnittet [!DNL Target]i Experience Cloud
 
    ![alt-bild](assets/asset-target-ui-1.png)
 
@@ -145,15 +145,15 @@ Om spårning aktiveras kommer ytterligare information att hämtas från [!DNL Ad
 
    ![alt-bild](assets/asset-form-base-composer-ui.png)
 
-1. Ange namnet på mbox som används i[!DNL Target]request as the location for the XT activity (note this should be a unique mbox name specific for development purposes).
+1. Ange mbox-namnet som används i din[!DNL Target]begäran som plats för XT-aktiviteten (observera att det ska vara ett unikt mbox-namn specifikt för utvecklingsändamål).
 
    ![alt-bild](assets/asset-mbox-location-ui.png)
 
-1. Ändra innehållet till ett HTML-erbjudande eller JSON-erbjudande. Detta returneras i dialogrutan[!DNL Target]förfrågan till ditt program. Lämna aktiviteten som&quot;Alla besökare&quot; som mål och välj önskat mätvärde. Ge aktiviteten ett namn, spara den och aktivera den sedan för att säkerställa att mbox/location som används bara är till för utveckling.
+1. Ändra innehållet till ett HTML-erbjudande eller JSON-erbjudande. Detta returneras i [!DNL Target]-begäran till ditt program. Lämna aktiviteten som&quot;Alla besökare&quot; som mål och välj önskat mätvärde. Ge aktiviteten ett namn, spara den och aktivera den sedan för att säkerställa att mbox/location som används bara är till för utveckling.
 
    ![alt-bild](assets/asset-target-content-ui.png)
 
-1. Lägg till en loggsats för det innehåll som tas emot i svaret från ditt program[!DNL Target]förfrågan
+1. Lägg till loggsatser för innehållet som tagits emot i ditt [!DNL Target]svar i ditt program
 
    **Node.js SDK**
 
@@ -191,9 +191,9 @@ Om spårning aktiveras kommer ytterligare information att hämtas från [!DNL Ad
    }
    ```
 
-1. Granska loggarna i terminalen för att bekräfta att ditt innehåll levereras och att det levererades via regelartefakten på servern. The `LD.DeciscionProvider` objektet returneras när aktivitetskvalifikationen och aktivitetsbestämningen bestämdes på enheten baserat på regelartefakten. På grund av loggningen av `content`bör du se `<div>test</div>` Du har dock bestämt att svaret ska vara när du skapar testaktiviteten.
+1. Granska loggarna i terminalen för att bekräfta att ditt innehåll levereras och att det levererades via regelartefakten på servern. Objektet `LD.DeciscionProvider` returneras när aktivitetskvalifikationen och aktivitetsbeslutet fastställdes på enheten baserat på regelartefakten. På grund av loggningen av `content` bör du se `<div>test</div>` eller så har du bestämt att svaret ska vara när du skapar testaktiviteten.
 
-   **Loggutdata**
+   **Loggningsutdata**
 
    ```text {line-numbers="true"}
    AT: LD.DecisionProvider {...}
@@ -203,7 +203,7 @@ Om spårning aktiveras kommer ytterligare information att hämtas från [!DNL Ad
 
 ## Meddelandefel för Inspect
 
-När du använder On-device-beslut skickas meddelanden automatiskt för getOffers-körningsbegäranden. Dessa förfrågningar skickas tyst i bakgrunden. Alla fel kan kontrolleras genom att prenumerera på en händelse som kallas `sendNotificationError`. Här följer ett kodexempel som visar hur du prenumererar på meddelandefel med hjälp av Node.js SDK.
+När du använder On-device-beslut skickas meddelanden automatiskt för getOffers-körningsbegäranden. Dessa förfrågningar skickas tyst i bakgrunden. Eventuella fel kan kontrolleras genom att prenumerera på en händelse med namnet `sendNotificationError`. Här följer ett kodexempel som visar hur du prenumererar på meddelandefel med hjälp av Node.js SDK.
 
 ```js {line-numbers="true"}
 const TargetClient = require("@adobe/target-nodejs-sdk");
@@ -239,15 +239,15 @@ client = TargetClient.create({
 
 ## Vanliga felsökningsscenarier
 
-Se till att granska [funktioner](supported-features.md) for [!UICONTROL on-device decisioning] när du stöter på problem.
+Granska [funktioner som stöds](supported-features.md) för [!UICONTROL on-device decisioning] när du stöter på problem.
 
 ### Beslutsaktiviteter på enheten körs inte på grund av målgrupp eller aktivitet som inte stöds
 
-Ett vanligt problem som kan inträffa är [!UICONTROL on-device decisioning] aktiviteter körs inte på grund av att målgruppen används eller att aktivitetstypen inte stöds.
+Ett vanligt problem som kan uppstå är att [!UICONTROL on-device decisioning] aktiviteter inte körs på grund av att målgruppen används eller att aktivitetstypen inte stöds.
 
 (1) Använd loggningsutdata för att granska posterna i egenskapen trace i ditt svarsobjekt. Identifiera kampanjegenskapen:
 
-**Spåra utdata**
+**Kalkera utdata**
 
 ```text {line-numbers="true"}
   "execute": {
@@ -264,11 +264,11 @@ Ett vanligt problem som kan inträffa är [!UICONTROL on-device decisioning] akt
     }
 ```
 
-Du kommer att märka att den aktivitet du försöker kvalificera dig för inte finns i `campaigns` eftersom målgrupps- eller aktivitetstypen inte stöds. Om aktiviteten listas under `campaigns` -egenskapen beror ditt problem inte på en målgrupp eller aktivitetstyp som inte stöds.
+Du kommer att märka att aktiviteten som du försöker kvalificera dig för inte finns i egenskapen `campaigns` eftersom målgrupps- eller aktivitetstypen inte stöds. Om aktiviteten listas under egenskapen `campaigns` beror ditt problem inte på en målgrupp eller aktivitetstyp som inte stöds.
 
-(2) Leta reda på `rules.json` genom att titta på `trace` > `artifact` > `artifactLocation` i loggutdata och observera att din aktivitet saknas i `rules` > `mboxes` egenskap:
+(2) Leta reda på filen `rules.json` genom att titta på `trace` > `artifact` > `artifactLocation` i loggutdata och observera att din aktivitet saknas i egenskapen `rules` > `mboxes`:
 
-**Loggutdata**
+**Loggningsutdata**
 
 ```text {line-numbers="true"}
  ...
@@ -278,7 +278,7 @@ Du kommer att märka att den aktivitet du försöker kvalificera dig för inte f
  }
 ```
 
-Till sist navigerar du till[!DNL Target]Användargränssnitt och lokalisering av aktiviteten i fråga: [experience.adobe.com/target](https://experience.adobe.com/target)
+Till sist går du till [!DNL Target]användargränssnittet och letar upp aktiviteten i fråga: [experience.adobe.com/target](https://experience.adobe.com/target)
 
 Granska reglerna som används i publiken och se till att du bara använder de som stöds. Kontrollera dessutom att aktivitetstypen är A/B eller XT.
 
@@ -342,9 +342,9 @@ TargetDeliveryResponse response = targetClient.getOffers(request);
 
 >[!ENDTABS]
 
-(2) Se till att du är kvalificerad för målgruppen genom att läsa `matchedRuleConditions` eller `unmatchedRuleConditions` egenskapen för dina trace-utdata:
+(2) Se till att du är kvalificerad för målgruppen för din aktivitet genom att granska egenskapen `matchedRuleConditions` eller `unmatchedRuleConditions` för dina trace-utdata:
 
-**Spåra utdata**
+**Kalkera utdata**
 
 ```text {line-numbers="true"}
 ...
@@ -377,7 +377,7 @@ Det kanske inte är uppenbart varför en beslutsaktivitet på enheten inte utfö
 
 (1) Läs igenom loggspårningsutdata i konsolen och identifiera artefaktegenskapen som ser ut ungefär som följande:
 
-**Spåra utdata**
+**Kalkera utdata**
 
 ```text {line-numbers="true"}
 ...
@@ -394,11 +394,11 @@ Det kanske inte är uppenbart varför en beslutsaktivitet på enheten inte utfö
 ...
 ```
 
-Titta på `artifactLastRetrieved` datum för artefakten och se till att du har den senaste `rules.json` fil som laddats ned till din app.
+Titta på artefaktens `artifactLastRetrieved`-datum och se till att du har den senaste `rules.json`-filen hämtad till din app.
 
-(2) Hitta `evaluatedCampaignTargets` i loggutdata:
+(2) Hitta egenskapen `evaluatedCampaignTargets` i loggutdata:
 
-**Loggutdata**
+**Loggningsutdata**
 
 ```text {line-numbers="true"}
 ...
@@ -470,24 +470,24 @@ Titta på `artifactLastRetrieved` datum för artefakten och se till att du har d
 ...
 ```
 
-(3) Granska `context`, `page`och `referring` data för att säkerställa att de är så förväntade som detta kan påverka aktivitetens målinriktningskvalifikation.
+(3) Granska `context`-, `page`- och `referring`-data för att säkerställa att de är så förväntade som detta kan påverka aktivitetens målinriktningskvalifikation.
 
-(4) Granska `campaignId` för att säkerställa att aktiviteten eller aktiviteterna som du väntar dig att utföra utvärderas. The `campaignId` matchar aktivitets-ID på aktivitetsöversiktsfliken i[!DNL Target]Gränssnitt:
+(4) Granska `campaignId` för att kontrollera att aktiviteten eller aktiviteterna som du väntar dig att köra utvärderas. `campaignId` matchar aktivitets-ID på aktivitetsöversiktsfliken i [!DNL Target]gränssnittet:
 
 ![alt-bild](assets/asset-activity-id-target-ui.png)
 
-(5) Granska `matchedRuleConditions` och `unmatchedRuleConditions` identifiera problem med kvalificering för målgruppsregler för en viss aktivitet.
+(5) Granska `matchedRuleConditions` och `unmatchedRuleConditions` för att identifiera problem med kvalificering för målgruppsregler för en viss aktivitet.
 
-(6) Granska den senaste `rules.json` för att säkerställa att aktiviteten eller aktiviteterna som du vill köra lokalt inkluderas. Platsen anges ovan i steg 1.
+(6) Granska den senaste `rules.json`-filen för att kontrollera att aktiviteten eller aktiviteterna som du vill köra lokalt ingår. Platsen anges ovan i steg 1.
 
 (7) Se till att du använder samma mbox-namn i din begäran och dina aktiviteter.
 
 (8) Se till att du använder målgruppsregler och aktivitetstyper som stöds.
 
-### Ett serveranrop görs trots att aktivitetsinställningarna under en mbox säger &quot;Enhetsbeslut är berättigade&quot; i[!DNL Target]användargränssnitt
+### Ett serveranrop görs trots att aktivitetsinställningarna under en mbox säger &quot;Enhetsbeslut är valbart&quot; i användargränssnittet i [!DNL Target]
 
 Det finns några skäl till att ett serveranrop görs trots att enheten är berättigad till enhetsbeslut:
 
-* När mbox som används för aktiviteten&quot;Enhetsbeslut är berättigade&quot; även används för andra aktiviteter som inte är&quot;Enhetsval är berättigade&quot; visas mbox under `remoteMboxes` i `rules.json` artefakt. När en mbox visas under `remoteMboxes`, alla `getOffer(s)` anrop till mbox resulterar i ett serveranrop.
+* När mbox som används för en aktivitet av typen &quot;Enhetsbeslut är berättigade&quot; också används för andra aktiviteter som inte är &quot;Enhetsbeslut är berättigade&quot; visas mbox under avsnittet `remoteMboxes` i artefakten `rules.json`. När en mbox visas under `remoteMboxes` resulterar alla `getOffer(s)` anrop till den mbox i ett serveranrop.
 
-* Om du ställer in en aktivitet under en arbetsyta/egenskap och inte inkluderar samma aktivitet när du konfigurerar SDK kan detta orsaka `rules.josn` av standardarbetsytan som ska hämtas, som kan använda mbox under `remoteMboxes` -avsnitt.
+* Om du ställer in en aktivitet under en arbetsyta/egenskap och inte inkluderar samma aktivitet när du konfigurerar SDK, kan det göra att `rules.josn` av standardarbetsytan hämtas, som kan använda mbox under avsnittet `remoteMboxes`.

@@ -1,12 +1,12 @@
 ---
 keywords: adobe.target.getOffers, getOffers, getoffers, get offers, at.js, functions, function, $8
-description: Använd [!UICONTROL adobe.target.getOffers()] och dess alternativ för [!DNL Adobe Target] at.js-bibliotek som ska utlösa förfrågningar om att få flera [!DNL Target] erbjudanden. (at.js 2.x)
-title: Hur jag använder [!UICONTROL adobe.target.getOffers()] Funktion?
+description: Använd funktionen [!UICONTROL adobe.target.getOffers()] och dess alternativ för biblioteket  [!DNL Adobe Target]  at.js för att utlösa förfrågningar om att få flera  [!DNL Target] erbjudanden. (at.js 2.x)
+title: Hur använder jag funktionen [!UICONTROL adobe.target.getOffers()]?
 feature: at.js
 exl-id: b96a3018-93eb-49e7-9aed-b27bd9ae073a
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '1289'
+source-wordcount: '1317'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Med den här funktionen kan du hämta flera erbjudanden genom att skicka in fler
 
 | Nyckel | Typ | Obligatoriskt? | Beskrivning |
 | --- | --- | --- | --- |
-| `consumerId` | Sträng | Nej | Standardvärdet är klientens globala mbox om den inte anges. Den här nyckeln används för att generera det extra data-ID (SDID) som används för A4T-integrering.<P>När du använder `getOffers()`genererar varje anrop ett nytt SDID. Om du har flera mbox-begäranden på samma sida och vill bevara SDID (så att det matchar SDID:t från målglobal-mbox och [!DNL Adobe Analytics] SDID) använder du `consumerId` parameter.<P>If `getOffers()` innehåller tre rutor (mbox1, mbox2 och mbox3): `consumerId: "mbox1, mbox2, mbox3"` i `getOffers()` ring. |
+| `consumerId` | Sträng | Nej | Standardvärdet är klientens globala mbox om den inte anges. Den här nyckeln används för att generera det extra data-ID (SDID) som används för A4T-integrering.<P>När du använder `getOffers()` genererar varje anrop ett nytt SDID. Om du har flera mbox-begäranden på samma sida och vill bevara SDID (så att det matchar SDID:t från mål-global-mbox och [!DNL Adobe Analytics] SDID) använder du parametern `consumerId`.<P>Om `getOffers()` innehåller tre mrutor (med namnen&quot;mbox1&quot;,&quot;mbox2&quot; och&quot;mbox3&quot;) inkluderar du: `consumerId: "mbox1, mbox2, mbox3"` i anropet till `getOffers()`. |
 | `decisioningMethod` | Sträng | Nej | &quot;server-side&quot;, &quot;on device&quot;, &quot;hybrid&quot; |
 | `request` | Objekt | Ja | Se tabellen över förfrågningar nedan. |
 | `timeout` | Nummer | Nej | Timeout för begäran. Om inget anges används standardtimeout för at.js. |
@@ -30,15 +30,15 @@ Med den här funktionen kan du hämta flera erbjudanden genom att skicka in fler
 
 >[!NOTE]
 >
->Läs [Dokumentation för leverans-API](/help/dev/implement/delivery-api/overview.md) för information om godkända typer för alla fält som listas nedan.
+>Läs [dokumentationen för leverans-API](/help/dev/implement/delivery-api/overview.md) om du vill ha information om vilka typer som kan användas för alla fält som listas nedan.
 
 | Fältnamn | Obligatoriskt? | Begränsningar | Beskrivning |
 | --- | --- | --- | --- |
-| request > id | Nej |  | En av `tntId`, `thirdPartyId`, eller `marketingCloudVisitorId` är obligatoriskt. |
+| request > id | Nej |  | Ett av `tntId`, `thirdPartyId` eller `marketingCloudVisitorId` krävs. |
 | Begäran > id > thirdPartyId | Nej | Maximal storlek = 128. |  |  |
 | Request > experienceCloud | Nej |  |  |
 | Request > experienceCloud > analytics | Nej |  | Integrering med Adobe Analytics |
-| Request > experienceCloud > analytics > log | Nej | Följande måste implementeras på sidan:<ul><li>Tjänst för besökar-ID</li><li>Appmeasurement.js</li></ul> | Följande värden stöds:<P>**client_side**: När det anges returneras en analyslast till anroparen som ska användas för att skicka till [!UICONTROL Adobe Analytics] via [!UICONTROL Data Insertion API].<P>**server_side**: Detta är standardvärdet där [!DNL Target] och [!DNL Analytics] backend använder SDID för att sammanfoga samanrop i rapporteringssyfte. |
+| Request > experienceCloud > analytics > log | Nej | Följande måste implementeras på sidan:<ul><li>Tjänst för besökar-ID</li><li>Appmeasurement.js</li></ul> | Följande värden stöds:<P>**client_side**: När det anges returneras en analysnyttolast till anroparen som ska användas för att skicka till [!UICONTROL Adobe Analytics] via [!UICONTROL Data Insertion API].<P>**server_side**: Det här är standardvärdet där [!DNL Target] och [!DNL Analytics] backend använder SDID för att knyta ihop anropen i rapporteringssyfte. |
 | Begäran > förhämtning | Nej |  |  |
 | Request > prefetch > views | Nej | Högsta antal 50.<P>Namnet är inte tomt.<P>Namnlängd `<=` 128.<P>Värdelängd `<=` 5000.<P>Namnet får inte börja med &quot;profile&quot;.<P>Otillåtna namn: &quot;orderId&quot;, &quot;orderTotal&quot;, &quot;productPurchasedId&quot;. | Ange parametrar som ska användas för att hämta relevanta vyer i aktiva aktiviteter. |
 | Request > prefetch > views > profileParameters | Nej | Maximantal 50.<P>Namnet är inte tomt.<P>Namnlängd `<=` 128.<P>Värdelängd `<=` 5000.<P>Accepterar endast strängvärden.<P>Namnet får inte börja med &quot;profile&quot;. | Ange profilparametrar som ska användas för att hämta relevanta vyer i aktiva aktiviteter. |
@@ -61,7 +61,7 @@ Med den här funktionen kan du hämta flera erbjudanden genom att skicka in fler
 | Request > execute > pageLoad > order > total | Nej | `>=` 0. | Hämta erbjudanden med angivna ordersummor när sidan läses in. |
 | Request > execute > pageLoad > order > purchaseProductIds | Nej | Inga tomma värden.<P>Varje värde har maxlängden 50.<P>Sammanfogad och avgränsad med komma.<P>Total längd för produkt-ID `<=` 250. | Hämta erbjudanden med angivna produkt-ID:n när sidan läses in. |
 | Request > execute > mboxes | Nej | Maximal storlek = 50.<P>Inga null-element. |  |
-| Request > execute > mboxes>mbox | Ja | Inte tom.<P>Inget &#39;-klickat&#39;-suffix.<P>Maximal storlek = 250.<P>Tecken: `'-, ._\/=:;&!@#$%^&*()_+|?~[]{}'` | Namn på mbox. |
+| Request > execute > mboxes>mbox | Ja | Inte tom.<P>Inget &#39;-klickat&#39;-suffix.<P>Maximal storlek = 250.<P>Tillåtna tecken: `'-, ._\/=:;&!@#$%^&*()_+|?~[]{}'` | Namn på mbox. |
 | Begäran > Kör > mbox>mbox>index | Ja | Inte null.<P>Unik.<P>`>=` 0. | Observera att indexet inte representerar den ordning i vilken rutorna bearbetas. På samma sätt som på en webbsida med flera regionala kryssrutor kan ordningen som de ska bearbetas i inte anges. |
 | Request > execute > mboxes > mbox > parameters | Nej | Högsta antal = 50.<P>Namnet är inte tomt.<P>Namnlängd `<=` 128.<P>Accepterar endast strängvärden.<P>Värdelängd `<=` 5000.<P>Namnet får inte börja med &quot;profile&quot;.<P>Otillåtna namn: &quot;orderId&quot;, &quot;orderTotal&quot;, &quot;productPurchasedId&quot;. | Hämta erbjudanden för en given mbox med de angivna parametrarna. |
 | Request > execute > mboxes>mbox>profileParameters | Nej | Högsta antal = 50.<P>Namnet är inte tomt.<P>Namnlängd `<=` 128.<P>Accepterar endast strängvärden.<P>Värdelängd `<=`256.<P>Namnet får inte börja med &quot;profile&quot;. | Hämta erbjudanden för en given mbox med de angivna profilparametrarna. |
@@ -71,9 +71,9 @@ Med den här funktionen kan du hämta flera erbjudanden genom att skicka in fler
 | Request > execute > mboxes > mbox > order | Nej |  |  |
 | Request > execute > mbox>mbox > order > id | Nej | Maximal längd = 250. | Hämta erbjudanden för en angiven mbox med de angivna order-ID:n. |
 | Request > execute > mboxes > mbox > order > total | Nej | `>=` 0. | Hämta erbjudanden för en angiven mbox med de angivna ordersummorna. |
-| Request > execute > mboxes > mbox > order > purchaseProductIds | Nej | Inga tomma värden.<P>Varje värdes maximala längd = 50.<P>Sammanfogad och avgränsad med komma.<P>Total längd för produkt-id `<=` 250. | Hämta erbjudanden för en angiven mbox med angivet produkt-ID för beställning. |
+| Request > execute > mboxes > mbox > order > purchaseProductIds | Nej | Inga tomma värden.<P>Varje värdes maximala längd = 50.<P>Sammanfogad och avgränsad med komma.<P>Produkt-ID:ts totala längd `<=` 250. | Hämta erbjudanden för en angiven mbox med angivet produkt-ID för beställning. |
 
-## Utlysning [!UICONTROL getOffers()] för alla vyer
+## Ring [!UICONTROL getOffers()] för alla vyer
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffers({
@@ -85,7 +85,7 @@ adobe.target.getOffers({
 });
 ```
 
-## Utlysning [!UICONTROL getOffers()] att fatta ett beslut på enheten
+## Anropa [!UICONTROL getOffers()] för att fatta ett beslut på enheten
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffers({ 
@@ -104,7 +104,7 @@ adobe.target.getOffers({
 }); 
 ```
 
-## Utlysning [!UICONTROL getOffers()] för att hämta de senaste vyerna med skickade parametrar och profilparametrar
+## Ring [!UICONTROL getOffers()] för att hämta de senaste vyerna med skickade parametrar och profilparametrar
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffers({
@@ -125,7 +125,7 @@ adobe.target.getOffers({
 });
 ```
 
-## Utlysning [!UICONTROL getOffers()] för att hämta rutor med parametrar och profilparametrar skickade.
+## Anropa [!UICONTROL getOffers()] för att hämta mbox med parametrar och profilparametrar skickade.
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffers({
@@ -152,7 +152,7 @@ adobe.target.getOffers({
 });
 ```
 
-## Utlysning [!UICONTROL getOffers()] för att hämta analysens nyttolast från klientsidan
+## Anropa [!UICONTROL getOffers()] för att hämta analysnyttolasten från klientsidan
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffers({
@@ -204,11 +204,11 @@ adobe.target.getOffers({
 }
 ```
 
-Nyttolasten kan sedan vidarebefordras till [!DNL Adobe Analytics] via [API för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md).
+Nyttolasten kan sedan vidarebefordras till [!DNL Adobe Analytics] via [API:t för datainfogning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md).
 
 ## Hämta och återge data från flera rutor via [!UICONTROL getOffers()] och [!UICONTROL applyOffers()]
 
-Med at.js 2.x kan du hämta flera mbox via `[!UICONTROL getOffers()]` API. Du kan även hämta data för flera mbox-rutor och sedan använda `[!UICONTROL applyOffers()]` för att återge data på olika platser som identifieras av en CSS-väljare.
+Med at.js 2.x kan du hämta flera mbox via API:t `[!UICONTROL getOffers()]`. Du kan också hämta data för flera kryssrutor och sedan använda `[!UICONTROL applyOffers()]` för att återge data på olika platser som identifieras av en CSS-väljare.
 
 I följande exempel visas en enkel HTML-sida med at.js 2.x implementerad:
 
@@ -275,7 +275,7 @@ adobe.target.getOffers({
 });
 ```
 
-I `request > prefetch > mboxes` finns det tre olika kartonger. Om begäran slutfördes utan fel får du svaret för varje ruta från `response > prefetch > mboxes`. När du har fått svaren och de platser du vill använda för återgivningen kan du anropa `applyOffers()` för att återge innehåll som hämtats från [!DNL Target]. I det här exemplet har vi följande mappning:
+I avsnittet `request > prefetch > mboxes` finns det tre olika rutor. Om begäran slutfördes utan fel får du svaret för varje mbox från `response > prefetch > mboxes`. När du har fått svar och de platser du vill använda för återgivning kan du anropa `applyOffers()` för att återge det innehåll som hämtats från [!DNL Target]. I det här exemplet har vi följande mappning:
 
 * mbox1 > CSS-väljare #container1
 * mbox2 > CSS-väljare #container2
@@ -283,9 +283,9 @@ I `request > prefetch > mboxes` finns det tre olika kartonger. Om begäran slutf
 
 I det här exemplet används variabeln count för att skapa CSS-väljarna. I ett verkligt scenario kan du använda en annan mappning mellan CSS-väljaren och mbox.
 
-Observera att det här exemplet använder `prefetch > mboxes`, men du kan också använda `execute > mboxes`. Om du använder förhämtning i `getOffers()`ska du också använda förhämtning i `applyOffers()` anrop.
+Observera att `prefetch > mboxes` används i det här exemplet, men du kan också använda `execute > mboxes`. Om du använder förhämtning i `getOffers()` bör du också använda förhämtning i `applyOffers()`-anropet.
 
-## Utlysning [!UICONTROL getOffers()] för att utföra en pageLoad
+## Anropa [!UICONTROL getOffers()] för att utföra pageLoad
 
 I följande exempel visas hur du utför en pageLoad med [!UICONTROL getOffers()] med at.js 2.*x*
 

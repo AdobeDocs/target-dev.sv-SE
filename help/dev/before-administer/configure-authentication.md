@@ -1,18 +1,18 @@
 ---
-title: Konfigurera autentisering för [!DNL Adobe Target] API:er
-description: Hur skapar jag autentiseringstoken som behövs för att kunna interagera med [!DNL Adobe Target] API?
+title: Konfigurera autentisering för  [!DNL Adobe Target] API:er
+description: Hur genererar jag autentiseringstoken som behövs för att kunna interagera med  [!DNL Adobe Target] API:er?
 feature: APIs/SDKs, Administration & Configuration
 exl-id: fc67363c-6527-40aa-aff1-350b5af884ab
 source-git-commit: 2fba03b3882fd23a16342eaab9406ae4491c9044
 workflow-type: tm+mt
-source-wordcount: '1865'
-ht-degree: 2%
+source-wordcount: '1785'
+ht-degree: 0%
 
 ---
 
 # Konfigurera autentisering för [!DNL Adobe Target] API:er
 
-The [!DNL Adobe Target] Admin-API:er, inklusive [!DNL Recommendations Admin] API:er, skyddas av autentisering för att säkerställa att endast behöriga användare använder dem för åtkomst [!DNL Adobe Target]. Använd [Adobe Developer Console](https://developer.adobe.com/console/home) för att hantera denna autentisering för alla [!DNL Adobe Experience Cloud solutions], inklusive [!DNL Adobe Target].
+Administratörs-API:erna [!DNL Adobe Target], inklusive [!DNL Recommendations Admin], skyddas av autentisering för att säkerställa att endast behöriga användare använder dem för åtkomst till [!DNL Adobe Target]. Använd [Adobe Developer Console](https://developer.adobe.com/console/home) för att hantera den här autentiseringen för alla [!DNL Adobe Experience Cloud solutions], inklusive [!DNL Adobe Target].
 
 >[!IMPORTANT]
 >
@@ -20,11 +20,11 @@ The [!DNL Adobe Target] Admin-API:er, inklusive [!DNL Recommendations Admin] API
 >
 >JWT-inloggningsuppgifterna (Service Account) kommer att fortsätta att fungera fram till 1 januari 2025. Du måste migrera programmet eller integreringen för att kunna använda de nya autentiseringsuppgifterna för OAuth Server-till-server före 1 januari 2025.
 >
->Mer information och stegvisa instruktioner för att migrera din integrering finns i [Migrerar från JWT-autentiseringsuppgifter (Service Account) till OAuth Server-till-Server-autentiseringsuppgifter](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/){target=_blank} i *Developer Console* dokumentation.
+>Mer information och stegvisa instruktioner för att migrera din integrering finns i [Migrera från JWT-autentiseringsuppgifter (Service Account) till autentiseringsuppgifter för OAuth Server-till-server](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/migration/){target=_blank} i *Developer Console* -dokumentationen.
 >
->Mer information om hur du konfigurerar nya OAuth-autentiseringsuppgifter finns i [Autentiseringsimplementering av OAuth Server-till-Server](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/){target=_blank} i *Developer Console* dokumentation.
+>Mer information om hur du konfigurerar nya OAuth-autentiseringsuppgifter finns i [Implementering av autentiseringsuppgifter för OAuth Server-till-Server](https://developer.adobe.com/developer-console/docs/guides/authentication/ServerToServerAuthentication/implementation/){target=_blank} i *Developer Console* -dokumentationen.
 
-Här följer de inledande stegen som krävs för att generera de äldre JWT-autentiseringstoken som behövs för att kunna interagera med [!DNL Adobe Target] API:
+Här följer de inledande stegen som krävs för att skapa de äldre JWT-autentiseringstoken som krävs för att kunna interagera med [!DNL Adobe Target] API:er:
 
 1. Skapa ett projekt (som tidigare kallades integration) i [!DNL Adobe Developer Console].
 1. Exportera projektinformation till Postman.
@@ -35,81 +35,81 @@ Här följer de inledande stegen som krävs för att generera de äldre JWT-aute
 
 | Resurs | Information |
 | --- | --- |
-| Postman | Om du vill slutföra de här stegen måste du skaffa [Postman](https://www.postman.com/downloads/) för ditt operativsystem. Postman Basic är kostnadsfritt när man skapar konto. Krävs inte för att använda [!DNL Adobe Target] API:er i allmänhet gör Postman API-arbetsflöden enklare och [!DNL Adobe Target] innehåller flera Postman-samlingar som hjälper dig att köra API:erna och lära dig hur de fungerar. Resten av guiden förutsätter att man har kunskap om Postman. Om du behöver hjälp kan du läsa [Postman-dokumentation](https://learning.getpostman.com/). |
-| Referenser | Du bör känna till följande resurser under resten av den här guiden:<ul><li>[Adobe I/O Github](https://github.com/adobeio)</li><li>[Dokumentation för Target Admin och Profile API](../administer/admin-api/admin-api-overview-new.md)</li><li>[Recommendations API-dokumentation](https://developer.adobe.com/target/administer/recommendations-api/)</li></ul> |
+| Postman | Om du vill slutföra de här stegen hämtar du [Postman-appen](https://www.postman.com/downloads/) för ditt operativsystem. Postman Basic är kostnadsfritt när man skapar konto. Även om det inte krävs för att använda [!DNL Adobe Target] API:er i allmänhet, underlättar Postman API-arbetsflöden och [!DNL Adobe Target] innehåller flera Postman-samlingar som hjälper dig att köra API:erna och lära dig hur de fungerar. Resten av guiden förutsätter att man har kunskap om Postman. Mer information finns i [Postman-dokumentationen](https://learning.getpostman.com/). |
+| Referenser | Du bör känna till följande resurser under resten av den här guiden:<ul><li>[Adobe I/O Github](https://github.com/adobeio)</li><li>[Dokumentation för måladministratör och profil-API](../administer/admin-api/admin-api-overview-new.md)</li><li>[Recommendations API-dokumentation](https://developer.adobe.com/target/administer/recommendations-api/)</li></ul> |
 
 ## Skapa ett Adobe I/O-projekt
 
-I det här avsnittet kommer du åt [!DNL Adobe Developer Console] och skapa ett projekt för [!DNL Adobe Target]. Mer information finns i [dokumentation om projekt](https://developer.adobe.com/developer-console/docs/guides/projects/).
+I det här avsnittet kommer du åt [!DNL Adobe Developer Console] och skapar ett projekt för [!DNL Adobe Target]. Mer information finns i [dokumentationen om projekt](https://developer.adobe.com/developer-console/docs/guides/projects/).
 
-&lt;!---(1. Generera din privata nyckel och ditt offentliga certifikat, enligt [dokumentation om autentisering](https://developer.adobe.com/developer-console/docs/guides/authentication/). // [//]: # (enligt beskrivning i **Steg 1** av [Så här konfigurerar du Adobe IO: Autentisering - Steg för steg](https://helpx.adobe.com/marketing-cloud-core/kb/adobe-io-authentication-step-by-step.html). När du är klar med steg 1 går du tillbaka till den här guiden och fortsätter med steg 2 nedan. // Resultatet av det här steget bör vara att en `private.key` och en `certificate_pub.crt` -fil. Återgå till den här guiden när du har skapat de här två filerna.)—>
+&lt;!—(1. Generera din privata nyckel och ditt offentliga certifikat enligt [dokumentationen för autentisering](https://developer.adobe.com/developer-console/docs/guides/authentication/). // [//]: # (enligt beskrivningen i **Steg 1** av [Så här konfigurerar du Adobe I/O: Autentisering - Steg för steg](https://helpx.adobe.com/marketing-cloud-core/kb/adobe-io-authentication-step-by-step.html). När du är klar med steg 1 går du tillbaka till den här guiden och fortsätter med steg 2 nedan. // Resultatet av det här steget bör vara att en `private.key`-fil och en `certificate_pub.crt`-fil skapas. Återgå till den här guiden när du har skapat de här två filerna.)—>
 
-1. I [Adobe Admin Console](https://adminconsole.adobe.com/), kontrollera att [!DNL Adobe] användarkontot har tilldelats båda [Produktadministratör](https://helpx.adobe.com/enterprise/using/admin-roles.html) och [Utvecklare](https://helpx.adobe.com/enterprise/using/manage-developers.html) behörighet till [!DNL Target].
+1. I [Adobe Admin Console](https://adminconsole.adobe.com/) kontrollerar du att ditt [!DNL Adobe]-användarkonto har beviljats åtkomst på både [produktadministratörsnivå](https://helpx.adobe.com/enterprise/using/admin-roles.html) och [utvecklarnivå](https://helpx.adobe.com/enterprise/using/manage-developers.html) till [!DNL Target].
 
-1. I [Adobe Developer Console](https://developer.adobe.com/console/home)väljer du [!UICONTROL Experience Cloud Organization] som du vill skapa den här integreringen för. (Observera att du antagligen bara har tillgång till en enda [!UICONTROL Experience Cloud Organization].)
+1. I [Adobe Developer Console](https://developer.adobe.com/console/home) väljer du den [!UICONTROL Experience Cloud Organization] som du vill skapa den här integreringen för. (Observera att du förmodligen bara har åtkomst till en enda [!UICONTROL Experience Cloud Organization].)
 
-   ![configure-io-target-create-project2.png](assets/configure-io-target-createproject2.png)
+   ![configure-io-target-createProject2.png](assets/configure-io-target-createproject2.png)
 
 1. Klicka på **[!UICONTROL Create new project]**.
 
-   ![configure-io-target-create-project3.png](assets/configure-io-target-createproject3.png)
+   ![configure-io-target-createProject3.png](assets/configure-io-target-createproject3.png)
 
-1. Klicka **[!UICONTROL Add API]** för att lägga till ett REST API i ditt projekt för att få åtkomst [!DNL Adobe] tjänster och produkter.
+1. Klicka på **[!UICONTROL Add API]** om du vill lägga till ett REST API i projektet för att få tillgång till [!DNL Adobe]-tjänster och -produkter.
 
    ![Lägg till API](assets/configure-io-target-createproject4.png)
 
-1. Välj **[!DNL Adobe Target]** som [!DNL Adobe] tjänster som du vill integrera med. Klicka på **[!UICONTROL Next]** som visas.
+1. Välj **[!DNL Adobe Target]** som den [!DNL Adobe]-tjänst du vill integrera med. Klicka på knappen **[!UICONTROL Next]** som visas.
 
-   ![configure-io-target-createproject5](assets/configure-io-target-createproject5.png)
+   ![configure-io-target-createProject5](assets/configure-io-target-createproject5.png)
 
-1. Välj ett alternativ för att associera offentliga och privata nycklar med tjänstkontointegreringen som du skapar för [!DNL Target]. I detta exempel väljer du **[!UICONTROL Option 1: Generate a key pair]** och klicka **[!UICONTROL Generate keypair]**.
+1. Välj ett alternativ för att associera offentliga och privata nycklar med tjänstkontointegreringen som du skapar för [!DNL Target]. I det här exemplet väljer du **[!UICONTROL Option 1: Generate a key pair]** och klickar på **[!UICONTROL Generate keypair]**.
 
-   ![configure-io-target-createproject6](assets/configure-io-target-createproject6.png)
+   ![configure-io-target-createProject6](assets/configure-io-target-createproject6.png)
 
-1. Anteckna den automatiskt hämtade konfigurationsfilen (`config`), som innehåller din privata nyckel. Klicka på **[!UICONTROL Next]**.
+1. Anteckna den automatiskt hämtade konfigurationsfilen (`config`) som innehåller din privata nyckel. Klicka på **[!UICONTROL Next]**.
 
-   ![configure-io-target-createproject7](assets/configure-io-target-createproject7.png)
+   ![configure-io-target-createProject7](assets/configure-io-target-createproject7.png)
 
-1. Kontrollera var i filsystemet `config`, som är den komprimerade konfigurationsfilen som skapades i föregående steg. Igen, den här `config` filen innehåller din privata nyckel, som du behöver senare. Den exakta platsen i filsystemet kan skilja sig från den som visas här.
+1. Kontrollera platsen för `config`, som är den komprimerade konfigurationsfilen som skapades i föregående steg, i filsystemet. Återigen innehåller den här `config`-filen din privata nyckel, som du behöver senare. Den exakta platsen i filsystemet kan skilja sig från den som visas här.
 
-   ![configure-io-target-createproject8](assets/configure-io-target-createproject8.png)
+   ![configure-io-target-createProject8](assets/configure-io-target-createproject8.png)
 
-1. Gå tillbaka till Adobe Developer Console och välj [produktprofil(er)](https://helpx.adobe.com/enterprise/using/manage-products-and-profiles.html) motsvarar de egenskaper som du använder Adobe Recommendations i. (Om du inte använder egenskaper markerar du alternativet Standardarbetsyta.) Klicka på **[!UICONTROL Save configured API]**.
+1. Gå tillbaka till Adobe Developer Console och välj den [produktprofil(er)](https://helpx.adobe.com/enterprise/using/manage-products-and-profiles.html) som motsvarar de egenskaper som du använder Adobe Recommendations i. (Om du inte använder egenskaper väljer du standardalternativet för Workspace.) Klicka på **[!UICONTROL Save configured API]**.
 
-   ![configure-io-target-createproject9](assets/configure-io-target-createproject9.png)
+   ![configure-io-target-createProject9](assets/configure-io-target-createproject9.png)
 
 1. Klicka på **[!UICONTROL Create Integration]**. Du bör få ett tillfälligt meddelande om att ditt API har konfigurerats.
-1. Som ett sista steg byter du namn på projektet till ett namn som är mer meningsfullt än det ursprungliga `Project 1`. Det gör du genom att navigera till projektet med navigeringssökvägen som visas och klicka på **[!UICONTROL Edit project]** för att komma åt **[!UICONTROL Edit Project]** modal och ge projektet ett nytt namn.
+1. Som ett sista steg byter du namn på projektet till ett mer meningsfullt namn än det ursprungliga `Project 1`. Det gör du genom att navigera till projektet med navigeringssökvägen som visas, klicka på **[!UICONTROL Edit project]** för att komma åt den spärrade **[!UICONTROL Edit Project]** och byta namn på projektet.
 
-   ![configure-io-target-createproject11](assets/configure-io-target-createproject11.png)
+   ![configure-io-target-createProject11](assets/configure-io-target-createproject11.png)
 
 >[!NOTE]
 >
->I det här exemplet kallar vi vårt projekt &quot;[!DNL Target] Integrering.&quot; Om du tänker använda ditt projekt för mer än bara [!DNL Adobe Target]kan du ge den ett namn. Du kan till exempel välja att ge den namnet&quot;Adobe API:er&quot; eller&quot;Experience Cloud API:er&quot;, eftersom den kan användas med andra lösningar i Adobe Experience Cloud.
+>I det här exemplet namnger vi projektet [!DNL Target]-integrering. Om du planerar att använda ditt projekt för mer än bara [!DNL Adobe Target] kan du ge det ett lämpligt namn. Du kan till exempel välja att ge den namnet&quot;Adobe API:er&quot; eller&quot;Experience Cloud API:er&quot;, eftersom den kan användas med andra lösningar i Adobe Experience Cloud.
 
 ## Exportera projektinformation
 
-Nu när du har ett Adobe-projekt som du kan använda för att komma åt [!DNL Target]måste du se till att du skickar information om det projektet tillsammans med dina Adobe API-begäranden. Dessa uppgifter krävs för att interagera med flera Adobe-API:er, inklusive flera [!DNL Target] API. Integreringsinformationen innehåller till exempel information om autentisering och autentisering som krävs av [!DNL Target] Admin-API:er. Om du vill använda API:erna med Postman måste du därför hämta dessa uppgifter till Postman.
+Nu när du har ett Adobe-projekt som du kan använda för att komma åt [!DNL Target] måste du se till att skicka information om det projektet tillsammans med dina Adobe API-begäranden. Dessa uppgifter krävs för att interagera med flera Adobe API:er, inklusive flera [!DNL Target] API:er. Integreringsinformationen innehåller till exempel autentiserings- och autentiseringsinformation som krävs av [!DNL Target] Admin API:er. Om du vill använda API:erna med Postman måste du därför hämta dessa uppgifter till Postman.
 
 Det finns många sätt att ange projektinformation i Postman, men i det här avsnittet kan vi utnyttja vissa färdiga funktioner och samlingar. Först (i det här avsnittet) exporteras information om din integrering till en Postman-miljö. Därefter (i följande avsnitt) genererar du en token för innehavaråtkomst som ger dig tillgång till de nödvändiga Adobe-resurserna.
 
 >[!NOTE]
 >
->För videoinstruktioner för alla Experience Cloud-lösningar, inklusive [!DNL Target], se [Använd Postman med Experience Platform API:er](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html). Följande avsnitt gäller [!DNL Target] API: 1. Skapa och exportera Experience Platform API till Postman 2. Generera en åtkomsttoken med Postman. De här stegen finns också nedan.
+>Om du vill se videoinstruktioner för en Experience Cloud-lösning, inklusive [!DNL Target], går du till [Använd Postman med Experience Platform API:er](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html). Följande avsnitt är relevanta för [!DNL Target] API:er: 1. Skapa och exportera Experience Platform API till Postman 2. Generera en åtkomsttoken med Postman. De här stegen finns också nedan.
 
-1. Fortfarande i [Adobe Developer Console](https://developer.adobe.com/console/home)navigera till det nya projektets **[!UICONTROL Service Account (JWT)]** autentiseringsuppgifter. Använd antingen den vänstra navigeringen eller **[!UICONTROL Credentials]** som visas.
+1. Navigera fortfarande i [Adobe Developer Console](https://developer.adobe.com/console/home) för att visa det nya projektets **[!UICONTROL Service Account (JWT)]** inloggningsuppgifter. Använd antingen den vänstra navigeringen eller **[!UICONTROL Credentials]**-avsnittet så som visas.
 
    ![JWT1](assets/configure-io-target-jwt1.png)
 
-   I **[!UICONTROL Credential details]** kan du se **[!UICONTROL Public key(s)]**, **[!UICONTROL Client ID]** och annan information om ditt tjänstkonto.
+   I **[!UICONTROL Credential details]** kan du visa din **[!UICONTROL Public key(s)]**, **[!UICONTROL Client ID]** och annan information som rör ditt tjänstkonto.
 
    ![JWT1a](assets/configure-io-target-jwt1a.png)
 
-1. Klicka för att navigera till information om **[!DNL Adobe Target]** API. Använd antingen den vänstra navigeringen eller **Anslutna produkter och tjänster** som visas.
+1. Klicka för att navigera till information om API:t **[!DNL Adobe Target]**. Använd antingen den vänstra navigeringen eller **Anslutna produkter och tjänster** så som visas.
 
    ![JWT2](assets/configure-io-target-jwt2.png)
 
-1. Klicka **[!UICONTROL Download for Postman]** > **[!UICONTROL Service Account (JWT)]** för att skapa en JSON-fil som hämtar din autentiseringsinformation för en Postman-miljö.
+1. Klicka på **[!UICONTROL Download for Postman]** > **[!UICONTROL Service Account (JWT)]** för att skapa en JSON-fil som hämtar din autentiseringsinformation för en Postman-miljö.
 
    ![JWT3](assets/configure-io-target-jwt3.png)
 
@@ -125,31 +125,31 @@ Det finns många sätt att ange projektinformation i Postman, men i det här avs
 
    ![JWT5](assets/configure-io-target-jwt5.png)
 
-1. I POSTMAN **Hantera miljöer** modal klickar du på namnet på den nyligen importerade miljön för att inspektera den. (Ditt miljönamn kan skilja sig från det som visas här. Redigera namnet efter behov. Det behöver inte nödvändigtvis matcha namnet på [!DNL Adobe] projekt.)
+1. I Postman **Hantera miljöer** modal klickar du på namnet på den nyligen importerade miljön för att inspektera den. (Ditt miljönamn kan skilja sig från det som visas här. Redigera namnet efter behov. Det behöver inte nödvändigtvis matcha namnet på projektet [!DNL Adobe].)
 
    ![JWT6](assets/configure-io-target-jwt6.png)
 
-1. Anteckning `CLIENT_SECRET` och `API_KEY` (tillsammans med andra variabler) har sina värden ifyllda i förväg, som hämtats från integreringen enligt definitionen i Adobe Developer Console. (Postman `CLIENT_SECRET` variabeln ska matcha `CLIENT SECRET` autentiseringsuppgifter för Adobe som de visas i Developer Console, och `API_KEY` i Postman bör likaså matcha `CLIENT ID` i Developer Console.) Observera `PRIVATE_KEY`, `JWT_TOKEN`och `ACCESS_TOKEN` är tomma. Vi börjar med att erbjuda `PRIVATE_KEY` värde.
+1. Obs! `CLIENT_SECRET` och `API_KEY` (tillsammans med andra variabler) har sina värden förifyllda, tagna från din integrering enligt definitionen i Adobe Developer Console. (Postman-variabeln `CLIENT_SECRET` ska matcha de `CLIENT SECRET` Adobe-autentiseringsuppgifter som visas i Developer Console, och `API_KEY` i Postman ska likaså matcha `CLIENT ID` i Developer Console.) Obs! `PRIVATE_KEY`, `JWT_TOKEN` och `ACCESS_TOKEN` är däremot tomma. Vi börjar med att ange värdet `PRIVATE_KEY`.
 
    ![JWT7](assets/configure-io-target-jwt7.png)
 
-1. Öppna ditt filsystem `config` och öppna `private` nyckelfil.
+1. Öppna `config`-filen från filsystemet och öppna `private`-nyckelfilen.
 
    ![JWT8](assets/configure-io-target-jwt8.png)
 
-1. Markera och kopiera hela innehållet i `private` nyckelfil.
+1. Markera och kopiera hela innehållet i nyckelfilen `private`.
 
    ![JWT9](assets/configure-io-target-jwt9.png)
 
-1. I Postman klistrar du in ditt privata nyckelvärde i **[!UICONTROL INITIAL VALUE]** och **[!UICONTROL CURRENT VALUE]** fält.
+1. Klistra in värdet för din privata nyckel i fälten **[!UICONTROL INITIAL VALUE]** och **[!UICONTROL CURRENT VALUE]** i Postman.
 
    ![JWT10](assets/configure-io-target-jwt10.png)
 
-1. Klicka **[!UICONTROL Update]** och stänger Miljöerna modal.
+1. Klicka på **[!UICONTROL Update]** och stäng modala miljöer.
 
 ## Generera token för innehavaråtkomst
 
-I det här avsnittet skapar du en token för innehavaråtkomst som krävs för att autentisera din interaktion med [!DNL Adobe Target] API. Om du vill generera en token för innehavaråtkomst måste du skicka din integreringsinformation (som anges i de föregående avsnitten) till [Adobe Identity Management Service (IMS)](https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/AuthenticationOverview/AuthenticationGuide.md). Det finns några olika sätt att göra detta, men i den här guiden drar vi nytta av en Postman-samling som innehåller ett färdigbyggt IMS-anrop som gör processen direkt och enkel. När du har importerat samlingen kan du återanvända den när det behövs för att generera nya tokens inte bara för [!DNL Adobe Target], men även andra Adobe-API:er.
+I det här avsnittet genererar du din innehavaråtkomsttoken, vilket krävs för att autentisera din interaktion med [!DNL Adobe Target] API:er. Om du vill generera en token för innehavaråtkomst måste du skicka din integreringsinformation (som fastställts i de föregående avsnitten) till [Adobe Identity Management-tjänsten (IMS)](https://www.adobe.io/authentication/auth-methods.html#!AdobeDocs/adobeio-auth/master/AuthenticationOverview/AuthenticationGuide.md). Det finns några olika sätt att göra detta, men i den här guiden drar vi nytta av en Postman-samling som innehåller ett färdigbyggt IMS-anrop som gör processen direkt och enkel. När du har importerat samlingen kan du återanvända den när det behövs för att generera nya tokens inte bara för [!DNL Adobe Target], utan även för andra Adobe-API:er.
 
 1. Navigera till [Adobe Identity Management Service API-exempelanrop](https://github.com/adobe/experience-platform-postman-samples/tree/master/apis/ims).
 
@@ -159,7 +159,7 @@ I det här avsnittet skapar du en token för innehavaråtkomst som krävs för a
 
    ![token2](assets/configure-io-target-generatetoken2.png)
 
-1. Hämta rå-JSON för den här samlingen genom att klicka **[!UICONTROL Raw]** och sedan kopiera den resulterande JSON-filen till Urklipp. (Du kan också spara raw-JSON som en .json-fil.)
+1. Hämta rå-JSON för den här samlingen genom att klicka på **[!UICONTROL Raw]** och sedan kopiera den resulterande JSON-filen till Urklipp. (Du kan också spara raw-JSON som en .json-fil.)
 
    ![token3](assets/configure-io-target-generatetoken3.png)
 
@@ -167,7 +167,7 @@ I det här avsnittet skapar du en token för innehavaråtkomst som krävs för a
 
    ![token4](assets/configure-io-target-generatetoken4.png)
 
-1. Välj **[!UICONTROL IMS: JWT Generate + Auth via User Token]** begär Postman-samlingen för generering av Adobe I/O Access-token, kontrollera att din miljö är markerad och klicka sedan på **[!UICONTROL Send]** för att generera token.
+1. Markera **[!UICONTROL IMS: JWT Generate + Auth via User Token]**-begäran i Postman-samlingen för generering av Adobe I/O Access-token, kontrollera att din miljö är markerad och klicka på **[!UICONTROL Send]** för att generera token.
 
    ![token5](assets/configure-io-target-generatetoken5.png)
 
@@ -179,7 +179,7 @@ I det här avsnittet skapar du en token för innehavaråtkomst som krävs för a
 
    ![token6](assets/configure-io-target-jwt11.png)
 
-1. Anteckna `ACCESS_TOKEN` och `JWT_TOKEN` värden har nu fyllts i.
+1. Observera att värdena `ACCESS_TOKEN` och `JWT_TOKEN` nu är ifyllda.
 
    ![token7](assets/configure-io-target-generatetoken7.png)
 
@@ -189,29 +189,29 @@ Svar: Nej. Adobe I/O Access Token Generation Postman-samlingen är tillgänglig 
 
 ## Testa innehavaråtkomsttoken
 
-I den här övningen använder du din nya innehavaråtkomsttoken genom att skicka en API-begäran som hämtar en lista över aktiviteter från din [!DNL Target] konto. Ett lyckat svar indikerar att [!DNL Adobe] projekt och autentisering fungerar som förväntat för att API:t ska kunna användas.
+I den här övningen använder du din nya innehavaråtkomsttoken genom att skicka en API-begäran som hämtar en lista över aktiviteter från ditt [!DNL Target]-konto. Ett lyckat svar indikerar att ditt [!DNL Adobe]-projekt och din autentisering fungerar som förväntat för att kunna använda API:t.
 
-1. Importera [[!DNL Adobe Target] Admin-API:er för Postman Collection](https://developers.adobetarget.com/api/#admin-postman-collection). Följ alla instruktioner tills samlingen har importerats till Postman.
+1. Importera [[!DNL Adobe Target] Admin-API:erna för Postman Collection](https://developers.adobetarget.com/api/#admin-postman-collection). Följ alla instruktioner tills samlingen har importerats till Postman.
 
    ![testtoken1](assets/configure-io-target-testtoken0.png)
 
-1. Expandera samlingen och notera **[!UICONTROL List activities]** begäran.
+1. Expandera samlingen och notera **[!UICONTROL List activities]**-begäran.
 
    ![testtoken1](assets/configure-io-target-testtoken1.png)
 
-1. Observera att variabler som `{{access_token}}` är från början olösta. Du kan lösa detta på flera olika sätt - du kan till exempel definiera en ny samlingsvariabel som kallas `{{access_token}}`- men i den här handboken ändrar du i stället API-begäran så att du kan utnyttja den Postman-miljö du använde tidigare. På så sätt kan miljön fortsätta att fungera som en enda, konsekvent konsolidering av alla variabler som är gemensamma för olika API:er i Adobe.
+1. Observera att variabler som `{{access_token}}` från början inte har matchats. Du kan lösa detta på flera olika sätt - du kan till exempel definiera en ny samlingsvariabel som heter `{{access_token}}` - men i den här guiden ändrar du API-begäran så att den utnyttjar den Postman-miljö som du använde tidigare. På så sätt kan miljön fortsätta att fungera som en enda, konsekvent konsolidering av alla variabler som är gemensamma för olika API:er i Adobe.
 
    ![testtoken2](assets/configure-io-target-testtoken2.png)
 
-1. Text som ska ersättas `{{access_token}}` med `{{ACCESS_TOKEN}}`.
+1. Skriv som ska ersätta `{{access_token}}` med `{{ACCESS_TOKEN}}`.
 
    ![testtoken3](assets/configure-io-target-testtoken3.png)
 
-1. Text som ska ersättas `{{api_key}}` med `{{API_KEY}}`.
+1. Skriv som ska ersätta `{{api_key}}` med `{{API_KEY}}`.
 
    ![testtoken4](assets/configure-io-target-testtoken4.png)
 
-1. Text som ska ersättas `{{tenant}}` med `{{TENANT_ID}}`. Anteckning `{{TENANT_ID}}` känns inte igen än.
+1. Skriv som ska ersätta `{{tenant}}` med `{{TENANT_ID}}`. Anteckningen `{{TENANT_ID}}` känns inte igen än.
 
    ![testtoken4](assets/configure-io-target-testtoken4a.png)
 
@@ -219,16 +219,16 @@ I den här övningen använder du din nya innehavaråtkomsttoken genom att skick
 
    ![JWT11](assets/configure-io-target-jwt11.png)
 
-1. Skriv för att lägga till en ny `{{TENANT_ID}}` miljövariabel. Kopiera och klistra in värdet för ditt klient-ID i **[!UICONTROL INITIAL VALUE]** och **[!UICONTROL CURRENT VALUE]** fält för dina nya `TENANT_ID` miljövariabel.
+1. Skriv för att lägga till en ny `{{TENANT_ID}}`-miljövariabel. Kopiera och klistra in ditt klient-ID-värde i fälten **[!UICONTROL INITIAL VALUE]** och **[!UICONTROL CURRENT VALUE]** för den nya `TENANT_ID` -miljövariabeln.
 
    ![testtoken5](assets/configure-io-target-testtoken5.png)
 
    >[!NOTE]
    >
-   >Klient-ID:t skiljer sig från din [!DNL Target] `clientcode`. Klient-ID:t finns i URL:en när du är inloggad på [!DNL Target]. Logga in på Adobe Experience Cloud och öppna för att få ditt klient-ID [!DNL Target]och klicka på Target-kortet. Använd det klient-ID som anges i URL-underdomänen. Om din URL-adress till exempel är inloggad på [!DNL Adobe Target] är `<https://mycompany.experiencecloud.adobe.com/...>` blir ditt klient-ID&quot;mincompany&quot;.
+   >Klient-ID:t skiljer sig från [!DNL Target] `clientcode`. Klient-ID finns i URL:en när du är inloggad på [!DNL Target]. Logga in på Adobe Experience Cloud, öppna [!DNL Target] och klicka på Target-kortet för att få ditt klient-ID. Använd det klient-ID som anges i URL-underdomänen. Om din URL när du är inloggad på [!DNL Adobe Target] till exempel är `<https://mycompany.experiencecloud.adobe.com/...>` är ditt klient-ID&quot;mincompany&quot;.
 
 1. Skicka din begäran efter att du har valt rätt miljö. Du bör få ett svar med din lista över aktiviteter.
 
    ![testtoken6](assets/configure-io-target-testtoken6.png)
 
-Nu när du har verifierat din autentisering från Adobe kan du använda den för att interagera med [!DNL Adobe Target] API:er (och andra Adobe-API:er). Du kan till exempel [Använda Recommendations API:er](recs-api/overview.md) för att skapa eller hantera rekommendationer, eller så kan du använda dem med [Målleverans-API](/help/dev/implement/delivery-api/overview.md).
+Nu när du har verifierat din Adobe-autentisering kan du använda den för att interagera med [!DNL Adobe Target] API:er (och andra Adobe API:er). Du kan till exempel [använda Recommendations API:er](recs-api/overview.md) för att skapa eller hantera rekommendationer, eller använda dem med [Target Delivery API](/help/dev/implement/delivery-api/overview.md).

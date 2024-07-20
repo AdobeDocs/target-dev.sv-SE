@@ -1,36 +1,36 @@
 ---
 title: Adobe Target Admin API - översikt
-description: Översikt över [!DNL Adobe Target Admin API]
+description: Översikt över  [!DNL Adobe Target Admin API]
 exl-id: 1168d376-c95b-4c5a-b7a2-c7815799a787
 feature: APIs/SDKs
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '1365'
+source-wordcount: '1312'
 ht-degree: 0%
 
 ---
 
 # Översikt över API för måladministratör
 
-I den här artikeln finns en översikt över bakgrundsinformation som behövs för att förstå och använda [!DNL Adobe Target Admin API]har slutförts. Följande innehåll förutsätter att du förstår hur [konfigurera autentisering](../configure-authentication.md) for [!DNL Adobe Target Admin API]s.
+Den här artikeln innehåller en översikt över bakgrundsinformation som krävs för att förstå och använda [!DNL Adobe Target Admin API]. Följande innehåll förutsätter att du förstår hur du [konfigurerar autentisering](../configure-authentication.md) för [!DNL Adobe Target Admin API]s.
 
 >[!NOTE]
 >
->Om du vill administrera [!DNL Target] via användargränssnittet, se [administreringsavdelning *Adobe Target Business Practitioner Guide*](https://experienceleague.adobe.com/docs/target/using/administer/administrating-target.html?lang=en).
+>Om du vill administrera [!DNL Target] via användargränssnittet läser du avsnittet [administration i *Adobe Target Business Practitioner-handboken*](https://experienceleague.adobe.com/docs/target/using/administer/administrating-target.html?lang=en).
 >
->Admin-API:erna och profil-API:erna kallas ofta tillsammans (&quot;Admin- och Profile-API:er&quot;), men kan också hänvisas till separat (&quot;Admin-API:er&quot; och&quot;Profil-API:er&quot;). Recommendations API är en specifik implementering av en [!DNL Target] Admin-API.
+>Admin-API:erna och profil-API:erna kallas ofta tillsammans (&quot;Admin- och Profile-API:er&quot;), men kan också hänvisas till separat (&quot;Admin-API:er&quot; och&quot;Profil-API:er&quot;). Recommendations API är en specifik implementering av ett [!DNL Target]-administratörs-API.
 
 ## Innan du börjar
 
-I alla kodexempel för [Administratörs-API:er](../../administer/admin-api/admin-api-overview-new.md), ersätt {tenant} med ert hyresvärde, `your-bearer-token` med den åtkomsttoken som du genererar med din JWT och `your-api-key` med din API-nyckel från [Adobe Developer Console](https://developer.adobe.com/console/home). Mer information om hyresgäster och JWT finns i artikeln om hur du [konfigurera autentisering](../configure-authentication.md) för Adobe [!DNL Target] Admin-API:er.
+I alla kodexempel som ingår för [Admin-API:erna](../../administer/admin-api/admin-api-overview-new.md) ersätter du {tenant} med ditt klientvärde, `your-bearer-token` med den åtkomsttoken som du genererar med din JWT och `your-api-key` med din API-nyckel från [Adobe Developer Console](https://developer.adobe.com/console/home). Mer information om klientorganisationer och JWT finns i artikeln om hur du [konfigurerar autentisering](../configure-authentication.md) för Adobe [!DNL Target] Admin API:er.
 
 ## Versioner
 
 Alla API:er har en associerad version. Det är viktigt att du tillhandahåller rätt version av det API som du vill använda.
 
-Om begäran innehåller en nyttolast (POST eller PUT), `Content-Type` begärans huvud används för att ange versionen.
+Om begäran innehåller en nyttolast (POST eller PUT) används `Content-Type`-huvudet för begäran för att ange versionen.
 
-Om begäran inte innehåller någon nyttolast (GET, DELETE eller OPTIONS), `Accept` används för att ange versionen.
+Om begäran inte innehåller någon nyttolast (GET, DELETE eller OPTIONS) används rubriken `Accept` för att ange versionen.
 
 Om ingen version anges används V1 (application/vnd.adobe.target.v1+json) som standard.
 
@@ -56,7 +56,7 @@ Felmeddelande för funktioner som inte stöds
 
 Admin Postman Collection
 
-Postman är ett program som gör det enkelt att utlösa API-anrop. Detta [API för måladministratör för Postman Collection](https://developers.adobetarget.com/api/#admin-postman-collection) innehåller alla Target Admin API-anrop som kräver autentisering med hjälp av aktiviteter, målgrupper, erbjudanden, rapporter, kartor och miljöer
+Postman är ett program som gör det enkelt att utlösa API-anrop. Det här [API:t för måladministratör för Postman Collection](https://developers.adobetarget.com/api/#admin-postman-collection) innehåller alla API-anrop för måladministratör som kräver autentisering med aktiviteter, målgrupper, erbjudanden, rapporter, kryssrutor och miljöer
 
 ## Svarskoder
 
@@ -65,7 +65,7 @@ Här är de vanliga svarskoderna för Target Admin API:erna.
 | Status | Betydelse | Beskrivning |
 | --- | --- | --- |
 | 200 | [OK](https://www.rfc-editor.org/rfc/rfc7231#section-6.3.1) | OK |  |
-| 400 | [Felaktig begäran](https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1) | Felaktig begäran. Troligen är de data som angavs i begäran ogiltiga. |  |
+| 400 | [Ogiltig begäran](https://www.rfc-editor.org/rfc/rfc7231#section-6.5.1) | Felaktig begäran. Troligen är de data som angavs i begäran ogiltiga. |  |
 | 401 | [Obehörig](https://www.rfc-editor.org/rfc/rfc7235#section-3.1) | Användaren har inte behörighet att utföra den här åtgärden. |  |
 | 403 | [Förbjuden](https://www.rfc-editor.org/rfc/rfc7231#section-6.5.3) | Åtkomst till den här resursen är förbjuden. |  |
 | 404 | [Hittades inte](https://www.rfc-editor.org/rfc/rfc7231#section-6.5.4) | Den refererade resursen hittades inte. |  |
@@ -78,7 +78,7 @@ Med en aktivitet kan du testa och anpassa innehåll för dina användare. Verksa
 * [Experience Targeting (XT)](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html)
 * [Recommendations](https://experienceleague.adobe.com/docs/target/using/activities/recommendations-activity.html)
 * [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
-* [Multivariata tester (MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
+* [Multivariattest (MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
 
 ## Batchuppdateringar
 
@@ -111,7 +111,7 @@ Gruppbearbetningen avslutas när alla åtgärder har slutförts, en åtgärd kan
 | Attribut | Beskrivning | Gränser | Standard |
 | --- | --- | --- | --- |
 | brödtext | brödtext för HTTP-batchåtgärd. ignoreras för alla åtgärder utom POST och PUT. kan referera till ID:n från tidigare batchåtgärder, till exempel: &quot;offerId&quot;: &quot;{operationIdResponse:0}&quot;, &quot;segmentId&quot;: &quot;{operationIdResponse:1}&quot; | ska vara en giltig JSON; om en operationIdResponse refereras ska det refererade operationId-svaret vara ett giltigt ID och metoden för den åtgärden ska vara POST | tomt objekt {} |  |
-| LegityOnOperationIds | lista över begränsnings-ID:n som säkerställer att den aktuella åtgärden endast körs om de angivna åtgärderna har slutförts. Kan användas för att uppnå kedjning av operationer. | maximalt 255 åtgärder tillåts; unika värden tillåts bara; ska peka på ett giltigt operationId i arrayen; cykliska beroenden tillåts inte |  |  |
+| LegityOnOperationIds | lista över begränsnings-ID:n som säkerställer att den aktuella åtgärden endast körs om de angivna åtgärderna har slutförts. Kan användas för att uppnå kedjning av operationer. | maximalt 255 åtgärder tillåts; unika värden tillåts bara; ska peka på ett giltigt operationId i matrisen; cykliska beroenden tillåts inte |  |  |
 | rubriker | matris med nyckelvärdesrubriker som ska skickas med en viss åtgärd. Om autentisering för batch-API har utförts via auktoriseringshuvud kopieras den också för enskilda åtgärder. | maximalt antal rubriker i matrisen är 50 | Content-Type: application/json |  |
 | headers->name | rubriknamn | ska vara unika bland andra rubriknamn. rubriker är skiftlägeskänsliga av rfc, annars åsidosätter värdena varandra. |  |  |
 | headers->value | rubrikvärde | Ej tillämpligt | tom sträng |  |

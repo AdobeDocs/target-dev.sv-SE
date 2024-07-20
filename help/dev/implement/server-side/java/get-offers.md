@@ -1,11 +1,11 @@
 ---
 title: Använd getOffers() i [!DNL Adobe Target] när du använder Java SDK
-description: Lär dig hur du använder getOffers() för att köra ett beslut och hämta en upplevelse från [!DNL Adobe Target].
+description: Lär dig hur du använder getOffers() för att köra ett beslut och hämta en upplevelse från  [!DNL Adobe Target].
 feature: APIs/SDKs
 exl-id: 9d7bf956-9d6a-4b4f-a401-2e6814f17f3d
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '642'
+source-wordcount: '635'
 ht-degree: 0%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 0%
 
 ## Beskrivning
 
-`getOffers()` används för att verkställa ett beslut och hämta en upplevelse från [!DNL Adobe Target].
+`getOffers()` används för att köra ett beslut och hämta en upplevelse från [!DNL Adobe Target].
 
 ## Metod
 
 ### getOffers
 
-The `TargetClient.getOffers` metodsignaturen visas så här.
+`TargetClient.getOffers`-metodsignaturen visas enligt följande.
 
 **Begäran**
 
@@ -38,14 +38,14 @@ TargetDeliveryRequestBuilder TargetDeliveryRequest.builder()
 
 ## Parametrar
 
-The `[!UICONTROL TargetDeliveryRequestBuilder]` objektet har följande struktur:
+Objektet `[!UICONTROL TargetDeliveryRequestBuilder]` har följande struktur:
 
 | Namn | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
 | kontext | Kontext | Ja | Anger kontexten för begäran |
-| sessionId |  | Sträng | Nej | Används för att länka flera [!DNL Target] förfrågningar |
+| sessionId |  | Sträng | Nej | Används för att länka flera [!DNL Target]-begäranden |
 | thirdPartyId | Sträng | Nej | Ditt företags-ID för användaren som du kan skicka med varje samtal |
-| cookies | Lista | Nej | Lista över cookies som returnerats i tidigare [!DNL Target] begäran från samma användare. |
+| cookies | Lista | Nej | Lista över cookies som returnerats i en tidigare [!DNL Target]-begäran från samma användare. |
 | customerIds | Karta | Nej | Kund-ID i VisitorId-kompatibelt format |
 | execute | ExecuteRequest | Nej | PageLoad eller mboxes begär att köras. Utvärderingen av servern kommer att göras omedelbart |
 | förhämtning | PrefetchRequest | Nej | Vyer, PageLoad eller mboxes begär att få förhämtning. Returnerar med en meddelandetoken som ska returneras vid konvertering. |
@@ -56,32 +56,32 @@ The `[!UICONTROL TargetDeliveryRequestBuilder]` objektet har följande struktur:
 | property | Egenskap | Nej | Anger egenskapen at_property via tokenfältet. Den kan användas för att styra leveransomfånget. |
 | trace | Kalkera | Nej | Aktiverar spårning för leverans-API. |
 | qaMode | QAMode | Nej | Använd det här objektet för att aktivera QA-läget i begäran. |
-| locationHint | Sträng | Nej | [!DNL Target] tips för edge-klusterplats. Används för att ange angivet edge-kluster som mål för denna begäran. |
+| locationHint | Sträng | Nej | Tips för [!DNL Target] edge-klusterplats. Används för att ange angivet edge-kluster som mål för denna begäran. |
 | besökare | Besökare | Nej | Används för att tillhandahålla anpassade Visitor API-objekt. |
 | id | VisitorId | Nej | Objekt som innehåller identifierarna för besökaren. T.ex. tntId, thirdParyId, mcId, customerIds. |
 | experienceCloud | ExperienceCloud | Nej | Anger integreringar med Audience Manager och Analytics. Fylls i automatiskt med hjälp av cookies, om detta inte anges. |
 | tntId | Sträng | Nej | Primär identifierare i [!DNL Target] för en användare. Hämtat från targetCookies. Automatiskt genererad om inte. |
-| mcId | Sträng | Nej | Används för att sammanfoga och dela data mellan olika [!DNL Adobe] lösningar (ECID). Hämtat från targetCookies. Automatiskt genererad om inte. |
-| trackingServer | Sträng | Nej | Adobe Analytics Server för att [!DNL Adobe Target] och [!DNL Adobe Analytics] för att sammanfoga data på ett korrekt sätt. |
-| trackingServerSecure | Sträng | Nej | The [!UICONTROL Adobe Analytics Secure Server] för att [!DNL Adobe Target] och [!DNL Adobe Analytics] för att sammanfoga data på ett korrekt sätt. |
+| mcId | Sträng | Nej | Används för att sammanfoga och dela data mellan olika [!DNL Adobe]-lösningar (ECID). Hämtat från targetCookies. Automatiskt genererad om inte. |
+| trackingServer | Sträng | Nej | Adobe Analytics-servern för att [!DNL Adobe Target] och [!DNL Adobe Analytics] ska kunna sammanfoga data korrekt. |
+| trackingServerSecure | Sträng | Nej | [!UICONTROL Adobe Analytics Secure Server] för att [!DNL Adobe Target] och [!DNL Adobe Analytics] ska kunna sammanfoga data korrekt. |
 | decisioningMethod | DecisioningMethod | Nej | Kan användas för att explicit ange ON_DEVICE eller HYBRID-beslutsmetod för enhetsbeslut |
 
-Värdena för varje fält bör överensstämma med *[!UICONTROL Target View Delivery API]* begärandespecifikation. Läs mer om *[!UICONTROL Target View Delivery API]*, se [http://developers.adobetarget.com/api/#view-delivery-overview](http://developers.adobetarget.com/api/#view-delivery-overview)
+Värdena för varje fält ska överensstämma med *[!UICONTROL Target View Delivery API]*-begärandespecifikationen. Mer information om *[!UICONTROL Target View Delivery API]* finns på [http://developers.adobetarget.com/api/#view-delivery-overview](http://developers.adobetarget.com/api/#view-delivery-overview)
 
 
 ## Svar
 
-The `TargetDeliveryResponse` returneras av `TargetClient.getOffers(`) har följande struktur:
+`TargetDeliveryResponse` som returneras av `TargetClient.getOffers(`) har följande struktur:
 
 | Namn | Typ | Beskrivning |
 | --- | --- | --- |
-| förfrågan | TargetDeliveryRequest &#x200B; | *[!DNL Target]* förfrågan |
+| förfrågan | TargetDeliveryRequest &#x200B; | *[!DNL Target]* begäran |
 | svar | Leveranssvar | *[!DNL Target]* svar |
 | cookies | Lista | Lista över sessionsmetadata för den här användaren. Måste skickas i nästa målbegäran för den här användaren. |
 | visitorState | Karta | Besökartillstånd som ska anges på klientsidan och användas av Visitor API |
 | responseStatus | Status för svar | Ett objekt som representerar svarsstatus |
 
-The `ResponseStatus` i svaret innehåller följande fält:
+`ResponseStatus` i svaret innehåller följande fält:
 
 | Namn | Typ | Beskrivning |
 | --- | --- | --- |
@@ -90,7 +90,7 @@ The `ResponseStatus` i svaret innehåller följande fält:
 | remoteMboxes | Lista över strängar | Används för enhetsbeslut. Innehåller en lista med kryssrutor som har fjärraktiviteter som inte kan bestämmas helt på enheten. |
 | remoteViews | Lista över strängar | Används för enhetsbeslut. Innehåller en lista med vyer som har fjärraktiviteter som inte kan bestämmas helt på enheten. |
 
-The `TargetCookie` objekt som används för att spara data för användarsession har följande struktur:
+Objektet `TargetCookie` som används för att spara data för användarsession har följande struktur:
 
 | Namn | Typ | Beskrivning |
 | --- | --- | --- |

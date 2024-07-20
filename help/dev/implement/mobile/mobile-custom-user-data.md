@@ -1,40 +1,40 @@
 ---
 keywords: mobilapp, skicka mobilapp, målmobilapp, anpassade användardata för mobilapp, anpassade data för mobilapp
-description: Lär dig hur du skickar ytterligare information om platsen eller användaren till [!DNL Adobe Target] som namnvärdespar för att hjälpa er att skapa anpassade målgrupper.
+description: Lär dig hur du skickar ytterligare information om platsen eller användaren till  [!DNL Adobe Target] som namn/värde-par för att hjälpa dig att skapa anpassade målgrupper.
 title: Hur skickar jag anpassade användardata i en iOS-app?
 feature: Implement Mobile
 exl-id: 9cf8e8fd-1898-43b1-b339-d7a21cb35d57
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '407'
 ht-degree: 0%
 
 ---
 
 # iOS - skicka anpassade användardata
 
-Du kan skicka ytterligare information om platsen eller användaren till [!DNL Target] som namnvärdespar.
+Du kan skicka ytterligare information om platsen eller användaren till [!DNL Target] som namn/värde-par.
 
 >[!IMPORTANT]
 >
->Stöd för [!DNL Adobe Mobile] version 4.*x* SDK har upphört den 31 augusti 2021 och rekommenderas inte längre för [!DNL Adobe Target] mobilanvändare.
+>Stöd för version 4 av [!DNL Adobe Mobile].*x* SDK:er har upphört den 31 augusti 2021 och rekommenderas inte längre för [!DNL Adobe Target] mobila användare.
 >
->The [Adobe Experience Platform SDK för mobilappar](https://developer.adobe.com/client-sdks/documentation/){target=_blank} är den rekommenderade lösningen för strömförsörjning [!DNL Adobe Experience Cloud] lösningar och tjänster i era mobilappar.
+>[Adobe Experience Platform SDK för mobilappar](https://developer.adobe.com/client-sdks/documentation/){target=_blank} är den rekommenderade lösningen för att driva [!DNL Adobe Experience Cloud] lösningar och tjänster i dina mobilappar.
 
 Den här informationen kan användas för att skapa anpassade målgrupper (till exempel användare med fler än 2500 mil) och för rapportering.
 
-Det finns två typer av parametrar som du kan skicka med en [!DNL Target] ring:
+Det finns två typer av parametrar som du kan skicka med ett [!DNL Target]-anrop:
 
 * **mbox-parametrar**: Mbox-parametrar är inte beständiga mellan sessioner.
-* **Profilparametrar**: Profilparametrar lagras i besökarprofilens arkiv och är beständiga mellan sessioner. mbox-parametrar finns inte kvar. Vissa nycklar är reserverade, men både profil- och mbox-parametrar kan vara anpassade nyckel/värde-par.
+* **Profilparametrar**: Profilparametrar lagras i besökarprofilarkivet och är beständiga mellan sessioner. mbox-parametrar finns inte kvar. Vissa nycklar är reserverade, men både profil- och mbox-parametrar kan vara anpassade nyckel/värde-par.
 
 Även om det finns reserverade nycklar kan både profil- och mbox-parametrar innehålla anpassade nyckel/värde-par.
 
 1. Skapa ordlista.
 
-   Skapa först ett lexikon med de värden som du skickar till [!DNL Target]. För enkelhetens skull bör du lägga till det här inuti `welcomeMessageCampaign` så att du inte behöver bekymra dig om omfattningen.
+   Skapa först en ordlista med de värden som du skickar till [!DNL Target]. För enkelhetens skull bör du lägga till detta inuti metoden `welcomeMessageCampaign` så att du inte behöver bekymra dig om omfånget.
 
-   Här följer ett exempel på en ordlista. Du kan kopiera och klistra in den här inuti `(void)welcomeMessageCampaign`. Värdena för tangenter som `userLevel` och `userMiles` är hårdkodade i detta exempel. Vanligtvis skickar du in motsvarande variabler.
+   Här följer ett exempel på en ordlista. Du kan kopiera och klistra in den här inuti `(void)welcomeMessageCampaign`. Värdena för nycklar som `userLevel` och `userMiles` är hårdkodade i det här exemplet. Vanligtvis skickar du in motsvarande variabler.
 
    ```
    NSDictionary *targetParams = [[NSDictionary alloc] initWithObjectsAndKeys: 
@@ -59,16 +59,16 @@ Det finns två typer av parametrar som du kan skicka med en [!DNL Target] ring:
    * Tangenter med prefixentiteten (till exempel `entity.category.id`) används för produktrekommendationer.
 
 1. Verifiera data.
-   1. I programmet `didFinishLaunchingWithOptions`, ta bort kommentarer eller lägga till `[ADBMobile setDebugLogging:YES];`.
+   1. Avkommentera eller lägg till `[ADBMobile setDebugLogging:YES];` i programmet `didFinishLaunchingWithOptions`.
 
       Detaljerade felsökningsloggar skrivs ut.
    1. Skapa appen.
    1. Kontrollera att parametrarna skickas i målanropet.
 
-      Sök efter målplatsens namn i felsökningskonsolen. Du kommer att se ett samtal till `YOUR-CLIENT-CODE.tt.omtrdc.net`med alla parametrar som du just har passerat.
+      Sök efter målplatsens namn i felsökningskonsolen. Du kommer att se ett anrop till `YOUR-CLIENT-CODE.tt.omtrdc.net` med alla parametrar som du just har skickat.
 
       (Klicka på bilden för att expandera till full bredd.)
 
-      ![Målplats i felsökningskonsolen](/help/dev/implement/mobile/assets/mobile-debug.png "Målplats i felsökningskonsolen"){zoomable=&quot;yes&quot;}
+      ![Målplats i felsökningskonsolen](/help/dev/implement/mobile/assets/mobile-debug.png "Målplats i felsökningskonsolen"){zoomable="yes"}
 
-   Du kan bygga målgrupper och begränsa eller rikta in visningen av innehåll med dessa parametrar i [!DNL Target].
+   Du kan skapa målgrupper och begränsa eller ange innehåll som mål med hjälp av de här parametrarna i [!DNL Target].

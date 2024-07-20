@@ -5,7 +5,7 @@ exl-id: 4fcf235b-6a58-442c-ae13-9d05ec1033fc
 feature: Implement Server-side
 source-git-commit: 09a50aa67ccd5c687244a85caad24df56c0d78f5
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1130'
 ht-degree: 0%
 
 ---
@@ -14,20 +14,20 @@ ht-degree: 0%
 
 ## Användaridentifiering
 
-En användare kan identifieras på flera olika sätt [!DNL Adobe Target]. [!UICONTROL Target] använder följande identifierare:
+Det finns flera sätt att identifiera en användare inom [!DNL Adobe Target]. [!UICONTROL Target] använder följande identifierare:
 
 | Fältnamn | Beskrivning |
 | --- | --- |
-| `tntID` | The `tntId` är den primära identifieraren i [!DNL Target] för en användare. Du kan ange detta ID, eller [!DNL Target] genererar den automatiskt om begäran inte innehåller någon. |
-| `thirdPartyId` | The `thirdPartyId` är företagets identifierare för användaren, som du kan skicka med varje samtal. När en användare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. |
-| `marketingCloudVisitorId` | The `marketingCloudVisitorId` används för att sammanfoga och dela data mellan olika Adobe-lösningar. marketingCloudVisitorId krävs för integrering med Adobe Analytics och Adobe Audience Manager. |
-| `customerIds` | Tillsammans med besökar-ID:t för Experience Cloud kan ytterligare [kund-ID](https://experienceleague.adobe.com/docs/id-service/using/reference/authenticated-state.html) och en autentiserad status för varje besökare kan också användas. |
+| `tntID` | `tntId` är den primära identifieraren i [!DNL Target] för en användare. Du kan ange det här ID:t, annars genereras det automatiskt av [!DNL Target] om begäran inte innehåller någon. |
+| `thirdPartyId` | `thirdPartyId` är företagets identifierare för användaren, som du kan skicka med varje samtal. När en användare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. |
+| `marketingCloudVisitorId` | `marketingCloudVisitorId` används för att sammanfoga och dela data mellan olika Adobe-lösningar. marketingCloudVisitorId krävs för integrering med Adobe Analytics och Adobe Audience Manager. |
+| `customerIds` | Förutom besökar-ID:t för Experience Cloud kan ytterligare [kund-ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/authenticated-state.html) och en autentiserad status för varje besökare också användas. |
 
-## [!DNL Target] ID (tntID)
+## [!DNL Target]-ID (tntID)
 
-The [!DNL Target] ID, eller `tntId`, kan betraktas som ett enhets-ID. Detta `tntId` genereras automatiskt av [!DNL Adobe Target] om det inte anges i begäran. Efterföljande förfrågningar måste inkludera detta `tntId` för att rätt innehåll ska kunna levereras till en enhet som används av samma användare.
+[!DNL Target]-ID:t, eller `tntId`, kan betraktas som ett enhets-ID. `tntId` genereras automatiskt av [!DNL Adobe Target] om det inte anges i begäran. Efterföljande begäranden måste inkludera `tntId` för att rätt innehåll ska kunna levereras till en enhet som används av samma användare.
 
-I följande exempelanrop visas en situation där en `tntId` skickas inte till [!DNL Target].
+I följande exempelanrop visas en situation där `tntId` inte skickas till [!DNL Target].
 
 >[!BEGINTABS]
 
@@ -82,7 +82,7 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 >[!ENDTABS]
 
-I avsaknad av `tntId`, [!DNL Adobe Target] genererar ett `tntId` och ger det i svaret, enligt följande.
+Om `tntId` inte finns genererar [!DNL Adobe Target] en `tntId` och tillhandahåller den i svaret enligt följande.
 
 ```json {line-numbers="true"}
 {
@@ -97,11 +97,11 @@ I avsaknad av `tntId`, [!DNL Adobe Target] genererar ett `tntId` och ger det i s
 }
 ```
 
-I det här exemplet genereras `tntId` är `10abf6304b2714215b1fd39a870f01afc.35_0`. Observera detta `tntId` måste användas för samma användare i olika sessioner.
+I det här exemplet är den genererade `tntId` `10abf6304b2714215b1fd39a870f01afc.35_0`. Observera att `tntId` måste användas för samma användare i alla sessioner.
 
 ## Tredje parts-ID (thirdPartyId)
 
-Om din organisation använder ett ID för att identifiera besökaren kan du använda `thirdPartyID` för att leverera innehåll. A `thirdPartyID` är ett beständigt ID som ert företag använder för att identifiera en slutanvändare, oavsett om de interagerar med ert företag via webben, mobiler eller IoT-kanaler. Med andra ord `thirdPartyId` refererar till användarprofildata som kan användas i alla kanaler. Du måste dock ange `thirdPartyID` för varje [!DNL Adobe Target] Anrop till leverans-API.
+Om din organisation använder ett ID för att identifiera besökaren kan du använda `thirdPartyID` för att leverera innehåll. En `thirdPartyID` är ett beständigt ID som används av ditt företag för att identifiera en slutanvändare, oavsett om de interagerar med ditt företag via webb-, mobil- eller IoT-kanaler. `thirdPartyId` refererar med andra ord till användarprofildata som kan användas i alla kanaler. Du måste dock ange `thirdPartyID` för varje [!DNL Adobe Target] leverans-API-anrop du gör.
 
 I följande exempelanrop visas hur du använder en `thirdPartyId`.
 
@@ -163,11 +163,11 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 >[!ENDTABS]
 
-I detta scenario [!DNL Adobe Target] skapar en `tntId` eftersom det inte skickades till det ursprungliga anropet, som mappas till det angivna `thirdPartyId`.
+I det här scenariot genererar [!DNL Adobe Target] en `tntId` eftersom den inte skickades till det ursprungliga anropet, som mappas till angiven `thirdPartyId`.
 
 ## Marketing Cloud Visitor-ID (marketingCloudVisitorId)
 
-The `marketingCloudVisitorId` är ett universellt och beständigt ID som identifierar besökarna i alla lösningar i Adobe Experience Cloud. När din organisation implementerar ID-tjänsten kan du med detta ID identifiera samma besökare och deras data i olika Experience Cloud-lösningar, inklusive [!DNL Adobe Target], Adobe Analytics och Adobe Audience Manager. Observera `marketingCloudVisitorId` krävs vid integrering [!DNL Target] med [!DNL Adobe Analytics] och [!DNL Adobe Audience Manager].
+`marketingCloudVisitorId` är ett universellt och beständigt ID som identifierar dina besökare för alla lösningar i Adobe Experience Cloud. När din organisation implementerar ID-tjänsten kan du med det här ID:t identifiera samma besökare och deras data i olika Experience Cloud-lösningar, inklusive [!DNL Adobe Target], Adobe Analytics och Adobe Audience Manager. Observera att `marketingCloudVisitorId` krävs vid integrering av [!DNL Target] med [!DNL Adobe Analytics] och [!DNL Adobe Audience Manager].
 
 Följande exempelanrop visar hur en `marketingCloudVisitorId` som hämtades från Experience Cloud ID-tjänsten skickas till [!DNL Target].
 
@@ -229,11 +229,11 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 >[!ENDTABS]
 
-I detta scenario [!DNL Target] skapar en `tntId` eftersom det inte skickades till det ursprungliga anropet, som mappas till det angivna `marketingCloudVisitorId`.
+I det här scenariot genererar [!DNL Target] en `tntId` eftersom den inte skickades till det ursprungliga anropet, som mappas till angiven `marketingCloudVisitorId`.
 
 ## Kund-ID (customerIds)
 
-[Kund-ID](https://experienceleague.adobe.com/docs/id-service/using/reference/authenticated-state.html) kan läggas till eller kopplas till ett Experience Cloud Visitor-ID. Vid sändning `customerIds`, `marketingCloudVisitorId` måste också anges. Dessutom kan en autentiseringsstatus anges tillsammans med varje `customerId` för varje besökare. Följande autentiseringsstatusar kan användas:
+[Kund-ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/authenticated-state.html) kan läggas till i, eller kopplas till, ett Experience Cloud Visitor-ID. När `customerIds` skickas måste även `marketingCloudVisitorId` anges. Dessutom kan en autentiseringsstatus anges tillsammans med varje `customerId` för varje besökare. Följande autentiseringsstatusar kan användas:
 
 | Autentiseringsstatus | Användarstatus |
 | --- | --- |
@@ -241,7 +241,7 @@ I detta scenario [!DNL Target] skapar en `tntId` eftersom det inte skickades til
 | `authenticated` | Användaren autentiseras för närvarande med en aktiv session på din webbplats eller i din app. |
 | `logged_out` | Användaren autentiserades men loggades aktivt ut. Användaren ville koppla från det autentiserade läget. Användaren vill inte längre behandlas som autentiserad. |
 
-Observera att endast när `customerId` är i ett autentiserat tillstånd kommer att [!DNL Target] referera till användarprofildata som lagras och länkas till customerId. Om `customerId` är okänd eller `logged_out` kommer det att ignoreras och alla användarprofildata som kan associeras med det `customerId` kommer inte att utnyttjas för målgruppsanpassning.
+Observera att endast när `customerId` är i ett autentiserat tillstånd [!DNL Target] refererar till användarprofildata som är lagrade och länkade till customerId. Om `customerId` är i ett okänt eller `logged_out`-läge ignoreras det och alla användarprofildata som kan associeras med `customerId` utnyttjas inte för målgruppsanpassning.
 
 >[!BEGINTABS]
 
@@ -311,11 +311,11 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 >[!ENDTABS]
 
-Exemplet ovan visar hur du skickar en `customerId` med `authenticatedState`. När en `customerId`, `integrationCode`, `id`och `authenticatedState` och `marketingCloudVisitorId` krävs. The `integrationCode` är alias för [kundattributfil](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/working-with-customer-attributes.html) du tillhandahöll via CRS.
+Exemplet ovan visar hur du skickar en `customerId` med en `authenticatedState`. När du skickar en `customerId` krävs både `integrationCode`, `id` och `authenticatedState` samt `marketingCloudVisitorId`. `integrationCode` är aliaset för den [kundattributfil](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/working-with-customer-attributes.html) som du tillhandahöll via CRS.
 
 ## Sammanfogad profil
 
-Du kan kombinera `tntId`, `thirdPartyID`och `marketingCloudVisitorId` i samma begäran. I detta scenario [!DNL Adobe Target] behåller mappningen av alla dessa ID:n och fäster den på en besökare. Läs om hur profiler [sammanfogade och synkroniserade i realtid](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html) med olika identifierare.
+Du kan kombinera `tntId`, `thirdPartyID` och `marketingCloudVisitorId` i samma begäran. I det här scenariot behåller [!DNL Adobe Target] mappningen av alla dessa ID:n och fäster den till en besökare. Lär dig hur profiler [sammanfogas och synkroniseras i realtid](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html) med olika identifierare.
 
 >[!BEGINTABS]
 
@@ -379,14 +379,14 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 >[!ENDTABS]
 
-Exemplet ovan visar hur du kan kombinera `tntId`, `thirdPartyID`och `marketingCloudVisitorId` i samma begäran.
+Exemplet ovan visar hur du kan kombinera `tntId`, `thirdPartyID` och `marketingCloudVisitorId` i samma begäran.
 
 ## Bucketing
 
-Användarna är intresserade av att se en upplevelse som beror på hur du konfigurerar dina [!DNL Adobe Target] verksamhet. I [!DNL Adobe Target], bucketing är:
+Dina användare ser en upplevelse som är beroende av hur du konfigurerar dina [!DNL Adobe Target]-aktiviteter. I [!DNL Adobe Target] är bucketing:
 
-* **Deterministisk**: MurmurHash3 används för att se till att användaren är fast och ser rätt variant varje gång så länge användar-ID:t är konsekvent.
-* **Fäst**: [!DNL Adobe Target] lagrar variationen som användaren ser i användarprofilen för att säkerställa att variationen visas på ett konsekvent sätt för användaren i alla sessioner och kanaler. Variationer och krånglighet garanteras när beslut på serversidan används. När beslut på enheten används, kan man inte garantera att de hålls nere.
+* **Deterministisk**: MurmurHash3 används för att se till att användaren är spärrad och ser rätt variant varje gång så länge användar-ID:t är konsekvent.
+* **Fäst**: [!DNL Adobe Target] lagrar variationen som din användare ser i användarprofilen för att säkerställa att variationen visas på ett konsekvent sätt för användaren i olika sessioner och kanaler. Variationer och krånglighet garanteras när beslut på serversidan används. När beslut på enheten används, kan man inte garantera att de hålls nere.
 
 ## Arbetsflöde för komplett paketering
 
@@ -422,7 +422,7 @@ Innan du börjar använda den faktiska låsningsalgoritmen är det viktigt att u
 
 Anta följande:
 
-* Klient C med klientkod `acmeclient`
+* Klient-C med klientkod `acmeclient`
 * Aktivitet A som har ID `1111` och tre upplevelser `E1`, `E2`, `E3`
 * Erfarenheter har följande fördelning: `E1` - 33 %, `E2` - 33 %, `E3` - 34 %
 
@@ -432,9 +432,9 @@ Markeringsflödet ser ut så här:
 1. Klientkod `acmeclient`
 1. Aktivitets-ID `1111`
 1. Salt `experience`
-1. Värde till hash `acmeclient.1111.702ff4d0-83b1-4e2e-a0a6-22cbe460eb15.experience`, hash-värde `-919077116`
-1. Hashens absoluta värde `919077116`
-1. Resterande efter division med 10000, `7116`
-1. Värdet efter återstoden divideras med 10000, `0.7116`
+1. Värde för hash `acmeclient.1111.702ff4d0-83b1-4e2e-a0a6-22cbe460eb15.experience`, hash-värde `-919077116`
+1. Absolut värde för hash `919077116`
+1. Återstående efter division med 10000, `7116`
+1. Värdet efter resten divideras med 10000, `0.7116`
 1. Resultat efter att värdet har multiplicerats med det totala antalet upplevelser `3 * 0.7116 = 2.1348`
-1. Erfarenhetsindexet är `2`, vilket betyder den tredje erfarenheten eftersom vi använder `0` baserad indexering.
+1. Erfarenhetsindexet är `2`, vilket innebär den tredje upplevelsen eftersom vi använder `0`-baserad indexering.

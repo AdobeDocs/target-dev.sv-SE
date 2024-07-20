@@ -1,6 +1,6 @@
 ---
-title: Skicka visnings- eller klickmeddelanden till [!DNL Adobe Target] med .NET SDK
-description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till [!DNL Adobe Target] för mätning och rapportering.
+title: Skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target] med .NET SDK
+description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target]  för mätning och rapportering.
 feature: APIs/SDKs
 exl-id: 724e787c-af53-4152-8b20-136f7b5452e1
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -18,14 +18,14 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->När en `Execute` om ett objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
+>När ett `Execute`-objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
 
 SDK-metoder som automatiskt ökar ett intryck är:
 
 * `GetOffers()`
 * `GetAttributes()`
 
-När en `Prefetch` -objektet skickas i begäran, intrycket ökas inte automatiskt för aktiviteter med rutor i `Prefetch` -objekt. `SendNotifications()` måste användas för förhämtade upplevelser för att öka antalet visningar och konverteringar.
+När ett `Prefetch`-objekt skickas i begäran ökas inte intrycket automatiskt för aktiviteter med rutor i `Prefetch`-objektet. `SendNotifications()` måste användas för förhämtade upplevelser för att öka antalet visningar och konverteringar.
 
 ## Metod
 
@@ -37,7 +37,7 @@ TargetDeliveryResponse TargetClient.SendNotifications(TargetDeliveryRequest requ
 
 ## Exempel
 
-Först bygger vi [!UICONTROL Target Delivery API] begäran om förhämtning av innehåll för `home` och `product1` mboxes.
+Först skapar vi [!UICONTROL Target Delivery API]-begäran om förhämtning av innehåll för mrutorna `home` och `product1`.
 
 ### \.NET
 
@@ -56,7 +56,7 @@ var targetDeliveryRequest = new TargetDeliveryRequest.Builder()
 var targetResponse = targetClient.GetOffers(targetDeliveryRequest);
 ```
 
-Ett godkänt svar innehåller en [!DNL Target Delivery API] svarsobjekt, som innehåller förhämtat innehåll för de begärda rutorna. Ett exempel `targetResponse.Response` -objektet kan se ut så här:
+Ett godkänt svar kommer att innehålla ett [!DNL Target Delivery API]-svarsobjekt, som innehåller förhämtat innehåll för de begärda rutorna. Ett exempel på `targetResponse.Response`-objekt kan se ut så här:
 
 ### \.NET
 
@@ -114,7 +114,7 @@ Ett godkänt svar innehåller en [!DNL Target Delivery API] svarsobjekt, som inn
 }
 ```
 
-Anteckna `mbox` namn och `state` fält, samt `eventToken` -fält, i var och en av [!DNL Target] innehållsalternativ. Dessa bör anges i `SendNotifications()` begär, så snart varje innehållsalternativ visas. Låt oss anta att `product1` mbox har visats på en icke-webbläsarenhet. Begäran om meddelanden visas enligt följande:
+Observera fälten `mbox` name och `state` samt fältet `eventToken` i alla [!DNL Target]-innehållsalternativ. Dessa bör anges i `SendNotifications()`-begäran så snart varje innehållsalternativ visas. Låt oss anta att mbox `product1` har visats på en annan enhet än webbläsaren. Begäran om meddelanden visas enligt följande:
 
 ### \.NET
 
@@ -131,7 +131,7 @@ var mboxNotificationRequest = new TargetDeliveryRequest.Builder()
     .Build();
 ```
 
-Observera att vi har inkluderat både mbox-läget och händelsetoken som motsvarar [!DNL Target] Erbjudandet levereras som ett prefetch-svar. När vi har skapat meddelandebegäran kan vi skicka den till [!DNL Target] via `SendNotifications()` API-metod:
+Observera att vi har inkluderat både mbox-tillståndet och den händelsetoken som motsvarar erbjudandet [!DNL Target] som levererades i förhämtningssvaret. När vi har skapat meddelandebegäran kan vi skicka den till [!DNL Target] via API-metoden `SendNotifications()`:
 
 ### \.NET
 

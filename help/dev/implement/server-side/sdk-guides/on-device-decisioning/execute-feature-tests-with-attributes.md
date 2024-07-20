@@ -5,7 +5,7 @@ feature: APIs/SDKs
 exl-id: c89d337c-20a9-454c-930c-79d9217e23b6
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '877'
 ht-degree: 0%
 
 ---
@@ -14,8 +14,8 @@ ht-degree: 0%
 
 ## Sammanfattning av steg
 
-1. Aktivera [!UICONTROL on-device decisioning] för er organisation
-1. Skapa en [!UICONTROL A/B Test] aktivitet
+1. Aktivera [!UICONTROL on-device decisioning] för din organisation
+1. Skapa en [!UICONTROL A/B Test]-aktivitet
 1. Definiera A och B
 1. Lägg till en målgrupp
 1. Ange trafikallokering
@@ -30,67 +30,67 @@ ht-degree: 0%
 >
 >Anta att du är ett e-handelsföretag inom detaljhandeln. Du vill öka konverteringsgraden när kunderna bläddrar och sorterar i produktkatalogen. Du har en hypotes om att vissa sorteringsalgoritmer och pagineringsstrategier ger bättre resultat än andra. Om du vill testa den här teorin bestämmer du dig för att köra ett funktionstest som innebär att sorteringswidgeten designas om med olika sorteringsalternativ för slutanvändarna. Du vill vara säker på att det här funktionstestet utförs med nästan noll fördröjning så att det inte påverkar användarupplevelserna negativt och skevar resultatet.
 
-## 1. Aktivera [!UICONTROL on-device decisioning] för er organisation
+## 1. Aktivera [!UICONTROL on-device decisioning] för din organisation
 
-Aktivering av enhetsbeslut säkerställer att en A/B-aktivitet utförs vid nästan noll-fördröjning. Om du vill aktivera den här funktionen går du till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** > **[!UICONTROL Account details]** in [!DNL Adobe Target]och aktivera **[!UICONTROL On-Device Decisioning]** växla.
+Aktivering av enhetsbeslut säkerställer att en A/B-aktivitet utförs vid nästan noll-fördröjning. Om du vill aktivera den här funktionen går du till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** > **[!UICONTROL Account details]** i [!DNL Adobe Target] och aktiverar växlingsknappen **[!UICONTROL On-Device Decisioning]**.
 
 ![alt-bild](assets/asset-odd-toggle.png)
 
 >[!NOTE]
 >
->Du måste ha administratören eller godkännaren [användarroll](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att aktivera eller inaktivera **[!UICONTROL On-Device Decisioning]** växla.
+>Du måste ha administratörs- eller godkännarrollen [användare](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att aktivera eller inaktivera växlingsknappen **[!UICONTROL On-Device Decisioning]**.
 
-När du har aktiverat **[!UICONTROL On-Device Decisioning]** växla, [!DNL Adobe Target] börjar generera *regelartefakter* för kunden.
+När du har aktiverat växeln **[!UICONTROL On-Device Decisioning]** börjar [!DNL Adobe Target] generera *regelartefakter* för klienten.
 
-## 2. Skapa en [!UICONTROL A/B Test] aktivitet
+## 2. Skapa en [!UICONTROL A/B Test]-aktivitet
 
-1. I [!DNL Adobe Target], navigera till **[!UICONTROL Activities]** sida och sedan välja **[!UICONTROL Create Activity]** > **[!UICONTROL A/B test]**.
+1. Gå till sidan **[!UICONTROL Activities]** i [!DNL Adobe Target] och välj sedan **[!UICONTROL Create Activity]** > **[!UICONTROL A/B test]**.
 
    ![alt-bild](assets/asset-ab.png)
 
-1. I **[!UICONTROL Create A/B Test Activity]** modal, lämna standardvärdet **[!UICONTROL Web]** markerat alternativ (1), markera **[!UICONTROL Form]** som upplevelsedisposition (2) väljer du **[!UICONTROL Default Workspace]** med **[!UICONTROL No Property Restrictions]** (3) och klicka **[!UICONTROL Next]** (4)
+1. I **[!UICONTROL Create A/B Test Activity]** modal låter du standardalternativet **[!UICONTROL Web]** vara markerat (1), väljer **[!UICONTROL Form]** som din upplevelsedisposition (2), väljer **[!UICONTROL Default Workspace]** med **[!UICONTROL No Property Restrictions]** (3) och klickar på **[!UICONTROL Next]** (4).
 
    ![alt-bild](assets/asset-form.png)
 
 ## 3. Definiera A och B
 
-1. I **[!UICONTROL Experiences]** skapa aktivitet, ange ett namn för aktiviteten (1) och lägg till ytterligare en upplevelse, Experience B, genom att klicka på **[!UICONTROL Add Experience]** (2). Ange namnet på den plats (3) i programmet där du vill köra funktionstestet med attribut. I exemplet nedan `product-results-page` är den plats som definieras för Experience A. (Det är också den plats som definieras för Experience B.)
+1. I steget **[!UICONTROL Experiences]** när du skapar en aktivitet anger du ett namn för aktiviteten (1) och lägger till en andra upplevelse, Experience B, genom att klicka på knappen **[!UICONTROL Add Experience]** (2). Ange namnet på den plats (3) i programmet där du vill köra funktionstestet med attribut. I exemplet nedan är `product-results-page` den plats som definieras för Experience A. (Det är också den plats som definieras för Experience B.)
 
    ![alt-bild](assets/asset-location.png)
 
-   **[!UICONTROL Experience A]** innehåller den JSON som signalerar till din affärslogik att göra följande:
+   **[!UICONTROL Experience A]** innehåller JSON som signalerar till din affärslogik att göra följande:
 
-   * Initiera sorteringsalgoritmfunktionen via `test_sorting` funktionsflagga
-   * Kör den rekommenderade sorteringsalgoritmen som definieras i `sorting_algorithm _**_attribute`
+   * Initiera sorteringsalgoritmfunktionen via funktionsflaggan `test_sorting`
+   * Kör den rekommenderade sorteringsalgoritmen som definierats i `sorting_algorithm _**_attribute`
    * Returnera 50 produkter per sida enligt den sidnumreringsstrategi som definieras i `pagination_limit`
 
-1. I Experience A klickar du för att ändra innehållet från **[!UICONTROL Default Content]** till JSON genom att välja **[!UICONTROL Create JSON Offer]** som visas nedan (1).
+1. I upplevelse A klickar du för att ändra innehållet från **[!UICONTROL Default Content]** till JSON genom att välja **[!UICONTROL Create JSON Offer]** enligt nedan (1).
 
    ![alt-bild](assets/asset-offer.png)
 
-1. Definiera JSON med `test_sorting`, `sorting_algorithm`och `pagination_limit` flaggor och attribut som ska användas för att initiera den rekommenderade sorteringsalgoritmen med en pagineringsgräns på 50 produkter.
+1. Definiera JSON med flaggorna `test_sorting`, `sorting_algorithm` och `pagination_limit` och attribut som ska användas för att initiera den rekommenderade sorteringsalgoritmen med en pagineringsgräns på 50 produkter.
 
    >[!NOTE]
    >
-   >När [!DNL Adobe Target] blockerar en användare för att se upplevelse A, så returneras JSON med de definierade attributen i exemplet. I koden måste du kontrollera värdet för funktionsflaggan `test_sorting` för att se om sorteringsfunktionen ska vara aktiverad. I så fall använder du det rekommenderade värdet för `sorting_algorithm` för att visa rekommenderade produkter i produktlistvyn. Gränsen för vilka produkter som ska visas för ditt program är 50, eftersom det är värdet av `pagination_limit` -attribut.
+   >När [!DNL Adobe Target] blockerar en användare för att se upplevelse A, returneras JSON med de definierade attributen i exemplet. I koden måste du kontrollera värdet för funktionsflaggan `test_sorting` för att se om sorteringsfunktionen ska vara aktiverad. I så fall använder du det rekommenderade värdet för attributet `sorting_algorithm` för att visa rekommenderade produkter i produktlistvyn. Gränsen för produkter som ska visas för ditt program är 50, eftersom det är värdet för attributet `pagination_limit`.
 
    ![alt-bild](assets/asset-sorting.png)
 
    **[!UICONTROL Experience B]** definierar den JSON som signalerar till din affärslogik att göra följande:
 
    * Initiera sorteringsalgoritmfunktionen via flaggan test_sorting feature
-   * Kör `best_sellers` sorteringsalgoritm som definieras i `sorting_algorithm _**_attribute`
+   * Kör sorteringsalgoritmen `best_sellers` som definierats i `sorting_algorithm _**_attribute`
    * Returnera 50 produkter per sida enligt den sidnumreringsstrategi som definieras i `pagination_limit`
 
    >[!NOTE]
    >
-   >När [!DNL Adobe Target] söker efter en användare för att se Experience B, returneras JSON med de definierade attributen i exemplet. I koden måste du kontrollera värdet för funktionsflaggan `test_sorting` för att se om sorteringsfunktionen ska vara aktiverad. I så fall använder du `best_sellers` värdet på `sorting_algorithm` för att visa de bästsäljande produkterna i produktlistvyn. Gränsen för vilka produkter som ska visas för ditt program är 50, eftersom det är värdet av `pagination_limit` -attribut.
+   >När [!DNL Adobe Target] blockerar en användare för att se Experience B, returneras JSON med de definierade attributen i exemplet. I koden måste du kontrollera värdet för funktionsflaggan `test_sorting` för att se om sorteringsfunktionen ska vara aktiverad. I så fall använder du värdet `best_sellers` för attributet `sorting_algorithm` för att visa de bästsäljande produkterna i produktlistvyn. Gränsen för produkter som ska visas för ditt program är 50, eftersom det är värdet för attributet `pagination_limit`.
 
    ![alt-bild](assets/asset-sorting-b.png)
 
 ## 4. Lägg till en målgrupp
 
-I **[!UICONTROL Targeting]** steg, behåll **[!UICONTROL All Visitors]** målgrupp. På så sätt kan du förstå vilken effekt sorteringsfunktionen har, liksom vilken algoritm och vilket antal objekt som bäst påverkar resultatet.
+Behåll målgruppen **[!UICONTROL All Visitors]** i steget **[!UICONTROL Targeting]**. På så sätt kan du förstå vilken effekt sorteringsfunktionen har, liksom vilken algoritm och vilket antal objekt som bäst påverkar resultatet.
 
 ![alt-bild](assets/asset-audience-b.png)
 
@@ -108,7 +108,7 @@ Definiera den procentandel av besökarna som ska se den rekommenderade jämfört
 
 ## 7. Ställ in rapportering
 
-I **[!UICONTROL Goals & Settings]** steg, välja **[!UICONTROL Adobe Target]** som **[!UICONTROL Reporting Source]** för att se dina A/B-testresultat i [!DNL Adobe Target] Användargränssnitt, eller välj **[!UICONTROL Adobe Analytics]** för att visa dem i Adobe Analytics användargränssnitt.
+I steget **[!UICONTROL Goals & Settings]** väljer du **[!UICONTROL Adobe Target]** som **[!UICONTROL Reporting Source]** för att visa dina A/B-testresultat i användargränssnittet för [!DNL Adobe Target] eller **[!UICONTROL Adobe Analytics]** för att visa dem i användargränssnittet för Adobe Analytics.
 
 ![alt-bild](assets/asset-reporting-b.png)
 

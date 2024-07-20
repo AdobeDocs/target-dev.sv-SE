@@ -5,14 +5,14 @@ feature: APIs/SDKs
 exl-id: 15d9870f-6c58-4da0-bfe5-ef23daf7d273
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '643'
+source-wordcount: '474'
 ht-degree: 0%
 
 ---
 
 # Översikt över funktioner som stöds
 
-[!DNL Adobe Target]Med SDK:er på serversidan kan utvecklare välja mellan prestanda och aktualitet för data vid beslut. Med andra ord, om det viktigaste är att leverera det mest relevanta och engagerande personaliserade innehållet via maskininlärning, bör du ringa ett live-serversamtal. Men när prestanda är viktigare bör man fatta ett beslut på enheten. För [!UICONTROL on-device decisioning] om du vill arbeta kan du läsa följande lista över funktioner som stöds:
+Serversidesbaserade SDK:er för [!DNL Adobe Target] ger utvecklare flexibilitet att välja mellan prestanda och aktualitet för data för beslut. Med andra ord, om det viktigaste är att leverera det mest relevanta och engagerande personaliserade innehållet via maskininlärning, bör du ringa ett live-serversamtal. Men när prestanda är viktigare bör man fatta ett beslut på enheten. För att [!UICONTROL on-device decisioning] ska fungera, se följande lista över funktioner som stöds:
 
 * Typ av aktivitet
 * Målgruppsanpassning
@@ -20,14 +20,14 @@ ht-degree: 0%
 
 ## Typ av aktivitet
 
-I följande tabell visas vilka [aktivitetstyper](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) som skapats med [Formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?) stöds eller stöds inte för [!UICONTROL on-device decisioning].
+Tabellen nedan visar vilka [aktivitetstyper](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) som skapats med [formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?) som stöds eller inte stöds för [!UICONTROL on-device decisioning].
 
 | Typ av aktivitet | Stöds |
 | --- | --- |
 | [A/B-test](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html) | Ja |
 | [Automatisk allokering](https://experienceleague.adobe.com/docs/target/using/activities/auto-allocate/automated-traffic-allocation.html) | Nej |
 | [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html) | Nej |
-| [Analyser för Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) (A4T) | Ja |
+| [Analyser för mål](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) (A4T) | Ja |
 | [Multivariata tester](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html) (MVT) | Nej |
 | [Experience Targeting](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html) (XT) | Ja |
 | [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html) (AP) | Nej |
@@ -50,11 +50,11 @@ Tabellen nedan visar vilka målgruppsregler som stöds eller inte stöds för [!
 | [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html) | Nej |
 | [Trafikkällor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/traffic-sources.html) | Nej |
 | [Tidsram](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/time-frame.html) | Ja |
-| [Experience Cloud målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html) (Målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager | Nej |
+| [Experience Cloud-målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html) (målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager) | Nej |
 
-### Geografisk anpassning för [!UICONTROL on-device decisioning]
+### Geografisk målinriktning för [!UICONTROL on-device decisioning]
 
-För att behålla latenstid nära noll för [!UICONTROL on-device decisioning] Adobe rekommenderar att du själv anger geovärdena i anropet till `getOffers`. Gör detta genom att ställa in `Geo` -objektet i `Context` om begäran. Det innebär att servern behöver ett sätt att avgöra var varje slutanvändare befinner sig. Servern kan till exempel utföra en IP-till-Geo-sökning med en tjänst som du konfigurerar. Vissa värdtjänstleverantörer, som Google Cloud, tillhandahåller den här funktionen via anpassade rubriker i varje `HttpServletRequest`.
+Adobe rekommenderar att du anger geovärdena själv i anropet till `getOffers` för att behålla nästan noll-fördröjning för [!UICONTROL on-device decisioning]-aktiviteter med geobaserade målgrupper. Gör detta genom att ställa in objektet `Geo` i `Context` för begäran. Det innebär att servern behöver ett sätt att avgöra var varje slutanvändare befinner sig. Servern kan till exempel utföra en IP-till-Geo-sökning med en tjänst som du konfigurerar. Vissa värdtjänstleverantörer, som Google Cloud, tillhandahåller den här funktionen via anpassade rubriker i varje `HttpServletRequest`.
 
 >[!BEGINTABS]
 
@@ -114,7 +114,7 @@ public class TargetRequestUtils {
 
 >[!ENDTABS]
 
-Om du inte kan utföra IP-till-Geo-sökningar på servern, men ändå vill utföra sökningen [!UICONTROL on-device decisioning] for `getOffers` -förfrågningar som innehåller geobaserade målgrupper stöds också. Nackdelen med detta är att det kommer att använda en fjärransluten IP-till-Geo-sökning som lägger till fördröjning för varje `getOffers` ring. Den här fördröjningen bör vara lägre än en fjärranslutning `getOffers` eftersom det träffar ett CDN som ligger nära servern. Du får bara ange `ipAddress` fältet i `Geo` -objektet i `Context` för att SDK ska kunna hämta den geografiska platsen för användarens IP-adress. Om något annat fält förutom `ipAddress` tillhandahålls, [!DNL Target] SDK hämtar inte metadata för geopositionering för upplösning.
+Om du inte kan utföra IP-till-Geo-sökningar på servern, men ändå vill utföra [!UICONTROL on-device decisioning] för `getOffers`-begäranden som innehåller geobaserade målgrupper, stöds detta också. Nackdelen med den här metoden är att den kommer att använda en fjärr-IP-till-Geo-sökning, som lägger till fördröjning till varje `getOffers`-samtal. Den här fördröjningen bör vara lägre än ett `getOffers`-fjärranrop, eftersom den träffar ett CDN som ligger nära servern. Du får bara ange fältet `ipAddress` i objektet `Geo` i `Context` i din begäran för att SDK ska kunna hämta den geografiska platsen för användarens IP-adress. Om något annat fält förutom `ipAddress` anges kommer [!DNL Target] SDK inte att hämta metadata för geopositionering för upplösning.
 
 
 >[!BEGINTABS]

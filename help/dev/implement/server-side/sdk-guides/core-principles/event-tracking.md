@@ -1,6 +1,6 @@
 ---
 title: Händelsespårning
-description: Använd [!DNL Adobe Target]Tack vare möjligheten att spåra händelser kan ni effektivt mäta mätvärden som är viktiga för ert företag och era användningsfall.
+description: Använd funktionerna för händelsespårning i  [!DNL Adobe Target] för att effektivt mäta mätvärden som är viktiga för ditt företag och dina användningsfall.
 exl-id: a47fa692-c633-4c53-82da-878b1e451a3f
 feature: Implement Server-side
 source-git-commit: 09a50aa67ccd5c687244a85caad24df56c0d78f5
@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Händelsespårning
 
-Använd [!DNL Adobe Target]Tack vare möjligheten att spåra händelser kan ni effektivt mäta mätvärden som är viktiga för ert företag och era användningsfall. Spåra händelser är avgörande för att mäta hur framgångsrik dina experiment- eller personaliseringsaktiviteter är, eftersom de talar om för dig vilken variation eller upplevelse som vinner eller förlorar. Genom att förstå detta blir det lättare att förstå hur användarna interagerar med produkten eller utvecklas i ett ständigt föränderligt landskap.
+Använd funktionerna för händelsespårning i [!DNL Adobe Target] för att effektivt mäta mätvärden som är viktiga för ditt företag och dina användningsfall. Spåra händelser är avgörande för att mäta hur framgångsrik dina experiment- eller personaliseringsaktiviteter är, eftersom de talar om för dig vilken variation eller upplevelse som vinner eller förlorar. Genom att förstå detta blir det lättare att förstå hur användarna interagerar med produkten eller utvecklas i ett ständigt föränderligt landskap.
 
-För att spåra händelser genom [!DNL Adobe Target]SDK:er: följ den här tvåstegsprocessen:
+Följ den här tvåstegsprocessen för att spåra händelser via SDK:n för [!DNL Adobe Target]:
 
 1. Installera SDK och distribuera kod som skickar händelser till [!DNL Adobe Target].
 
-1. Skapa och aktivera en [!DNL Adobe Target] aktivitet med ett målmått i användargränssnittet.
+1. Skapa och aktivera en [!DNL Adobe Target]-aktivitet med ett målmått i användargränssnittet.
 
    ![alt-bild](./assets/report-settings.png)
 
 ## Målmått och händelser
 
-I följande tabell definieras den kombination av mål och händelser som du kan definiera och mäta med en [!DNL Target] aktivitet med [!DNL Target]Rapporteringsfunktioner:
+I följande tabell definieras den kombination av mål och händelser som du kan definiera och mäta med en [!DNL Target]-aktivitet med hjälp av rapportfunktionerna i [!DNL Target]:
 
 | Primärt mål | Händelse |
 | --- | --- |
@@ -34,7 +34,7 @@ I följande tabell definieras den kombination av mål och händelser som du kan 
 
 ## Hur intrycken utlöses
 
-Målets SDK anropar den underliggande [Leverans-API](/help/dev/implement/delivery-api/overview.md). När ett exekveringsobjekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter. SDK-metoder som automatiskt ökar ett intryck är:
+Mål-SDK anropar underliggande [leverans-API](/help/dev/implement/delivery-api/overview.md). När ett exekveringsobjekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter. SDK-metoder som automatiskt ökar ett intryck är:
 
 * getOffers()
 * getAttributes()
@@ -43,7 +43,7 @@ Målets SDK anropar den underliggande [Leverans-API](/help/dev/implement/deliver
 >
 >När ett förhämtningsobjekt skickas i begäran ökas inte intrycket automatiskt för aktiviteter med rutor i förhämtningsobjektet.
 
-The `sendNotifications` kan användas för att skicka händelser manuellt till [!DNL Adobe Target] och ger ett intryck.
+Metoden `sendNotifications` kan användas för att manuellt skicka händelser till [!DNL Adobe Target] och utlösa ett intryck.
 
 >[!BEGINTABS]
 
@@ -67,13 +67,13 @@ Följande kodexempel fungerar för alla målmätningstyper, oavsett om det är C
 
 ### Visad sida eller mbox
 
-Det här exemplet får först ett målerbjudande med `getOffers`. Sedan skapas en begäran med ett meddelande baserat på det mbox-erbjudandet.
+Det här exemplet får först ett erbjudande om målruta med `getOffers`. Sedan skapas en begäran med ett meddelande baserat på det mbox-erbjudandet.
 
-Meddelandet `type` egenskapen är inställd på `display`.
+Egenskapen för meddelandet `type` är inställd på `display`.
 
 Om du vill ange att en sida har visats är det viktigt att du anger adressobjektet i meddelandenyttolasten. Var noga med att ange URL-adressen därefter.
 
-För rutor måste du ange egenskapen mbox för meddelandeobjektet och tillhandahålla en array med variabler baserat på alternativarrayen i `targetResult`.
+För rutor måste du ange egenskapen mbox för meddelandeobjektet och tillhandahålla en array med tokens baserat på alternativarrayen i `targetResult`.
 
 >[!BEGINTABS]
 
@@ -184,11 +184,11 @@ targetJavaClient.sendNotifications(notificationRequest);
 
 ### Klicka på en Mbox
 
-Det här exemplet får först ett målerbjudande med `getOffers`. Sedan skapas en begäran med ett meddelande baserat på det mbox-erbjudandet.
+Det här exemplet får först ett erbjudande om målruta med `getOffers`. Sedan skapas en begäran med ett meddelande baserat på det mbox-erbjudandet.
 
-Meddelandet `type` egenskapen är inställd på `click`.
+Egenskapen för meddelandet `type` är inställd på `click`.
 
-Du måste ange `mbox` egenskapen i meddelandeobjektet och tillhandahåller en array med variabler baserat på metrisk array i `targetResult`.
+Du måste ange egenskapen `mbox` för meddelandeobjektet och tillhandahålla en array med tokens baserat på metrisk array i `targetResult`.
 
 >[!BEGINTABS]
 
@@ -306,9 +306,9 @@ targetJavaClient.sendNotifications(notificationRequest);
 
 Det här exemplet hämtar först målvyer med `getOffers`. Sedan skapas en begäran med ett meddelande baserat på dessa vyer.
 
-Meddelandet `type` egenskapen är inställd på `display`.
+Egenskapen för meddelandet `type` är inställd på `display`.
 
-För vyer måste du ange `view` -egenskapen i meddelandeobjektet och tillhandahåller en array med variabler baserat på alternativarrayen i targetResult.
+För vyer måste du ange egenskapen `view` för meddelandeobjektet och tillhandahålla en array med variabler baserat på alternativarrayen i targetResult.
 
 >[!BEGINTABS]
 
@@ -416,9 +416,9 @@ targetJavaClient.sendNotifications(notificationRequest);
 
 Det här exemplet hämtar först målvyer med `getOffers`. Sedan skapas en begäran med meddelanden baserade på dessa vyer.
 
-Meddelandet `type` egenskapen är inställd på `click`.
+Egenskapen för meddelandet `type` är inställd på `click`.
 
-Du måste ange `view` -egenskapen i meddelandeobjektet och tillhandahåller en array med token baserat på metrics-arrayen i targetResult.
+Du måste ange egenskapen `view` för meddelandeobjektet och tillhandahålla en array med tokens baserat på metrisk array i targetResult.
 
 >[!BEGINTABS]
 

@@ -1,18 +1,18 @@
 ---
 title: Användarbehörigheter och egenskaper
-description: The [!DNL Target] SDK:er har stöd för användarbehörigheter och egenskaper.
+description: ' [!DNL Target] SDK:erna har stöd för användarbehörigheter och egenskaper.'
 exl-id: 612faf1a-e8f9-4321-b831-90fba69ead3a
 feature: Implement Server-side
 source-git-commit: 09a50aa67ccd5c687244a85caad24df56c0d78f5
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '114'
 ht-degree: 0%
 
 ---
 
 # Användarbehörigheter och egenskaper
 
-The [!DNL Target] SDK:er har stöd för användarbehörigheter och egenskaper. Om du inte känner till hur [!DNL Adobe Target] hanterar företagsbehörigheter via arbetsytor och egenskaper. Du kan läsa mer om dem i [Enterprise-användarbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html).
+SDK:erna [!DNL Target] har stöd för användarbehörigheter och egenskaper. Om du inte känner till hur [!DNL Adobe Target] hanterar företagsbehörigheter via arbetsytor och egenskaper kan du läsa mer om det i [Enterprise-användarbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html).
 
 Klienten kan använda en egenskapstoken på ett av två sätt.
 
@@ -50,7 +50,7 @@ TargetClient targetClient = TargetClient.create(clientConfig);
 
 ## Incidentegenskapstoken i getOffers-anrop
 
-En egenskapstoken kan också anges i en enskild `getOffers` ring. Detta görs genom att ett egenskapsobjekt läggs till i begäran. En egenskapstoken som anges på det här sättet får företräde framför en uppsättning i konfigurationen.
+En egenskapstoken kan också anges i ett enskilt `getOffers`-anrop. Detta görs genom att ett egenskapsobjekt läggs till i begäran. En egenskapstoken som anges på det här sättet får företräde framför en uppsättning i konfigurationen.
 
 >[!BEGINTABS]
 

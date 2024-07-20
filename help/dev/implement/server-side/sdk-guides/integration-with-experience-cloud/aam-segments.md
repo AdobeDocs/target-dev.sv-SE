@@ -25,31 +25,31 @@ ht-degree: 0%
 | `marketingCloudVisitorId` | Ja | Marketing Cloud Visitor-ID |
 | `blob` | Ja | AAM används för att skicka ytterligare data till AAM. Får inte vara tom och storleken &lt;= 1024. |
 
-SDK fyller automatiskt i dessa fält när du skapar en `getOffers` metodanrop, men du måste se till att en giltig besöks-cookie anges. För att få denna cookie måste du implementera VisitorAPI.js i webbläsaren.
+SDK fyller automatiskt i dessa fält när du gör ett `getOffers`-metodanrop, men du måste se till att en giltig besöks-cookie anges. För att få denna cookie måste du implementera VisitorAPI.js i webbläsaren.
 
 ## Användarhandbok om implementering
 
 ### Användning av cookies
 
-Cookies används för att korrelera [!DNL Adobe Audience Manager] förfrågningar med [!DNL Adobe Target] förfrågningar. Detta är de cookies som används i den här implementeringen.
+Cookies används för att korrelera [!DNL Adobe Audience Manager]-begäranden med [!DNL Adobe Target]-begäranden. Detta är de cookies som används i den här implementeringen.
 
 | Cookie | Namn | Beskrivning |
 | --- | --- | --- |
-| besöks-cookie | `AMCVS_XXXXXXXXXXXXXXXXXXXXXXXX%40AdobeOrg` | Den här cookien anges av `VisitorAPI.js` när den initieras med `visitorState` från målet `getOffers` svar. |
-| mål-cookie | `mbox` | Webbservern måste ange denna cookie med hjälp av namnet och värdet för `targetCookie` från målet `getOffers` svar. |
+| besöks-cookie | `AMCVS_XXXXXXXXXXXXXXXXXXXXXXXX%40AdobeOrg` | Den här cookien anges av `VisitorAPI.js` när den initieras med `visitorState` från målsvaret `getOffers`. |
+| mål-cookie | `mbox` | Webbservern måste ange den här cookien med namnet och värdet för `targetCookie` från `getOffers`-målsvaret. |
 
 ### Översikt över steg
 
 Anta att en användare anger en URL i en webbläsare som skickar en begäran till webbservern. När den begäran uppfylls:
 
 1. Servern läser besökar- och målcookies från begäran.
-1. Servern ringer upp `getOffers` metod för [!DNL Target] SDK, ange besökar- och målcookies om sådana finns.
-1. När `getOffers` anrop är uppfyllt, värden för `targetCookie` och `visitorState` från svaret används.
-   1. En cookie anges för svaret med värden från `targetCookie`. Detta görs med `Set-Cookie` svarshuvud, som anger att webbläsaren ska behålla målcookien.
-   1. Ett HTML-svar förbereds som initierar `VisitorAPI.js` och passerar in `visitorState` från målsvaret.
+1. Servern anropar metoden `getOffers` för SDK:n [!DNL Target] och anger besökar- och målcookies om sådana finns.
+1. När anropet `getOffers` har slutförts används värden för `targetCookie` och `visitorState` från svaret.
+   1. En cookie har angetts för svaret med värden från `targetCookie`. Detta görs med svarshuvudet `Set-Cookie`, som anger för webbläsaren att behålla målcookien.
+   1. Ett HTML-svar förbereds som initierar `VisitorAPI.js` och skickar in `visitorState` från målsvaret.
 1. HTML-svaret läses in i webbläsaren..
-   1. `VisitorAPI.js` finns i dokumenthuvudet.
-   1. VisitorAPI initieras med `visitorState` från `getOffers` SDK-svar. Detta gör att besökarens cookie ställs in i webbläsaren så att den skickas till servern vid efterföljande begäranden.
+   1. `VisitorAPI.js` ingår i dokumenthuvudet.
+   1. VisitorAPI har initierats med `visitorState` från SDK-svaret `getOffers`. Detta gör att besökarens cookie ställs in i webbläsaren så att den skickas till servern vid efterföljande begäranden.
 
 ### Exempelkod
 
@@ -57,7 +57,7 @@ Följande kodexempel implementerar vart och ett av stegen ovan. Varje steg visas
 
 #### Node.js
 
-Exemplet bygger på [express, ett webbramverk för Node.js](https://expressjs.com/).
+Det här exemplet bygger på [express, ett Node.js-webbramverk](https://expressjs.com/).
 
 >[!BEGINTABS]
 
@@ -148,7 +148,7 @@ app.listen(3000, function () {
 });
 ```
 
->[!TAB index.handtag]
+>[!TAB index.handlebars]
 
 ```html {line-numbers="true"}
 <!doctype html>
@@ -175,7 +175,7 @@ app.listen(3000, function () {
 
 #### Java
 
-Det här exemplet använder [Spring, ett Java-ramverk](https://spring.io/).
+I det här exemplet används [spring, ett Java-webbramverk](https://spring.io/).
 
 >[!BEGINTABS]
 
@@ -298,4 +298,4 @@ public class TargetClientService {
 
 >[!ENDTABS]
 
-Mer information om `TargetRequestUtils.java`, se [Verktygsmetoder (Java)](https://experienceleague.adobe.com/docs/target-dev/developer/server-side/java/utility-methods.html){target=_blank}
+Mer information om `TargetRequestUtils.java` finns i [Verktygsmetoder (Java)](https://experienceleague.adobe.com/docs/target-dev/developer/server-side/java/utility-methods.html){target=_blank}

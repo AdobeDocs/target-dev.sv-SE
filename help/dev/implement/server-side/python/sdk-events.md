@@ -1,11 +1,11 @@
 ---
-title: Prenumerera på händelser i [!DNL Adobe Target] Python SDK
-description: Lär dig hur du prenumererar på olika händelser i Python SDK med [!UICONTROL OnDeviceDecisioningHandler] -objekt.
+title: Prenumerera på händelser i  [!DNL Adobe Target] Python SDK
+description: Lär dig hur du prenumererar på olika händelser som inträffar i Python SDK med objektet [!UICONTROL OnDeviceDecisioningHandler].
 feature: APIs/SDKs
 exl-id: 4e32e3b5-6072-4703-b09d-abb467aa1304
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '174'
+source-wordcount: '165'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 ## Beskrivning
 
-När [initierar SDK](initialize-sdk.md), `options["events"]` dict är ett valfritt objekt med händelsenamnnycklar och callback-funktionsvärden. Det kan användas för att prenumerera på olika händelser som inträffar i SDK. Till exempel `client_ready` -händelsen kan användas med en callback-funktion som anropas när SDK är redo för metodanrop.
+När [SDK](initialize-sdk.md) initieras är `options["events"]`-ordlistan ett valfritt objekt med händelsenamnnycklar och värden för återanropsfunktionen. Det kan användas för att prenumerera på olika händelser som inträffar i SDK. Händelsen `client_ready` kan till exempel användas med en callback-funktion som anropas när SDK är redo för metodanrop.
 
-När `callback` -funktionen anropas, ett händelseobjekt skickas in. Varje händelse har en `type` motsvarar händelsenamnet och vissa händelser innehåller ytterligare egenskaper med relevant information.
+När funktionen `callback` anropas skickas ett händelseobjekt. Varje händelse har en `type` som motsvarar händelsenamnet, och vissa händelser innehåller ytterligare egenskaper med relevant information.
 
 ## Händelser
 

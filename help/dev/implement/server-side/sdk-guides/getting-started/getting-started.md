@@ -5,14 +5,14 @@ feature: APIs/SDKs
 exl-id: a5ae9826-7bb5-41de-8796-76edc4f5b281
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '595'
 ht-degree: 0%
 
 ---
 
-# Komma igång med [!DNL Target] SDK
+# Komma igång med [!DNL Target] SDK:er
 
-För att komma igång rekommenderar vi att du skapar din första [beslut på enheten](../on-device-decisioning/overview.md) aktivitetsflaggan på det språk du väljer:
+För att komma igång rekommenderar vi att du skapar din första flaggaktivitet för funktionen [på enheten](../on-device-decisioning/overview.md) på det språk du väljer:
 
 * Node.js
 * Java
@@ -24,26 +24,26 @@ För att komma igång rekommenderar vi att du skapar din första [beslut på enh
 1. Aktivera beslut på enheten för din organisation
 1. Installera SDK
 1. Initiera SDK
-1. Konfigurera funktionsflaggor i en [!DNL Adobe Target] [!UICONTROL A/B Test] aktivitet
+1. Konfigurera funktionsflaggor i en [!DNL Adobe Target] [!UICONTROL A/B Test]-aktivitet
 1. Implementera och återge funktionen i ditt program
 1. Implementera spårning för händelser i ditt program
-1. Aktivera [!UICONTROL A/B Test] aktivitet
+1. Aktivera din [!UICONTROL A/B Test]-aktivitet
 
 ## 1. Aktivera beslut på enheten för din organisation
 
-Genom att aktivera beslut på enheten säkerställs att [!UICONTROL A/B Test] -aktiviteten utförs vid latens nära noll. Om du vill aktivera den här funktionen går du till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** > **[!UICONTROL Account details]** och aktivera **[!UICONTROL On-Device Decisioning]** växla.
+Om du aktiverar enhetsbeslut körs en [!UICONTROL A/B Test]-aktivitet med en latens som är nära noll. Om du vill aktivera den här funktionen går du till **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** > **[!UICONTROL Account details]** och aktiverar växlingsknappen **[!UICONTROL On-Device Decisioning]**.
 
 ![alt-bild](assets/asset-odd-toggle.png)
 
 >[!NOTE]
 >
->Du måste ha **[!UICONTROL Admin]** eller **[!UICONTROL Approver]** [användarroll](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att aktivera eller inaktivera **[!UICONTROL On-Device Decisioning]** växla.
+>Du måste ha användarrollen **[!UICONTROL Admin]** eller **[!UICONTROL Approver]** [](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att aktivera eller inaktivera växlingsknappen **[!UICONTROL On-Device Decisioning]**.
 
-När du har aktiverat **[!UICONTROL On-Device Decisioning]** växla, [!DNL Adobe Target] börjar generera [regelartefakter](../on-device-decisioning/rule-artifact-overview.md) för kunden.
+När du har aktiverat växeln **[!UICONTROL On-Device Decisioning]** börjar [!DNL Adobe Target] generera [regelartefakter](../on-device-decisioning/rule-artifact-overview.md) för klienten.
 
 ## 2. Installera SDK
 
-För Node.js, Java och Python kör du följande kommando i din projektkatalog i terminalen. För .NET lägger du till det som ett beroende av [installera från NuGet](https://www.nuget.org/packages/Adobe.Target.Client).
+För Node.js, Java och Python kör du följande kommando i din projektkatalog i terminalen. För .NET lägger du till det som ett beroende genom att [installera från NuGet](https://www.nuget.org/packages/Adobe.Target.Client).
 
 >[!BEGINTABS]
 
@@ -146,31 +146,31 @@ target_client = TargetClient.create(CONFIG)
 
 >[!ENDTABS]
 
-## 4. Konfigurera funktionsflaggorna i en [!DNL Adobe Target] [!UICONTROL A/B Test] aktivitet
+## 4. Konfigurera funktionsflaggor i en [!DNL Adobe Target] [!UICONTROL A/B Test]-aktivitet.
 
-1. I [!DNL Target], navigera till **[!UICONTROL Activities]** sida och sedan välja **[!UICONTROL Create Activity]** > **[!UICONTROL A/B test]**.
+1. Gå till sidan **[!UICONTROL Activities]** i [!DNL Target] och välj sedan **[!UICONTROL Create Activity]** > **[!UICONTROL A/B test]**.
 
    ![alt-bild](assets/asset-ab.png)
 
-1. I **[!UICONTROL Create A/B Test Activity]** modal, lämna standardalternativet för webben markerat (1), välj **[!UICONTROL Form]** som upplevelsedisposition (2) väljer du **[!UICONTROL Default Workspace]** med **[!UICONTROL No Property Restrictions]**(3) och sedan klicka på **[!UICONTROL Next]** (4)
+1. I modala **[!UICONTROL Create A/B Test Activity]** låter du standardalternativet för webben vara markerat (1), väljer **[!UICONTROL Form]** som din upplevelsedisposition (2), väljer **[!UICONTROL Default Workspace]** med **[!UICONTROL No Property Restrictions]**(3) och klickar sedan på **[!UICONTROL Next]** (4).
 
    ![alt-bild](assets/asset-form.png)
 
-1. I **[!UICONTROL Experiences]** skapa aktivitet, ange ett namn för aktiviteten (1) och lägg till ytterligare en upplevelse, Experience B, genom att klicka på **[!UICONTROL Add Experience]** (2) Ange platsnamnet (3). Till exempel: `ondevice-featureflag` eller `homepage-addtocart-featureflag` är platsnamn som anger mål för funktionsflaggstestning.  I exemplet nedan `ondevice-featureflag` är den plats som definieras för Experience B. Om du vill kan du lägga till Audience Refinements (4) för att begränsa behörigheten för aktiviteten.
+1. I steget **[!UICONTROL Experiences]** när du skapar en aktivitet anger du ett namn för aktiviteten (1) och lägger till en andra upplevelse, Experience B, genom att klicka på **[!UICONTROL Add Experience]** (2). Ange platsnamnet (3). `ondevice-featureflag` eller `homepage-addtocart-featureflag` är till exempel platsnamn som anger mål för testning av funktionsflaggor.  I exemplet nedan är `ondevice-featureflag` den plats som definierats för Experience B. Om du vill kan du lägga till Audience Refinements (4) för att begränsa behörigheten för aktiviteten.
 
    ![alt-bild](assets/asset-location.png)
 
-1. I **[!UICONTROL CONTENT]** på samma sida väljer **[!UICONTROL Create JSON Offer]** i listrutan (1) enligt bilden.
+1. I avsnittet **[!UICONTROL CONTENT]** på samma sida väljer du **[!UICONTROL Create JSON Offer]** i listrutan (1) så som visas.
 
    ![alt-bild](assets/asset-offer.png)
 
-1. I **[!UICONTROL JSON Data]** textruta som visas anger du variabler för funktionsflaggan för varje upplevelse (1) med ett giltigt JSON-objekt (2).
+1. I textrutan **[!UICONTROL JSON Data]** som visas skriver du in dina funktionsflaggvariabler för varje upplevelse (1) med ett giltigt JSON-objekt (2).
 
    Ange funktionens flaggvariabler för Experience A.
 
    ![alt-bild](assets/asset-json_a.png)
 
-   **(Exempel på JSON för upplevelse A ovan)**
+   **(Exempel-JSON för upplevelse A, ovan)**
 
    ```json {line-numbers="true"}
    {
@@ -192,21 +192,21 @@ target_client = TargetClient.create(CONFIG)
    }
    ```
 
-1. Klicka **[!UICONTROL Next]** (1) att gå vidare till **[!UICONTROL Targeting]** steg för att skapa aktiviteter.
+1. Klicka på **[!UICONTROL Next]** (1) för att gå vidare till steget **[!UICONTROL Targeting]** när du skapar aktiviteter.
 
    ![alt-bild](assets/asset-next_2_t.png)
 
-1. I **[!UICONTROL Targeting]** som visas nedan är målgruppsanpassning (2) fortfarande standardinställningen för alla besökare, vilket förenklar arbetet. Det innebär att aktiviteten inte är målinriktad. Observera dock att Adobe alltid rekommenderar att ni riktar in er på era målgrupper för produktionsaktiviteter. Klicka **[!UICONTROL Next]** (3) att gå vidare till **[!UICONTROL Goals & Settings]** steg för att skapa aktiviteter.
+1. I exemplet med steget **[!UICONTROL Targeting]** som visas nedan är målgruppsanpassning (2) fortfarande standarduppsättningen för alla besökare, vilket är enklare. Det innebär att aktiviteten inte är målinriktad. Observera dock att Adobe alltid rekommenderar att ni riktar in er på era målgrupper för produktionsaktiviteter. Klicka på **[!UICONTROL Next]** (3) för att gå vidare till steget **[!UICONTROL Goals & Settings]** när du skapar aktiviteter.
 
    ![alt-bild](assets/asset-next_2_g.png)
 
-1. I **[!UICONTROL Goals & Settings]** steg, ange **[!UICONTROL Reporting Source]** till **[!UICONTROL Adobe Target]** (1) Definiera **[!UICONTROL Goal Metric]** as **[!UICONTROL Conversion]**, och specificera detaljerna baserat på webbplatsens konverteringsmått (2). Klicka **[!UICONTROL Save & Close]** (3) för att spara aktiviteten.
+1. I steget **[!UICONTROL Goals & Settings]** anger du **[!UICONTROL Reporting Source]** till **[!UICONTROL Adobe Target]** (1). Definiera **[!UICONTROL Goal Metric]** som **[!UICONTROL Conversion]** och ange informationen baserat på din webbplats konverteringsmått (2). Klicka på **[!UICONTROL Save & Close]** (3) för att spara aktiviteten.
 
    ![alt-bild](assets/asset-conv.png)
 
 ## 5. Implementera och återge funktionen i ditt program
 
-När du har konfigurerat variablerna för funktionsflagga i [!DNL Target], ändra programkoden så att den används. När du har hämtat funktionsflaggan i programmet kan du till exempel använda den för att aktivera funktioner och återge den upplevelse som besökaren är kvalificerad för.
+När du har konfigurerat variablerna för funktionsflaggan i [!DNL Target] ändrar du programkoden så att de används. När du har hämtat funktionsflaggan i programmet kan du till exempel använda den för att aktivera funktioner och återge den upplevelse som besökaren är kvalificerad för.
 
 >[!BEGINTABS]
 
@@ -382,12 +382,12 @@ target_client.send_notifications({
 
 >[!ENDTABS]
 
-## 7. Aktivera [!UICONTROL A/B Test] aktivitet
+## 7. Aktivera aktiviteten [!UICONTROL A/B Test]
 
-1. Klicka **[!UICONTROL Activate]** (1) aktivera [!UICONTROL A/B Test] aktivitet.
+1. Klicka på **[!UICONTROL Activate]** (1) för att aktivera din [!UICONTROL A/B Test]-aktivitet.
 
    >[!NOTE]
    >
-   >Du måste ha **[!UICONTROL Approver]** eller **[!UICONTROL Publisher]** [användarroll](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att utföra det här steget.
+   >Du måste ha användarrollen **[!UICONTROL Approver]** eller **[!UICONTROL Publisher]** [](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att kunna utföra det här steget.
 
    ![alt-bild](assets/asset-activate.png)

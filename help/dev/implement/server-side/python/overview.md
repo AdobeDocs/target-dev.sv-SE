@@ -1,39 +1,39 @@
 ---
-title: Kom igång med [!DNL Adobe Target] Python SDK
-description: Lär dig mer [!DNL Adobe Target] kan man installera, initiera och använda Python SDK.
+title: Kom igång med  [!DNL Adobe Target] Python SDK
+description: Lär dig hur [!DNL Adobe Target] kunder kan installera, initiera och använda Python SDK.
 feature: APIs/SDKs
 exl-id: 2ccd1b4e-d9af-4547-81fe-c70e6f00df3d
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '108'
 ht-degree: 0%
 
 ---
 
 # Python SDK - översikt
 
-Den här referenshandboken visar hur [!DNL Adobe Target] kan man installera, initiera och använda Python SDK.
+Den här referenshandboken visar hur [!DNL Adobe Target]-kunder kan installera, initiera och använda Python SDK.
 
 ## Krav
 
-Alla aktuella versioner av Python stöds. Se [Python Releases](https://www.python.org/downloads/).
+Alla aktuella versioner av Python stöds, se [Python Releases](https://www.python.org/downloads/).
 
 ## Komma igång
 
-Om du vill se hur du kommer igång med att använda Python SDK går du till [[!DNL Target] Starthandbok för SDK](../sdk-guides/getting-started/getting-started.md).
+Om du vill se hur du kan komma igång med att använda Python SDK går du till [[!DNL Target] SDK Getting Started Guide](../sdk-guides/getting-started/getting-started.md).
 
 ## Exempelapp
 
 Testkör Python SDK:
 
-* Genom att besöka [[!DNL Adobe Target] [!UICONTROL on-device decisioning] demowebbplats](https://github.com/adobe/on-device-decisioning-demo-site)
-* I en [exempelprogram](../sdk-guides/sample-apps/sample-apps.md).
+* Genom att gå till demowebbplatsen [[!DNL Adobe Target] [!UICONTROL on-device decisioning]](https://github.com/adobe/on-device-decisioning-demo-site)
+* I ett [exempelprogram](../sdk-guides/sample-apps/sample-apps.md).
 
 ## Referens
 
-Om du vill läsa och förstå referensdokumentationen för Python SDK börjar du på [Installera SDK](install-sdk.md).
+Börja med [Installera SDK](install-sdk.md) om du vill läsa och förstå referensdokumentationen för Python SDK.
 
-## Källfiler
+## Source-filer
 
 * [Python SDK Github Repo](https://github.com/adobe/target-python-sdk)
-* [Changelog](https://github.com/adobe/target-python-sdk/blob/master/CHANGELOG.md)
+* [Ändra](https://github.com/adobe/target-python-sdk/blob/master/CHANGELOG.md)

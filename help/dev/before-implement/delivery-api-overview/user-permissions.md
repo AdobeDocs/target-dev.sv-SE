@@ -7,14 +7,14 @@ exl-id: 332f90bd-4079-4653-aa38-b35837631c94
 feature: APIs/SDKs
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '178'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
 
 # Användarbehörigheter (Premium)
 
-[!DNL Adobe] ger kunderna möjlighet att hantera behörigheter för sina användare när de använder Adobe Target. För att lyckas [!UICONTROL Adobe Target Delivery API] anrop måste en token med rätt behörigheter skickas inom API-anropet. Om du vill veta mer om användarbehörighet och hur du hämtar token går du till [den här dokumentationen](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html).
+[!DNL Adobe] tillåter kunder att hantera behörigheter för sina användare när de använder Adobe Target. För att kunna genomföra ett lyckat [!UICONTROL Adobe Target Delivery API]-anrop måste en token med rätt behörigheter skickas inom API-anropet. Om du vill veta mer om användarbehörighet och hur du hämtar token går du till [den här dokumentationen](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html).
 
 ```
 curl -X POST \
@@ -49,7 +49,7 @@ curl -X POST \
     }'
 ```
 
-När du har en motsvarande token skickar du den till `property` -> `token` för varje API-anrop som görs. Om `property` -> `token` skickas inte inom varje API-anrop, du får inga `content` tillbaka från Adobe Target.
+När du har fått motsvarande token skickar du den till `property` -> `token` för varje API-anrop som görs. Om `property` -> `token` inte skickas inom varje API-anrop får du inte tillbaka `content` från Adobe Target.
 
 ```
 {
@@ -71,4 +71,4 @@ När du har en motsvarande token skickar du den till `property` -> `token` för 
 }
 ```
 
-Som du kan se ovan, utan att skicka `property` -> `token`får du inget innehåll tillbaka. Om du förväntar dig innehåll från ditt API-anrop men inte hämtar något från svaret, är det mest troligt eftersom antingen  `property` -> `token` har inte angetts eller skickas utan rätt behörighet.
+Som du ser ovan kommer du inte att få tillbaka något innehåll utan att skicka `property` -> `token`. Om du förväntar dig innehåll från ditt API-anrop men inte hämtar något från svaret, beror det troligen på att `property` -> `token` inte har angetts eller på att den skickas utan rätt behörighet.

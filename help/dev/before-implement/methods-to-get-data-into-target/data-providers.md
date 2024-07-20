@@ -1,12 +1,12 @@
 ---
 keywords: implementera, implementera, konfigurera, konfigurera, dataleverantörer
-description: Hämta data till [!DNL Target] med dataleverantörer.
-title: Hur får jag in data på [!DNL Target] Använda Data Providers?
+description: Hämta data till  [!DNL Target] med dataleverantörer.
+title: Hur hämtar jag data till  [!DNL Target] Använda Data Providers?
 feature: Implementation
 exl-id: 9971bd96-f736-4965-afe2-b4901c12d006
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '298'
+source-wordcount: '287'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ Dataleverantörer är en funktion som gör att du enkelt kan skicka data från t
 
 ## Format
 
-The `window.targetGlobalSettings.dataProviders` -inställningen är en matris med dataleverantörer.
+Inställningen `window.targetGlobalSettings.dataProviders` är en matris med dataleverantörer.
 
-Mer information om strukturen för varje dataleverantör finns i [Dataleverantörer](../../implement/client-side/atjs/atjs-functions/targetglobalsettings.md#data-providers).
+Mer information om strukturen för varje dataleverantör finns i [Data Providers](../../implement/client-side/atjs/atjs-functions/targetglobalsettings.md#data-providers).
 
 ## Exempel på användningsområden
 
@@ -39,17 +39,17 @@ Med den här metoden blir det enkelt att hantera flimmer av standardsidinnehåll
 
 ## Caveats
 
-Om dataleverantörerna har lagts till i `window.targetGlobalSettings.dataProviders` är asynkrona, utförs de parallellt. Besökar-API-begäran körs parallellt med funktioner som lagts till i `window.targetGlobalSettings.dataProviders` för att tillåta en minimal väntetid.
+Om dataleverantörerna som läggs till i `window.targetGlobalSettings.dataProviders` är asynkrona körs de parallellt. Visitor-API-begäran körs parallellt med funktioner som lagts till i `window.targetGlobalSettings.dataProviders` för att ge en minimal väntetid.
 
 at.js försöker inte cachelagra data. Om dataleverantören bara hämtar data en gång, bör dataleverantören se till att data cachelagras och, när providerfunktionen anropas, hantera cachedata för det andra anropet.
 
 ## Exempel på koder
 
-Flera exempel finns i [Dataleverantörer](../../implement/client-side/atjs/atjs-functions/targetglobalsettings.md#data-providers).
+Flera exempel finns i [Data Providers](../../implement/client-side/atjs/atjs-functions/targetglobalsettings.md#data-providers).
 
 ## Länkar till relevant information
 
-Dokumentation: [Dataleverantörer](../../implement/client-side/atjs/atjs-functions/targetglobalsettings.md#data-providers)
+Dokumentation: [Data Providers](../../implement/client-side/atjs/atjs-functions/targetglobalsettings.md#data-providers)
 
 ## Utbildningsvideor:
 

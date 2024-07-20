@@ -1,11 +1,11 @@
 ---
-title: Så här använder du asynkrona begäranden i [!DNL Adobe Target] Node.js SDK
-description: Lär dig mer [!DNL Target] Node.js SDK har stöd för asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
+title: Så här använder du asynkrona begäranden i  [!DNL Adobe Target] Node.js SDK
+description: Lär dig hur  [!DNL Target] Node.js SDK stöder asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
 feature: APIs/SDKs
 exl-id: aa06f3ca-7d2a-4334-8092-730a8705dfb0
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '116'
+source-wordcount: '112'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Beskrivning
 
-`[!UICONTROL getAttributes()]` används för att hämta in experiment och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
+`[!UICONTROL getAttributes()]` används för att hämta experimentella och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
 
 ## Metod
 
@@ -33,7 +33,7 @@ TargetClient.getAttributes(mboxNames: Array, options: Object): Promise
 
 ## Lova
 
-The `Promise` returneras av `TargetClient.getAttributes()` löser ett objekt med följande metoder:
+`Promise` som returneras av `TargetClient.getAttributes()` löser ett objekt med följande metoder:
 
 | Metod | Returtyp | Beskrivning |
 | --- | --- | --- |

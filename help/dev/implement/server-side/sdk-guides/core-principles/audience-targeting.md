@@ -5,7 +5,7 @@ exl-id: df1bd856-e848-452c-90a0-abf29e7a2313
 feature: Implement Server-side
 source-git-commit: 09a50aa67ccd5c687244a85caad24df56c0d78f5
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
@@ -14,11 +14,12 @@ ht-degree: 0%
 
 ## Ökning
 
-Målgrupper kan användas för att målinrikta era experiment- och personaliseringsaktiviteter. [!DNL Adobe Target] har stöd för en mängd kraftfulla målgruppsanpassningsfunktioner. Följande attribut är tillgängliga för [målgruppsanpassning](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/create-audience.html):
+Målgrupper kan användas för att målinrikta era experiment- och personaliseringsaktiviteter. [!DNL Adobe Target] har stöd för en mängd kraftfulla målgruppsanpassningsfunktioner. Följande attribut är tillgängliga för [målgrupp](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/create-audience.html):
 
-### [!DNL Target] Bibliotek
+### Bibliotek för [!DNL Target]
 
-Mer information finns i [[!DNL Target] Bibliotek](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-library.html). &#x200B;
+Mer information finns i [[!DNL Target] Bibliotek](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-library.html).
+&#x200B;
 * Refereras från Bing
 * Chrome Browser
 * Firefox-webbläsare
@@ -35,7 +36,8 @@ Mer information finns i [[!DNL Target] Bibliotek](https://experienceleague.adobe
 
 ### Geo
 
-Mer information finns i [Geo](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html). &#x200B; &#x200B;
+Mer information finns i [Geo](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html).
+&#x200B; &#x200B;
 * Land/region
 * Läge
 * Ort
@@ -55,7 +57,7 @@ Mer information finns i [Nätverk](https://experienceleague.adobe.com/docs/targe
 
 ### Mobil
 
-Mer information finns i [Mobil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html).
+Mer information finns i [Mobile](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html).
 
 * Namn på enhetsmarknadsföring
 * Enhetsmodell
@@ -124,11 +126,11 @@ Mer information finns i [Tidsram](https://experienceleague.adobe.com/docs/target
 
 ## Klienttips
 
-[!DNL Adobe Target] kräver klienttips för korrekt segmentering av attribut för webbläsare, operativsystem och mobila målgrupper samt vissa instanser av profilskript. Mer bakgrundsinformation finns i [Tips för användaragent och klient](../../../client-side/atjs/user-agent-and-client-hints.md).
+[!DNL Adobe Target] kräver klienttips för korrekt segmentering av attribut för webbläsare, operativsystem och mobila målgrupper samt vissa instanser av profilskript. Mer bakgrundsinformation finns i [Användaragent och Klienttips](../../../client-side/atjs/user-agent-and-client-hints.md).
 
 ### Skicka klienttips till [!DNL Adobe Target]
 
-Från och med Node.js SDK v2.4.0 och Java SDK v2.3.0 kan klienttips skickas till [!DNL Target] via `getOffers()` samtal. Klienttips bör finnas på `request.context` -objekt tillsammans med användaragent.
+Från och med Node.js SDK v2.4.0 och Java SDK v2.3.0 kan klienttips skickas till [!DNL Target] via `getOffers()` anrop. Klienttips bör inkluderas på objektet `request.context`, tillsammans med användaragenten.
 
 >[!BEGINTABS]
 
@@ -205,11 +207,11 @@ Tabellen nedan visar vilka målgruppsregler som stöds eller inte stöds för en
 | [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html) | Nej |
 | [Trafikkällor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/traffic-sources.html) | Nej |
 | [Tidsram](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/time-frame.html) | Ja |
-| [Experience Cloud målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html) (Målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager | Nej |
+| [Experience Cloud-målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html) (målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager) | Nej |
 
 ### Målinriktning för geolokalisering för beslut på enheter
 
-Adobe rekommenderar att du anger geovärdena själv i anropet till `getOffers`. Gör detta genom att ställa in `Geo` -objektet i `Context` om begäran. Det innebär att servern behöver ett sätt att avgöra var varje slutanvändare befinner sig. Servern kan till exempel utföra en IP-till-Geo-sökning med en tjänst som du konfigurerar. Vissa värdtjänstleverantörer, som Google Cloud, tillhandahåller den här funktionen via anpassade rubriker i varje `HttpServletRequest`.
+Adobe rekommenderar att du anger geovärdena själv i anropet till `getOffers` för att behålla nästan noll fördröjning för enhetsspecifika beslutsaktiviteter med geobaserade målgrupper. Gör detta genom att ställa in objektet `Geo` i `Context` för begäran. Det innebär att servern behöver ett sätt att avgöra var varje slutanvändare befinner sig. Servern kan till exempel utföra en IP-till-Geo-sökning med en tjänst som du konfigurerar. Vissa värdtjänstleverantörer, som Google Cloud, tillhandahåller den här funktionen via anpassade rubriker i varje `HttpServletRequest`.
 
 >[!BEGINTABS]
 
@@ -268,7 +270,7 @@ public class TargetRequestUtils {
 
 >[!ENDTABS]
 
-Om du inte kan utföra IP-till-Geo-sökningar på servern, men ändå vill utföra enhetsbeslut för `getOffers` -förfrågningar som innehåller geobaserade målgrupper stöds också. Nackdelen med detta är att det kommer att använda en fjärransluten IP-till-Geo-sökning som lägger till fördröjning för varje `getOffers` ring. Den här fördröjningen bör vara lägre än en fjärranslutning `getOffers` eftersom det träffar ett CDN som ligger nära servern. Du måste **endast** tillhandahåller `ipAddress` fältet i `Geo` -objektet i `Context` för att SDK ska kunna hämta den geografiska platsen för användarens IP-adress. Om något annat fält förutom `ipAddress` tillhandahålls, [!DNL Target] SDK hämtar inte metadata för geopositionering för upplösning.
+Men om du inte kan utföra IP-till-Geo-sökningar på servern, men ändå vill utföra enhetsbeslut för `getOffers`-begäranden som innehåller geobaserade målgrupper, stöds även detta. Nackdelen med den här metoden är att den kommer att använda en fjärr-IP-till-Geo-sökning, som lägger till fördröjning till varje `getOffers`-samtal. Den här fördröjningen bör vara lägre än ett `getOffers`-fjärranrop, eftersom den träffar ett CDN som ligger nära servern. Du får **endast** tillhandahålla fältet `ipAddress` i objektet `Geo` i `Context` i din begäran för att SDK ska kunna hämta den geografiska platsen för användarens IP-adress. Om något annat fält förutom `ipAddress` anges kommer [!DNL Target] SDK inte att hämta metadata för geopositionering för upplösning.
 
 >[!BEGINTABS]
 
@@ -332,4 +334,4 @@ Tabellen nedan visar vilka målgruppsregler som stöds eller inte stöds för be
 | [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html) | Ja |
 | [Trafikkällor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/traffic-sources.html) | Ja |
 | [Tidsram](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/time-frame.html) | Ja |
-| [Experience Cloud målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html) (Målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager | Ja |
+| [Experience Cloud-målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html) (målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager) | Ja |

@@ -1,6 +1,6 @@
 ---
-title: Prenumerera på händelser i [!DNL Adobe Target] Java SDK
-description: Lär dig hur du prenumererar på olika händelser i Java SDK med [!UICONTROL OnDeviceDecisioningHandler] -objekt.
+title: Prenumerera på händelser i  [!DNL Adobe Target] Java SDK
+description: Lär dig hur du prenumererar på olika händelser i Java SDK med objektet [!UICONTROL OnDeviceDecisioningHandler].
 feature: APIs/SDKs
 exl-id: f2d56762-6bf7-4c6b-9c14-fb20e5cfd60d
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -14,17 +14,17 @@ ht-degree: 0%
 
 ## Beskrivning
 
-När [initierar SDK](initialize-sdk.md), ett valfritt `OnDeviceDecisioningHandler` kan anges på `ClientConfig` -objekt. Det kan användas för att prenumerera på olika händelser som inträffar i SDK. Till exempel `onDeviceDecisioningReady` -händelsen kan användas med en callback-funktion som anropas när SDK är redo för metodanrop.
+När [SDK](initialize-sdk.md) initieras kan ett valfritt `OnDeviceDecisioningHandler`-objekt anges för `ClientConfig`-objektet. Det kan användas för att prenumerera på olika händelser som inträffar i SDK. Händelsen `onDeviceDecisioningReady` kan till exempel användas med en callback-funktion som anropas när SDK är redo för metodanrop.
 
 ## Händelser
 
-The `OnDeviceDecisioningHandler` -objektet innehåller följande återanrop som anropas för vissa händelser:
+Objektet `OnDeviceDecisioningHandler` innehåller följande återanrop som anropas för vissa händelser:
 
 | Namn | Argument | Beskrivning |
 | --- | --- | --- |
-| onDeviceDecisioningReady | Ingen | Anropas endast första gången klienten är klar för [!UICONTROL on-device decisioning] |
-| artifactDownloadSucceeded | byte[] innehåll i artefaktfil | Anropas varje gång [!UICONTROL on-device decisioning] defekten har hämtats |
-| artifactDownloadFailed | Undantag | Anropas varje gång det inte går att hämta en [!UICONTROL on-device decisioning] artefakt |
+| onDeviceDecisioningReady | Ingen | Anropas endast en gång första gången klienten är klar för [!UICONTROL on-device decisioning] |
+| artifactDownloadSucceeded | byte[] innehåll i artefaktfilen | Anropas varje gång en [!UICONTROL on-device decisioning]-artefakt hämtas |
+| artifactDownloadFailed | Undantag | Anropas varje gång det inte går att hämta en [!UICONTROL on-device decisioning]-artefakt |
 
 ## Exempel
 

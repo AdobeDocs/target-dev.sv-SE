@@ -1,6 +1,6 @@
 ---
-title: Skicka visnings- eller klickmeddelanden till [!DNL Adobe Target] med Java SDK
-description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till [!DNL Adobe Target] för mätning och rapportering.
+title: Skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target] med Java SDK
+description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target]  för mätning och rapportering.
 feature: APIs/SDKs
 exl-id: 9231b480-f50f-40d1-ab06-0b9f2a2d79e3
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -18,14 +18,14 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->När en `execute` om ett objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
+>När ett `execute`-objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
 
 SDK-metoder som automatiskt ökar ett intryck är:
 
 * `getOffers()`
 * `getAttributes()`
 
-När en `prefetch` -objektet skickas i begäran, intrycket ökas inte automatiskt för aktiviteter med rutor i `prefetch` -objekt. `sendNotifications()` måste användas för förhämtade upplevelser för att öka antalet visningar och konverteringar.
+När ett `prefetch`-objekt skickas i begäran ökas inte intrycket automatiskt för aktiviteter med rutor i `prefetch`-objektet. `sendNotifications()` måste användas för förhämtade upplevelser för att öka antalet visningar och konverteringar.
 
 ## Metod
 
@@ -37,7 +37,7 @@ ResponseStatus TargetClient.sendNotifications(TargetDeliveryRequest request)
 
 ## Exempel
 
-Först bygger vi [!DNL Target Delivery API] begäran om förhämtning av innehåll för `home` och `product1` mboxes.
+Först skapar vi [!DNL Target Delivery API]-begäran om förhämtning av innehåll för mrutorna `home` och `product1`.
 
 ### Förhämtning
 
@@ -51,7 +51,7 @@ PrefetchRequest prefetchMboxesRequest = new PrefetchRequest().setMboxes(mboxRequ
 TargetDeliveryResponse targetResponse = targetJavaClient.getOffers(targetDeliveryRequest);
 ```
 
-Ett godkänt svar innehåller en [!UICONTROL Target Delivery API] svarsobjekt, som innehåller förhämtat innehåll för de begärda rutorna. Ett exempel `targetResponse.response` kan se ut så här:
+Ett godkänt svar kommer att innehålla ett [!UICONTROL Target Delivery API]-svarsobjekt, som innehåller förhämtat innehåll för de begärda rutorna. Ett `targetResponse.response`-exempelobjekt kan se ut så här:
 
 ### Svar
 
@@ -109,7 +109,7 @@ Ett godkänt svar innehåller en [!UICONTROL Target Delivery API] svarsobjekt, s
 }
 ```
 
-Lägg märke till mbox `name` och `state` fält, samt `eventToken` -fält, i var och en av [!DNL Target] innehållsalternativ. Dessa bör anges i `sendNotifications()` begär, så snart varje innehållsalternativ visas. Låt oss anta att `product1` mbox har visats på en icke-webbläsarenhet. Begäran om meddelanden ser ut så här:
+Observera fälten mbox `name`, `state` och `eventToken` i alla [!DNL Target] -innehållsalternativ. Dessa bör anges i `sendNotifications()`-begäran så snart varje innehållsalternativ visas. Låt oss anta att mbox `product1` har visats på en annan enhet än webbläsaren. Begäran om meddelanden ser ut så här:
 
 ### Begäran
 
@@ -128,7 +128,7 @@ TargetDeliveryRequest mboxNotificationRequest = TargetDeliveryRequest.builder().
 }}).build();
 ```
 
-Observera att vi har inkluderat både mbox-läget och händelsetoken som motsvarar [!DNL Target] Erbjudandet levereras som ett prefetch-svar. När vi har skapat meddelandebegäran kan vi skicka den till [!DNL Target] via `sendNotifications()` API-metod:
+Observera att vi har inkluderat både mbox-tillståndet och den händelsetoken som motsvarar erbjudandet [!DNL Target] som levererades i förhämtningssvaret. När vi har skapat meddelandebegäran kan vi skicka den till [!DNL Target] via API-metoden `sendNotifications()`:
 
 ### Svar
 

@@ -6,7 +6,7 @@ exl-id: eab88e3a-442c-440b-a83d-f4512fc73e75
 feature: APIs/SDKs
 source-git-commit: 4ff2746b8b485fe3d845337f06b5b0c1c8d411ad
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '522'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,9 @@ När du använder förhämtning är det viktigt att du känner till följande te
 
 | Fältnamn | Beskrivning |
 | --- | --- |
-| `prefetch` | Lista med rutor och vyer som ska hämtas men inte markeras som besökta. The [!DNL Target] Kanten returnerar ett `eventToken` för varje ruta eller vy som finns i förhämtningsarrayen. |
+| `prefetch` | Lista med rutor och vyer som ska hämtas men inte markeras som besökta. Edge [!DNL Target] returnerar `eventToken` för varje mbox eller vy som finns i förhämtningsarrayen. |
 | `notifications` | Lista med rutor och vyer som tidigare har förhämtats och ska markeras som besökta. |
-| `eventToken` | En hash-kodad krypterad token som returneras när innehållet är förhämtat. Denna token ska skickas tillbaka till [!DNL Target] i `notifications` array. |
+| `eventToken` | En hash-kodad krypterad token som returneras när innehållet är förhämtat. Denna token ska skickas tillbaka till [!DNL Target] i `notifications`-arrayen. |
 
 ## Förhämta kartonger
 
@@ -69,7 +69,7 @@ curl -X POST \
 }'
 ```
 
-I `prefetch` fält, lägga till ett eller flera `mboxes` du vill förhämta minst en gång för en besökare i en session. När du har förhämtat dem `mboxes`får du följande svar:
+I fältet `prefetch` lägger du till en eller flera `mboxes` som du vill förhämta minst en gång för en besökare i en session. När du har förhämtat för dessa `mboxes` får du följande svar:
 
 ```JSON {line-numbers="true"}
 {
@@ -120,13 +120,13 @@ I `prefetch` fält, lägga till ett eller flera `mboxes` du vill förhämta mins
 }
 ```
 
-I svaret ser du `content` fält som innehåller den upplevelse som ska visas för besökaren för en viss `mbox`. Detta är mycket användbart när det cache-lagras på servern, så att när en besökare interagerar med ditt webb- eller mobilprogram under en session och besöker en `mbox` på en viss sida i programmet kan upplevelsen levereras från cacheminnet i stället för att göra en annan [!UICONTROL Adobe Target Delivery API] ring. Men när en upplevelse levereras till besökaren från `mbox`, a `notification` skickas via ett anrop till Delivery API för att logga in. Detta beror på svaret från `prefetch` anrop cachelagras, vilket innebär att besökaren inte har sett upplevelserna vid den tidpunkt då `prefetch` samtal inträffar. Läs mer om `notification` process, se [Meddelanden](notifications.md).
+I svaret visas fältet `content` med den upplevelse som ska visas för besökaren för en viss `mbox`. Detta är mycket användbart när det cache-lagras på servern, så att när en besökare interagerar med ditt webb- eller mobilprogram under en session och besöker en `mbox` på en viss sida i programmet kan upplevelsen levereras från cachen i stället för att göra ett nytt [!UICONTROL Adobe Target Delivery API]-anrop. Men när en upplevelse levereras till besökaren från `mbox` skickas en `notification` via ett anrop från leverans-API för att kunna logga in. Detta beror på att svaret på `prefetch` anrop cachelagras, vilket innebär att besökaren inte har sett upplevelserna när `prefetch` -anropet inträffar. Mer information om processen `notification` finns i [Meddelanden](notifications.md).
 
-## Förhämta mappar med `clickTrack` mätvärden när du använder [!UICONTROL Analytics for Target] (A4T)
+## Förhämta rutor med `clickTrack`-mått när [!UICONTROL Analytics for Target] (A4T) används
 
 [[!UICONTROL Adobe Analytics for Target]](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html){target=_blank} (A4T) är en integrering med flera lösningar som gör att du kan skapa aktiviteter baserade på [!DNL Analytics] konverteringsstatistik och målgruppssegment.
 
-Följande kodfragment är ett svar från en förhämtning av en mbox som innehåller `clickTrack` mätvärden som ska rapporteras [!DNL Analytics] att man klickat på ett erbjudande:
+Följande kodfragment är ett svar från en förhämtning av en mbox som innehåller `clickTrack` mätvärden för att meddela [!DNL Analytics] att ett erbjudande har klickats:
 
 ```JSON {line-numbers="true"}
 {
@@ -165,11 +165,11 @@ Följande kodfragment är ett svar från en förhämtning av en mbox som innehå
 
 >[!NOTE]
 >
->Förhämtningen för en mbox innehåller [!DNL Analytics] endast nyttolast för kvalificerade aktiviteter. Att förhämta framgångsmått för ännu ej kvalificerade aktiviteter leder till inkonsekvenser i rapporteringen.
+>Förhämtningen för en mbox innehåller endast nyttolasten [!DNL Analytics] för kvalificerade aktiviteter. Att förhämta framgångsmått för ännu ej kvalificerade aktiviteter leder till inkonsekvenser i rapporteringen.
 
 ## Förhämta vyer
 
-Vyer stöder enkelsidiga program (SPA) och mobilprogram smidigare. Vyer kan ses som en logisk grupp av visuella element som tillsammans utgör en SPA eller mobil upplevelse. Nu har VEC skapats med Delivery API [[!UICONTROL A/B Test]](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html){target=_blank} and [[!UICONTROL Experience Targeting]](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html){target=_blank} (X)T-verksamhet med modifieringar på [SPA](/help/dev/implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md) kan nu förhämtas.
+Vyer stöder enkelsidiga program (SPA) och mobilprogram smidigare. Vyer kan ses som en logisk grupp av visuella element som tillsammans utgör en SPA eller mobil upplevelse. Nu kan VEC-skapade [[!UICONTROL A/B Test]](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html){target=_blank}- och [[!UICONTROL Experience Targeting]](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html){target=_blank} (X)T-aktiviteter med ändringar i [Vyer för SPA](/help/dev/implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md) hämtas i förväg via leverans-API:t.
 
 ```shell  {line-numbers="true"}
 curl -X POST \
@@ -199,7 +199,7 @@ curl -X POST \
 }'
 ```
 
-Exemplanropet ovan förhämtar alla vyer som skapats via SPA VEC för [!UICONTROL A/B Test] och XT-aktiviteter att visa för webben `channel`. Observera att anropet förhämtar alla vyer från [!UICONTROL A/B Test] eller XT-aktiviteter som en besökare med `tntId`:`84e8d0e211054f18af365d65f45e902b.28_131` som besöker `url`:`https://target.enablementadobe.com/react/demo/#/` kvalificerar för.
+Exemplanropet ovan förhämtar alla vyer som skapats via SPA VEC för [!UICONTROL A/B Test]- och XT-aktiviteter som ska visas för webben `channel`. Observera att anropet förhämtar alla vyer från de [!UICONTROL A/B Test]- eller XT-aktiviteter som en besökare med `tntId`:`84e8d0e211054f18af365d65f45e902b.28_131` som besöker `url`:`https://target.enablementadobe.com/react/demo/#/` kvalificerar för.
 
 ```JSON  {line-numbers="true"}
 {
@@ -280,4 +280,4 @@ Exemplanropet ovan förhämtar alla vyer som skapats via SPA VEC för [!UICONTRO
 }
 ```
 
-I `content` svarsfält, anteckna metadata som `type`, `selector`, `cssSelector`och `content`, som används för att återge upplevelsen för besökaren när en användare besöker sidan. Observera att `prefetched` innehåll kan cachelagras och återges för användaren när det behövs.
+Observera metadata som `type`, `selector`, `cssSelector` och `content` i `content`-fälten i svaret, som används för att återge upplevelsen för besökaren när en användare besöker sidan. Observera att `prefetched`-innehållet kan cachelagras och återges för användaren när det behövs.

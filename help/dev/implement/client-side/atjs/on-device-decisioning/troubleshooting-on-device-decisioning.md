@@ -6,18 +6,18 @@ feature: at.js
 exl-id: b9530cc7-5e83-4fdf-bde9-b2492e0861ff
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '265'
 ht-degree: 0%
 
 ---
 
-# Felsökning [!UICONTROL on-device decisioning] for at.js
+# Felsökning av [!UICONTROL on-device decisioning] för at.js
 
-Utför följande steg för att felsöka [!UICONTROL on-device decisioning] in [!UICONTROL Adobe Target] med JavaScript-biblioteket at.js:
+Utför följande steg för att felsöka [!UICONTROL on-device decisioning] i [!UICONTROL Adobe Target] med JavaScript-biblioteket at.js:
 
 ## Steg 1: Aktivera konsolloggen för at.js
 
-Lägga till URL-parametern `mboxDebug=1` gör att at.js kan skriva ut meddelanden i webbläsarens konsol.
+Om URL-parametern `mboxDebug=1` läggs till aktiveras at.js för att skriva ut meddelanden i webbläsarens konsol.
 
 Alla meddelanden innehåller prefixet&quot;AT:&quot; för praktisk översikt. För att säkerställa att en artefakt har lästs in bör konsolloggen innehålla meddelanden som liknar följande:
 
@@ -30,13 +30,13 @@ Följande bild visar dessa meddelanden i konsolloggen:
 
 (Klicka på bilden för att expandera till full bredd.)
 
-![Konsollogg med artefaktmeddelanden](/help/dev/implement/client-side/atjs/on-device-decisioning/assets/browser-console.png "Konsollogg med artefaktmeddelanden"){zoomable=&quot;yes&quot;}
+![Konsollogg med artefaktmeddelanden](/help/dev/implement/client-side/atjs/on-device-decisioning/assets/browser-console.png "Konsollogg med artefaktmeddelanden"){zoomable="yes"}
 
 ## Steg 2: Verifiera regelartefaktnedladdningen på fliken Nätverk i webbläsaren
 
 Öppna fliken Nätverk i webbläsaren.
 
-Så här öppnar du till exempel DevTools i Google Chrome:
+Om du till exempel vill öppna DevTools i Google Chrome:
 
 1. Tryck på Ctrl+Skift+J (Windows) eller Kommando+Alt+J (Mac).
 1. Gå till fliken Nätverk.
@@ -48,7 +48,7 @@ Så här öppnar du till exempel DevTools i Google Chrome:
 
 ## Steg 3: Verifiera regelartefaktnedladdningen med anpassade at.js-händelser
 
-At.js-biblioteket skickar två nya anpassade händelser som ska stödjas [!UICONTROL on-device decisioning].
+At.js-biblioteket skickar två nya anpassade händelser som stöder [!UICONTROL on-device decisioning].
 
 * `adobe.target.event.ARTIFACT_DOWNLOAD_SUCCEEDED`
 * `adobe.target.event.ARTIFACT_DOWNLOAD_FAILED`

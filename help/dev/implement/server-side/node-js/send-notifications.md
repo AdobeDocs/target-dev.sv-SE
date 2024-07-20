@@ -1,6 +1,6 @@
 ---
-title: Skicka visnings- eller klickmeddelanden till [!DNL Adobe Target] med Node.js SDK
-description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till [!DNL Adobe Target] för mätning och rapportering.
+title: Skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target] med Node.js SDK
+description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target]  för mätning och rapportering.
 feature: APIs/SDKs
 exl-id: 84bb6a28-423c-457f-8772-8e3f70e06a6c
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -18,14 +18,14 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->När en `execute` om ett objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
+>När ett `execute`-objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
 
 SDK-metoder som automatiskt ökar ett intryck är:
 
 * `getOffers()`
 * `getAttributes()`
 
-När en `prefetch` -objektet skickas i begäran, intrycket ökas inte automatiskt för aktiviteter med rutor i `prefetch` -objekt. `sendNotifications()` måste användas för förhämtade upplevelser för att öka antalet visningar och konverteringar.
+När ett `prefetch`-objekt skickas i begäran ökas inte intrycket automatiskt för aktiviteter med rutor i `prefetch`-objektet. `sendNotifications()` måste användas för förhämtade upplevelser för att öka antalet visningar och konverteringar.
 
 ## Metod
 
@@ -45,7 +45,7 @@ TargetClient.sendNotifications(options: Object): Promise
 
 ## Exempel
 
-Först bygger vi mål-Dleverera API-begäran för förhämtning av innehåll för `home` och `product1` mboxes.
+Först skapar vi mål-Delivery-API-begäran för förhämtning av innehåll för `home` - och `product1` -rutorna.
 
 ### Node.js
 
@@ -62,7 +62,7 @@ const prefetchMboxesRequest = {
 const targetResponse = await targetClient.getOffers({ request: prefetchMboxesRequest });
 ```
 
-Ett godkänt svar innehåller en [!UICONTROL Target Delivery API] svarsobjekt, som innehåller förhämtat innehåll för de begärda rutorna. Ett exempel `targetResponse.response` -objektet kan se ut så här:
+Ett godkänt svar kommer att innehålla ett [!UICONTROL Target Delivery API]-svarsobjekt, som innehåller förhämtat innehåll för de begärda rutorna. Ett exempel på `targetResponse.response`-objekt kan se ut så här:
 
 ### Node.js
 
@@ -120,7 +120,7 @@ Ett godkänt svar innehåller en [!UICONTROL Target Delivery API] svarsobjekt, s
 }
 ```
 
-Lägg märke till mbox `name` och `state` fält, samt `eventToken` -fält, i var och en av [!DNL Target] innehållsalternativ. Dessa bör anges i `sendNotifications()` begär, så snart varje innehållsalternativ visas. Låt oss anta att `product1` mbox har visats på en icke-webbläsarenhet. Begäran om meddelanden visas enligt följande:
+Observera fälten mbox `name`, `state` och `eventToken` i alla [!DNL Target] -innehållsalternativ. Dessa bör anges i `sendNotifications()`-begäran så snart varje innehållsalternativ visas. Låt oss anta att mbox `product1` har visats på en annan enhet än webbläsaren. Begäran om meddelanden visas enligt följande:
 
 ### Node.js
 
@@ -139,7 +139,7 @@ const mboxNotificationRequest = {
 };
 ```
 
-Observera att vi har inkluderat både mbox-läget och händelsetoken som motsvarar [!DNL Target] Erbjudandet levereras som ett prefetch-svar. När vi har skapat meddelandebegäran kan vi skicka den till [!DNL Target] via `sendNotifications()` API-metod:
+Observera att vi har inkluderat både mbox-tillståndet och den händelsetoken som motsvarar erbjudandet [!DNL Target] som levererades i förhämtningssvaret. När vi har skapat meddelandebegäran kan vi skicka den till [!DNL Target] via API-metoden `sendNotifications()`:
 
 ### Node.js
 

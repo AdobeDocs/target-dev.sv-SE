@@ -1,6 +1,6 @@
 ---
 title: Adobe Target Delivery API Single eller Batch Delivery
-description: Hur använder jag [!UICONTROL Adobe Target Delivery API] Enskilda samtal eller batchsamtal?
+description: Hur använder jag [!UICONTROL Adobe Target Delivery API] samtal för en eller flera leveranser?
 keywords: leverans-API
 exl-id: 525cd1f2-616a-486c-8f49-8117615500bb
 feature: APIs/SDKs
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Enskild leverans eller gruppleverans
 
-The [!UICONTROL Adobe Target Delivery API] har stöd för ett enstaka eller grupperat leveranssamtal. Man kan begära en server för innehåll för en eller flera mbox-filer.
+[!UICONTROL Adobe Target Delivery API] har stöd för ett enskilt eller grupperat leveranssamtal. Man kan begära en server för innehåll för en eller flera mbox-filer.
 
 Väg upp prestandakostnaderna när du bestämmer dig för att ringa ett samtal eller ett gruppsamtal. Om du känner till allt innehåll som behöver visas för en användare är det bästa sättet att hämta innehåll för alla mbox med ett enda batchleveranssamtal, för att undvika att ringa flera leveranssamtal.
 
@@ -55,7 +55,7 @@ curl -X POST \
 }'
 ```
 
-I exemplet med ett leveranssamtal ovan hämtas upplevelsen så att den visas för användaren med `tntId`: `abcdefghijkl00023.1_1` för `mbox`:`SummerOffer` på webbkanalen. Det här samtalet kommer att generera följande svar:
+I exemplet med ett leveransanrop ovan hämtas upplevelsen så att den visas för användaren med `tntId`: `abcdefghijkl00023.1_1` för en `mbox`:`SummerOffer` i webbkanalen. Det här samtalet kommer att generera följande svar:
 
 ```
 {
@@ -83,11 +83,11 @@ I exemplet med ett leveranssamtal ovan hämtas upplevelsen så att den visas fö
 }
 ```
 
-Observera följande i svaret: `content` -fältet innehåller HTML som beskriver den upplevelse som ska visas för användaren för webben som motsvarar Sommarerbjudandemlådan.
+Observera att fältet `content` i svaret innehåller HTML som beskriver den upplevelse som ska visas för användaren för webben som motsvarar sommarerbjudanderutan.
 
 ### Kör sidinläsning
 
-Om det finns upplevelser som ska visas när en sidinläsning sker i webbkanalen, t.ex. AB-testning av teckensnitt i sidfoten eller sidhuvudet, kan du ange `pageLoad` i `execute` om du vill hämta alla ändringar som ska tillämpas.
+Om det finns upplevelser som ska visas när en sidinläsning sker i webbkanalen, till exempel AB-testning av teckensnitt i sidfoten eller sidhuvudet, kan du ange `pageLoad` i fältet `execute` för att hämta alla ändringar som ska tillämpas.
 
 ```
 curl -X POST \
@@ -117,7 +117,7 @@ curl -X POST \
 }'
 ```
 
-Exempelanropet ovan hämtar alla upplevelser som kan visa en användare när sidan `https://target.enablementadobe.com/react/demo/#/` laddas.
+Samplingsanropet ovan hämtar alla upplevelser som kan visa en användare när sidan `https://target.enablementadobe.com/react/demo/#/` läses in.
 
 ```
 {
@@ -155,7 +155,7 @@ Exempelanropet ovan hämtar alla upplevelser som kan visa en användare när sid
   }
 ```
 
-I `content` kan den ändring som ska tillämpas på en sidinläsning hämtas. Observera att en länk i rubriken måste namnges i exemplet ovan *Ändrad startsida*.
+I fältet `content` kan den ändring som ska tillämpas på en sidinläsning hämtas. I exemplet ovan bör du tänka på att en länk i rubriken måste heta *Ändrad startsida*.
 
 ## Batchsamtal för leverans
 
@@ -203,7 +203,7 @@ curl -X POST \
 }'
 ```
 
-I exemplet med gruppsamtal ovan hämtas upplevelser som ska visas för användaren med `tntId`: `abcdefghijkl00023.1_1` för flera `mbox`:`SummerOffer`, `SummerShoesOffer`och `SummerDressOffer`. Eftersom vi vet att vi behöver visa en upplevelse av flera kryssrutor för den här användaren kan vi batchera dessa förfrågningar och ringa ett serversamtal i stället för tre individuella leveranssamtal.
+I exemplet med grupperat leveransanrop ovan hämtas upplevelser som ska visas för användaren med `tntId`: `abcdefghijkl00023.1_1` för flera `mbox`:`SummerOffer`, `SummerShoesOffer` och `SummerDressOffer`. Eftersom vi vet att vi behöver visa en upplevelse av flera kryssrutor för den här användaren kan vi batchera dessa förfrågningar och ringa ett serversamtal i stället för tre individuella leveranssamtal.
 
 ```
 {
@@ -252,4 +252,4 @@ I exemplet med gruppsamtal ovan hämtas upplevelser som ska visas för användar
 }
 ```
 
-I svaret ovan ser du att i `content` för varje mbox går det att hämta HTML-representationen av upplevelsen som ska visas för användaren för varje mbox.
+I svaret ovan ser du att i fältet `content` i varje mbox kan HTML-representationen av upplevelsen som ska visas för användaren för varje mbox hämtas.

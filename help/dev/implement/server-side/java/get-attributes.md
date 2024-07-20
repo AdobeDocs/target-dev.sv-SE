@@ -1,6 +1,6 @@
 ---
 title: Använd getAttributes i [!DNL Adobe Target] med Java SDK
-description: Lär dig hur du använder getAttributes() för att hämta experiment och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
+description: Lär dig hur du använder getAttributes() för att hämta experiment och personaliserade upplevelser från  [!DNL Target]  och extrahera attributvärden.
 feature: APIs/SDKs
 exl-id: e493e1b9-7180-4a7c-b98d-be84cc3a57c3
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Beskrivning
 
-`getAttributes()` används för att hämta in experiment och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
+`getAttributes()` används för att hämta experimentella och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
 
 ## Metod
 
@@ -28,13 +28,13 @@ Attributes TargetClient.getAttributes(TargetDeliveryRequest targetRequest, Strin
 
 | Namn | Typ | Obligatoriskt | Standard | Beskrivning |
 | --- | --- | --- | --- | --- |
-| targetRequest | TargetDeliveryRequest | Ja | Ingen | Samma målbegäran som används för [Få &#x200B;](get-offers.md) |
+| targetRequest | TargetDeliveryRequest | Ja | Ingen | Samma målbegäran som används för [Get Offers &#x200B;](get-offers.md) |
 | mboxNames | var-args-array | Nej | Ingen | En var-args-array med mbox-namn |
 
 
 ## Resultat
 
-An `Attributes` objektet returneras från `TargetClient.getAttributes()` som har följande metoder:
+Ett `Attributes`-objekt returneras från `TargetClient.getAttributes()` som har följande metoder:
 
 | Namn | Typ | Beskrivning |
 | --- | --- | --- |

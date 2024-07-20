@@ -1,11 +1,11 @@
 ---
-title: Skicka visnings- eller klickmeddelanden till [!DNL Adobe Target] med Python SDK
-description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till [!DNL Adobe Target] för mätning och rapportering.
+title: Skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target] med Python SDK
+description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target]  för mätning och rapportering.
 feature: APIs/SDKs
 exl-id: 03827b18-a546-4ec8-8762-391fcb3ac435
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '425'
+source-wordcount: '405'
 ht-degree: 0%
 
 ---
@@ -18,14 +18,14 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->När en `execute` om ett objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
+>När ett `execute`-objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
 
 SDK-metoder som automatiskt ökar ett intryck är:
 
 * `get_offers()`
 * `get_attributes()`
 
-När en `prefetch` -objektet skickas i begäran, intrycket ökas inte automatiskt för aktiviteter med rutor i `prefetch` -objekt. `Send_notifications()` måste användas för förhämtade upplevelser för att öka antalet visningar och konverteringar.
+När ett `prefetch`-objekt skickas i begäran ökas inte intrycket automatiskt för aktiviteter med rutor i `prefetch`-objektet. `Send_notifications()` måste användas för förhämtade upplevelser för att öka antalet visningar och konverteringar.
 
 ## Metod
 
@@ -41,9 +41,9 @@ target_client.send_notifications(options)
 
 | Namn | Typ | Obligatoriskt | Standard | Beskrivning |
 | --- | --- | --- | --- | --- |
-| förfrågan | DeliveryRequest | Ja | Ingen | Följer [[!UICONTROL Target Delivery API]](/help/dev/implement/delivery-api/overview.md) förfrågan |
-| target_cookie | str | no | Ingen | [!DNL Target] cookie |
-| target_location_hint | str | no | Ingen | [!DNL Target] platstips |
+| förfrågan | DeliveryRequest | Ja | Ingen | Följer begäran [[!UICONTROL Target Delivery API]](/help/dev/implement/delivery-api/overview.md) |
+| target_cookie | str | no | Ingen | [!DNL Target]-cookie |
+| target_location_hint | str | no | Ingen | Platstips för [!DNL Target] |
 | Consumer_id | str | no | Ingen | Olika konsument-ID bör anges när flera samtal sammanfogas |
 | customer_ids | list[CustomerId] | no | Ingen | En lista med kund-ID:n i VisitorId-kompatibelt format |
 | session_id | str | no | Ingen | Används för att länka flera begäranden |
@@ -52,21 +52,21 @@ target_client.send_notifications(options)
 
 ## Returnerar
 
-`Returns` a `TargetDeliveryResponse` om det anropas synkront (standard), eller en `AsyncResult` om det anropas med ett återanrop. `TargetDeliveryResponse` har följande struktur:
+`Returns` a `TargetDeliveryResponse` om det anropas synkront (standard), eller en `AsyncResult` om den anropas med ett återanrop. `TargetDeliveryResponse` har följande struktur:
 
 | Namn | Typ | Beskrivning |
 | --- | --- | --- |
-| svar | Leveranssvar | Följer [[!DNL Target Delivery API]](/help/dev/implement/delivery-api/overview.md) svar |
-| target_cookie | dict | [!DNL Target] cookie |
-| target_location_hint_cookie | dict | [!DNL Target] cookie för platstips |
-| analytics_details | list[AnalyticsResponse] | [!DNL Analytics] nyttolast, om klientsidan [!DNL Analytics] användning |
+| svar | Leveranssvar | Följer svaret på [[!DNL Target Delivery API]](/help/dev/implement/delivery-api/overview.md) |
+| target_cookie | dict | [!DNL Target]-cookie |
+| target_location_hint_cookie | dict | Webbplatstipscookie för [!DNL Target] |
+| analytics_details | list[AnalyticsResponse] | [!DNL Analytics] nyttolast, om [!DNL Analytics] används på klientsidan |
 | trace |  | list[dict] | Sammanlagda spårningsdata för alla begärandemrutor/vyer |
-| response_tokens | list[dict] | En lista med [&#x200B;-svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html) |
+| response_tokens | list[dict] | En lista med [ &#x200B; svarstoken ](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html) |
 | meta | dict | Ytterligare metadata för beslutsfattande som kan användas med enhetsspecifik beslutsfattande |
 
 ## Exempel
 
-Först bygger vi [!UICONTROL Target Delivery API] begäran om förhämtning av innehåll för `home` och `product1` mboxes.
+Först skapar vi [!UICONTROL Target Delivery API]-begäran om förhämtning av innehåll för mrutorna `home` och `product1`.
 
 ### Python
 
@@ -80,7 +80,7 @@ delivery_request = DeliveryRequest(prefetch=prefetch)
 response = target_client.get_offers({ "request": delivery_request })
 ```
 
-Ett godkänt svar innehåller en [!UICONTROL Target Delivery API] svarsobjekt, som innehåller förhämtat innehåll för de begärda rutorna. Ett exempel `target_response["response"]` -objekt (formaterat som ordlista) kan se ut så här:
+Ett godkänt svar kommer att innehålla ett [!UICONTROL Target Delivery API]-svarsobjekt, som innehåller förhämtat innehåll för de begärda rutorna. Ett exempel på ett `target_response["response"]`-objekt (formaterat som en ordlista) kan se ut så här:
 
 ### Python
 
@@ -138,7 +138,7 @@ Ett godkänt svar innehåller en [!UICONTROL Target Delivery API] svarsobjekt, s
 }
 ```
 
-Lägg märke till mbox `name` och `state` fält, samt `eventToken` -fält, i varje alternativ för målinnehåll. Dessa bör anges i `send_notifications()` begär, så snart varje innehållsalternativ visas. Låt oss anta att `product1` mbox har visats på en icke-webbläsarenhet. Begäran om meddelanden visas enligt följande:
+Observera fälten mbox `name`, `state` och `eventToken` i alla alternativ för målinnehåll. Dessa bör anges i `send_notifications()`-begäran så snart varje innehållsalternativ visas. Låt oss anta att mbox `product1` har visats på en annan enhet än webbläsaren. Begäran om meddelanden visas enligt följande:
 
 ### Python
 
@@ -155,7 +155,7 @@ notification = Notification(
 notification_request = DeliveryRequest(notifications=[notification])
 ```
 
-Observera att vi har inkluderat både mbox-läget och händelsetoken som motsvarar [!DNL Target] Erbjudandet levereras som ett prefetch-svar. När vi har skapat meddelandebegäran kan vi skicka den till [!DNL Target] via `send_notifications()` API-metod:
+Observera att vi har inkluderat både mbox-tillståndet och den händelsetoken som motsvarar erbjudandet [!DNL Target] som levererades i förhämtningssvaret. När vi har skapat meddelandebegäran kan vi skicka den till [!DNL Target] via API-metoden `send_notifications()`:
 
 ### Python
 

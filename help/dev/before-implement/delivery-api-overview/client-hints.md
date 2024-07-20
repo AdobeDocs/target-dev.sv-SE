@@ -1,6 +1,6 @@
 ---
 title: Klienttips för Adobe Target Delivery API
-description: Hur använder jag klienttips i [!DNL Adobe Target] Leverans-API?
+description: Hur använder jag klienttips i  [!DNL Adobe Target] leverans-API:t?
 exl-id: 317b9d7d-5b98-464e-9113-08b899ee1455
 feature: APIs/SDKs
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Klienttips och [!UICONTROL Adobe Target Delivery API]
 
-Klienttips måste skickas till [!DNL Adobe Target] på förfrågan.
+Klienttips måste skickas till [!DNL Adobe Target] för erbjudandebegäran.
 
-I allmänhet rekommenderas du att skicka alla tillgängliga klienttips till [!DNL Target]. Mer information finns i [Tips för användaragent och klient](/help/dev/implement/client-side/atjs/user-agent-and-client-hints.md) i [Implementering på klientsidan](../../implement/client-side/overview.md) -avsnitt.
+I allmänhet rekommenderas du att skicka alla tillgängliga klienttips till [!DNL Target]. Mer information finns i [Användare-agent och Klienttips](/help/dev/implement/client-side/atjs/user-agent-and-client-hints.md) i avsnittet [Implementering på klientsidan](../../implement/client-side/overview.md).
 
 ## Direktanrop till leverans-API
 
 ### Från webbläsaren
 
-I det här fallet skickar webbläsaren lågentropi-klienttips till [!DNL Target] automatiskt via begäranrubriker. Men det finns ett par begränsningar på webbläsarnivå för den här implementeringen. Först skickas inga tips för klienttips från webbläsaren om inte begäran görs via https. Andra - Klienttips skickas inte vid den första begäran till [!DNL Target] på sidan. Klienttipsrubriker skickas endast för den andra begäran och alla begäranden därefter. Detta innebär att målgruppssegmentering och personalisering inte kan utföras av [!DNL Target] på första sidan. För att komma runt båda dessa begränsningar rekommenderar vi att du använder API:t för användaragentens klienttips i webbläsaren för att samla in klienttips direkt och skicka dem på nyttolasten för begäran.
+I det här fallet skickar webbläsaren automatiskt tips för klienten med låg entropi till [!DNL Target] via begäranderubriker. Men det finns ett par begränsningar på webbläsarnivå för den här implementeringen. Först skickas inga tips för klienttips från webbläsaren om inte begäran görs via https. Andra - Klienttips skickas inte vid den första begäran till [!DNL Target] på sidan. Klienttipsrubriker skickas endast för den andra begäran och alla begäranden därefter. Det innebär att målgruppssegmentering och personalisering inte kan utföras av [!DNL Target] vid första sidbesöket. För att komma runt båda dessa begränsningar rekommenderar vi att du använder API:t för användaragentens klienttips i webbläsaren för att samla in klienttips direkt och skicka dem på nyttolasten för begäran.
 
 ### Från en server
 
-I det här fallet måste klienttipsen vidarebefordras manuellt från webbläsaren till [!DNL Target] på förfrågan om leverans-API.
+I det här fallet måste klienttipsen vidarebefordras manuellt från webbläsaren till [!DNL Target] på förfrågan för leverans-API.
 
 ```
 curl -X POST 'http://mboxedge28.tt.omtrdc.net/rest/v1/delivery?client=myClientCode&sessionId=abcdefghijkl00014' -d '{

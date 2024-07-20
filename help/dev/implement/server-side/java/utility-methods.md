@@ -1,5 +1,5 @@
 ---
-title: Använd verktygsmetoder i [!DNL Adobe Target] Java SDK
+title: Använd verktygsmetoder i  [!DNL Adobe Target] Java SDK
 description: Lär dig hur du använder hjälpmetoder, som kan återanvändas mellan olika styrenheter och som kan flyttas till en separat verktygsklass.
 feature: APIs/SDKs
 exl-id: 19418126-c4d8-4e6b-bb84-036b7fe0e6ec

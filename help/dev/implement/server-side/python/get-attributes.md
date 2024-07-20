@@ -1,11 +1,11 @@
 ---
-title: Så här använder du asynkrona begäranden i [!DNL Adobe Target] Python SDK
-description: Lär dig mer [!DNL Target] Python SDK har stöd för asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
+title: Så här använder du asynkrona begäranden i  [!DNL Adobe Target] Python SDK
+description: Lär dig hur  [!DNL Target] Python SDK stöder asynkrona begäranden, vilket kan minska den effektiva måltiden till noll.
 feature: APIs/SDKs
 exl-id: fafb9e28-5ac5-41c1-8e7f-f40550b6749f
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '123'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Beskrivning
 
-`get_attributes()` används för att hämta in experiment och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
+`get_attributes()` används för att hämta experimentella och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
 
 
 ## Metod
@@ -30,17 +30,17 @@ target_client_instance.get_attributes(mbox_names, options)
 | Namn | Typ | Obligatoriskt | Standard | Beskrivning |
 | --- | --- | --- | --- | --- |
 | mbox_names | list[str] | Ja | Ingen | En lista med mbox-namn |
-| alternativ | dict | Nej | Ingen | Samma alternativ som används för [Erbjudanden](get-offers.md) |
+| alternativ | dict | Nej | Ingen | Samma alternativ som används för [Get Offers](get-offers.md) |
 
 ## AttributesProvider
 
-The `AttributesProvider` returneras av `target_client.get_attributes()` har följande metoder:
+`AttributesProvider` som returneras av `target_client.get_attributes()` har följande metoder:
 
 | Metod | Returtyp | Beskrivning |
 | --- | --- | --- |
 | get_value(mbox_name, key) | alla | Returnerar värdet för ett angivet mbox-namn och attributnyckel |
 | as_object(mbox_name) | dict | Returnerar ett enkelt json-objekt med nyckelvärdepar |
-| get_response() | [MålLeveranssvar](https://github.com/adobe/target-python-sdk/blob/main/target_python_sdk/types/target_delivery_response.py) | Returnerar det svarsobjekt som normalt returneras av `get_offers` |
+| get_response() | [TargetDeliveryResponse](https://github.com/adobe/target-python-sdk/blob/main/target_python_sdk/types/target_delivery_response.py) | Returnerar det svarsobjekt som normalt returneras av `get_offers` |
 
 ## Exempel
 

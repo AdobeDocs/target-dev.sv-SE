@@ -1,6 +1,6 @@
 ---
 title: Använd getAttributes i [!DNL Adobe Target] med .NET SDK
-description: Lär dig hur du använder getAttributes() för att hämta experiment och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
+description: Lär dig hur du använder getAttributes() för att hämta experiment och personaliserade upplevelser från  [!DNL Target]  och extrahera attributvärden.
 feature: APIs/SDKs
 exl-id: 808da83d-3077-468b-a2ad-e35c25905f7d
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 ## Beskrivning
 
-`GetAttributes()` används för att hämta in experiment och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
+`GetAttributes()` används för att hämta experimentella och personaliserade upplevelser från [!DNL Target] och extrahera attributvärden.
 
 ## Metod
 
@@ -28,16 +28,16 @@ TargetAttributes TargetClient.GetAttributes(TargetDeliveryRequest targetRequest,
 
 | Namn | Typ | Obligatoriskt | Standard | Beskrivning |
 | --- | --- | --- | --- | --- |
-| targetRequest | TargetDeliveryRequest | Nej | null | Samma [!DNL Target] begäran som används för [Få &#x200B;](get-offers.md) |
-| mboxNames | params-sträng[] | Nej | null | En parameterarray med mbox-namn |
+| targetRequest | TargetDeliveryRequest | Nej | null | Samma [!DNL Target]-begäran som den som används för [Get Offers &#x200B;](get-offers.md) |
+| mboxNames | parametersträng[] | Nej | null | En parameterarray med mbox-namn |
 
 ## Resultat
 
-A `TargetAttributes` objektet returneras från `TargetClient.GetAttributes()` som har följande egenskaper och metoder:
+Ett `TargetAttributes`-objekt returneras från `TargetClient.GetAttributes()` som har följande egenskaper och metoder:
 
 | Egenskap/metod | Returtyp | Beskrivning |
 | --- | --- | --- |
-| Svar | MålLeveranssvar | Returnerar det svarsobjekt som normalt returneras av [Erbjudanden](get-offers.md) |
+| Svar | MålLeveranssvar | Returnerar det svarsobjekt som normalt returneras av [Get Offers](get-offers.md) |
 | ToDictionary | IReadOnlyDictionary | Returnerar ett lexikon med nyckelvärdepar grupperade efter mbox-namn |
 | ToMboxDictionary(mboxName) | IReadOnlyDictionary | Returnerar en ordlista med nyckelvärdepar för den angivna mbox-filen |
 | GetBoolean(mboxName, key, defaultValue) | bool | Returnerar värdet för ett angivet mbox-namn och attributnyckel |

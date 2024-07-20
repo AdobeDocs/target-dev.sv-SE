@@ -1,33 +1,33 @@
 ---
 keywords: adobe.target.getOffer, getOffer, getoffer, get offer, at.js, functions, function, $8
-description: Använd [!UICONTROL adobe.target.getOffer()] och dess alternativ för [!DNL Adobe Target] at.js-biblioteket som ska köra förfrågningar om att få [!DNL Target] erbjudande.
-title: Hur jag använder [!UICONTROL adobe.target.getOffer()] Funktion?
+description: Använd funktionen [!UICONTROL adobe.target.getOffer()] och dess alternativ för biblioteket  [!DNL Adobe Target]  at.js för att utlösa begäranden om att få ett  [!DNL Target] erbjudande.
+title: Hur använder jag funktionen [!UICONTROL adobe.target.getOffer()]?
 feature: at.js
 exl-id: 7b917d42-06e8-4838-a09d-0c4872c9beaa
 source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '460'
 ht-degree: 0%
 
 ---
 
 # [!DNL adobe.target.getOffer(options)]
 
-Den här funktionen utlöser en begäran om att få en [!DNL Target] erbjudande.
+Den här funktionen utlöser en begäran om att få ett [!DNL Target]-erbjudande.
 
-Använd med `[!UICONTROL adobe.target.applyOffer()]` för att bearbeta svaret eller använda din egen hantering av lyckade resultat. Alternativparametern är obligatorisk och har följande struktur:
+Använd med `[!UICONTROL adobe.target.applyOffer()]` om du vill bearbeta svaret eller använda din egen hantering av lyckade åtgärder. Alternativparametern är obligatorisk och har följande struktur:
 
 | Nyckel | Typ | Obligatoriskt | Beskrivning |
 |--- |--- |--- |--- |
 | mbox | Sträng | Ja | Namn på mbox |
 | parametrar | Objekt | Nej | Mbox-parametrar. Ett objekt med nyckelvärdepar som har följande struktur:<P>`{ "param1": "value1", "param2": "value2"}` |
-| framgång |  -funktion | Ja | Återanrop som ska köras när vi får ett svar från servern. Callback-funktionen för lyckade försök får en enda parameter som representerar en array med objekt för erbjudanden. Här är ett exempel på lyckad återanrop:<P>`function handleSuccess(response){......}`<P>Mer information finns i Svaren nedan. |
-| fel |  -funktion | Ja | Återanrop som ska utföras när ett fel inträffar. Det finns några fall som anses felaktiga:<ul><li>HTTP-statuskoden skiljer sig från 200 OK</li><li>Svaret kan inte tolkas. Vi har till exempel dåligt konstruerat JSON eller HTML i stället för JSON.</li><li>Svaret innehåller felnyckeln. Ett undantag utlöstes till exempel på kanten som en begäran inte kunde behandlas korrekt. Ett fel kan uppstå när en mbox är blockerad och vi inte kan hämta något innehåll för den, osv. Återanropsfunktionen för fel får två parametrar: status och fel. Här är ett exempel på ett fel vid återanrop: `function handleError(status, error){......}`</li></ul>Mer information finns i Felsvar nedan. |
-| timeout | Nummer | Nej | Timeout i millisekunder. Om inget anges används standardtidsgränsen i at.js.<P>Standardtidsgränsen kan anges från [!DNL Target] Användargränssnitt under [!UICONTROL Administration] > [!UICONTROL Implementation]. |
+| framgång | Funktion | Ja | Återanrop som ska köras när vi får ett svar från servern. Callback-funktionen för lyckade försök får en enda parameter som representerar en array med objekt för erbjudanden. Här är ett exempel på lyckad återanrop:<P>`function handleSuccess(response){......}`<P>Mer information finns i Svaren nedan. |
+| fel | Funktion | Ja | Återanrop som ska utföras när ett fel inträffar. Det finns några fall som anses felaktiga:<ul><li>HTTP-statuskoden skiljer sig från 200 OK</li><li>Svaret kan inte tolkas. Vi har till exempel dåligt konstruerat JSON eller HTML i stället för JSON.</li><li>Svaret innehåller felnyckeln. Ett undantag utlöstes till exempel på kanten som en begäran inte kunde behandlas korrekt. Ett fel kan uppstå när en mbox är blockerad och vi inte kan hämta något innehåll för den, osv. Återanropsfunktionen för fel får två parametrar: status och fel. Här är ett exempel på ett återanrop: `function handleError(status, error){......}`</li></ul>Mer information finns i Felsvar nedan. |
+| timeout | Nummer | Nej | Timeout i millisekunder. Om inget anges används standardtidsgränsen i at.js.<P>Standardtidsgränsen kan anges från användargränssnittet [!DNL Target] under [!UICONTROL Administration] > [!UICONTROL Implementation]. |
 
 ## Exempel
 
-Lägga till parametrar med [!UICONTROL getOffer()] och använda [!UICONTROL applyOffer()] för lyckad hantering:
+Lägger till parametrar med [!UICONTROL getOffer()] och använder [!UICONTROL applyOffer()] för lyckad hantering:
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffer({   
@@ -48,7 +48,7 @@ adobe.target.getOffer({
 });
 ```
 
-Lägga till parametrar och profilparametrar med [!UICONTROL getOffer()] och använda [!UICONTROL applyOffer()] för lyckad hantering:
+Lägger till parametrar och profilparametrar med [!UICONTROL getOffer()] och använder [!UICONTROL applyOffer()] för lyckad hantering:
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffer({   
@@ -71,7 +71,7 @@ adobe.target.getOffer({
 });
 ```
 
-Använda anpassad tidsgräns och anpassad hantering av lyckade resultat med [!UICONTROL getOffer()]:
+Använder anpassad tidsgräns och anpassad hantering av lyckade åtgärder med [!UICONTROL getOffer()]:
 
 &quot;YOUR_OWN_CUSTOM_HANDLING_FUNCTION&quot; är en platshållare för en funktion som kunden skulle definiera.
 
