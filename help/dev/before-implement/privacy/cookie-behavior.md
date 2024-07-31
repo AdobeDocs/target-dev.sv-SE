@@ -4,7 +4,7 @@ description: Lär dig mer om  [!DNL Target] cookie-beteende (cookie från först
 title: Var hittar jag information om  [!DNL Target] cookies?
 feature: at.js
 exl-id: d44e02ce-8920-4130-bcad-699ca77c0dad
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 39f390a0e5eedf8c6957333759d31d96ed11b321
 workflow-type: tm+mt
 source-wordcount: '1581'
 ht-degree: 0%
@@ -120,6 +120,7 @@ Denna cookie har olika värden för att hantera hur besökarna upplever kampanje
 |--- |--- |
 | Första parts domäner | Standardimplementeringen för [!DNL Target] kunder. &quot;mbox&quot;-cookies anges i kundens domän. |
 | Spårning från tredje part | Spårning från tredje part är viktigt för annonsering och målinriktning av användningsfall i [!DNL Target] och i [!DNL Adobe Audience Manager] (AAM). Spårning från tredje part kräver serveröverskridande skripttekniker. [!DNL Target] använder två cookies, &quot;mboxSession&quot; och &quot;mboxPC&quot;, som angetts i domänen `clientcode.tt.omtrd.net`. |
+
 **Vad innebär Apple?**
 
 Från Apple:

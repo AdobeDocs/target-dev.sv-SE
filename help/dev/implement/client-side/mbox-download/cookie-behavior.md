@@ -4,7 +4,7 @@ description: Lär dig mer om Target-cookies (cookie från första part, cookie f
 title: Var hittar jag information om målcookies?
 feature: at.js
 role: Developer
-source-git-commit: 34e8625798121e236a04646dfcf049f9c2b6f9d0
+source-git-commit: 39f390a0e5eedf8c6957333759d31d96ed11b321
 workflow-type: tm+mt
 source-wordcount: '1580'
 ht-degree: 0%
@@ -118,6 +118,7 @@ Denna cookie har olika värden för att hantera hur besökarna upplever kampanje
 |--- |--- |
 | Första parts domäner | Standardimplementeringen för Target-kunder. &quot;mbox&quot;-cookies anges i kundens domän. |
 | Spårning från tredje part | Spårning från tredje part är viktigt för reklam och riktad marknadsföring i Target och i Adobe Audience Manager (AAM). Spårning från tredje part kräver serveröverskridande skripttekniker. Målet använder två cookies, &quot;mboxSession&quot; och &quot;mboxPC&quot;, som angetts i domänen `clientcode.tt.omtrd.net`. |
+
 **Vad innebär Apple?**
 
 Från Apple:
