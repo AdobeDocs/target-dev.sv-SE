@@ -4,9 +4,9 @@ description: Lär dig hur du använder  [!DNL Adobe Target] [!UICONTROL Bulk Pro
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
 exl-id: 0f38d109-5273-4f73-9488-80eca115d44d
-source-git-commit: 2934fbaa1dc3cd92bc5a434937e5db9a617009a9
+source-git-commit: bee8752dd212a14f8414879e03565867eb87f6b9
 workflow-type: tm+mt
-source-wordcount: '828'
+source-wordcount: '829'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ Du refererar till den här filen i serveranropet till [!DNL Target] POSTER för 
 * Om du använder [!UICONTROL Bulk Profile Update API] v2 behöver du inte ange alla parametervärden för varje `pcId`. Profiler skapas för alla `pcId` eller `mbox3rdPartyId` som inte hittas i [!DNL Target]. Om du använder v1 skapas inte profiler för pcIds som saknas eller mbox3rdPartyIds.
 * Batchfilens storlek måste vara mindre än 50 MB. Dessutom bör det totala antalet rader inte överstiga 500 000. Den här gränsen gör att servrarna inte översvämmas av för många förfrågningar.
 * Du kan skicka flera filer. Summan av raderna i alla filer som du skickar en dag får dock inte överstiga en miljon för varje kund.
-* Det finns ingen gräns för hur många attribut du överför. Den totala storleken på en profil, inklusive systemdata, bör dock inte överstiga 2000 kB. [!DNL Adobe] rekommenderar att du använder mindre än 1 000 kB lagringsutrymme för profilattribut.
+* Det finns ingen begränsning för hur många attribut du kan överföra. Den totala storleken på externa profildata, som innehåller kundattribut, profil-API, parametrar för in-Mbox-profiler och profilskript, får dock inte överstiga 64 kB.
 * Parametrar och värden är versalkänsliga.
 
 ## Begäran om HTTP-POST

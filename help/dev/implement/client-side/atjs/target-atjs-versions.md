@@ -4,9 +4,9 @@ description: Visa information om ändringarna i varje version av JavaScript-bibl
 title: Vad ingår i varje version av at.js?
 feature: at.js
 exl-id: 609dacba-2ab8-45e9-b189-928d59938c98
-source-git-commit: 9999c1b5f603e6607bd81f6ad6a06a7f74e76acb
+source-git-commit: bee8752dd212a14f8414879e03565867eb87f6b9
 workflow-type: tm+mt
-source-wordcount: '4904'
+source-wordcount: '4967'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,16 @@ Information om ändringar i varje version av JavaScript-biblioteket [!DNL Adobe 
 >
 >Du bör uppgradera till de senaste versionerna av antingen 1.*x* eller 2.*x* om du vill få buggfixar och säkerhetsuppdateringar för problem som upptäckts i en tidigare mindre version av motsvarande större version.
 
-Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den metod du föredrar att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tilläggsuppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html) i *Översikt över taggar*.6+
+Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den metod du föredrar att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tilläggsuppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html) i guiden *Översikt över taggar*.
+
+## at.js version 2.11.6 (29 september 2024)
+
+* Korrigerade ett problem som förhindrade [!DNL Target] från att fungera korrekt med omdirigeringserbjudanden i [!UICONTROL Visual Experience Composer] (VEC) eller [!UICONTROL Form-Based Experience Composer].
+
+## at.js version 2.11.5 (14 augusti 2024)
+
+* Implementerad cachning för läs- och skrivåtgärder för cookies för att minska overheadkostnaderna för upprepad, kostsam strängparsning och -hantering.
+* Implementerade det nyare API:t för URL-sökparametrar när det är tillgängligt, eftersom det är snabbare än att analysera och ändra strängar manuellt.
 
 ## at.js version 2.11.4 (24 januari 2024)
 
