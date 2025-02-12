@@ -4,9 +4,9 @@ description: Lär dig vilka webbläsare [!DNL Adobe Target] har stöd för för 
 title: Vilka webbläsare stöder  [!DNL Target] ?
 feature: Implementation
 exl-id: 1d778e14-26b0-477b-ac28-d304db70a133
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: f194c6de43070443b78c9a69b4233c27d70b8858
 workflow-type: tm+mt
-source-wordcount: '350'
+source-wordcount: '380'
 ht-degree: 0%
 
 ---
@@ -38,6 +38,7 @@ Materialet har testats i följande webbläsare och enheter:
 
 Observera följande:
 
+* [!DNL Adobe Experience Platform Web SDK] är utformad för att fungera optimalt i de senaste versionerna av [!DNL Google Chrome], [!DNL Safari], [!DNL Firefox] och [!DNL Microsoft Edge Chromium]. Du kan ha problem med att använda vissa funktioner i äldre versioner av dessa webbläsare eller i inaktuella webbläsare, till exempel [!DNL Internet Explorer].
 * För at.js-implementeringar visar [!DNL Target] standardinnehåll i tidigare versioner av Internet Explorer och eventuellt i tidigare versioner av webbläsarna ovan.
 * I Internet Explorer behandlas alla okända element (t.ex. anpassade element) som samma elementtyp. Leveransen fungerar därför inte med anpassade element.
 * [!DNL Target] visar standardinnehåll i webbläsare som inte listas ovan och i webbläsare som använder läget [quirks](https://en.wikipedia.org/wiki/Quirks_mode). at.js kräver en doctype som återges i standardläge, till exempel: `<!DOCTYPE html>` .
