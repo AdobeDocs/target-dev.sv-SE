@@ -4,9 +4,9 @@ description: Visa information om ändringarna i varje version av JavaScript-bibl
 title: Vad ingår i varje version av at.js?
 feature: at.js
 exl-id: 609dacba-2ab8-45e9-b189-928d59938c98
-source-git-commit: bee8752dd212a14f8414879e03565867eb87f6b9
+source-git-commit: 3deeee2838d02d578bb653a4911313463b962050
 workflow-type: tm+mt
-source-wordcount: '4967'
+source-wordcount: '4994'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,10 @@ Information om ändringar i varje version av JavaScript-biblioteket [!DNL Adobe 
 >Du bör uppgradera till de senaste versionerna av antingen 1.*x* eller 2.*x* om du vill få buggfixar och säkerhetsuppdateringar för problem som upptäckts i en tidigare mindre version av motsvarande större version.
 
 Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den metod du föredrar att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tilläggsuppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html) i guiden *Översikt över taggar*.
+
+## at.js version 2.11.7 (26 februari 2025)
+
+* Loggning av telemetri när `localStorage` inte är tillgänglig har åtgärdats. Telemetry orsakade ett problem för vissa kunder som hade `localStorage` inaktiverat i sina webbläsare.
 
 ## at.js version 2.11.6 (29 september 2024)
 
@@ -100,7 +104,7 @@ Den här versionen innehåller följande förbättringar:
 
 Den här versionen innehåller följande ändringar:
 
-* Modulerna `reactor-window` och `reactor-document` Adobe Experience Platform Launch har tagits bort för att säkerställa att Platforma launchen fungerar korrekt för kunder som har `window.default` eller `document-default` angivna.
+* Modulerna `reactor-window` och `reactor-document` Adobe Experience Platform Launch har tagits bort för att säkerställa att Platform Launch fungerar korrekt för kunder som har `window.default` eller `document-default` angivna.
 * at.js 1.8.3 anger nu explicit `Samesite=None` och `Secure` för att säkerställa att tredjepartsdomäncookies anges korrekt.
 
 ## kl. 2.6.1 (16 augusti 2021)
@@ -115,7 +119,7 @@ Den här versionen innehåller följande ändringar:
 * [!UICONTROL Analytics for Target] (A4T) klickmätningsinformation returneras korrekt när `prefetch`-begäranden används.
 * UUID-generering använder inte längre `Math.random()`, utan är beroende av `window.crypto`.
 * Utgångsdatumet för cookien `sessionId` har utökats korrekt för varje nätverksanrop.
-* Cacheinitieringen för SPA-vyn (Single Page Application) hanteras nu korrekt och inställningarna för `viewsEnabled` följs. Om du anger `viewsEnabled` till värdet `false` inaktiveras funktionen `triggerView()`. Se [Åtgärdsordning för inledande sidinläsning](/help/dev/implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md#order).
+* Initieringen av visningscachen för SPA-vyn (Single Page Application) hanteras nu korrekt och inställningarna för `viewsEnabled` följs. Om du anger `viewsEnabled` till värdet `false` inaktiveras funktionen `triggerView()`. Se [Åtgärdsordning för inledande sidinläsning](/help/dev/implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md#order).
 
 ## at.js 2.5.0 (13 maj 2021)
 
@@ -210,15 +214,15 @@ Den här versionen av at.js innehåller följande förbättringar och korrigerin
 
 Den här versionen av at.js är en underhållsrelease och innehåller följande förbättringar och korrigeringar:
 
-(Numren inom parentes är avsedda för Adobe.)
+(Numren inom parentes är avsedda för intern användning i Adobe.)
 
 * Korrigerade ett problem som gjorde att flera fyrar stacks när användaren använde metoden för klickspårning på sidan Mål och inställningar i Visual Experience Composer (VEC). (TNT-32812)
 * Korrigerade ett problem som gjorde att `triggerView()` inte återgav erbjudanden mer än en gång. (TNT-32780)
-* Ett problem med `triggerView()` har korrigerats för att kontrollera att begäran innehåller Marketing Cloud ID-information (MCID). (TNT-32776)
+* Ett problem med `triggerView()` har korrigerats för att kontrollera att begäran innehåller information om Marketing Cloud ID (MCID). (TNT-32776)
 * Korrigerade ett problem som förhindrade att meddelandet `triggerView()` utlöstes även om det inte finns några sparade vyer. (TNT-32614)
 * Korrigerade ett problem som orsakade ett fel på grund av användningen av decodeURIcomponent som orsakade problem när URL:en innehåller en felformaterad frågesträngsparameter. (TNT-32710)
 * Beacon-flaggan är nu inställd på true i samband med leveransbegäranden som skickas via API:t `Navigator.sendBeacon()`. (TNT-32683)
-* Korrigerade ett problem som hindrade Recommendations erbjudanden från att visas på webbplatser för ett fåtal kunder. Kunderna kunde se erbjudandeinnehållet i API-anropet, men erbjudandet tillämpades inte på webbplatsen. (TNT-32680)
+* Ett problem som hindrade rekommendationserbjudanden från att visas på webbplatser för ett fåtal kunder har korrigerats. Kunderna kunde se erbjudandeinnehållet i API-anropet, men erbjudandet tillämpades inte på webbplatsen. (TNT-32680)
 * Korrigerade ett problem som gjorde att klickspårning över flera upplevelser inte fungerade som förväntat. (TNT-32644)
 * Korrigerade ett problem som förhindrade at at at.js från att använda det andra måttet efter att återgivningen av det första måttet misslyckades. (TNT-32628)
 * Korrigerade ett problem när `mbox3rdPartyId` skickades med funktionen `targetPageParams` som gjorde att nyttolasten för begäran inte fanns i frågeparametrarna eller i nyttolasten för begäran. (TNT-32613)
@@ -246,7 +250,7 @@ Den här versionen innehåller följande funktioner och förbättringar:
 
 Det här är en underhållsrelease och innehåller följande förbättringar och korrigeringar:
 
-(Numren inom parentes är avsedda för Adobe.)
+(Numren inom parentes är avsedda för intern användning i Adobe.)
 
 * Korrigerade ett konkurrensvillkor i DOM-avsökningskoden som orsakade JavaScript-undantag för vissa kunder. (TNT-31869)
 * Meddelanden om att vyer har renderats har kopplats bort från händelsehanterare för klickspårning. Till att börja med skickade [!DNL Target] inga meddelanden om klickhändelsehanterare som tillhör en återgiven vy inte kunde bifogas. [!DNL Target] skickar nu ett vymeddelande även när klickelement inte hittas. (TNT-31969)
@@ -258,13 +262,13 @@ Det här är en underhållsrelease och innehåller följande förbättringar och
 
 Det här är en underhållsrelease och innehåller följande korrigering:
 
-(Numren inom parentes är avsedda för Adobe.)
+(Numren inom parentes är avsedda för intern användning i Adobe.)
 
 * Korrigerade ett konkurrensvillkor i DOM-avsökningskoden som orsakade JavaScript-undantag för vissa kunder. (TNT-31869)
 
 ## at.js Version 2.0.0
 
-at.js 2.x innehåller funktionsrika uppsättningar som gör det möjligt för företaget att utföra personalisering på nästa generations klienttekniker. Den nya versionen fokuserar på att uppgradera at.js för att få harmonisk interaktion med applikationer för en sida (SPA).
+at.js 2.x innehåller funktionsrika uppsättningar som gör det möjligt för företaget att utföra personalisering på nästa generations klienttekniker. Den nya versionen fokuserar på att uppgradera at.js för att få harmonisk interaktion med single page-applikationer (SPA).
 
 Här är några fördelar med att använda at.js 2.x som inte finns i tidigare versioner:
 
@@ -288,7 +292,7 @@ Mer information finns i [Uppgradera från at.js 1.x till at.js 2.x](/help/dev/im
 
 >[!NOTE]
 >
->Om du behöver stöd för Adobe Opt-in för [General Data Protection Regulation](/help/dev/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.md) (GDPR) måste du för närvarande använda at.js 1.7.0 eller at.js 2.1.0 eller senare.
+>Om du behöver Adobe Opt-in-stöd för [Allmänna dataskyddsförordningen](/help/dev/before-implement/privacy/cmp-privacy-and-general-data-protection-regulation.md) (GDPR) måste du för närvarande använda at.js 1.7.0 eller at.js 2.1.0 eller senare.
 
 ## at.js Version 1.7.0
 
@@ -300,7 +304,7 @@ Den här versionen åtgärdar också ett problem där [!DNL Target] kan åsidos�
 
 >[!NOTE]
 >
->Om du behöver stöd för Adobe-deltagande för GDPR måste du för närvarande använda at.js 1.7.0 eller at.js 2.1.0 eller senare.
+>Om du behöver Adobe Opt-in-stöd för GDPR måste du för närvarande använda at.js 1.7.0 eller at.js 2.1.0 eller senare.
 
 ## at.js Version 1.6.4
 
@@ -382,11 +386,11 @@ at.js version 1.3.0 finns nu att köpa.
 
   Mer information finns i [Dataproviders](atjs-functions/targetglobalsettings.md#data-providers).
 
-* at.js-begäranden använder nu GET, men kommer att växla till POST när URL-storleken överstiger 2 048 tecken. Det finns en ny egenskap med namnet `urlSizeLimit` där du kan öka storleksgränsen om det behövs. Med den här ändringen kan [!DNL Target] justera at.js mot AppMeasurementet, som använder samma teknik.
+* at.js-begäranden använder nu GET, men det växlar till POST när URL-storleken överskrider 2 048 tecken. Det finns en ny egenskap med namnet `urlSizeLimit` där du kan öka storleksgränsen om det behövs. Med den här ändringen kan [!DNL Target] justera at.js mot AppMeasurement, som använder samma teknik.
 * [!DNL Target] tvingar nu `mbox`-nyckeln i funktionen `adobe.target.applyOffer(options)` att användas. Den här nyckeln har krävts tidigare, men [!DNL Target] använder den nu för att säkerställa att [!DNL Target] har korrekt validering och att kunderna använder funktionen korrekt.
 * at.js har förbättrat funktionerna för händelsespårning och klickning. at.js använder `navigator.sendBeacon()` för att skicka händelsespårningsdata och kommer att återgå till synkron XHR när `navigator.sendBeacon()` inte stöds. Detta gäller oftast Internet Explorer 10 och 11 samt vissa versioner av Safari. Safari kommer att lägga till stöd för `navigator.sendBeacon()` i den kommande iOS 11.3-versionen.
 * at.js kan nu återge erbjudanden även när en sida öppnas i bakgrundsflikar. Vissa [!DNL Target]-kunder stötte på ett problem när `requestAnimationFrame()` inaktiverades på grund av webbläsarbegränsningsbeteendet för bakgrundsflikar.
-* Den här versionen innehåller många prestandaförbättringar, bland annat kortare anropsstackar vid kontroll av en Chrome CPU-profil.
+* Den här versionen innehåller många prestandaförbättringar, bland annat kortare anropsstackar när du inspekterar en Chrome CPU-profil.
 * at.js 1.3.0 stöder inte längre innehållsleverans i Microsoft Internet Explorer 9. En lista över webbläsare som stöds finns i [Webbläsare som stöds](/help/dev/before-implement/supported-browsers.md). Framöver utförs alla begäranden via `XMLHttpRequest` med CORS-stöd utan JSONP-begäranden. Den här förändringen förbättrar säkerheten avsevärt.
 
 ## at.js Version 1.2.3
