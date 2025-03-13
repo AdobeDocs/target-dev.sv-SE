@@ -4,9 +4,9 @@ description: Lär dig vilka webbläsare [!DNL Adobe Target] har stöd för för 
 title: Vilka webbläsare stöder  [!DNL Target] ?
 feature: Implementation
 exl-id: 1d778e14-26b0-477b-ac28-d304db70a133
-source-git-commit: f194c6de43070443b78c9a69b4233c27d70b8858
+source-git-commit: 1b6dcb24d677b758ed1daf85dc0a7e9e5b42680d
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '421'
 ht-degree: 0%
 
 ---
@@ -21,10 +21,24 @@ Mer information om TLS finns i [TLS (Transport Layer Security) Krypteringsändri
 
 Gränssnittet [!DNL Target] har stöd för följande webbläsare och enheter:
 
+>[!NOTE]
+>
+>Target har stöd för den senaste versionen av alla webbläsare i listan och den senaste versionen minus 1.
+
+
 | Enhetstyp | Webbläsarversion |
 |--- |--- |
-| Windows | <ul><li>Microsoft Edge</li><li>Google Chrome (senaste, senaste minus 1)</li><li>Mozilla Firefox (senaste, senaste minus 1)</li></ul> |
-| Mac | <ul><li>Firefox (senaste, senaste minus 1)</li><li>Chrome (senaste, senaste minus 1)</li></ul> |
+| [!DNL Windows] | <ul><li>[!DNL Microsoft Edge]</li><li>[!DNL Google Chrome]</li><li>[!DNL Mozilla Firefox]</li></ul> |
+| [!DNL Mac] | <ul><li>[!DNL Microsoft Edge]</li><li>[!DNL Google Chrome]</li><li>[!DNL Mozilla Firefox]</li></ul> |
+
+## Krav för visuell redigering
+
+Om du vill kunna öppna, redigera och förhandsgranska dina webbsidor på ett tillförlitligt sätt i [!UICONTROL Visual Experience Composer] (VEC) måste du ha webbläsartillägget [Adobe Experience Cloud Visual Editing Helper ](https://experienceleague.adobe.com/en/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension){target=_blank} installerat i webbläsaren eller använda [!UICONTROL Enhanced Experience Composer (EEC)].
+
+>[!NOTE]
+>
+>[!DNL Google Chrome] och [!DNL Microsoft Edge] är för närvarande de enda webbläsare som stöder visuell redigering av webbsidor i [!DNL Adobe Target].
+
 
 ## Innehållsleverans
 
