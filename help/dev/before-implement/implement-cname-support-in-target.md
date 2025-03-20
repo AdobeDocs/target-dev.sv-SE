@@ -4,7 +4,7 @@ description: Arbeta med [!UICONTROL Adobe Client Care] för att implementera st�
 title: Hur använder jag CNAME i Target?
 feature: Privacy & Security
 exl-id: 5709df5b-6c21-4fea-b413-ca2e4912d6cb
-source-git-commit: dd99cf1753e4fa5033ee463b79a31c6eddcd02b5
+source-git-commit: a36826202c5baa47f95a88c7b29c0d114901e6fa
 workflow-type: tm+mt
 source-wordcount: '1164'
 ht-degree: 0%
@@ -100,18 +100,21 @@ Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller L
    ```
    function adobeTargetCnameValidation {
      local hostname="$1"
+   
      if [ -z "$hostname" ]; then
        echo "ERROR: no hostname specified"
        return 1
-     fi  local service="Adobe Target CNAME implementation"
+     fi
+   
+     local service="Adobe Target CNAME implementation"
      local edges="41 42 44 45 46 47 48"
      local edgeDomain="tt.omtrdc.net"
      local edgeFormat="mboxedge%d%s.$edgeDomain"
      local poolDomain="pool.data.adobedc.net"
      local shards=5
      local shardsFoundCount=0
-     local shardsFound
-     local shardsFoundOutput
+     local shardsFound=""
+     local shardsFoundOutput=""
      local curlRegex="subject:.*CN=|expire date:|issuer:"
      local curlValidation="SSL certificate verify ok"
      local curlResponseValidation='"OK"'
@@ -124,36 +127,40 @@ Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller L
      local rule="="
      local horizontalRule="$(seq ${COLUMNS:-30} | xargs printf "$rule%.0s")"
      local miniRule="$(seq 5 | xargs printf "$rule%.0s")"
-     local curlVersion="$(curl --version | head -1 | cut -d' ' -f2 )"
-     local curlVersionRequired=">=7.49"
+     local curlVersion="$(curl --version | head -1 | cut -d' ' -f2)"
+     local curlVersionRequired=7.49
      local edgeCount="$(wc -w <<< "$edges" | tr -d ' ')"
-     local shard
-     local currShard
-     local dnsOutput
-     local cnameExists
-     local endToEndTestSucceeded
-     local curlResult  for region in IRL1 IND1 SIN OR SYD VA TYO; do
-       currShard="${region}-${poolDomain}"
-       curlResult="$(curl -vsm20 --connect-to "$hostname:443:$currShard:443" "$url" 2>&1)"
+     local cnameExists=""
+     local endToEndTestSucceeded=""
+   
+     for region in IRL1 IND1 SIN OR SYD VA TYO; do
+       local currShard="${region}-${poolDomain}"
+       local curlResult="$(curl -vsm20 --connect-to "$hostname:443:$currShard:443" "$url" 2>&1)"
+   
        if grep -q "$curlValidation" <<< "$curlResult"; then
          shardsFound+=" $currShard"
+   
          if grep -q "$curlResponseValidation" <<< "$curlResult"; then
            shardsFoundCount=$((shardsFoundCount+1))
            shardsFoundOutput+="\n\n$miniRule $success $hostname [edge shard: $currShard] $miniRule\n"
          else
            shardsFoundOutput+="\n\n$miniRule $failure $hostname [edge shard: $currShard] $miniRule\n"
          fi
+   
          shardsFoundOutput+="$(grep -E "$curlRegex" <<< "$curlResult" | sort)"
+   
          if ! grep -q "$curlResponseValidation" <<< "$curlResult"; then
            shardsFoundOutput+="\nERROR: unexpected HTTP response from this shard using $url"
          fi
        fi
      done
+   
      echo
      echo "$horizontalRule"
      echo
      echo "$service validation for hostname $hostname:"
-     dnsOutput="$(dig -t CNAME +short "$hostname" 2>&1)"
+   
+     local dnsOutput="$(dig -t CNAME +short "$hostname" 2>&1)"
      if grep -qFi ".$edgeDomain" <<< "$dnsOutput"; then
        echo "$success $hostname passes DNS CNAME validation"
        cnameExists=true
@@ -164,8 +171,11 @@ Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller L
        else
          echo "required DNS CNAME record pointing to <target-client-code>.$edgeDomain not found"
        fi
-     fi  for region in IRL1 IND1 SIN OR SYD VA TYO; do
-       curlResult="$(curl -vsm20 --connect-to "$hostname:443:${region}-pool.data.adobedc.net:443" "https://$hostname$curlEndpoint" 2>&1)"
+     fi
+   
+     for region in IRL1 IND1 SIN OR SYD VA TYO; do
+       local curlResult="$(curl -vsm20 --connect-to "$hostname:443:${region}-pool.data.adobedc.net:443" "https://$hostname$curlEndpoint" 2>&1)"
+   
        if grep -q "$curlValidation" <<< "$curlResult"; then
          if grep -q "$curlResponseValidation" <<< "$curlResult"; then
            echo -en "$success $hostname passes TLS and HTTP response validation for region $region"
@@ -199,10 +209,14 @@ Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller L
            echo "the required DNS CNAME record is missing, see above"
          fi
        fi
-     done  if [ "$shardsFoundCount" -ge "$edgeCount" ]; then
+     done
+   
+     if [ "$shardsFoundCount" -ge "$edgeCount" ]; then
        echo -n "$success $hostname passes shard validation for the following $shardsFoundCount edge shards:"
        echo -e "$shardsFoundOutput"
-       echo    if [ -n "$cnameExists" ] && [ -n "$endToEndTestSucceeded" ]; then
+       echo
+   
+       if [ -n "$cnameExists" ] && [ -n "$endToEndTestSucceeded" ]; then
          echo "$horizontalRule"
          echo ""
          echo "  For additional TLS/SSL validation, see SSL Shopper:"
@@ -217,16 +231,9 @@ Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller L
      else
        echo -n "$failure $hostname FAILED shard validation -- shards found: $shardsFoundCount," \
          "expected: $edgeCount"
-       if bc -l <<< "$(cut -d. -f1,2 <<< "$curlVersion") $curlVersionRequired" 2>/dev/null | grep -q 0; then
-         echo -n " -- insufficient curl version installed: $curlVersion, but this script requires curl version" \
-           "$curlVersionRequired because it uses the curl --connect-to flag to bypass DNS and directly test" \
-           "each Adobe Target edge shards' SNI configuration for $hostname"
-       fi
-       if [ -n "$shardsFoundOutput" ]; then
-         echo -e ":\n$shardsFoundOutput"
-       fi
-       echo
+       echo ""
      fi
+   
      echo
      echo "$horizontalRule"
      echo
@@ -242,39 +249,66 @@ Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller L
    Om implementeringen är klar visas utdata som nedan. Den viktiga delen är att alla valideringsstatusrader visar `✅` i stället för `🚫`. Varje CNAME-målserver ska visa `CN=target.example.com`, vilket matchar det primära värdnamnet på det begärda certifikatet (ytterligare SAN-värdnamn på certifikatet skrivs inte ut i dessa utdata).
 
    ```
-      $ adobeTargetCnameValidation
-    target.example.com==========================================================Adobe Target CNAME implementation validation for hostname target.example.com:
-    ✅ target.example.com passes DNS CNAME validation
-    ✅ target.example.com passes TLS and HTTP response validation for region IRL1
-    ✅ target.example.com passes TLS and HTTP response validation for region IND1
-    ✅ target.example.com passes TLS and HTTP response validation for region SIN
-    ✅ target.example.com passes TLS and HTTP response validation for region OR
-    ✅ target.example.com passes TLS and HTTP response validation for region SYD
-    ✅ target.example.com passes TLS and HTTP response validation for region VA
-    ✅ target.example.com passes TLS and HTTP response validation for region TYO
-    ✅ target.example.com passes shard validation for the following 7 edge shards:===== ✅ target.example.com [edge shard: IRL1-pool.data.adobedc.net] =====
-    *  expire date: Feb 20 23:59:59 2026 GMT
-    *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com===== ✅ target.example.com [edge shard: IND1-pool.data.adobedc.net] =====
-    *  expire date: Feb 20 23:59:59 2026 GMT
-    *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com===== ✅ target.example.com [edge shard: SIN-pool.data.adobedc.net] =====
-    *  expire date: Feb 20 23:59:59 2026 GMT
-    *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com===== ✅ target.example.com [edge shard: OR-pool.data.adobedc.net] =====
-    *  expire date: Feb 20 23:59:59 2026 GMT
-    *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com===== ✅ target.example.com [edge shard: SYD-pool.data.adobedc.net] =====
-    *  expire date: Feb 20 23:59:59 2026 GMT
-    *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com===== ✅ target.example.com [edge shard: VA-pool.data.adobedc.net] =====
-    *  expire date: Feb 20 23:59:59 2026 GMT
-    *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com===== ✅ target.example.com [edge shard: TYO-pool.data.adobedc.net] =====
-    *  expire date: Feb 20 23:59:59 2026 GMT
-    *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com==========================================================  For additional TLS/SSL validation, see SSL Shopper:    🔎  https://www.sslshopper.com/ssl-checker.html#hostname=target.example.com  To check DNS propagation around the world, see whatsmydns.net:    🔎  DNS A records:     https://whatsmydns.net/#A/target.example.com
-        🔎  DNS CNAME record:  https://whatsmydns.net/#CNAME/target.example.com
+   $ adobeTargetCnameValidation target.example.com
+   
+   ==========================================================
+   
+   Adobe Target CNAME implementation validation for hostname target.example.com:
+   ✅ target.example.com passes DNS CNAME validation
+   ✅ target.example.com passes TLS and HTTP response validation for region IRL1
+   ✅ target.example.com passes TLS and HTTP response validation for region IND1
+   ✅ target.example.com passes TLS and HTTP response validation for region SIN
+   ✅ target.example.com passes TLS and HTTP response validation for region OR
+   ✅ target.example.com passes TLS and HTTP response validation for region SYD
+   ✅ target.example.com passes TLS and HTTP response validation for region VA
+   ✅ target.example.com passes TLS and HTTP response validation for region TYO
+   ✅ target.example.com passes shard validation for the following 7 edge shards:
+   
+   ===== ✅ target.example.com [edge shard: IRL1-pool.data.adobedc.net] =====
+   *  expire date: Feb 20 23:59:59 2026 GMT
+   *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+   *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com
+   
+   ===== ✅ target.example.com [edge shard: IND1-pool.data.adobedc.net] =====
+   *  expire date: Feb 20 23:59:59 2026 GMT
+   *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+   *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com
+   
+   ===== ✅ target.example.com [edge shard: SIN-pool.data.adobedc.net] =====
+   *  expire date: Feb 20 23:59:59 2026 GMT
+   *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+   *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com
+   
+   ===== ✅ target.example.com [edge shard: OR-pool.data.adobedc.net] =====
+   *  expire date: Feb 20 23:59:59 2026 GMT
+   *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+   *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com
+   
+   ===== ✅ target.example.com [edge shard: SYD-pool.data.adobedc.net] =====
+   *  expire date: Feb 20 23:59:59 2026 GMT
+   *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+   *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com
+   
+   ===== ✅ target.example.com [edge shard: VA-pool.data.adobedc.net] =====
+   *  expire date: Feb 20 23:59:59 2026 GMT
+   *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+   *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com
+   
+   ===== ✅ target.example.com [edge shard: TYO-pool.data.adobedc.net] =====
+   *  expire date: Feb 20 23:59:59 2026 GMT
+   *  issuer: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+   *  subject: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com
+   
+   ==========================================================  
+   
+   For additional TLS/SSL validation, see SSL Shopper:
+   
+       🔎  https://www.sslshopper.com/ssl-checker.html#hostname=target.example.com  
+   
+   To check DNS propagation around the world, see whatsmydns.net:
+   
+       🔎  DNS A records:     https://whatsmydns.net/#A/target.example.com
+       🔎  DNS CNAME record:  https://whatsmydns.net/#CNAME/target.example.com 
    ```
 
 >[!NOTE]
