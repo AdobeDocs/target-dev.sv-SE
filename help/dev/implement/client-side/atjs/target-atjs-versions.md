@@ -4,9 +4,9 @@ description: Visa information om ändringarna i varje version av JavaScript-bibl
 title: Vad ingår i varje version av at.js?
 feature: at.js
 exl-id: 609dacba-2ab8-45e9-b189-928d59938c98
-source-git-commit: 3deeee2838d02d578bb653a4911313463b962050
+source-git-commit: 1a9b43142319ace8fa04aff209b8b639c7512e3f
 workflow-type: tm+mt
-source-wordcount: '4994'
+source-wordcount: '5018'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,10 @@ Information om ändringar i varje version av JavaScript-biblioteket [!DNL Adobe 
 >Du bör uppgradera till de senaste versionerna av antingen 1.*x* eller 2.*x* om du vill få buggfixar och säkerhetsuppdateringar för problem som upptäckts i en tidigare mindre version av motsvarande större version.
 
 Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den metod du föredrar att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tilläggsuppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html) i guiden *Översikt över taggar*.
+
+## at.js version 2.11.8 (31 mars 2025)
+
+* Åtgärdade en CodeQL-identifierad säkerhetslucka i strängsuffixvalidering för att förhindra kantfall vid storleksändrings- och flyttningsåtgärder. (TNT-51516)
 
 ## at.js version 2.11.7 (26 februari 2025)
 
