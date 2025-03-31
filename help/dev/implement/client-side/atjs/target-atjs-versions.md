@@ -4,7 +4,7 @@ description: Visa information om ändringarna i varje version av JavaScript-bibl
 title: Vad ingår i varje version av at.js?
 feature: at.js
 exl-id: 609dacba-2ab8-45e9-b189-928d59938c98
-source-git-commit: 1a9b43142319ace8fa04aff209b8b639c7512e3f
+source-git-commit: aa6f6593a6979666101d8754dde3e02fb6a21e33
 workflow-type: tm+mt
 source-wordcount: '5018'
 ht-degree: 0%
