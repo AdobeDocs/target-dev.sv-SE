@@ -44,7 +44,7 @@ I det här avsnittet kommer du åt [!DNL Adobe Developer Console] och skapar ett
 
 &lt;!—(1. Generera din privata nyckel och ditt offentliga certifikat enligt [dokumentationen för autentisering](https://developer.adobe.com/developer-console/docs/guides/authentication/). // [//]: # (enligt beskrivningen i **Steg 1** av [Så här konfigurerar du Adobe I/O: Autentisering - Steg för steg](https://helpx.adobe.com/marketing-cloud-core/kb/adobe-io-authentication-step-by-step.html). När du är klar med steg 1 går du tillbaka till den här guiden och fortsätter med steg 2 nedan. // Resultatet av det här steget bör vara att en `private.key`-fil och en `certificate_pub.crt`-fil skapas. Återgå till den här guiden när du har skapat de här två filerna.)—>
 
-1. I [Adobe Admin Console](https://adminconsole.adobe.com/) kontrollerar du att ditt [!DNL Adobe]-användarkonto har beviljats åtkomst på både [produktadministratörsnivå](https://helpx.adobe.com/enterprise/using/admin-roles.html) och [utvecklarnivå](https://helpx.adobe.com/enterprise/using/manage-developers.html) till [!DNL Target].
+1. I [Adobe Admin Console](https://adminconsole.adobe.com/) kontrollerar du att ditt [!DNL Adobe]-användarkonto har beviljats åtkomst på både [produktadministratörsnivå](https://helpx.adobe.com/se/enterprise/using/admin-roles.html) och [utvecklarnivå](https://helpx.adobe.com/se/enterprise/using/manage-developers.html) till [!DNL Target].
 
 1. I [Adobe Developer Console](https://developer.adobe.com/console/home) väljer du den [!UICONTROL Experience Cloud Organization] som du vill skapa den här integreringen för. (Observera att du förmodligen bara har åtkomst till en enda [!UICONTROL Experience Cloud Organization].)
 
@@ -74,7 +74,7 @@ I det här avsnittet kommer du åt [!DNL Adobe Developer Console] och skapar ett
 
    ![configure-io-target-createProject8](assets/configure-io-target-createproject8.png)
 
-1. Gå tillbaka till Adobe Developer Console och välj den [produktprofil(er)](https://helpx.adobe.com/enterprise/using/manage-products-and-profiles.html) som motsvarar de egenskaper som du använder Adobe Recommendations i. (Om du inte använder egenskaper väljer du standardalternativet för Workspace.) Klicka på **[!UICONTROL Save configured API]**.
+1. Gå tillbaka till Adobe Developer Console och välj den [produktprofil(er)](https://helpx.adobe.com/se/enterprise/using/manage-products-and-profiles.html) som motsvarar de egenskaper som du använder Adobe Recommendations i. (Om du inte använder egenskaper väljer du standardalternativet för Workspace.) Klicka på **[!UICONTROL Save configured API]**.
 
    ![configure-io-target-createProject9](assets/configure-io-target-createproject9.png)
 
@@ -95,7 +95,7 @@ Det finns många sätt att ange projektinformation i Postman, men i det här avs
 
 >[!NOTE]
 >
->Om du vill se videoinstruktioner för en Experience Cloud-lösning, inklusive [!DNL Target], går du till [Använd Postman med Experience Platform API:er](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html). Följande avsnitt är relevanta för [!DNL Target] API:er: 1. Skapa och exportera Experience Platform API till Postman 2. Generera en åtkomsttoken med Postman. De här stegen finns också nedan.
+>Om du vill se videoinstruktioner för en Experience Cloud-lösning, inklusive [!DNL Target], går du till [Använd Postman med Experience Platform API:er](https://experienceleague.adobe.com/docs/platform-learn/tutorials/platform-api-authentication.html?lang=sv-SE). Följande avsnitt är relevanta för [!DNL Target] API:er: 1. Skapa och exportera Experience Platform API till Postman 2. Generera en åtkomsttoken med Postman. De här stegen finns också nedan.
 
 1. Navigera fortfarande i [Adobe Developer Console](https://developer.adobe.com/console/home) för att visa det nya projektets **[!UICONTROL Service Account (JWT)]** inloggningsuppgifter. Använd antingen den vänstra navigeringen eller **[!UICONTROL Credentials]**-avsnittet så som visas.
 

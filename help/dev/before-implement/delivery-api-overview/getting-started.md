@@ -49,6 +49,6 @@ curl -X POST \
 
 Innan du gör ett [!UICONTROL Target Delivery API]-anrop följer du de här stegen för att se till att ett svar innehåller den relevanta upplevelsen för att visa slutanvändarna:
 
-1. Skapa en [!DNL Target]-aktivitet (A/B, XT, AP eller Recommendations) med [formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=en) eller [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
+1. Skapa en [!DNL Target]-aktivitet (A/B, XT, AP eller Recommendations) med [formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE) eller [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE).
 1. Använd leverans-API:t för att få ett svar för rutorna som används i aktiviteten [!DNL Target] som skapades i steg 2.
 1. Presentera upplevelsen för besökaren.

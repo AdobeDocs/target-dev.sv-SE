@@ -68,8 +68,8 @@ targetPageParams (lägger till parametrarna i den globala mbox på sidan):
 
 ## Länkar till relevant information
 
-Recommendations: [Implementering enligt sidtyp](https://experienceleague.adobe.com/docs/target/using/recommendations/plan-implement.html)
+Recommendations: [Implementering enligt sidtyp](https://experienceleague.adobe.com/docs/target/using/recommendations/plan-implement.html?lang=sv-SE)
 
 Orderbekräftelse: [Spåra konverteringar](../../implement/client-side/atjs/how-to-deployatjs/implement-target-without-a-tag-manager.md#track-conversions)
 
-Kategoritillhörighet: [Kategoritillhörighet](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/category-affinity.html)
+Kategoritillhörighet: [Kategoritillhörighet](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/category-affinity.html?lang=sv-SE)

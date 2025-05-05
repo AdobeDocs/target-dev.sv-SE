@@ -37,7 +37,7 @@ Adobe lagrar inte PII (Personally Identiitable Information) eller annan känslig
 
 ### Hur tillåter eller förhindrar jag att min webbplats bäddas in som en iFrame under utländska domäner?
 
-Om du vill tillåta [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html){target=_blank} (VEC) att bädda in din webbplats i en iFrame måste CSP (om den är inställd) ändras på webbserverinställningen. [!DNL Adobe] domäner måste vitlistas och konfigureras.
+Om du vill tillåta [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE){target=_blank} (VEC) att bädda in din webbplats i en iFrame måste CSP (om den är inställd) ändras på webbserverinställningen. [!DNL Adobe] domäner måste vitlistas och konfigureras.
 
 Av säkerhetsskäl kanske du vill förhindra att din plats bäddas in som iFrame under externa domäner.
 

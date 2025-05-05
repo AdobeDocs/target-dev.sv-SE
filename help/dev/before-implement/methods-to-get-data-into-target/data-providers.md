@@ -53,5 +53,5 @@ Dokumentation: [Data Providers](../../implement/client-side/atjs/atjs-functions/
 
 ## Utbildningsvideor:
 
-* [Använda Data Providers i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/integrations/use-data-providers-to-integrate-third-party-data.html)
-* [Implementera Data Providers i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/integrations/implement-data-providers-to-integrate-third-party-data.html)
+* [Använda Data Providers i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/integrations/use-data-providers-to-integrate-third-party-data.html?lang=sv-SE)
+* [Implementera Data Providers i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/integrations/implement-data-providers-to-integrate-third-party-data.html?lang=sv-SE)

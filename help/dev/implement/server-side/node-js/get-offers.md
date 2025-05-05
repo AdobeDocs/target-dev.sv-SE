@@ -52,7 +52,7 @@ Objektet `options` har följande struktur:
 | targetCookie | Objekt | [!DNL Target]-cookie |
 | targetLocationHintCookie | Objekt | Webbplatstipscookie för [!DNL Target] |
 | analyticsDetails | Array | Analysens nyttolast, om Analytics används på klientsidan |
-| responseTokens | Array | En lista med [svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?). |
+| responseTokens | Array | En lista med [svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE&). |
 | trace | Array | Sammanlagda spårningsdata för alla begärandemrutor/vyer |
 | status | Objekt | Ett objekt som innehåller svarsstatus. |
 | decisioningMethod | Sträng | Avgör vilken beslutsmetod som ska användas ([på enheten](/help/dev/implement/server-side/sdk-guides/on-device-decisioning/overview.md), på serversidan, hybrid) |

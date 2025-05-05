@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Den här funktionen utlöser en begäran om att rapportera användaråtgärder, till exempel klickningar och konverteringar. Den levererar inte någon verksamhet som svar.
 
-Dessa händelsespårningsanrop kan sedan användas för att definiera mått i aktiviteter. Mer information finns i [Success Metrics](https://experienceleague.adobe.com/docs/target/using/activities/success-metrics/success-metrics.html) och [Track Conversions](../how-to-deployatjs/implement-target-without-a-tag-manager.md#track-conversions).
+Dessa händelsespårningsanrop kan sedan användas för att definiera mått i aktiviteter. Mer information finns i [Success Metrics](https://experienceleague.adobe.com/docs/target/using/activities/success-metrics/success-metrics.html?lang=sv-SE) och [Track Conversions](../how-to-deployatjs/implement-target-without-a-tag-manager.md#track-conversions).
 
 Här är API-informationen:
 

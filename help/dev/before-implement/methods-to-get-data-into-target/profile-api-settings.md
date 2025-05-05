@@ -36,11 +36,11 @@ För ökad säkerhet kan du kräva att API-anropet för gruppuppdatering kräver
 
    * Administratörsroll eller har minst godkännarbehörighet
 
-     Mer information för Target Standard-kunder finns i [Ange roller och behörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/users/user-management.html#roles-permissions) i *Användare*. Mer information om [!DNL Target Premium] kunder finns i [Konfigurera företagsbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html).
+     Mer information för Target Standard-kunder finns i [Ange roller och behörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/users/user-management.html?lang=sv-SE#roles-permissions) i *Användare*. Mer information om [!DNL Target Premium] kunder finns i [Konfigurera företagsbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html?lang=sv-SE).
 
    * Administratörsroll på arbetsyta/produktprofilnivå
 
-     Arbetsytor är bara tillgängliga för [!DNL Target Premium] kunder. Mer information finns i [Konfigurera företagsbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html).
+     Arbetsytor är bara tillgängliga för [!DNL Target Premium] kunder. Mer information finns i [Konfigurera företagsbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html?lang=sv-SE).
 
    * Administratörsrättigheter (systemadministratörsbehörighet) på [!DNL Adobe Target]-produktnivå
 

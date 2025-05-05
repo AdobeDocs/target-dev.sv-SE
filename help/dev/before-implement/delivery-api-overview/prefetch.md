@@ -124,7 +124,7 @@ I svaret visas fältet `content` med den upplevelse som ska visas för besökare
 
 ## Förhämta rutor med `clickTrack`-mått när [!UICONTROL Analytics for Target] (A4T) används
 
-[[!UICONTROL Adobe Analytics for Target]](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html){target=_blank} (A4T) är en integrering med flera lösningar som gör att du kan skapa aktiviteter baserade på [!DNL Analytics] konverteringsstatistik och målgruppssegment.
+[[!UICONTROL Adobe Analytics for Target]](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE){target=_blank} (A4T) är en integrering med flera lösningar som gör att du kan skapa aktiviteter baserade på [!DNL Analytics] konverteringsstatistik och målgruppssegment.
 
 Följande kodfragment är ett svar från en förhämtning av en mbox som innehåller `clickTrack` mätvärden för att meddela [!DNL Analytics] att ett erbjudande har klickats:
 
@@ -169,7 +169,7 @@ Följande kodfragment är ett svar från en förhämtning av en mbox som innehå
 
 ## Förhämta vyer
 
-Vyer stöder enkelsidiga program (SPA) och mobilprogram smidigare. Vyer kan ses som en logisk grupp av visuella element som tillsammans utgör en SPA eller mobil upplevelse. Nu kan VEC-skapade [[!UICONTROL A/B Test]](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html){target=_blank}- och [[!UICONTROL Experience Targeting]](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html){target=_blank} (X)T-aktiviteter med ändringar i [Vyer för SPA](/help/dev/implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md) hämtas i förväg via leverans-API:t.
+Vyer stöder enkelsidiga program (SPA) och mobilprogram smidigare. Vyer kan ses som en logisk grupp av visuella element som tillsammans utgör en SPA eller mobil upplevelse. Nu kan VEC-skapade [[!UICONTROL A/B Test]](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html?lang=sv-SE){target=_blank}- och [[!UICONTROL Experience Targeting]](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html?lang=sv-SE){target=_blank} (X)T-aktiviteter med ändringar i [Vyer för SPA](/help/dev/implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md) hämtas i förväg via leverans-API:t.
 
 ```shell  {line-numbers="true"}
 curl -X POST \

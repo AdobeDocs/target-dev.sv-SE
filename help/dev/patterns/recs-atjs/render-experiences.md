@@ -58,8 +58,8 @@ Lägg till framhävda objekt och styr deras placering i din rekommendationsdesig
 **Tillgängliga alternativ**
 
 * Befordra efter ID
-* [Befordra efter samling](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/collections.html){target=_blank}
-* [Befordra efter attribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html){target=_blank}
+* [Befordra efter samling](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/collections.html?lang=sv-SE){target=_blank}
+* [Befordra efter attribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html?lang=sv-SE){target=_blank}
 
 **Entitetsparametrar krävs**
 
@@ -67,7 +67,7 @@ Lägg till framhävda objekt och styr deras placering i din rekommendationsdesig
 
 **Läser**
 
-* [Lägg till kampanjer](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-activity/adding-promotions.html){target=_blank}
+* [Lägg till kampanjer](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-activity/adding-promotions.html?lang=sv-SE){target=_blank}
 
 +++
 
@@ -91,7 +91,7 @@ Utför rekommendationer baserat på användarens kundvagnsinnehåll.
 
 **Läser**
 
-* [Kundvagnsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Kundvagnsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -120,7 +120,7 @@ Utför rekommendationer baserat på hur populärt ett objekt på webbplatsen är
 
 **Läser**
 
-* [Popularitetsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Popularitetsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -146,7 +146,7 @@ Rekommendationer baserade på sökning efter liknande objekt för ett objekt som
 
 **Läser**
 
-* [Objektbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Objektbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -169,7 +169,7 @@ Utför rekommendationer baserat på användarens beteende.
 
 **Läser**
 
-* [Användarbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Användarbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -191,7 +191,7 @@ Utför rekommendationer baserat på en anpassad fil som du överför.
 
 **Läser**
 
-* [Anpassade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Anpassade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -203,7 +203,7 @@ Utför rekommendationer baserat på en anpassad fil som du överför.
 
 **Läser**
 
-* [Använd dynamiska och statiska inkluderingsregler](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/dynamic-static/use-dynamic-and-static-inclusion-rules.html){target=_blank}
+* [Använd dynamiska och statiska inkluderingsregler](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/dynamic-static/use-dynamic-and-static-inclusion-rules.html?lang=sv-SE){target=_blank}
 
 +++
 
@@ -217,7 +217,7 @@ Skicka enhets-ID:n för entiteter som du vill utesluta från dina rekommendation
 
 **Läser**
 
-* [Kan jag utesluta en entitet dynamiskt?](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-faq/recommendations-faq.html?lang=en#exclude){target=_blank}
+* [Kan jag utesluta en entitet dynamiskt?](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-faq/recommendations-faq.html?lang=sv-SE#exclude){target=_blank}
 
 +++
 
@@ -229,9 +229,9 @@ Skicka enhets-ID:n för entiteter som du vill utesluta från dina rekommendation
 
 **Läser**
 
-* [Entitetsattribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html){target=_blank}
+* [Entitetsattribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html?lang=sv-SE){target=_blank}
 
-Du kan också slutföra det här steget genom att skapa [produktflöden](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/feeds.html){target=_blank} med användargränssnittet i [!DNL Target] för att uppdatera produktkatalogen för [!DNL Recommendations].
+Du kan också slutföra det här steget genom att skapa [produktflöden](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/feeds.html?lang=sv-SE){target=_blank} med användargränssnittet i [!DNL Target] för att uppdatera produktkatalogen för [!DNL Recommendations].
 
 +++
 
@@ -245,7 +245,7 @@ Ange profilattributen som används som nycklar för inkluderingsregler i de Reco
 
 **Läser**
 
-* [Profilattribut](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/profile-parameters.html){target=_blank}
+* [Profilattribut](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/profile-parameters.html?lang=sv-SE){target=_blank}
 
 +++
 
@@ -253,7 +253,7 @@ Ange profilattributen som används som nycklar för inkluderingsregler i de Reco
 
 ## 3.11: Begäran om sidinläsning vid brand {#fire}
 
-Det här steget utlöser ett [!DNL Delivery API]-anrop med `execute` > `pageLoad` nyttolast i begäran. Metoden `getOffers()` hämtar upplevelsen och `applyOffers()` återger upplevelsen på sidan. `pageLoad`-begäran krävs för återgivning av upplevelser som har skapats i [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html){target=_blank} (VEC).
+Det här steget utlöser ett [!DNL Delivery API]-anrop med `execute` > `pageLoad` nyttolast i begäran. Metoden `getOffers()` hämtar upplevelsen och `applyOffers()` återger upplevelsen på sidan. `pageLoad`-begäran krävs för återgivning av upplevelser som har skapats i [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE){target=_blank} (VEC).
 
 +++Se information
 

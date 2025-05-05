@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # API-översikt för mål
 
-I den här artikeln beskrivs de olika mål-API:erna i allmänhet, innan den fokuserar på krav som är specifika för API:erna Admin och Profile. Om du vill administrera Target via användargränssnittet läser du avsnittet [Administration i *Adobe Target Business User Guide*](https://experienceleague.adobe.com/docs/target/using/administer/administrating-target.html?lang=en).
+I den här artikeln beskrivs de olika mål-API:erna i allmänhet, innan den fokuserar på krav som är specifika för API:erna Admin och Profile. Om du vill administrera Target via användargränssnittet läser du avsnittet [Administration i *Adobe Target Business User Guide*](https://experienceleague.adobe.com/docs/target/using/administer/administrating-target.html?lang=sv-SE).
 
 ## API-typer
 

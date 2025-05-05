@@ -102,7 +102,7 @@ Du kan åsidosätta följande inställningar:
 
   Endast på serversidan är den standardmetod för beslut som anges i rutan när at.js 2.5+ implementeras och distribueras på dina webbegenskaper.
 
-  Om endast serversidan används som standardkonfiguration innebär det att alla beslut fattas i gränsnätverket [!DNL Target], vilket innebär ett blockerande serveranrop. Den här metoden kan innebära inkrementell fördröjning, men den ger också avsevärda fördelar, som att du kan använda [!DNL Target]s maskininlärningsfunktioner som omfattar [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)-, [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)- (AP) och [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html) -aktiviteter.
+  Om endast serversidan används som standardkonfiguration innebär det att alla beslut fattas i gränsnätverket [!DNL Target], vilket innebär ett blockerande serveranrop. Den här metoden kan innebära inkrementell fördröjning, men den ger också avsevärda fördelar, som att du kan använda [!DNL Target]s maskininlärningsfunktioner som omfattar [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html?lang=sv-SE)-, [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html?lang=sv-SE)- (AP) och [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html?lang=sv-SE) -aktiviteter.
 
   Dessutom kan förbättringar av dina personaliserade upplevelser genom att använda användarprofilen för [!DNL Target], som är beständig i olika sessioner och kanaler, ge ett kraftfullt resultat för ditt företag.
 
@@ -284,8 +284,8 @@ Följande videofilmer innehåller mer information:
 
 | Video | Beskrivning |
 |--- |--- |
-| [Använda Data Providers i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/integrations/use-data-providers-to-integrate-third-party-data.html) | Data Providers är en funktion som gör att du enkelt kan skicka data från tredje part till Target. En tredje part kan vara en vädertjänst, en datahanteringsplattform eller till och med en egen webbtjänst. Sedan kan ni använda dessa data för att skapa målgrupper, målinnehåll och berika besökarprofilen. |
-| [Implementera Data Providers i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/integrations/implement-data-providers-to-integrate-third-party-data.html) | Implementeringsinformation och exempel på hur du använder funktionen dataProviders för Adobe [!DNL Target] för att hämta data från tredjepartsdataleverantörer och skicka den i [!DNL Target]-begäran. |
+| [Använda Data Providers i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/integrations/use-data-providers-to-integrate-third-party-data.html?lang=sv-SE) | Data Providers är en funktion som gör att du enkelt kan skicka data från tredje part till Target. En tredje part kan vara en vädertjänst, en datahanteringsplattform eller till och med en egen webbtjänst. Sedan kan ni använda dessa data för att skapa målgrupper, målinnehåll och berika besökarprofilen. |
+| [Implementera Data Providers i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/integrations/implement-data-providers-to-integrate-third-party-data.html?lang=sv-SE) | Implementeringsinformation och exempel på hur du använder funktionen dataProviders för Adobe [!DNL Target] för att hämta data från tredjepartsdataleverantörer och skicka den i [!DNL Target]-begäran. |
 
 Inställningen `window.targetGlobalSettings.dataProviders` är en matris med dataleverantörer.
 

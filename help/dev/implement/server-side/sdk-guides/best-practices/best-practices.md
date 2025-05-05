@@ -19,7 +19,7 @@ ht-degree: 0%
 När du använder&quot;på enheten&quot; som beslutsmetod hämtas artefakten när besökaren läser in webbsidan för första gången. Alla aktivitetskvalificeringar som behöver göras på första sidan läses in (inget cacheminne) inträffar först när artefakten har hämtats helt. Det finns vissa tips du kan följa för att se till att aktivitetskvalifikationerna sker snabbt för en ny anonym besökare.
 
 * Inaktivera aktiviteter som inte ska ingå i artefakten och som kan användas på en enhet.
-* Om du har Target Premium kan du använda [egenskaper/arbetsytor](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html) för att skapa olika artefaktfiler för olika arbetsytor.
+* Om du har Target Premium kan du använda [egenskaper/arbetsytor](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=sv-SE) för att skapa olika artefaktfiler för olika arbetsytor.
 * Om dina artefaktfiler blir mycket stora av legitima skäl kan du använda den&quot;hybridmetoden&quot; för beslut. Med den här metoden kan du hämta artefakten parallellt och alla Target API-anrop går över tråden tills artefakten har hämtats. Läs avsnittet om de effektivaste strategierna i hybridläget nedan om du vill veta mer om detta.
 * Om du har ett enkelsidigt program (SPA) rekommenderar [!DNL Adobe] att du läser in och initierar at.js innan du läser in programmets JavaScript-huvudfil under första sidinläsningen. Den här metoden initierar artefaktnedladdningen mycket tidigare, vilket ger en snabbare upplevelserendering.
 

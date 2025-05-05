@@ -24,6 +24,6 @@ Det finns flera skillnader mellan en vanlig mbox (icke-global mbox) och den glob
 | En vanlig mbox radbryts vanligtvis runt innehåll med en `<DIV>`-tagg. | Den globala rutan är tom och figursätts inte runt något innehåll. |
 | Innehåll från endast en aktivitet kan levereras i en vanlig mbox. | Innehåll från flera aktiviteter kan levereras som ett svar på en global mbox. |
 
-Om flera aktiviteter levereras via den globala mbox eller via flera vanliga mbox-rutor, avgör mål [prioriteten](https://experienceleague.adobe.com/docs/target/using/activities/priority.html) som aktiviteten (eller aktiviteterna) levereras med till en webbsida.
+Om flera aktiviteter levereras via den globala mbox eller via flera vanliga mbox-rutor, avgör mål [prioriteten](https://experienceleague.adobe.com/docs/target/using/activities/priority.html?lang=sv-SE) som aktiviteten (eller aktiviteterna) levereras med till en webbsida.
 
 Ytterligare data på sidnivå kan skickas till [!DNL Target] tillsammans med den globala mbox-filen med funktionen `[!UICONTROL targetPageParams]`. Detta liknar mbox-parameterfunktionen. Mer information finns i [Överföra parametrar till en global mbox](/help/dev/implement/client-side/atjs/global-mbox/pass-parameters-to-global-mbox.md).

@@ -38,7 +38,7 @@ Aktivering av enhetsbeslut säkerställer att en A/B-aktivitet utförs vid näst
 
 >[!NOTE]
 >
->Du måste ha administratörs- eller godkännarrollen [användare](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att aktivera eller inaktivera växlingsknappen **[!UICONTROL On-Device Decisioning]**.
+>Du måste ha administratörs- eller godkännarrollen [användare](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html?lang=sv-SE) för att aktivera eller inaktivera växlingsknappen **[!UICONTROL On-Device Decisioning]**.
 
 När du har aktiverat växeln **[!UICONTROL On-Device Decisioning]** börjar [!DNL Adobe Target] generera *regelartefakter* för klienten.
 

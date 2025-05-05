@@ -39,7 +39,7 @@ Hjälp med att välja rätt konfiguration finns i [Icke-JavaScript-baserade impl
 
      Detta måste vara URL-kodat och måste vara en absolut referens. Du kan använda [HTML URL-kodningsreferens](https://www.w3schools.com/tags/ref_urlencode.asp) för att snabbt koda dina URL-adresser.
 
-1. Skapa [Omdirigeringserbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html) för varje alternativ bild.
+1. Skapa [Omdirigeringserbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/offers/offer-redirect.html?lang=sv-SE) för varje alternativ bild.
 
    >[!NOTE]
    >

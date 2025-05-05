@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Användarbehörigheter och egenskaper
 
-SDK:erna [!DNL Target] har stöd för användarbehörigheter och egenskaper. Om du inte känner till hur [!DNL Adobe Target] hanterar företagsbehörigheter via arbetsytor och egenskaper kan du läsa mer om det i [Enterprise-användarbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html).
+SDK:erna [!DNL Target] har stöd för användarbehörigheter och egenskaper. Om du inte känner till hur [!DNL Adobe Target] hanterar företagsbehörigheter via arbetsytor och egenskaper kan du läsa mer om det i [Enterprise-användarbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=sv-SE).
 
 Klienten kan använda en egenskapstoken på ett av två sätt.
 

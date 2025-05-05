@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Ibland kan de algoritmer som tillhandahålls av Recommendations inte visa vissa element som du vill lyfta fram. I sådana fall kan du med anpassade kriterier leverera en specifik uppsättning rekommenderade objekt för ett visst nyckelobjekt eller en viss kategori.
 
-Om du vill skapa anpassade villkor definierar du och importerar den önskade mappningen mellan nyckelobjektet eller kategorin och de rekommenderade objekten. Den här processen beskrivs i [dokumentationen för anpassade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/recommendations-csv.html). Som du kan se i den dokumentationen kan du skapa, redigera och ta bort anpassade villkor via användargränssnittet i Target. Target innehåller dock även en uppsättning API:er för anpassade kriterier som ger en mer detaljerad hantering av anpassade villkor.
+Om du vill skapa anpassade villkor definierar du och importerar den önskade mappningen mellan nyckelobjektet eller kategorin och de rekommenderade objekten. Den här processen beskrivs i [dokumentationen för anpassade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/recommendations-csv.html?lang=sv-SE). Som du kan se i den dokumentationen kan du skapa, redigera och ta bort anpassade villkor via användargränssnittet i Target. Target innehåller dock även en uppsättning API:er för anpassade kriterier som ger en mer detaljerad hantering av anpassade villkor.
 
 >[!WARNING]
 >
@@ -31,7 +31,7 @@ Om du vill skapa anpassade villkor med [Create Custom Criteria API](https://deve
 
 >[!WARNING]
 >
->Anpassade villkor som skapats med API:t Skapa anpassade kriterier, som beskrivs i den här övningen, visas i användargränssnittet där de finns kvar. Du kan inte redigera eller ta bort dem från användargränssnittet. Du kan redigera eller ta bort dem **via API**, men på båda sätten visas de fortfarande i målgränssnittet. Om du vill behålla möjligheten att redigera eller ta bort från användargränssnittet skapar du anpassade villkor med användargränssnittet per [dokumentationen](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/recommendations-csv.html), i stället för att använda API:t Skapa anpassade kriterier.
+>Anpassade villkor som skapats med API:t Skapa anpassade kriterier, som beskrivs i den här övningen, visas i användargränssnittet där de finns kvar. Du kan inte redigera eller ta bort dem från användargränssnittet. Du kan redigera eller ta bort dem **via API**, men på båda sätten visas de fortfarande i målgränssnittet. Om du vill behålla möjligheten att redigera eller ta bort från användargränssnittet skapar du anpassade villkor med användargränssnittet per [dokumentationen](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/recommendations-csv.html?lang=sv-SE), i stället för att använda API:t Skapa anpassade kriterier.
 
 Fortsätt bara med följande steg när du har läst varningen ovan och är säker på att du kan skapa nya anpassade villkor som inte kan tas bort från användargränssnittet.
 

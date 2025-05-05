@@ -42,7 +42,7 @@ I följande diagram visas arkitekturen för [!UICONTROL on-device decisioning]. 
 
 ### Verksamhet
 
-Enhetsspecifikt beslutsfattande stöder följande aktivitetstyper som skapats av [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html):
+Enhetsspecifikt beslutsfattande stöder följande aktivitetstyper som skapats av [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE):
 
 * [!UICONTROL A/B Test]
 * [!UICONTROL Experience Targeting] (XT)
@@ -59,17 +59,17 @@ Enhetsbeslut stöder följande målgruppsregler:
 
 | Målgruppsregel | Beslut på enheten |
 | --- | --- |
-| [Geo](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html) | Ja<P>Följande geo-attribut stöds när enhetsbeslut används:<ul><li>Land/region</li><li>Ort</li><li>Latitude</li><li>Longitud</li></ul> |
-| [Nätverk](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/network.html) | Nej |
-| [Mobil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html) | Nej |
-| [Egna parametrar](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/custom-parameters.html) | Ja |
-| [Operativsystem](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/operating-system.html) | Ja |
-| [Webbplatssidor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/site-pages.html) | Ja |
-| [Webbläsare](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/browser.html) | Ja |
-| [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html) | Nej |
-| [Trafikkällor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/traffic-sources.html) | Nej |
-| [Tidsram](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/time-frame.html) | Ja |
-| [Experience Cloud-målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html) (målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager) | Nej |
+| [Geo](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html?lang=sv-SE) | Ja<P>Följande geo-attribut stöds när enhetsbeslut används:<ul><li>Land/region</li><li>Ort</li><li>Latitude</li><li>Longitud</li></ul> |
+| [Nätverk](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/network.html?lang=sv-SE) | Nej |
+| [Mobil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html?lang=sv-SE) | Nej |
+| [Egna parametrar](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/custom-parameters.html?lang=sv-SE) | Ja |
+| [Operativsystem](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/operating-system.html?lang=sv-SE) | Ja |
+| [Webbplatssidor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/site-pages.html?lang=sv-SE) | Ja |
+| [Webbläsare](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/browser.html?lang=sv-SE) | Ja |
+| [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html?lang=sv-SE) | Nej |
+| [Trafikkällor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/traffic-sources.html?lang=sv-SE) | Nej |
+| [Tidsram](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/time-frame.html?lang=sv-SE) | Ja |
+| [Experience Cloud-målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html?lang=sv-SE) (målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager) | Nej |
 
 ## Hur etablerar jag min klient för att använda [!UICONTROL on-device decisioning]?
 
@@ -144,7 +144,7 @@ Den här 7-minutersvideon:
 
 >[!VIDEO](https://video.tv.adobe.com/v/329032/?quality=12)
 
-Fler videoklipp och självstudiekurser finns i [[!DNL Adobe Target] Tutorials](https://experienceleague.adobe.com/docs/target-learn/tutorials/overview.html).
+Fler videoklipp och självstudiekurser finns i [[!DNL Adobe Target] Tutorials](https://experienceleague.adobe.com/docs/target-learn/tutorials/overview.html?lang=sv-SE).
 
 ### Adobe Tech Blog - Del 1: Kör [!DNL Adobe Target] NodeJS SDK för experiment och personalisering på kantplattformar (Akamai Edge Workers)
 

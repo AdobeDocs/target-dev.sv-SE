@@ -59,27 +59,27 @@ Detta steg hjälper till att säkerställa att biblioteket `VisitorAPI.js` läse
 
 **Förutsättningar**
 
-* Om du vill använda besökar-ID/API-tjänsten måste ditt företag vara aktiverat för [!DNL Adobe Experience Cloud] och ha en [!UICONTROL Organization ID]. Mer information finns i [Krav för Experience Cloud: Organisations-ID](https://experienceleague.adobe.com/docs/id-service/using/reference/requirements.html?){target=_blank} i hjälpen för *identitetstjänsten*.
-* Du behöver filen `VisitorAPI.js`. Du bör redan ha den här filen om du har implementerat [!DNL Adobe Analytics]. Den här filen kan också läggas till med [[!DNL Adobe Experience Platform] taggtillägget](https://experienceleague.adobe.com/docs/tags.html){target=_blank} eller hämtas från [Adobe Analytics Code Manager](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-analytics.html){target=_blank}.
+* Om du vill använda besökar-ID/API-tjänsten måste ditt företag vara aktiverat för [!DNL Adobe Experience Cloud] och ha en [!UICONTROL Organization ID]. Mer information finns i [Krav för Experience Cloud: Organisations-ID](https://experienceleague.adobe.com/docs/id-service/using/reference/requirements.html?lang=sv-SE&){target=_blank} i hjälpen för *identitetstjänsten*.
+* Du behöver filen `VisitorAPI.js`. Du bör redan ha den här filen om du har implementerat [!DNL Adobe Analytics]. Den här filen kan också läggas till med [[!DNL Adobe Experience Platform] taggtillägget](https://experienceleague.adobe.com/docs/tags.html?lang=sv-SE){target=_blank} eller hämtas från [Adobe Analytics Code Manager](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-analytics.html?lang=sv-SE){target=_blank}.
 
 **Konfigurera och referera till VisitorAPI.js**
 
-Mer information finns i [Implementera tjänsten Experience Cloud för mål](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-target.html){target=_blank}.
+Mer information finns i [Implementera tjänsten Experience Cloud för mål](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-target.html?lang=sv-SE){target=_blank}.
 
 **Läser**
 
-* [Översikt över identitetstjänsten i Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html){target=_blank}
-* [Om ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/intro/about-id-service.html){target=_blank}
-* [Cookies och Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html){target=_blank}
-* [Så här begär och anger identitetstjänsten i Experience Cloud ](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html){target=_blank}
-* [Förstå ID-synkronisering och matchningsfrekvenser](https://experienceleague.adobe.com/docs/id-service/using/intro/match-rates.html){target=_blank}
+* [Översikt över identitetstjänsten i Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=sv-SE){target=_blank}
+* [Om ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/intro/about-id-service.html?lang=sv-SE){target=_blank}
+* [Cookies och Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html?lang=sv-SE){target=_blank}
+* [Så här begär och anger identitetstjänsten i Experience Cloud ](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=sv-SE){target=_blank}
+* [Förstå ID-synkronisering och matchningsfrekvenser](https://experienceleague.adobe.com/docs/id-service/using/intro/match-rates.html?lang=sv-SE){target=_blank}
 
 **Åtgärder**
 
 * Bädda in filen `VisitorAPI.js` på dina webbsidor.
-* Läs om de [tillgängliga konfigurationerna för besökar-ID/API-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/reference/requirements.html){target=_blank}.
+* Läs om de [tillgängliga konfigurationerna för besökar-ID/API-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/reference/requirements.html?lang=sv-SE){target=_blank}.
 * När filen `VisitorAPI.js` har lästs in använder du metoden `Visitor.getInstance` för att initiera med de nödvändiga konfigurationer du behöver.
-* Bekanta dig med de [tillgängliga metoderna](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html){target=_blank}.
+* Bekanta dig med de [tillgängliga metoderna](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/get-set.html?lang=sv-SE){target=_blank}.
 
 +++
 
@@ -98,11 +98,11 @@ Det här steget hjälper dig att se till att dina besökares kända ID:n (CRM-ID
 * Besökarens kända ID bör vara tillgängligt i datalagret.
 
 **Ange kund-ID**
-Mer information finns i [setCustomerID:n](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html){target=_blank}.
+Mer information finns i [setCustomerID:n](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/setcustomerids.html?lang=sv-SE){target=_blank}.
 
 **Läser**
 
-* [Profilsynkronisering i realtid för mbox3rdPartyId](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html){target=_blank}
+* [Profilsynkronisering i realtid för mbox3rdPartyId](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html?lang=sv-SE){target=_blank}
 
 **Åtgärder**
 
@@ -213,15 +213,15 @@ Mer information finns i [targetPageParams()](/help/dev/implement/client-side/atj
 
 ## 1.6: Kampanj {#promotion}
 
-Lägg till upphöjda objekt och kontrollera deras placering i dina [!DNL Target Recommendations] [designer](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-design/create-design.html){target=_blank}.
+Lägg till upphöjda objekt och kontrollera deras placering i dina [!DNL Target Recommendations] [designer](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-design/create-design.html?lang=sv-SE){target=_blank}.
 
 +++Se information
 
 **Tillgängliga alternativ**
 
 * Befordra efter ID
-* [Befordra efter samling](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/collections.html){target=_blank}
-* [Befordra efter attribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html){target=_blank}
+* [Befordra efter samling](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/collections.html?lang=sv-SE){target=_blank}
+* [Befordra efter attribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html?lang=sv-SE){target=_blank}
 
 **Entitetsparametrar krävs**
 
@@ -249,7 +249,7 @@ Utför rekommendationer baserat på användarens kundvagnsinnehåll.
 
 **Läser**
 
-* [Kundvagnsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Kundvagnsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -278,7 +278,7 @@ Utför rekommendationer baserat på hur populärt ett objekt på webbplatsen är
 
 **Läser**
 
-* [Popularitetsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Popularitetsbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -303,7 +303,7 @@ Rekommendationer baserade på sökning efter liknande objekt för ett objekt som
 
 **Läser**
 
-* [Objektbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Objektbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -326,7 +326,7 @@ Utför rekommendationer baserat på användarens beteende.
 
 **Läser**
 
-* [Användarbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Användarbaserad](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -348,7 +348,7 @@ Utför rekommendationer baserat på en anpassad fil som du överför.
 
 **Läser**
 
-* [Anpassade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=en#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
+* [Anpassade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/algorithms.html?lang=sv-SE#section_885B3BB1B43048A88A8926F6B76FC482){target=_blank}
 
 +++
 
@@ -360,7 +360,7 @@ Utför rekommendationer baserat på en anpassad fil som du överför.
 
 **Läser**
 
-* [Använd dynamiska och statiska inkluderingsregler](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/dynamic-static/use-dynamic-and-static-inclusion-rules.html){target=_blank}
+* [Använd dynamiska och statiska inkluderingsregler](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/dynamic-static/use-dynamic-and-static-inclusion-rules.html?lang=sv-SE){target=_blank}
 
 +++
 
@@ -374,7 +374,7 @@ Skicka enhets-ID:n för entiteter som du vill utesluta från dina rekommendation
 
 **Läser**
 
-* [Kan jag utesluta en entitet dynamiskt?](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-faq/recommendations-faq.html?lang=en#exclude){target=_blank}
+* [Kan jag utesluta en entitet dynamiskt?](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-faq/recommendations-faq.html?lang=sv-SE#exclude){target=_blank}
 
 +++
 
@@ -388,7 +388,7 @@ Använd entitetsattribut för att skicka produkt- eller innehållsinformation ti
 
 **Läser**
 
-* [Entitetsattribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html?lang=en){target=_blank}
+* [Entitetsattribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html?lang=sv-SE){target=_blank}
 
 +++
 
@@ -436,7 +436,7 @@ Detta steg säkerställer att JavaScript-biblioteket at.js läses in och initier
 
 *Läser*
 
-* [Så fungerar Target](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html){target=_blank}
+* [Så fungerar Target](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html?lang=sv-SE){target=_blank}
 * [Hur at.js fungerar](/help/dev/implement/client-side/atjs/how-atjs-works/how-atjs-works.md)
 * [Implementera mål utan tagghanterare](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-without-a-tag-manager.md)
 

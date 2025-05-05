@@ -33,7 +33,7 @@ Gränssnittet [!DNL Target] har stöd för följande webbläsare och enheter:
 
 ## Krav för visuell redigering
 
-Om du vill kunna öppna, redigera och förhandsgranska dina webbsidor på ett tillförlitligt sätt i [!UICONTROL Visual Experience Composer] (VEC) måste du ha webbläsartillägget [Adobe Experience Cloud Visual Editing Helper ](https://experienceleague.adobe.com/en/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension){target=_blank} installerat i webbläsaren eller använda [!UICONTROL Enhanced Experience Composer (EEC)].
+Om du vill kunna öppna, redigera och förhandsgranska dina webbsidor på ett tillförlitligt sätt i [!UICONTROL Visual Experience Composer] (VEC) måste du ha webbläsartillägget [Adobe Experience Cloud Visual Editing Helper ](https://experienceleague.adobe.com/sv/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension){target=_blank} installerat i webbläsaren eller använda [!UICONTROL Enhanced Experience Composer (EEC)].
 
 >[!NOTE]
 >

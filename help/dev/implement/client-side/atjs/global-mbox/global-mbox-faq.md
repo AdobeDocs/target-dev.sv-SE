@@ -19,7 +19,7 @@ Lista med vanliga frågor och svar om globala kryssrutor.
 
 Endast en global mbox stöds för hela kontot.
 
-Du kan begränsa var dina aktiviteter körs genom att lägga till URL-regler i dina aktiviteter. Mer information finns i [Inkludera samma upplevelse på liknande sidor](https://experienceleague.adobe.com/docs/target/using/experiences/vec/temtest.html).
+Du kan begränsa var dina aktiviteter körs genom att lägga till URL-regler i dina aktiviteter. Mer information finns i [Inkludera samma upplevelse på liknande sidor](https://experienceleague.adobe.com/docs/target/using/experiences/vec/temtest.html?lang=sv-SE).
 
 Du kan också skicka en parameter på sidan med [targetPageParams](/help/dev/implement/client-side/atjs/atjs-functions/targetpageparams.md) och sedan välja parametrarna i avsnittet Konfigurera URL i [!UICONTROL Visual Experience Composer] (VEC) eller genom att lägga till parametrarna som &quot;finements&quot; i [!UICONTROL Form-Based Experience Composer] .
 

@@ -1,7 +1,7 @@
 ---
 title: Användarbehörigheter för Adobe Target Delivery API
 description: Användarbehörigheter för Adobe Target Delivery API
-badgePremium: label="Premium" type="Positive" url="https://experienceleague.adobe.com/docs/target/using/introduction/intro.html?lang=en#premium newtab=true" tooltip="Se vad som ingår i Target Premium."
+badgePremium: label="Premium" type="Positive" url="https://experienceleague.adobe.com/docs/target/using/introduction/intro.html?lang=sv-SE#premium newtab=true" tooltip="Se vad som ingår i Target Premium."
 keywords: leverans-API
 exl-id: 332f90bd-4079-4653-aa38-b35837631c94
 feature: APIs/SDKs
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Användarbehörigheter (Premium)
 
-[!DNL Adobe] tillåter kunder att hantera behörigheter för sina användare när de använder Adobe Target. För att kunna genomföra ett lyckat [!UICONTROL Adobe Target Delivery API]-anrop måste en token med rätt behörigheter skickas inom API-anropet. Om du vill veta mer om användarbehörighet och hur du hämtar token går du till [den här dokumentationen](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html).
+[!DNL Adobe] tillåter kunder att hantera behörigheter för sina användare när de använder Adobe Target. För att kunna genomföra ett lyckat [!UICONTROL Adobe Target Delivery API]-anrop måste en token med rätt behörigheter skickas inom API-anropet. Om du vill veta mer om användarbehörighet och hur du hämtar token går du till [den här dokumentationen](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html?lang=sv-SE).
 
 ```
 curl -X POST \

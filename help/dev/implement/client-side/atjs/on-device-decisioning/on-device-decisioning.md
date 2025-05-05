@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # [!UICONTROL On-device decisioning] för at.js
 
-Från och med version 2.5.0 erbjuder at.js [!UICONTROL on-device decisioning]. Med [!UICONTROL On-device decisioning] kan du cachelagra dina [A/B Test](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html) - och [Experience Targeting](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html) (XT)-aktiviteter i webbläsaren för att utföra minnesbaserad beslutsfattande utan någon blockerande nätverksbegäran till Edge Network [!DNL Adobe Target].
+Från och med version 2.5.0 erbjuder at.js [!UICONTROL on-device decisioning]. Med [!UICONTROL On-device decisioning] kan du cachelagra dina [A/B Test](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html?lang=sv-SE) - och [Experience Targeting](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html?lang=sv-SE) (XT)-aktiviteter i webbläsaren för att utföra minnesbaserad beslutsfattande utan någon blockerande nätverksbegäran till Edge Network [!DNL Adobe Target].
 
 >[!NOTE]
 >
@@ -28,7 +28,7 @@ Fördelarna med [!UICONTROL on-device decisioning] är:
 * **Leverera blixtsnabba beslut och upplevelser.** Buckling och beslut utförs i minnet och i webbläsaren för att undvika blockering av nätverksbegäranden.
 * **Förbättra programmets prestanda.** Kör experiment och leverera personalisering till kunder och användare utan att kompromissa med slutanvändarupplevelserna.
 * **Förbättra Google Site Quality Score.** I och med att beslut fattas i minnet kan du förbättra Google Site Quality-poängen för ditt onlineföretag så att det blir lättare att identifiera för kunderna.
-* **Lär dig av realtidsanalyser.** Få insikter från aktivitetsprestanda i realtid via [Analytics for Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) (A4T)-rapportering. Med A4T kan ni styra er strategi vid kritiska ögonblick.
+* **Lär dig av realtidsanalyser.** Få insikter från aktivitetsprestanda i realtid via [Analytics for Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE) (A4T)-rapportering. Med A4T kan ni styra er strategi vid kritiska ögonblick.
 
 ## Funktioner som stöds
 
@@ -56,7 +56,7 @@ Med [!UICONTROL on-device decisioning] introducerar [!DNL Target] en ny inställ
 
 Endast på serversidan är den standardmetod för beslut som anges i rutan när at.js 2.5.0+ implementeras och distribueras på dina webbegenskaper.
 
-Om endast serversidan används som standardkonfiguration innebär det att alla beslut fattas i gränsnätverket [!DNL Target], vilket innebär ett blockerande serveranrop. Den här metoden kan innebära inkrementell fördröjning, men den ger också avsevärda fördelar, som att du kan använda [!DNL Target]s maskininlärningsfunktioner som omfattar [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)-, [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)- (AP) och [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html) -aktiviteter.
+Om endast serversidan används som standardkonfiguration innebär det att alla beslut fattas i gränsnätverket [!DNL Target], vilket innebär ett blockerande serveranrop. Den här metoden kan innebära inkrementell fördröjning, men den ger också avsevärda fördelar, som att du kan använda [!DNL Target]s maskininlärningsfunktioner som omfattar [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html?lang=sv-SE)-, [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html?lang=sv-SE)- (AP) och [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html?lang=sv-SE) -aktiviteter.
 
 Dessutom kan förbättringar av dina personaliserade upplevelser genom att använda användarprofilen för [!DNL Target], som är beständig i olika sessioner och kanaler, ge ett kraftfullt resultat för ditt företag.
 
@@ -72,7 +72,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE&). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />   At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment som implementerats på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | En sidinläsningsbegäran görs som innehåller alla konfigurerade parametrar, t.ex. (ECID, Kund-ID, Anpassade parametrar, Användarprofil osv.) |
@@ -111,7 +111,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment implementerat på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | I at.js-biblioteket görs en begäran om att hämta JSON-regelartefakten från närmaste Akamai CDN till besökaren. |
@@ -138,7 +138,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment implementerat på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | I biblioteket at.js tolkas JSON-regelartefakten och beslutet i minnet verkställs för att hämta upplevelsen. |
@@ -173,7 +173,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment implementerat på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | En sidinläsningsbegäran görs till Edge Network [!DNL Adobe Target], inklusive alla konfigurerade parametrar som (ECID, Kund-ID, Anpassade parametrar, Användarprofil osv.). |
@@ -203,7 +203,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment implementerat på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | En begäran görs för att hämta en upplevelse. |
@@ -223,7 +223,7 @@ Aktivera [!UICONTROL on-device decisioning]:
 
 >[!NOTE]
 >
->Du måste ha administratörs- eller godkännarrollen [användare](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att kunna aktivera eller inaktivera växlingsknappen för enhetsbeslut.
+>Du måste ha administratörs- eller godkännarrollen [användare](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html?lang=sv-SE) för att kunna aktivera eller inaktivera växlingsknappen för enhetsbeslut.
 
 1. Klicka på **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** > **[!UICONTROL Account details]**.
 1. Under **[!UICONTROL Account details]** flyttar du växlingsknappen **[!UICONTROL On-Device Decisioning]** till läget&quot;på&quot;.

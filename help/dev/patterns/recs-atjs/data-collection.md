@@ -71,11 +71,11 @@ Länka till entitetsattribut för att uppdatera produktkatalogen för [!DNL Targ
 
 **Läser**
 
-* [Entitetsattribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html){target=_blank}
+* [Entitetsattribut](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/entity-attributes.html?lang=sv-SE){target=_blank}
 
 **Överväganden**
 
-* Ett annat sätt att skicka entitetsattribut är att uppdatera produktkatalogen i [!DNL Target]-gränssnittet så att [Recommendations produktflöden](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/feeds.html){target=_blank} används.
+* Ett annat sätt att skicka entitetsattribut är att uppdatera produktkatalogen i [!DNL Target]-gränssnittet så att [Recommendations produktflöden](https://experienceleague.adobe.com/docs/target/using/recommendations/entities/feeds.html?lang=sv-SE){target=_blank} används.
 * Överföringsentitetsattribut gäller bara för sidor där produktkatalogdata är tillgängliga i datalagret.
 * Att skicka parametern `entity.event.detailsOnly=true` i ett anrop har högre prioritet.
 

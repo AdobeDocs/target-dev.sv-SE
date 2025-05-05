@@ -17,15 +17,15 @@ Lista med vanliga frågor om [!DNL Target] för mobilappar.
 
 ## Ska jag använda taggar i [!DNL Adobe Experience Platform] för att distribuera SDK, eller kan jag distribuera SDK utan att använda Launch?
 
-SDK är tillgängligt på [Adobe Marketing Cloud Git](https://github.com/Adobe-Marketing-Cloud/acp-sdks/){target=_blank}. Om du inte använder [taggar i Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html){target=_blank} måste du hantera din egen inställningsfil och hantera den i din app.
+SDK är tillgängligt på [Adobe Marketing Cloud Git](https://github.com/Adobe-Marketing-Cloud/acp-sdks/){target=_blank}. Om du inte använder [taggar i Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html?lang=sv-SE){target=_blank} måste du hantera din egen inställningsfil och hantera den i din app.
 
 ## Vilka SDK:er finns tillgängliga idag?
 
-Adobe Experience Platform Mobile SDK:er stöder för närvarande iOS, Android och React. Mer information finns i handboken [Adobe Experience Cloud Platform Mobile SDKs](https://experienceleague.adobe.com/docs/mobile.html){target=_blank}.
+Adobe Experience Platform Mobile SDK:er stöder för närvarande iOS, Android och React. Mer information finns i handboken [Adobe Experience Cloud Platform Mobile SDKs](https://experienceleague.adobe.com/docs/mobile.html?lang=sv-SE){target=_blank}.
 
 ## Vilken frekvens har den platsbaserade funktionen för verifiering av latitud och longitud?
 
-Mer information finns i [dokumentationen för Adobe Platser](https://experienceleague.adobe.com/docs/places/using/home.html){target=_blank}.
+Mer information finns i [dokumentationen för Adobe Platser](https://experienceleague.adobe.com/docs/places/using/home.html?lang=sv-SE){target=_blank}.
 
 ## Behöver jag at.js för att Adobe Experience Platform Mobile SDK ska fungera?
 
@@ -33,8 +33,8 @@ Nej, du behöver inte at.js för att använda SDK:n för mobilen. at.js är Java
 
 ## Är [!DNL Target] Mobile endast en funktion i [!DNL Adobe Target] Premium Product SKU?
 
-Nej. För [!DNL Adobe Target Standard]-kunder kan du bara använda våra SDK:er för [!UICONTROL A/B Test]- och [!UICONTROL Experience Targeting] (XT)-aktiviteter med [!DNL Target Standard]-mobilappstillägget. Om du vill använda [!UICONTROL Recommendations] eller AI-funktioner i mobilappen behöver du en [Adobe Target Premium](https://experienceleague.adobe.com/docs/target/using/introduction/intro.html#premium)-licens.
+Nej. För [!DNL Adobe Target Standard]-kunder kan du bara använda våra SDK:er för [!UICONTROL A/B Test]- och [!UICONTROL Experience Targeting] (XT)-aktiviteter med [!DNL Target Standard]-mobilappstillägget. Om du vill använda [!UICONTROL Recommendations] eller AI-funktioner i mobilappen behöver du en [Adobe Target Premium](https://experienceleague.adobe.com/docs/target/using/introduction/intro.html?lang=sv-SE#premium)-licens.
 
 ## Finns det någon mobilappsintegrering mellan [!DNL Adobe Experience Manager] (AEM) och [!DNL Target] mobilaktiviteter?
 
-För närvarande kan du dela JSON [Experience Fragments](https://experienceleague.adobe.com/docs/target/using/experiences/offers/aem-experience-fragments.html){target=_blank} från AEM till [!DNL Target] och det kan finnas en möjlighet att sedan använda dem i en mobilappsaktivitet.
+För närvarande kan du dela JSON [Experience Fragments](https://experienceleague.adobe.com/docs/target/using/experiences/offers/aem-experience-fragments.html?lang=sv-SE){target=_blank} från AEM till [!DNL Target] och det kan finnas en möjlighet att sedan använda dem i en mobilappsaktivitet.

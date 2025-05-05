@@ -56,13 +56,13 @@ Innan du kan använda en omdirigering måste du skapa den.
 
    >[!WARNING]
    >
-   >Observera att med Redirector kan du utsättas för en risk för ett Open Redirect-fel. För att undvika obehörig användning av omdirigeringslänkar av tredje part rekommenderar Adobe att du använder&quot;auktoriserade värdar&quot; för att tillåtslista standarddomänerna för omdirigering av URL. [!DNL Target] använder värdar för att tillåtslista domäner som du vill tillåta omdirigeringar till. Mer information finns i [Skapa Tillåtelselista som anger värdar som har behörighet att skicka mbox-anrop till [!DNL Target]](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html#allowlist) i *Värdar*.
+   >Observera att med Redirector kan du utsättas för en risk för ett Open Redirect-fel. För att undvika obehörig användning av omdirigeringslänkar av tredje part rekommenderar Adobe att du använder&quot;auktoriserade värdar&quot; för att tillåtslista standarddomänerna för omdirigering av URL. [!DNL Target] använder värdar för att tillåtslista domäner som du vill tillåta omdirigeringar till. Mer information finns i [Skapa Tillåtelselista som anger värdar som har behörighet att skicka mbox-anrop till [!DNL Target]](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html?lang=sv-SE#allowlist) i *Värdar*.
 
 1. Validera omdirigeringen.
    1. *Bästa praxis för säkerhet*: Kontrollera att domänen som används i omdirigeraren är tillåtslista, vilket anges ovan. Om du använder en domän som inte är tillåtslista kommer Adobe att blockera alla anrop till den domänen för att förhindra att skadliga aktörer använder omdirigeraren för att dirigera om till potentiellt skadliga domäner.
    2. Infoga URL:en för omdirigeraren i en webbläsare och uppdatera.
    3. Logga in på ditt konto, uppdatera din mbox-lista och verifiera att den nya omdirigeraren är listad som en mbox.
-1. Om du vill testa olika mål för en annons skapar du [Omdirigeringserbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/vec/redirect-offer.html) för varje version.
+1. Om du vill testa olika mål för en annons skapar du [Omdirigeringserbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/vec/redirect-offer.html?lang=sv-SE) för varje version.
 1. Skapa kampanjen.
 
    Se [Icke-JavaScript-baserade implementeringar](/help/dev/implement/email/overview.md) för rätt konfiguration för att uppnå dina mål.

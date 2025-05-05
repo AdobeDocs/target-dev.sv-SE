@@ -51,7 +51,7 @@ Returnerar en `TargetDeliveryResponse` om den anropas synkront (standard), eller
 | target_location_hint_cookie | dict | Webbplatstipscookie för [!DNL Target] |
 | analytics_details | list[AnalyticsResponse] | Analysens nyttolast, om Analytics används på klientsidan |
 | trace | list[dict] | Sammanlagda spårningsdata för alla begärandemrutor/vyer |
-| response_tokens | list[dict] | En lista med &#x200B;[svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html) |
+| response_tokens | list[dict] | En lista med &#x200B;[svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE) |
 | meta | dict | Ytterligare metadata för beslutsfattande som kan användas med enhetsspecifik beslutsfattande |
 
 `target_cookie`- och `target_location_hint_cookie`-objekt som används för att skicka data tillbaka till webbläsaren har följande struktur:

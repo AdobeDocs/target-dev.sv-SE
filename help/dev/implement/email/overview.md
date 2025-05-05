@@ -28,7 +28,7 @@ Annonser och omdirigerare kan användas med alla typer av aktiviteter. I följan
 
 ## Bästa praxis för säkerhet
 
-Observera att med Redirector kan du utsättas för en risk för ett Open Redirect-fel. För att undvika obehörig användning av omdirigeringslänkar av tredje part rekommenderar vi att du använder &quot;auktoriserade värdar&quot; för att tillåtslista standarddomänerna för omdirigering av URL. [!DNL Target] använder värdar för att tillåtslista domäner som du vill tillåta omdirigeringar till. Mer information finns i [Skapa Tillåtelselista som anger värdar som har behörighet att skicka mbox-anrop till [!DNL Target]](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html#allowlist) i *Värdar*.
+Observera att med Redirector kan du utsättas för en risk för ett Open Redirect-fel. För att undvika obehörig användning av omdirigeringslänkar av tredje part rekommenderar vi att du använder &quot;auktoriserade värdar&quot; för att tillåtslista standarddomänerna för omdirigering av URL. [!DNL Target] använder värdar för att tillåtslista domäner som du vill tillåta omdirigeringar till. Mer information finns i [Skapa Tillåtelselista som anger värdar som har behörighet att skicka mbox-anrop till [!DNL Target]](https://experienceleague.adobe.com/docs/target/using/administer/hosts.html?lang=sv-SE#allowlist) i *Värdar*.
 
 ## Begränsningar
 

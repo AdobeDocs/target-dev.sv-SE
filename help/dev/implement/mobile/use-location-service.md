@@ -17,6 +17,6 @@ Plats är ett viktigt sammanhang när det gäller att förstå och engagera mobi
 
 [!DNL Adobe Experience Platform Location Service] ([!DNL Location Service]) är en geopositioneringstjänst som gör det möjligt för mobilappar med platsmedvetenhet att förstå platskontexten genom att använda avancerade och lättanvända SDK-gränssnitt tillsammans med en flexibel databas med intressepunkter (POI).
 
-Du kan använda [!DNL Location Service] med [!DNL Target] för att utnyttja regler med [taggar i Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html) för att koppla dina [!UICONTROL Places]-data till dina [!DNL Adobe Target] SDK-händelser.
+Du kan använda [!DNL Location Service] med [!DNL Target] för att utnyttja regler med [taggar i Adobe Experience Platform](https://experienceleague.adobe.com/docs/experience-platform/tags/home.html?lang=sv-SE) för att koppla dina [!UICONTROL Places]-data till dina [!DNL Adobe Target] SDK-händelser.
 
-Mer information finns i [Använd [!UICONTROL Location Service] med  [!DNL Adobe Target]](https://experienceleague.adobe.com/docs/places/using/use-places-with-other-solutions/places-target/places-target.html) i [Adobe Experience Platform Platstjänst-handboken](https://experienceleague.adobe.com/docs/places/using/home.html).
+Mer information finns i [Använd [!UICONTROL Location Service] med  [!DNL Adobe Target]](https://experienceleague.adobe.com/docs/places/using/use-places-with-other-solutions/places-target/places-target.html?lang=sv-SE) i [Adobe Experience Platform Platstjänst-handboken](https://experienceleague.adobe.com/docs/places/using/home.html?lang=sv-SE).

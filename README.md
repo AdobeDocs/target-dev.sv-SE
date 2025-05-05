@@ -15,13 +15,13 @@ Detta projekt har antagit [Adobe Open Source Code of Conduct](code-of-conduct.md
 
 ## Om dina bidrag till Adobe innehåll
 
-Se [Adobe Docs Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
+Se [Adobe Docs Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=sv-SE).
 
 Hur du bidrar beror på vem du är och vilken typ av ändringar du vill bidra med:
 
 ### Mindre ändringar
 
-Om du bidrar med mindre uppdateringar av ditt hjärta kan du gå till artikeln och klicka på knappen **Redigera** i artikeln som går till artikelns GitHub-källa. Använd sedan bara GitHub-gränssnittet för att göra uppdateringarna. Se det allmänna [Adobe Docs Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) för mer information.
+Om du bidrar med mindre uppdateringar av ditt hjärta kan du gå till artikeln och klicka på knappen **Redigera** i artikeln som går till artikelns GitHub-källa. Använd sedan bara GitHub-gränssnittet för att göra uppdateringarna. Se det allmänna [Adobe Docs Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=sv-SE) för mer information.
 
 Mindre korrigeringar och förtydliganden som du lämnar in för dokumentation och kodexempel i den här rapporten omfattas av Adobe användarvillkoren.
 
@@ -43,7 +43,7 @@ Om du är teknikskribent, programchef eller utvecklare för en Adobe Experience 
 
 Deltagare i communityn kan använda GitHub-gränssnittet för grundläggande redigering eller förgrena rapporten för att göra större insatser.
 
-Se [Adobe Docs Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) för mer information.
+Se [Adobe Docs Contributor Guide](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=sv-SE) för mer information.
 
 ## Så här använder du kod för att formatera ämnet
 

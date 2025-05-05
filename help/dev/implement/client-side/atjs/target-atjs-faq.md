@@ -148,7 +148,7 @@ För att stödja Safari-besökare är en bättre X-Domain inaktiverad (anger end
 
 ## Kan jag använda Target [!UICONTROL Visual Experience Composer] (VEC) i mina enkelsidiga program?
 
-Ja, du kan använda VEC för din SPA om du använder at.js 2.x. Mer information finns i [En sida (SPA) Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/spa-visual-experience-composer.html).
+Ja, du kan använda VEC för din SPA om du använder at.js 2.x. Mer information finns i [En sida (SPA) Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/spa-visual-experience-composer.html?lang=sv-SE).
 
 ## Kan jag använda Adobe Experience Cloud Debugger med at.js-implementeringar?
 
@@ -239,7 +239,7 @@ Observera att för svarstoken och sessions-ID som skickas i dessa begäranden:
 * De spårar kommunikationssessioner
 * De består av slumpmässiga tecken
 * Sessions-ID är giltiga i 30 minuter
-* Svarstoken kan inaktiveras ([Svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html))
+* Svarstoken kan inaktiveras ([Svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE))
 * De är bara användbara i den miljö där Adobe lösningar finns.
 
 `Access-Control-Allow-Origin`-huvudet med värdet * förväntas visas i at.js-begäranden eftersom de är offentliga, autentisering krävs inte och Adobe Edge Network måste nås från alla domäner via JavaScript-anrop.

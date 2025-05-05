@@ -17,4 +17,4 @@ ht-degree: 0%
 
 [!UICONTROL Edge Network Server API] kan användas för en mängd olika användningsfall för datainsamling, personalisering, annonsering och marknadsföring. Server-API:t kan användas på servrar, IoT-enheter, digitalboxar och en mängd andra enheter.
 
-Mer information finns i [Översikt över Edge Network Server-API](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html){target=_blank} i *dokumentationen för Edge Server-API*.
+Mer information finns i [Översikt över Edge Network Server-API](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html?lang=sv-SE){target=_blank} i *dokumentationen för Edge Server-API*.

@@ -20,18 +20,18 @@ Serversidesbaserade SDK:er för [!DNL Adobe Target] ger utvecklare flexibilitet 
 
 ## Typ av aktivitet
 
-Tabellen nedan visar vilka [aktivitetstyper](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) som skapats med [formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?) som stöds eller inte stöds för [!UICONTROL on-device decisioning].
+Tabellen nedan visar vilka [aktivitetstyper](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html?lang=sv-SE) som skapats med [formulärbaserade Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE&) som stöds eller inte stöds för [!UICONTROL on-device decisioning].
 
 | Typ av aktivitet | Stöds |
 | --- | --- |
-| [A/B-test](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html) | Ja |
-| [Automatisk allokering](https://experienceleague.adobe.com/docs/target/using/activities/auto-allocate/automated-traffic-allocation.html) | Nej |
-| [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html) | Nej |
-| [Analyser för mål](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) (A4T) | Ja |
-| [Multivariata tester](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html) (MVT) | Nej |
-| [Experience Targeting](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html) (XT) | Ja |
-| [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html) (AP) | Nej |
-| [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html) | Nej |
+| [A/B-test](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html?lang=sv-SE) | Ja |
+| [Automatisk allokering](https://experienceleague.adobe.com/docs/target/using/activities/auto-allocate/automated-traffic-allocation.html?lang=sv-SE) | Nej |
+| [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html?lang=sv-SE) | Nej |
+| [Analyser för mål](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE) (A4T) | Ja |
+| [Multivariata tester](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html?lang=sv-SE) (MVT) | Nej |
+| [Experience Targeting](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html?lang=sv-SE) (XT) | Ja |
+| [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html?lang=sv-SE) (AP) | Nej |
+| [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html?lang=sv-SE) | Nej |
 
 
 ## Målgruppsanpassning
@@ -40,17 +40,17 @@ Tabellen nedan visar vilka målgruppsregler som stöds eller inte stöds för [!
 
 | Målgruppsregel | Beslut på enheten |
 | --- | --- |
-| [Geo](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html) | Ja |
-| [Nätverk](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/network.html) | Nej |
-| [Mobil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html) | Nej |
-| [Egna parametrar](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/custom-parameters.html) | Ja |
-| [Operativsystem](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/operating-system.html) | Ja |
-| [Webbplatssidor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/site-pages.html) | Ja |
-| [Webbläsare](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/browser.html) | Ja |
-| [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html) | Nej |
-| [Trafikkällor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/traffic-sources.html) | Nej |
-| [Tidsram](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/time-frame.html) | Ja |
-| [Experience Cloud-målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html) (målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager) | Nej |
+| [Geo](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/geo.html?lang=sv-SE) | Ja |
+| [Nätverk](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/network.html?lang=sv-SE) | Nej |
+| [Mobil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html?lang=sv-SE) | Nej |
+| [Egna parametrar](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/custom-parameters.html?lang=sv-SE) | Ja |
+| [Operativsystem](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/operating-system.html?lang=sv-SE) | Ja |
+| [Webbplatssidor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/site-pages.html?lang=sv-SE) | Ja |
+| [Webbläsare](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/browser.html?lang=sv-SE) | Ja |
+| [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html?lang=sv-SE) | Nej |
+| [Trafikkällor](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/traffic-sources.html?lang=sv-SE) | Nej |
+| [Tidsram](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/time-frame.html?lang=sv-SE) | Ja |
+| [Experience Cloud-målgrupper](https://experienceleague.adobe.com/docs/target/using/integrate/mmp.html?lang=sv-SE) (målgrupper från Adobe Audience Manager, Adobe Analytics och Adobe Experience Manager) | Nej |
 
 ### Geografisk målinriktning för [!UICONTROL on-device decisioning]
 
@@ -170,5 +170,5 @@ Följande tabell visar vilka allokeringsmetoder som stöds eller inte stöds fö
 | Allokeringsmetod | Stöds |
 | --- | --- |
 | Manuell | Ja |
-| [Autoallokera till bästa upplevelse](https://experienceleague.adobe.com/docs/target/using/activities/auto-allocate/automated-traffic-allocation.html) | Nej |
-| [Automatisk målgruppsanpassning för personaliserade upplevelser](https://experienceleague.adobe.com/docs/target/using/activities/auto-target-to-optimize.html) | Nej |
+| [Autoallokera till bästa upplevelse](https://experienceleague.adobe.com/docs/target/using/activities/auto-allocate/automated-traffic-allocation.html?lang=sv-SE) | Nej |
+| [Automatisk målgruppsanpassning för personaliserade upplevelser](https://experienceleague.adobe.com/docs/target/using/activities/auto-target-to-optimize.html?lang=sv-SE) | Nej |

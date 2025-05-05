@@ -43,7 +43,7 @@ Följande inställningar är tillgängliga i [!DNL Target]-gränssnittet genom a
 
 När du använder [!DNL Platform Web SDK] (version 23.4 eller senare) har IP-begränsningsinställningen på datastream-nivå företräde framför IP-begränsningsalternativ som har angetts i [!DNL Target]. Om till exempel alternativet IP-obfuktion på datastream-nivå är inställt på [!UICONTROL Full] och alternativet [!DNL Target] för IP-obfuktion är inställt på [!UICONTROL Last octet obfuscation] får [!DNL Target] en helt okomplicerad IP.
 
-Mer information finns i [!UICONTROL IP Obfuscation] i [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html){target=_blank} i *[!DNL Adobe Experience Platfrom]Datastreams Guide*.
+Mer information finns i [!UICONTROL IP Obfuscation] i [Konfigurera ett datastream](https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=sv-SE){target=_blank} i *[!DNL Adobe Experience Platfrom]Datastreams Guide*.
 
 ## GeoSegmentation
 

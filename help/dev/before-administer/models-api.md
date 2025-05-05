@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Med API:t för modeller, som även kallas API för Blockeringslista, kan användare visa och hantera listan med funktioner som används i maskininlärningsmodeller för [!UICONTROL Automated Personalization]- (AP) och [!DNL Auto-Target] (AT)-aktiviteter. Om en användare vill utesluta en funktion från att användas av modellerna för AP- eller AT-aktiviteter kan de använda API:t för modeller för att lägga till den funktionen i blockeringslista.
 
-En **[!UICONTROL blocklist]** definierar den uppsättning funktioner som kommer att exkluderas av [!DNL Adobe Target] från dess maskininlärningsmodeller. Mer information om funktioner finns i [Data som används av  [!DNL Target] maskininlärningsalgoritmer](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/ap-data.html).
+En **[!UICONTROL blocklist]** definierar den uppsättning funktioner som kommer att exkluderas av [!DNL Adobe Target] från dess maskininlärningsmodeller. Mer information om funktioner finns i [Data som används av  [!DNL Target] maskininlärningsalgoritmer](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/ap-data.html?lang=sv-SE).
 
 Blockeringslista kan definieras per aktivitet (aktivitetsnivå) eller för alla aktiviteter inom ett [!DNL Target]-konto (global nivå).
 
@@ -100,7 +100,7 @@ I exemplet som visas här kontrollerar användaren om det finns en lista över f
 >
 >Navigera till aktivitetslistan i användargränssnittet för [!DNL Target] om du vill hitta aktivitetens aktivitets-ID. Klicka på aktiviteten. Aktivitets-ID visas i texten på sidan Översikt över aktiviteter, samt i slutet av URL:en för sidan.
 
-**[!UICONTROL externalName]** är ett användarvänligt namn för en funktion. Den har skapats av [!DNL Target] och det är möjligt att det här värdet kan ändras över tiden. Användare kan visa de här användarvänliga namnen i [Personalization Insights-rapporten](https://experienceleague.adobe.com/docs/target/using/reports/insights/personalization-insights-reports.html).
+**[!UICONTROL externalName]** är ett användarvänligt namn för en funktion. Den har skapats av [!DNL Target] och det är möjligt att det här värdet kan ändras över tiden. Användare kan visa de här användarvänliga namnen i [Personalization Insights-rapporten](https://experienceleague.adobe.com/docs/target/using/reports/insights/personalization-insights-reports.html?lang=sv-SE).
 
 **[!UICONTROL internalName]** är funktionens faktiska identifierare. Den har också skapats av [!DNL Target], men kan inte ändras. Detta är det värde som du måste referera till för att identifiera de funktioner som du vill blocklist.
 

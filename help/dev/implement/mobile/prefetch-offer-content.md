@@ -26,7 +26,7 @@ Den här processen minskar inläsningstiden, förhindrar flera nätverksanrop oc
 Tänk på följande begränsningar när du använder förhämtningsmetoden med iOS och Android Mobile SDK:er:
 
 * Förhämtningsinnehåll bevaras inte vid starter. Förhämtningsinnehållet cachelagras så länge som programmet finns eller tills metoden `clearPrefetchCache()` anropas.
-* Förhämtningsfunktionen stöds inte för [!UICONTROL Auto-Allocate]- och [!UICONTROL Auto-Target]-trafikallokeringsmetoder, för aktivitetstyperna [!UICONTROL Automated Personalization] eller [!UICONTROL Recommendations], eller för [rekommendationer i en A/B- eller XT-aktivitet](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-as-an-offer.html).
+* Förhämtningsfunktionen stöds inte för [!UICONTROL Auto-Allocate]- och [!UICONTROL Auto-Target]-trafikallokeringsmetoder, för aktivitetstyperna [!UICONTROL Automated Personalization] eller [!UICONTROL Recommendations], eller för [rekommendationer i en A/B- eller XT-aktivitet](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-as-an-offer.html?lang=sv-SE).
 
 Mer information, inklusive förhämtningsmetoder, publika klasser och kodexempel finns i:
 

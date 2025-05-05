@@ -294,7 +294,7 @@ I at.js 2.*x*, HTTP-GET används inte. I stället används HTTP-POST via at.js 2
 
 Om du vill använda spårning mellan domäner för at.js v2.10 eller senare kan du göra något av följande:
 
-1. Installera [ECID-biblioteket v4.3.0+](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html) tillsammans med at.js 2.*x*. ECID-biblioteket finns för att hantera beständiga ID:n som används för att identifiera en besökare även mellan domäner. Efter installation av ECID-biblioteket v4.3.0+ och at.js 2.*x*, du kan skapa aktiviteter som spänner över unika domäner samt spåra användare. Det är viktigt att notera att den här funktionen fungerar först när sessionen har upphört.
+1. Installera [ECID-biblioteket v4.3.0+](https://experienceleague.adobe.com/docs/id-service/using/release-notes/release-notes.html?lang=sv-SE) tillsammans med at.js 2.*x*. ECID-biblioteket finns för att hantera beständiga ID:n som används för att identifiera en besökare även mellan domäner. Efter installation av ECID-biblioteket v4.3.0+ och at.js 2.*x*, du kan skapa aktiviteter som spänner över unika domäner samt spåra användare. Det är viktigt att notera att den här funktionen fungerar först när sessionen har upphört.
 
 1. Om du har at.js v2.10 eller senare kan du i stället för att installera ECID-biblioteket aktivera korsdomänsinställningen i [!DNL Target]-gränssnittet i **[!UICONTROL Administration]** > **[!UICONTROL Implementation]**. (Du kan också ange alternativet _crossDomain_ till _enabled_ i koden at.js.)
 
@@ -405,7 +405,7 @@ I följande tabeller beskrivs at.js. 2.*x*-kompatibilitet med olika aktivitetsty
 
 ## Svarstoken
 
-at.js 2.*x*, precis som at.js 1.*x* använder den anpassade händelsen `at-request-succeeded` för att visa svarstoken. Exempel på kod som använder den anpassade händelsen `at-request-succeeded` finns i [Svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html).
+at.js 2.*x*, precis som at.js 1.*x* använder den anpassade händelsen `at-request-succeeded` för att visa svarstoken. Exempel på kod som använder den anpassade händelsen `at-request-succeeded` finns i [Svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE).
 
 ## at.js 1.*x* parametrar till at.js 2.*x* nyttolastmappning
 
@@ -428,7 +428,7 @@ I följande avsnitt listas var och en at.js 1.*x*-parametern, dess beskrivning o
 
 (at.js 1.*x* parameter)
 
-Används för [Enterprise-användarbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html).
+Används för [Enterprise-användarbehörigheter](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=sv-SE).
 
 ```json {line-numbers="true"}
 {
@@ -772,4 +772,4 @@ at.js 2.*x* förbättrar Adobe [!DNL Target] stöd för SPA och kan integreras m
 
 >[!VIDEO](https://video.tv.adobe.com/v/26250/?quality=12)
 
-Se [Förstå hur at.js 2.*x* fungerar](https://experienceleague.adobe.com/docs/target-learn/tutorials/implementation/understanding-how-atjs-20-works.html) om du vill ha mer information.
+Se [Förstå hur at.js 2.*x* fungerar](https://experienceleague.adobe.com/docs/target-learn/tutorials/implementation/understanding-how-atjs-20-works.html?lang=sv-SE) om du vill ha mer information.

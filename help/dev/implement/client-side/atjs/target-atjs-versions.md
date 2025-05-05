@@ -25,7 +25,7 @@ Information om ändringar i varje version av JavaScript-biblioteket [!DNL Adobe 
 >
 >Du bör uppgradera till de senaste versionerna av antingen 1.*x* eller 2.*x* om du vill få buggfixar och säkerhetsuppdateringar för problem som upptäckts i en tidigare mindre version av motsvarande större version.
 
-Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den metod du föredrar att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tilläggsuppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html) i guiden *Översikt över taggar*.
+Taggar i [Adobe Experience Platform](/help/dev/implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md) är den metod du föredrar att uppgradera at.js. Tilläggsutvecklare lägger ständigt till nya funktioner i sina tillägg och åtgärdar ofta fel. Dessa uppdateringar paketeras i nya versioner av ett tillägg och görs tillgängliga i Adobe Experience Platform-katalogen som uppgraderingar. Mer information finns i [Tilläggsuppgraderingar](https://experienceleague.adobe.com/docs/experience-platform/tags/ui/extensions/extension-upgrade.html?lang=sv-SE) i guiden *Översikt över taggar*.
 
 ## at.js version 2.11.8 (31 mars 2025)
 
@@ -130,7 +130,7 @@ Den här versionen innehåller följande ändringar:
 Den här versionen av at.js innehåller följande förbättringar och ändringar:
 
 * [Enhetsbeslut](/help/dev/implement/client-side/atjs/on-device-decisioning/on-device-decisioning.md) har stöd för at.js.
-* [Förhandsgranska länkar](https://experienceleague.adobe.com/docs/target/using/activities/activity-qa/activity-qa.html) - stöd för Automated Personalization-aktiviteter
+* [Förhandsgranska länkar](https://experienceleague.adobe.com/docs/target/using/activities/activity-qa/activity-qa.html?lang=sv-SE) - stöd för Automated Personalization-aktiviteter
 
 Den här versionen tar också bort stöd för Microsoft Internet Explorer 10 och senare versioner.
 
@@ -242,7 +242,7 @@ Den här versionen innehåller följande funktioner och förbättringar:
 
 * **Loggning av analysdata på klientsidan**: Ge kunderna full kontroll över hur de vill skicka analysdata till [!DNL Adobe Analytics], oavsett om det gäller klient- eller serversidan.
 
-  Mer information finns i [Logga [!DNL Analytics] på klientsidan](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/before-implement.html#client-side).
+  Mer information finns i [Logga [!DNL Analytics] på klientsidan](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/before-implement.html?lang=sv-SE#client-side).
 
 * **Skicka meddelanden**: Tillåt utvecklare att skicka meddelanden när en upplevelse återges av koden i stället för att använda `applyOffer()` eller `applyOffers()`.
 
@@ -359,7 +359,7 @@ at.js version 1.5.0 finns nu att köpa.
 * Information om händelsen `at-request-succeeded` innehåller omdirigeringsflaggan. Den här flaggan kan användas för att avgöra om sidan kommer att omdirigeras till en annan URL. Om du vill veta URL:en prenumererar du på `at-content-rendering-redirect`. (TNT-29834)
 * Korrigerade ett problem som gjorde att `window.targetGlobalSettings.enabled` misslyckades med ett körningsundantag om värdet var false. (TNT-29829)
 * Korrigerade ett problem som gjorde att sidan inte kunde läsas in i Visual Experience Composer (VEC) om anpassad kod användes i en global mbox-begäran och brödtext gömdes. (TNT-29795)
-* Stöd för `screenOrientation`, `devicePixelRatio` och `webGLRenderer` har lagts till. Dessa nya [!DNL Target]-begärandeparametrar används för iPhone X och annan modern enhetsidentifiering. Mer information finns i [Mobile](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html). (TNT-29781)
+* Stöd för `screenOrientation`, `devicePixelRatio` och `webGLRenderer` har lagts till. Dessa nya [!DNL Target]-begärandeparametrar används för iPhone X och annan modern enhetsidentifiering. Mer information finns i [Mobile](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/mobile.html?lang=sv-SE). (TNT-29781)
 * Ett problem har korrigerats där platstipset för Adobe Audience Manager (AAM) inte alltid skickades. (TNT-29695)
 * För webbläsare som har stöd för det växlar at.js 1.5.0 till MutationObserver för avsökning av väljare. Versioner före at.js 1.0.0 använde en MutationObserver-polyfill, som visade sig vara problematisk. För att undvika problem med polyfyllning använder version 1.5.0 följande pseudokod för att avgöra vilken schemaläggningsmekanism som ska användas:
 
@@ -401,7 +401,7 @@ at.js version 1.3.0 finns nu att köpa.
 
 at.js version 1.2.3 är nu tillgänglig.
 
-* Lägger till stöd för JSON-erbjudanden. JSON-erbjudanden stöds endast i aktiviteter som skapats med den formulärbaserade Experience Composer. För närvarande är det enda sättet att använda JSON-erbjudanden via direkta API-anrop. Se [Skapa JSON-erbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html).
+* Lägger till stöd för JSON-erbjudanden. JSON-erbjudanden stöds endast i aktiviteter som skapats med den formulärbaserade Experience Composer. För närvarande är det enda sättet att använda JSON-erbjudanden via direkta API-anrop. Se [Skapa JSON-erbjudanden](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=sv-SE).
 
 ## at.js Version 1.2.2
 
@@ -439,7 +439,7 @@ at.js version 1.2 finns nu som en underhållsrelease som innehåller de flesta f
 
 Följande förbättringar och korrigeringar finns i version 1.1 av at.js:
 
-* Förbättrad hantering av svarstoken. Mer information finns i [Svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html).
+* Förbättrad hantering av svarstoken. Mer information finns i [Svarstoken](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE).
 * Problemet har lösts så att `document.currentScript polyfill` inte stör Angular 1.X.
 * Ändringarna görs för att säkerställa att klickspårning inte stör synlighetsegenskapen. Klickspårningselement markeras med CSS-klassen `at-element-click-tracking` i stället för `at-element-marker`.
 
@@ -473,7 +473,7 @@ Följande förbättringar och korrigeringar finns i at.js version 0.9.7:
 
 Följande förbättringar och korrigeringar finns i at.js version 0.9.6:
 
-* Stöd för omdirigeringserbjudande för A4T. När du har hämtat och installerat på .js version 0.9.6 kan du använda omdirigeringserbjudanden i aktiviteter som använder [!UICONTROL Adobe Analytics as the Reporting Source for Target] (A4T). Förutom at.js version 0.9.6 finns det andra minimikrav som din implementering måste uppfylla för att kunna använda omdirigeringserbjudanden och A4T. Mer information och ytterligare viktig information som du bör känna till finns i [Omdirigeringserbjudanden - A4T - frågor och svar](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t-faq/a4t-faq-redirect-offers.html).
+* Stöd för omdirigeringserbjudande för A4T. När du har hämtat och installerat på .js version 0.9.6 kan du använda omdirigeringserbjudanden i aktiviteter som använder [!UICONTROL Adobe Analytics as the Reporting Source for Target] (A4T). Förutom at.js version 0.9.6 finns det andra minimikrav som din implementering måste uppfylla för att kunna använda omdirigeringserbjudanden och A4T. Mer information och ytterligare viktig information som du bör känna till finns i [Omdirigeringserbjudanden - A4T - frågor och svar](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t-faq/a4t-faq-redirect-offers.html?lang=sv-SE).
 * Före kl. 0.9.6, när besökar-API:t fanns på sidan och inställningen `visitorApiTimeout` var för aggressiv, kunde [!DNL Target] hamna i en situation när inga MCID-data skickades i [!DNL Target]-begäran. Detta kan leda till problem som osydda träffar i [!DNL Analytics] när A4T används.
 
   Detta beteende har ändrats i at.js 0.9.6, även om `visitorApiTimeout` är inställt på 1 ms, försöker [!DNL Target] samla in SDID-data, spårningsservrar och kund-ID:n och skicka dessa i [!DNL Target]-begäran.

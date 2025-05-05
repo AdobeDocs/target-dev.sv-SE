@@ -220,7 +220,7 @@ Nu hämtas vyer och åtgärder från cachen och visas för användaren utan ett 
 
 ## Visual Experience Composer för enkelsidig app
 
-När du har slutfört installationen på .js 2.x och lagt till `triggerView()` på platsen använder du VEC för att köra A/B- och XT-aktiviteter. Mer information finns i [Single Page App (SPA) Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/spa-visual-experience-composer.html).
+När du har slutfört installationen på .js 2.x och lagt till `triggerView()` på platsen använder du VEC för att köra A/B- och XT-aktiviteter. Mer information finns i [Single Page App (SPA) Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/spa-visual-experience-composer.html?lang=sv-SE).
 
 >[!NOTE]
 >
@@ -228,7 +228,7 @@ När du har slutfört installationen på .js 2.x och lagt till `triggerView()` p
 
 ## Använd TriggerView för att säkerställa att A4T fungerar korrekt med at.js 2.x och SPA
 
-För att [Analytics for Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) (A4T) ska fungera korrekt med at.js 2.x måste du skicka samma SDID i [!DNL Target]-begäran och i [!DNL Analytics]-begäran.
+För att [Analytics for Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE) (A4T) ska fungera korrekt med at.js 2.x måste du skicka samma SDID i [!DNL Target]-begäran och i [!DNL Analytics]-begäran.
 
 Som bästa praxis SPA
 
@@ -311,16 +311,16 @@ Följande videofilmer innehåller mer information:
 
 >[!VIDEO](https://video.tv.adobe.com/v/26250/?quality=12)
 
-Mer information finns i [Förstå hur at.js 2.x fungerar](https://experienceleague.adobe.com/docs/target-learn/tutorials/implementation/understanding-how-atjs-20-works.html).
+Mer information finns i [Förstå hur at.js 2.x fungerar](https://experienceleague.adobe.com/docs/target-learn/tutorials/implementation/understanding-how-atjs-20-works.html?lang=sv-SE).
 
 ### Implementera at.js 2.x i en SPA
 
 >[!VIDEO](https://video.tv.adobe.com/v/26248/?quality=12)
 
-Mer information finns i [Implementera Adobe Target at.js 2.x i ett enkelsidigt program (SPA)](https://experienceleague.adobe.com/docs/target-learn/tutorials/experiences/use-the-visual-experience-composer-for-single-page-applications.html).
+Mer information finns i [Implementera Adobe Target at.js 2.x i ett enkelsidigt program (SPA)](https://experienceleague.adobe.com/docs/target-learn/tutorials/experiences/use-the-visual-experience-composer-for-single-page-applications.html?lang=sv-SE).
 
 ### Använda VEC för SPA i [!DNL Adobe Target]
 
 >[!VIDEO](https://video.tv.adobe.com/v/26249/?quality=12)
 
-Mer information finns i [Använda Visual Experience Composer för enkelsidigt program (SPA VEC) i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/experiences/use-the-visual-experience-composer-for-single-page-applications.html).
+Mer information finns i [Använda Visual Experience Composer för enkelsidigt program (SPA VEC) i Adobe Target](https://experienceleague.adobe.com/docs/target-learn/tutorials/experiences/use-the-visual-experience-composer-for-single-page-applications.html?lang=sv-SE).

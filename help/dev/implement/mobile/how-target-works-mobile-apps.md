@@ -24,7 +24,7 @@ ht-degree: 0%
 
 En *målplats* kallas också för en mbox. En identifierad plats i appen är aktiverad för testning eller personalisering (till exempel välkomstmeddelandet på startskärmen). Dessa platser identifieras när testet skapas.
 
-Ett *[framgångsmått](https://experienceleague.adobe.com/docs/target/using/activities/success-metrics/success-metrics.html)* är en åtgärd som utförs av användaren och som identifierar om en viss aktivitet lyckades (t.ex. registrering, köp, bokning av biljett).
+Ett *[framgångsmått](https://experienceleague.adobe.com/docs/target/using/activities/success-metrics/success-metrics.html?lang=sv-SE)* är en åtgärd som utförs av användaren och som identifierar om en viss aktivitet lyckades (t.ex. registrering, köp, bokning av biljett).
 
 ![alt-bild](assets/mobile-target-location.png)
 

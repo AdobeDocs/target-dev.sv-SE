@@ -22,7 +22,7 @@ Målet använder tre identifierare:
 | `tntId` | `tntId` är den primära identifieraren i [!DNL Target] för en användare. Du kan ange detta ID, annars genereras det automatiskt av [!DNL Target] om begäran inte innehåller någon. |
 | `thirdPartyId` | `thirdPartyId` är företagets identifierare för användaren som du kan skicka med varje samtal. När en användare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. |
 | `marketingCloudVisitorId` | `marketingCloudVisitorId` används för att sammanfoga och dela data mellan olika Adobe-lösningar. `marketingCloudVisitorId` krävs för integrering med Adobe Analytics och Adobe Audience Manager. |
-| `customerIds` | Tillsammans med besökar-ID:t för Experience Cloud kan ytterligare [kund-ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/authenticated-state.html) och en autentiserad status för varje besökare användas. |
+| `customerIds` | Tillsammans med besökar-ID:t för Experience Cloud kan ytterligare [kund-ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/authenticated-state.html?lang=sv-SE) och en autentiserad status för varje besökare användas. |
 
 ## [!DNL Target]-ID
 
@@ -169,7 +169,7 @@ Exemplanropet ovan visar en `thirdPartyId`, som är ett beständigt ID som anvä
 
 ## Kund-ID
 
-[Kund-ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/authenticated-state.html) kan läggas till och kopplas till ett Experience Cloud Visitor-ID. När `customerIds` skickas måste även `marketingCloudVisitorId` anges. Dessutom kan en autentiseringsstatus anges tillsammans med varje `customerId` för varje besökare. Följande autentiseringsstatus kan beaktas:
+[Kund-ID:n](https://experienceleague.adobe.com/docs/id-service/using/reference/authenticated-state.html?lang=sv-SE) kan läggas till och kopplas till ett Experience Cloud Visitor-ID. När `customerIds` skickas måste även `marketingCloudVisitorId` anges. Dessutom kan en autentiseringsstatus anges tillsammans med varje `customerId` för varje besökare. Följande autentiseringsstatus kan beaktas:
 
 | Autentiseringsstatus | Användarstatus |
 | --- | --- |
@@ -220,11 +220,11 @@ curl -X POST \
     }'
 ```
 
-Exemplanropet ovan visar hur du skickar en `customerId` med en `authenticatedState`. När du skickar en `customerId` krävs både `integrationCode`, `id` och `authenticatedState` samt `marketingCloudVisitorId`. `integrationCode` är aliaset för den [kundattributfil](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/working-with-customer-attributes.html) som du tillhandahöll via CRS.
+Exemplanropet ovan visar hur du skickar en `customerId` med en `authenticatedState`. När du skickar en `customerId` krävs både `integrationCode`, `id` och `authenticatedState` samt `marketingCloudVisitorId`. `integrationCode` är aliaset för den [kundattributfil](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/working-with-customer-attributes.html?lang=sv-SE) som du tillhandahöll via CRS.
 
 ## Sammanfogad profil
 
-Du kan kombinera `tntId`, `thirdPartyID` och `marketingCloudVisitorId` i samma begäran. I det här scenariot behåller Adobe Target mappningen av alla dessa ID:n och fäster den vid en besökare. Lär dig hur profiler [sammanfogas och synkroniseras i realtid](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html) med olika identifierare.
+Du kan kombinera `tntId`, `thirdPartyID` och `marketingCloudVisitorId` i samma begäran. I det här scenariot behåller Adobe Target mappningen av alla dessa ID:n och fäster den vid en besökare. Lär dig hur profiler [sammanfogas och synkroniseras i realtid](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html?lang=sv-SE) med olika identifierare.
 
 ```
 curl -X POST \

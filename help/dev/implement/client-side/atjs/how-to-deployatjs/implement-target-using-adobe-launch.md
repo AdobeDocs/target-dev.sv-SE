@@ -17,15 +17,15 @@ Taggar i [!DNL Adobe Experience Platform] är nästa generation av tagghantering
 
 >[!NOTE]
 >
->Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i [!DNL Adobe Experience Platform]. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html?) finns en konsoliderad referens till de ändrade terminologin.
+>Adobe Experience Platform Launch har omklassificerats som en serie datainsamlingstekniker i [!DNL Adobe Experience Platform]. Som ett resultat av detta har flera terminologiska förändringar införts i produktdokumentationen. I följande [dokument](https://experienceleague.adobe.com/docs/experience-platform/tags/term-updates.html?lang=sv-SE&) finns en konsoliderad referens till de ändrade terminologin.
 
 I följande tabell visas de olika källor där du kan få mer information:
 
 | Resurs | Information |
 |--- |--- |
-| [Lägg till Adobe Target](https://experienceleague.adobe.com/docs/launch-learn/implementing-in-websites-with-launch/implement-solutions/target.html#implement-solutions) | I den här självstudiekursen finns stegvisa instruktioner för hur du implementerar [!DNL Target] på en webbplats med taggar i [!DNL Adobe Experience Platform]. Du kan lägga till JavaScript-biblioteket at.js, bränna den globala mbox, lägga till parametrar och integrera med andra lösningar. Artikeln ingår i en större självstudiekurs som visar hur du implementerar Adobe Experience Platform och andra Adobe Experience Cloud-lösningar. |
-| [Snabbstartguide](https://experienceleague.adobe.com/docs/experience-platform/tags/get-started/quick-start.html) | Information om driftsättning och hantering av de analys-, marknadsförings- och annonstaggar som krävs för relevanta kundupplevelser. |
-| [Adobe [!DNL Target] tilläggsöversikt](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/adobe/target/overview.html) | Information om hur du implementerar [!DNL Target] med [!DNL Adobe Experience Platform]. |
+| [Lägg till Adobe Target](https://experienceleague.adobe.com/docs/launch-learn/implementing-in-websites-with-launch/implement-solutions/target.html?lang=sv-SE#implement-solutions) | I den här självstudiekursen finns stegvisa instruktioner för hur du implementerar [!DNL Target] på en webbplats med taggar i [!DNL Adobe Experience Platform]. Du kan lägga till JavaScript-biblioteket at.js, bränna den globala mbox, lägga till parametrar och integrera med andra lösningar. Artikeln ingår i en större självstudiekurs som visar hur du implementerar Adobe Experience Platform och andra Adobe Experience Cloud-lösningar. |
+| [Snabbstartguide](https://experienceleague.adobe.com/docs/experience-platform/tags/get-started/quick-start.html?lang=sv-SE) | Information om driftsättning och hantering av de analys-, marknadsförings- och annonstaggar som krävs för relevanta kundupplevelser. |
+| [Adobe [!DNL Target] tilläggsöversikt](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/adobe/target/overview.html?lang=sv-SE) | Information om hur du implementerar [!DNL Target] med [!DNL Adobe Experience Platform]. |
 
 ## Fördelar med att implementera at.js med tillägget [!DNL Target]
 

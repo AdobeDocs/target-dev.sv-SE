@@ -19,7 +19,7 @@ Information som kan hjälpa dig att planera och implementera [!DNL Adobe Target 
 
 >[!NOTE]
 >
->Utöver den här artikeln innehåller [Adobe Target Business Practitioner](https://experienceleague.adobe.com/en/docs/target/using/target-home){target=_blank} detaljerad information om [Target Recommendations](https://experienceleague.adobe.com/en/docs/target/using/recommendations/recommendations){target=_blank}.
+>Utöver den här artikeln innehåller [Adobe Target Business Practitioner](https://experienceleague.adobe.com/sv/docs/target/using/target-home){target=_blank} detaljerad information om [Target Recommendations](https://experienceleague.adobe.com/sv/docs/target/using/recommendations/recommendations){target=_blank}.
 
 Innan du konfigurerar din första [!UICONTROL Recommendations]-aktivitet i [!DNL Adobe Target] utför du följande steg:
 
@@ -46,7 +46,7 @@ Innan du konfigurerar din första [!UICONTROL Recommendations]-aktivitet i [!DNL
 
 | Metod | Vad det är | När ska den användas | Ytterligare information |
 | --- | --- | --- | --- |
-| Katalogfeed | Schemalägg en feed (CSV, [!DNL Google] produkt-XML eller [!UICONTROL Analytics Product Classifications]) som ska överföras och importeras dagligen. | Om du vill skicka information om flera objekt samtidigt. För att skicka information som ändras sällan. | Se [Feeds](https://experienceleague.adobe.com/en/docs/target/using/recommendations/entities/feeds). |
+| Katalogfeed | Schemalägg en feed (CSV, [!DNL Google] produkt-XML eller [!UICONTROL Analytics Product Classifications]) som ska överföras och importeras dagligen. | Om du vill skicka information om flera objekt samtidigt. För att skicka information som ändras sällan. | Se [Feeds](https://experienceleague.adobe.com/sv/docs/target/using/recommendations/entities/feeds). |
 | Entiteter-API | Anropa ett API för att skicka uppdateringar som är aktuella för ett enskilt objekt. | För att skicka uppdateringar när de inträffar, ungefär ett objekt i taget. För att skicka information som ändras ofta (till exempel pris, lager/lagernivå). | Se [dokumentation för utvecklare av entiteter-API](https://developer.adobe.com/target/administer/recommendations-api/#tag/Entities). |
 | Skicka uppdateringar på sidan | Skicka uppdateringarna till de allra senaste för ett enstaka objekt med JavaScript på sidan eller med hjälp av leverans-API:t. | För att skicka uppdateringar när de inträffar, ungefär ett objekt i taget. För att skicka information som ändras ofta (till exempel pris, lager/lagernivå). | Se [Artikelvyer/produktsidor](#item-views-or-product-pages) nedan. |
 
@@ -109,7 +109,7 @@ function targetPageParams() {
 }
 ```
 
-Mer information om Cart-baserade rekommendationer finns i [Cart-Based](https://experienceleague.adobe.com/en/docs/target/using/recommendations/criteria/base-the-recommendation-on-a-recommendation-key#cart-based) i *[!DNL Adobe Target]Business Practitioner Guide*.
+Mer information om Cart-baserade rekommendationer finns i [Cart-Based](https://experienceleague.adobe.com/sv/docs/target/using/recommendations/criteria/base-the-recommendation-on-a-recommendation-key#cart-based) i *[!DNL Adobe Target]Business Practitioner Guide*.
 
 ### Uteslut artiklar som redan finns i besökarens kundvagn
 
@@ -131,7 +131,7 @@ När en köphändelse inträffar skickar du identiteten för den eller de köpta
 
 ## 4. Konfigurera globala undantag
 
-Uteslut alla objekt på global nivå som du aldrig vill rekommendera en besökare. Se [Undantag](https://experienceleague.adobe.com/en/docs/target/using/recommendations/entities/exclusions) i *[!DNL Adobe Target]Business Practitioner-handboken*.
+Uteslut alla objekt på global nivå som du aldrig vill rekommendera en besökare. Se [Undantag](https://experienceleague.adobe.com/sv/docs/target/using/recommendations/entities/exclusions) i *[!DNL Adobe Target]Business Practitioner-handboken*.
 
 ## 5. Konfigurera inställningarna för [!UICONTROL Recommendations]
 
@@ -169,7 +169,7 @@ Genom att känna till platsens vertikala struktur kan Target välja kriterier f�
 
 Kriterier i [!DNL Recommendations] är regler som avgör vilka produkter eller vilket innehåll som ska rekommenderas baserat på en fördefinierad uppsättning besökarbeteenden. Kriterierna kan baseras på populära trender, en besökares aktuella och tidigare beteenden eller liknande produkter och innehåll. Du kan testa flera rekommendationstyper mot varandra genom att lägga till flera villkor.
 
-Mer information finns i [Villkor](https://experienceleague.adobe.com/en/docs/target/using/recommendations/criteria/algorithms){target=_blank} i *Adobe Target Business Practitioner Guide.*
+Mer information finns i [Villkor](https://experienceleague.adobe.com/sv/docs/target/using/recommendations/criteria/algorithms){target=_blank} i *Adobe Target Business Practitioner Guide.*
 
 Följande inställningar är tillgängliga i avsnittet [!UICONTROL Criteria]:
 
@@ -192,7 +192,7 @@ I allmänhet är det bäst att bara visa kompatibla villkor. Om du vill att inko
 
 Adobe rekommenderar att du inaktiverar det här alternativet om du använder en tagghanteringslösning.
 
-Mer information om det här alternativet finns i [[!UICONTROL Recommendations] Vanliga frågor ](https://experienceleague.adobe.com/en/docs/target/using/recommendations/recommendations-faq/recommendations-faq){target=_blank} i *[!DNL Adobe Target]Business Practitioner-handboken*.
+Mer information om det här alternativet finns i [[!UICONTROL Recommendations] Vanliga frågor ](https://experienceleague.adobe.com/sv/docs/target/using/recommendations/recommendations-faq/recommendations-faq){target=_blank} i *[!DNL Adobe Target]Business Practitioner-handboken*.
 
 ### [!UICONTROL Product Catalog]
 
@@ -219,7 +219,7 @@ Filtret **[!UICONTROL Environment]** är tillgängligt från följande platser i
 * Dialogrutan Skapa undantag (**[!UICONTROL Recommendations]** > **[!UICONTROL Exclusions]** > **[!UICONTROL Create exclusion]**)
 * Dialogrutan Uppdatera undantag (**[!UICONTROL Recommendations]** > **[!UICONTROL Exclusions]** > **[!UICONTROL Edit]**)
 
-Mer information finns i [Värdar](https://experienceleague.adobe.com/en/docs/target/using/administer/hosts){target=_blank} i *[!DNL Adobe Target]Business Practitioner-guiden*.
+Mer information finns i [Värdar](https://experienceleague.adobe.com/sv/docs/target/using/administer/hosts){target=_blank} i *[!DNL Adobe Target]Business Practitioner-guiden*.
 
 #### [!UICONTROL Thumbnail Base]
 

@@ -17,7 +17,7 @@ Information om hur du använder tillägget [!UICONTROL Adobe Experience Cloud De
 
 Du kan snabbt visa bibliotekskonfigurationen, undersöka förfrågningar för att se till att dina anpassade parametrar skickas korrekt, aktivera konsolloggning och inaktivera alla [!DNL Target]-förfrågningar. Logga in i [!DNL Experience Cloud] så kan du använda det kraftfulla spårningsverktyget för Mbox för att kontrollera din aktivitet och dina målgruppskvalifikationer samt din besökarprofil.
 
-Granska [Adobe Experience Cloud Debugger-översikten](https://experienceleague.adobe.com/docs/experience-platform/debugger/home.html){target=_blank}.
+Granska [Adobe Experience Cloud Debugger-översikten](https://experienceleague.adobe.com/docs/experience-platform/debugger/home.html?lang=sv-SE){target=_blank}.
 
 ## Utbildningsvideor
 

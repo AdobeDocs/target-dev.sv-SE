@@ -49,7 +49,7 @@ Du behöver inte inkludera attribut för orderkonvertering i det här samtalet. 
    * `orderTotal`: Ordersumma för inköpet.
    * `orderId`: Inköpets order-ID.
 
-  Följande bild visar en [regel för [!DNL tags] in [!DNL Experience Platform]](https://experienceleague.adobe.com/docs/tags.html){target=_blank} som endast ska aktiveras på sidan [!UICONTROL Confirmation].
+  Följande bild visar en [regel för [!DNL tags] in [!DNL Experience Platform]](https://experienceleague.adobe.com/docs/tags.html?lang=sv-SE){target=_blank} som endast ska aktiveras på sidan [!UICONTROL Confirmation].
 
   ![Sidan Åtgärdskonfiguration](/help/dev/patterns/recs-atjs/assets/action-configuration.png){width="400" zoomable="yes"}
 
@@ -58,7 +58,7 @@ Du behöver inte inkludera attribut för orderkonvertering i det här samtalet. 
 **Läser**
 
 * [adobe.target.trackEvent(), metod](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-trackevent.md)
-* [cartIds för kundvagnsbaserade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/base-the-recommendation-on-a-recommendation-key.html?lang=en#cart-based){target=_blank}
+* [cartIds för kundvagnsbaserade villkor](https://experienceleague.adobe.com/docs/target/using/recommendations/criteria/base-the-recommendation-on-a-recommendation-key.html?lang=sv-SE#cart-based){target=_blank}
 
 **Åtgärder**
 

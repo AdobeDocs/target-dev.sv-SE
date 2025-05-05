@@ -149,7 +149,7 @@ Om du får ett felmeddelande om att enheten inte hittades, som visas i exemplet 
 
    >[!NOTE]
    >
-   >Om ingen miljö uttryckligen anges försöker Get Entity att hämta entiteten enbart från din [standardmiljö](https://experienceleague.adobe.com/docs/target/using/administer/environments.html). Om du vill hämta från någon annan miljö än standardmiljön måste du ange miljö-ID:t.
+   >Om ingen miljö uttryckligen anges försöker Get Entity att hämta entiteten enbart från din [standardmiljö](https://experienceleague.adobe.com/docs/target/using/administer/environments.html?lang=sv-SE). Om du vill hämta från någon annan miljö än standardmiljön måste du ange miljö-ID:t.
 
 1. Om det behövs lägger du till parametern `environmentId` och skickar begäran igen.
 

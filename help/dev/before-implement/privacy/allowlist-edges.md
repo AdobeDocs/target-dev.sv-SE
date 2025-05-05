@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Information och en uppdaterad lista över värdar som kan hjälpa dig att tillåtslista [!DNL Adobe Target]-kanter.
 
-En kant är en geografiskt fördelad serverarkitektur som ger optimala svarstider för slutanvändare som behöver innehåll, oavsett var de befinner sig. Varje edge-nod har all information som krävs för att svara på användarens innehållsförfrågan och för att spåra analysdata på den begäran. Användarförfrågningar dirigeras till närmaste kantnod. Mer information finns i [Kantnätverket](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html#concept_0AE2ED8E9DE64288A8B30FCBF1040934).
+En kant är en geografiskt fördelad serverarkitektur som ger optimala svarstider för slutanvändare som behöver innehåll, oavsett var de befinner sig. Varje edge-nod har all information som krävs för att svara på användarens innehållsförfrågan och för att spåra analysdata på den begäran. Användarförfrågningar dirigeras till närmaste kantnod. Mer information finns i [Kantnätverket](https://experienceleague.adobe.com/docs/target/using/introduction/how-target-works.html?lang=sv-SE#concept_0AE2ED8E9DE64288A8B30FCBF1040934).
 
 Du kan tillåtslista [!DNL Target]-kantnoder om du vill.
 
@@ -23,7 +23,7 @@ Du kan tillåtslista [!DNL Target]-kantnoder om du vill.
 >
 >Förutom att tillåtslista IP-adresserna för NAT (Network Address Translation) för [!DNL Target] kanter och IP-adresser för [!DNL Target]-kanter som beskrivs i artikeln, bör du även tillåtslista alla IP-adressblock för [!DNL Adobe Analytics].
 >
->Mer information finns i [Alla Adobe Analytics IP-adressblock](https://experienceleague.adobe.com/docs/analytics/technotes/ip-addresses.html?lang=en#all-adobe-analytics-ip-address-blocks){target=_blank} i dokumentationen för *Adobe Analytics Tech Notes*.
+>Mer information finns i [Alla Adobe Analytics IP-adressblock](https://experienceleague.adobe.com/docs/analytics/technotes/ip-addresses.html?lang=sv-SE#all-adobe-analytics-ip-address-blocks){target=_blank} i dokumentationen för *Adobe Analytics Tech Notes*.
 >
 >Infrastrukturen för [!DNL Adobe Target] uppdateras och kunder som vill tillåtslista adresser måste använda båda uppsättningarna med IP-adresser. Om du inte gör det kommer det att påverka kunder som använder implementeringar på serversidan eller hybridimplementeringar där Target API-anrop för att hämta upplevelser kommer från ett nätverk bakom en brandvägg som är konfigurerad att använda en tillåtelselista.
 >
