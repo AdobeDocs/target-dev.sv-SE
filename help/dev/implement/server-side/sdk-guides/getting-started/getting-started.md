@@ -37,7 +37,7 @@ Om du aktiverar enhetsbeslut körs en [!UICONTROL A/B Test]-aktivitet med en lat
 
 >[!NOTE]
 >
->Du måste ha användarrollen **[!UICONTROL Admin]** eller **[!UICONTROL Approver]** [](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att aktivera eller inaktivera växlingsknappen **[!UICONTROL On-Device Decisioning]**.
+>Du måste ha användarrollen **[!UICONTROL Admin]** eller **[!UICONTROL Approver]** [&#128279;](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att aktivera eller inaktivera växlingsknappen **[!UICONTROL On-Device Decisioning]**.
 
 När du har aktiverat växeln **[!UICONTROL On-Device Decisioning]** börjar [!DNL Adobe Target] generera [regelartefakter](../on-device-decisioning/rule-artifact-overview.md) för klienten.
 
@@ -388,6 +388,6 @@ target_client.send_notifications({
 
    >[!NOTE]
    >
-   >Du måste ha användarrollen **[!UICONTROL Approver]** eller **[!UICONTROL Publisher]** [](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att kunna utföra det här steget.
+   >Du måste ha användarrollen **[!UICONTROL Approver]** eller **[!UICONTROL Publisher]** [&#128279;](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att kunna utföra det här steget.
 
    ![alt-bild](assets/asset-activate.png)

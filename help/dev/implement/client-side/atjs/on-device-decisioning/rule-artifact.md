@@ -1,6 +1,6 @@
 ---
 keywords: implementering, javascript-bibliotek, js, atjs, enhetsbeslut, enhetsbeslut, enhetsbeslut, regelartefakt, $8
-description: Läs mer om JSON-regelartefakten som används av [!UICONTROL on-device decisioning]].
+description: Läs mer om JSON-regelartefakten som används av [!UICONTROL on-device decisioning]&rbrack;.
 title: Vad är JSON Rule Artifact Do in On-Device Decision?
 feature: at.js
 exl-id: 14413ccf-b55e-48a8-a474-4401eb1b50fc

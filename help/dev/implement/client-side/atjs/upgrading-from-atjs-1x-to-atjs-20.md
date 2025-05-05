@@ -317,7 +317,7 @@ Kunderna kan ange ett globalt mbox-namn via **[!UICONTROL Target]** > **[!UICONT
 
 Ja, de anpassade händelserna at.js gäller även för `triggerView()`.
 
-### Det står att när jag anropar `triggerView()` med &amp;lbrace;`"page" : "true"`&amp;rbrace; skickas ett meddelande till [!DNL Target]-serverdelen och utseendet ökar. Gör det även att profilskripten körs?
+### Det står att när jag anropar `triggerView()` med &lbrace;`"page" : "true"`&rbrace; skickas ett meddelande till [!DNL Target]-serverdelen och utseendet ökar. Gör det även att profilskripten körs?
 
 När ett förhämtningsanrop görs till [!DNL Target]-serverdelen körs profilskripten. Därefter krypteras profildata som påverkas och skickas tillbaka till klientsidan. När `triggerView()` med `{"page": "true"}` har anropats skickas ett meddelande tillsammans med de krypterade profildata. Detta är när [!DNL Target]-serverdelen dekrypterar profildata och lagrar dem i databaserna.
 

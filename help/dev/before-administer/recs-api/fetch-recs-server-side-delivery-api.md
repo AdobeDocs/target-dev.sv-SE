@@ -68,6 +68,7 @@ Syntaxen för [leverans-API](/help/dev/implement/delivery-api/overview.md) är:
    * objekten **browser** och **address** togs bort från **Body** eftersom de inte krävs för icke-HTML-bruk
    * *api_charter* listas som platsnamn i det här exemplet
    * entity.id anges eftersom den här rekommendationen baseras på innehållets likhet, vilket kräver att en aktuell artikelnyckel skickas till Target.
+
      ![server-side-Delivery-API-call.png](assets/server-side-delivery-api-call2.png)
 Kom ihåg att konfigurera frågeparametrarna korrekt. Ange till exempel `{{CLIENT_CODE}}` efter behov. &lt;!— Q: I den uppdaterade anropssyntaxen listas entity.id som en profileParameter i stället för en mboxParameter som i tidigare versioner. —> &lt;!— Q: Gammal bild ![server-side-create-recs-post.png](assets/server-side-create-recs-post.png) Gammal medföljande text: &quot;Observera att den här rekommendationen baseras på innehåll Liknande produkter baserat på entitet.id som skickas via mboxParameters.&quot; —>
      ![client-code3](assets/client-code3.png)

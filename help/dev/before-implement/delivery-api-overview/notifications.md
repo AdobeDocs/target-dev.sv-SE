@@ -19,7 +19,7 @@ Om du vill att meddelanden ska stängas av för rätt mbox eller vy måste du h�
 
 ## Meddelanden för förhämtade kartor
 
-Ett eller flera meddelanden kan skickas via ett enda leveranssamtal. Avgör om måttet som behöver spåras är antingen `click` eller `display` för varje mbox så att `type` i meddelandet kan återspeglas korrekt. Skicka dessutom en `id` för varje meddelande så att du kan avgöra om ett meddelande skickades korrekt via [!UICONTROL  Adobe Target Delivery API]. `timestamp` är också viktigt att vidarebefordras till [!DNL Target] för att ange när `click` eller `display` inträffade för en given mbox för rapportering.
+Ett eller flera meddelanden kan skickas via ett enda leveranssamtal. Avgör om måttet som behöver spåras är antingen `click` eller `display` för varje mbox så att `type` i meddelandet kan återspeglas korrekt. Skicka dessutom en `id` för varje meddelande så att du kan avgöra om ett meddelande skickades korrekt via [!UICONTROL &#x200B; Adobe Target Delivery API]. `timestamp` är också viktigt att vidarebefordras till [!DNL Target] för att ange när `click` eller `display` inträffade för en given mbox för rapportering.
 
 ```
 curl -X POST \
