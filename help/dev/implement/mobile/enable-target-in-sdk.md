@@ -25,7 +25,7 @@ Lägg till [!UICONTROL Adobe Mobile Services SDK] i din app.
 
 1. Lägg till [!DNL Adobe Mobile Services SDK] i din app.
 
-   Instruktionerna finns under [Core Implementation och Lifecycle](https://experienceleague.adobe.com/docs/mobile-services/ios/getting-started-ios/dev-qs.html).
+   Instruktionerna finns under [Core Implementation och Lifecycle](https://experienceleague.adobe.com/docs/mobile-services/ios/getting-started-ios/dev-qs.html?lang=sv-SE).
 
 1. Lägg till klientkod, tidsgräns och aktivera SSL.
 

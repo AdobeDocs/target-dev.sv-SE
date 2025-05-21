@@ -30,5 +30,5 @@ Tänk på följande begränsningar när du använder förhämtningsmetoden med i
 
 Mer information, inklusive förhämtningsmetoder, publika klasser och kodexempel finns i:
 
-* **iOS:** [Förhämta erbjudandeinnehåll i iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/target-ios/c-mob-target-prefetch-ios.html) i *Hjälp om iOS SDK för mobila tjänster*.
-* **Android:** [Förhämta erbjudandeinnehåll i Android](https://experienceleague.adobe.com/docs/mobile-services/android/target-android/c-mob-target-prefetch-android.html) i *Hjälp om Android SDK för mobila tjänster*.
+* **iOS:** [Förhämta erbjudandeinnehåll i iOS](https://experienceleague.adobe.com/docs/mobile-services/ios/target-ios/c-mob-target-prefetch-ios.html?lang=sv-SE) i *Hjälp om iOS SDK för mobila tjänster*.
+* **Android:** [Förhämta erbjudandeinnehåll i Android](https://experienceleague.adobe.com/docs/mobile-services/android/target-android/c-mob-target-prefetch-android.html?lang=sv-SE) i *Hjälp om Android SDK för mobila tjänster*.

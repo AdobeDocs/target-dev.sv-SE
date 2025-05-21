@@ -21,11 +21,11 @@ Om du vill använda [!DNL Target] i din mobilapp skapar du en plats och ett fram
 >
 >[Adobe Experience Platform SDK för mobilappar](https://developer.adobe.com/client-sdks/documentation/){target=_blank} är den rekommenderade lösningen för att driva [!DNL Adobe Experience Cloud] lösningar och tjänster i dina mobilappar.
 
-Det här avsnittet innehåller exempelkod som kan användas som mall för ditt program. Exemplen i det här avsnittet innehåller kod för iOS. Samma mönster gäller för Android. Android-specifik syntax finns i guiden [Android SDK 4.x för Experience Cloud Solutions](https://experienceleague.adobe.com/docs/mobile-services/android/target-android/target-main.html).
+Det här avsnittet innehåller exempelkod som kan användas som mall för ditt program. Exemplen i det här avsnittet innehåller kod för iOS. Samma mönster gäller för Android. Android-specifik syntax finns i guiden [Android SDK 4.x för Experience Cloud Solutions](https://experienceleague.adobe.com/docs/mobile-services/android/target-android/target-main.html?lang=sv-SE).
 
 >[!NOTE]
 >
->I [Mobile-dokumentationen](https://experienceleague.adobe.com/docs/mobile-services/ios/target-ios/c-target-methods.html) finns en lista med alla tillgängliga [!DNL Target]-metoder.
+>I [Mobile-dokumentationen](https://experienceleague.adobe.com/docs/mobile-services/ios/target-ios/c-target-methods.html?lang=sv-SE) finns en lista med alla tillgängliga [!DNL Target]-metoder.
 
 Det finns två primära metoder för att skapa en [!DNL Target]-plats i din app och göra en begäran:
 
