@@ -11,24 +11,24 @@ ht-degree: 0%
 
 # Använd [!DNL Adobe Target] och [!DNL Web SDK] för personalisering
 
-[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Target] till webbkanalen. Du kan använda en WYSIWYG-redigerare, som kallas [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC), eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
+[!DNL Adobe Experience Platform] [!DNL Web SDK] kan leverera och återge personaliserade upplevelser som hanteras i [!DNL Adobe Target] till webbkanalen. Du kan använda en WYSIWYG-redigerare, som kallas [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE) (VEC), eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE), för att skapa, aktivera och leverera dina aktiviteter och personaliseringsupplevelser.
 
 >[!IMPORTANT]
 >
->Lär dig hur du migrerar din [!DNL Target]-implementering till [!DNL Experience Platform Web SDK] med självstudiekursen [Migrate Target från at.js 2.x till Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html).
+>Lär dig hur du migrerar din [!DNL Target]-implementering till [!DNL Experience Platform Web SDK] med självstudiekursen [Migrate Target från at.js 2.x till Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/migrate-target-to-websdk/introduction.html?lang=sv-SE).
 >
->Lär dig hur du implementerar [!DNL Target] för första gången med självstudiekursen [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html). Mer information om [!DNL Target] finns i självstudieavsnittet [Konfigurera mål med Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html).
+>Lär dig hur du implementerar [!DNL Target] för första gången med självstudiekursen [Implementera Adobe Experience Cloud med Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/overview.html?lang=sv-SE). Mer information om [!DNL Target] finns i självstudieavsnittet [Konfigurera mål med Experience Platform Web SDK](https://experienceleague.adobe.com/docs/platform-learn/implement-web-sdk/applications-setup/setup-target.html?lang=sv-SE).
 
 Följande funktioner har testats och stöds för närvarande i [!DNL Target]:
 
-* [A/B-tester](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html)
-* [A4T Impression and conversion reporting](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html)
-* [Automated Personalization-aktiviteter](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
-* [Aktiviteter för målinriktning](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html)
-* [Multivariata tester (MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html)
-* [Rekommendationsaktiviteter](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html)
-* [Inbyggt målinställnings- och konverteringsrapportering](https://experienceleague.adobe.com/docs/target/using/reports/reports.html)
-* [VEC-support](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html)
+* [A/B-tester](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html?lang=sv-SE)
+* [A4T Impression and conversion reporting](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE)
+* [Automated Personalization-aktiviteter](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html?lang=sv-SE)
+* [Aktiviteter för målinriktning](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html?lang=sv-SE)
+* [Multivariata tester (MVT)](https://experienceleague.adobe.com/docs/target/using/activities/multivariate-test/multivariate-testing.html?lang=sv-SE)
+* [Rekommendationsaktiviteter](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html?lang=sv-SE)
+* [Inbyggt målinställnings- och konverteringsrapportering](https://experienceleague.adobe.com/docs/target/using/reports/reports.html?lang=sv-SE)
+* [VEC-support](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE)
 
 ## [!DNL Web SDK] systemdiagram
 
@@ -51,27 +51,27 @@ Följande diagram hjälper dig att förstå arbetsflödet för [!DNL Target]- oc
 
 Så här aktiverar du [!DNL Target]:
 
-1. Aktivera [!DNL Target] i [datastream](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/overview) med rätt klientkod.
+1. Aktivera [!DNL Target] i [datastream](https://experienceleague.adobe.com/sv/docs/experience-platform/datastreams/overview) med rätt klientkod.
 1. Lägg till alternativet `renderDecisions` i dina händelser.
 
 Du kan sedan även lägga till följande alternativ:
 
 * **`decisionScopes`**: Hämta specifika aktiviteter (användbart för aktiviteter som skapats med den formulärbaserade dispositionen) genom att lägga till det här alternativet i dina händelser.
-* **[Dölj fragment](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/manage-flicker)**: Dölj endast vissa delar av sidan.
+* **[Dölj fragment](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/manage-flicker)**: Dölj endast vissa delar av sidan.
 
 ## Använda VEC:t [!UICONTROL Adobe Target]
 
-Om du vill använda VEC med en [!DNL Web SDK]-implementering installerar och aktiverar du [ Firefox ](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://experienceleague.adobe.com/en/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension) VEC Helper Extension.
+Om du vill använda VEC med en [!DNL Web SDK]-implementering installerar och aktiverar du [ Firefox ](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://experienceleague.adobe.com/sv/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension) VEC Helper Extension.
 
-Mer information finns i [Hjälptillägg för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html) i *Adobe Target-handboken*.
+Mer information finns i [Hjälptillägg för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html?lang=sv-SE) i *Adobe Target-handboken*.
 
 ## Återge personaliserat innehåll
 
-Mer information finns i [Återge anpassat innehåll](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/rendering-personalization-content).
+Mer information finns i [Återge anpassat innehåll](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content).
 
 ## Målgrupper i XDM
 
-När du definierar målgrupper för dina [!DNL Target]-aktiviteter som levereras via [!DNL Web SDK] måste [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html) definieras och användas. När du har definierat XDM-scheman, klasser och schemafältgrupper kan du skapa en [!DNL Target] målgruppsregel som definieras av XDM-data för målgruppsanpassning. I [!DNL Target] visas XDM-data i [!UICONTROL Audience Builder] som en anpassad parameter. XDM serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
+När du definierar målgrupper för dina [!DNL Target]-aktiviteter som levereras via [!DNL Web SDK] måste [XDM](https://experienceleague.adobe.com/docs/experience-platform/xdm/home.html?lang=sv-SE) definieras och användas. När du har definierat XDM-scheman, klasser och schemafältgrupper kan du skapa en [!DNL Target] målgruppsregel som definieras av XDM-data för målgruppsanpassning. I [!DNL Target] visas XDM-data i [!UICONTROL Audience Builder] som en anpassad parameter. XDM serialiseras med punktnotation (till exempel `web.webPageDetails.name`).
 
 Om du har [!DNL Target] aktiviteter med fördefinierade målgrupper som använder anpassade parametrar eller en användarprofil levereras de inte korrekt via SDK. I stället för att använda egna parametrar eller användarprofilen måste du använda XDM i stället. Det finns dock färdiga målgruppsfält som stöds via [!DNL Web SDK] och som inte kräver XDM. De här fälten är tillgängliga i användargränssnittet [!DNL Target] som inte kräver XDM:
 
@@ -84,7 +84,7 @@ Om du har [!DNL Target] aktiviteter med fördefinierade målgrupper som använde
 * Trafikkällor
 * Tidsram
 
-Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html) i *Adobe Target-handboken*.
+Mer information finns i [Kategorier för målgrupper](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/target-rules.html?lang=sv-SE) i *Adobe Target-handboken*.
 
 ### Svarstoken
 
@@ -287,7 +287,7 @@ alloy("sendEvent", {
 
 ## Felsökning
 
-mboxTrace och mboxDebug har tagits bort. Använd en metod för [Web SDK-felsökning](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/use-cases/debugging) i stället.
+mboxTrace och mboxDebug har tagits bort. Använd en metod för [Web SDK-felsökning](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/use-cases/debugging) i stället.
 
 ## Terminologi
 

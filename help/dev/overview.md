@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Adobe Target] Utvecklarhandbok
 
-**([Visa [!DNL Target] dokumentationsuppdateringar](https://experienceleague.adobe.com/docs/target/using/release-notes/doc-change.html){target=_blank})**
+**([Visa [!DNL Target] dokumentationsuppdateringar](https://experienceleague.adobe.com/docs/target/using/release-notes/doc-change.html?lang=sv-SE){target=_blank})**
 
 Den här *[!DNL Adobe Target]-utvecklarhandboken* innehåller resurser och guider för [!DNL Target]-utvecklare, inklusive API- och SDK-dokumentation för implementering och administration av [!DNL Target].
 
@@ -22,11 +22,11 @@ Den här *[!DNL Adobe Target]-utvecklarhandboken* innehåller resurser och guide
 >
 >Förutom den här guiden finns även följande [!DNL Adobe Target] stödlinjer tillgängliga:
 >
->* [*[!DNL Adobe Target] Business Practitioner Guide *](https://experienceleague.adobe.com/docs/target/using/target-home.html){target=_blank}
+>* [*[!DNL Adobe Target] Business Practitioner Guide *](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=sv-SE){target=_blank}
 >
->* [*[!DNL Adobe Target] självstudiekurser *](https://experienceleague.adobe.com/docs/target-learn/tutorials/overview.html){target=_blank}
+>* [*[!DNL Adobe Target] självstudiekurser *](https://experienceleague.adobe.com/docs/target-learn/tutorials/overview.html?lang=sv-SE){target=_blank}
 >
->Versionsinformation finns i [Versionsinformation för mål (aktuell)](https://experienceleague.adobe.com/docs/target/using/release-notes/release-notes.html){target=_blank} i *[!DNL Adobe Target]Business Practitioner-handboken*.
+>Versionsinformation finns i [Versionsinformation för mål (aktuell)](https://experienceleague.adobe.com/docs/target/using/release-notes/release-notes.html?lang=sv-SE){target=_blank} i *[!DNL Adobe Target]Business Practitioner-handboken*.
 
 ## Komma igång med implementering
 
@@ -86,7 +86,7 @@ Den här *[!DNL Adobe Target]-utvecklarhandboken* innehåller resurser och guide
 
 [**Admin Console API:er**](https://developer.adobe.com/umapi/): Hantera användare och produktbehörigheter via Adobe API:er för användarhantering och användarsynkronisering.
 
-[**[!DNL Adobe Experience Platform Edge Network Server API]**](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html): Använd API:t [!DNL Adobe Experience Platform Edge Network Server] för en mängd olika användningsfall för datainsamling, personalisering, annonsering och marknadsföring.
+[**[!DNL Adobe Experience Platform Edge Network Server API]**](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html?lang=sv-SE): Använd API:t [!DNL Adobe Experience Platform Edge Network Server] för en mängd olika användningsfall för datainsamling, personalisering, annonsering och marknadsföring.
 
 ## Resurs
 
@@ -98,6 +98,6 @@ Den här *[!DNL Adobe Target]-utvecklarhandboken* innehåller resurser och guide
 * [Målimplementering](./before-implement/prepare-to-implement-target.md)
 * [Måladministration](./before-administer/target-api-overview.md)
 * [Adobe Target Dev Docs GitHub Repo](https://github.com/AdobeDocs/target-developers)
-* [Versionsinformation för Adobe Target](https://experienceleague.adobe.com/docs/target/using/release-notes/release-notes.html)
-* [Adobe Target Business User Guide](https://experienceleague.adobe.com/docs/target/using/target-home.html)
+* [Versionsinformation för Adobe Target](https://experienceleague.adobe.com/docs/target/using/release-notes/release-notes.html?lang=sv-SE)
+* [Adobe Target Business User Guide](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=sv-SE)
 

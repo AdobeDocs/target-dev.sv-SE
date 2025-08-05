@@ -13,7 +13,7 @@ ht-degree: 0%
 
 # Översikt: implementera [!DNL Target] för klientwebben
 
-I en implementering på klientsidan av [!DNL Adobe Target] levererar [!DNL Target] upplevelserna som är kopplade till en aktivitet direkt till klientwebbläsaren. Webbläsaren avgör vilken upplevelse som ska visas och visar den. Med en implementering på klientsidan kan du använda en WYSIWYG-redigerare, [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html) (VEC) eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html), för att skapa din aktivitet och dina personaliseringsupplevelser.
+I en implementering på klientsidan av [!DNL Adobe Target] levererar [!DNL Target] upplevelserna som är kopplade till en aktivitet direkt till klientwebbläsaren. Webbläsaren avgör vilken upplevelse som ska visas och visar den. Med en implementering på klientsidan kan du använda en WYSIWYG-redigerare, [Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE) (VEC) eller ett icke-visuellt gränssnitt, [formulärbaserad Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE), för att skapa din aktivitet och dina personaliseringsupplevelser.
 
 Om du vill implementera [!DNL Target] på klientsidan måste du använda ett av följande JavaScript-bibliotek:
 
@@ -26,4 +26,4 @@ Om du vill implementera [!DNL Target] på klientsidan måste du använda ett av 
   JavaScript-biblioteket at.js förbättrar sidinläsningstiderna för webbimplementeringar, förbättrar säkerheten och erbjuder bättre implementeringsalternativ för enkelsidiga program. Om du väljer att migrera till at.js ska du läsa [How At.js Works](/help/dev/implement/client-side/atjs/how-atjs-works/overview.md) och [[!DNL Adobe Target] SDödBuilder: Developer chat, migrera Adobe Target mbox.js till at.js](https://seminars.adobeconnect.com/ptdo6mfo6qn6/?proto=true).
 
 
-Mer information om skillnaderna mellan de två implementeringsmetoderna finns i [Jämföra at.js-biblioteket med Web SDK](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/adobe-target/web-sdk-atjs-comparison){target=_blank}.
+Mer information om skillnaderna mellan de två implementeringsmetoderna finns i [Jämföra at.js-biblioteket med Web SDK](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/adobe-target/web-sdk-atjs-comparison){target=_blank}.
