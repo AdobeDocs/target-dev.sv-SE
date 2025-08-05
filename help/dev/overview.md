@@ -5,28 +5,28 @@ description: Hur implementerar och administrerar jag  [!DNL Adobe Target]  och a
 contributors: https://github.com/icaraps
 feature: APIs/SDKs
 exl-id: 655cff9b-fc04-45cf-9068-5c6c32b70d79
-source-git-commit: dadc3804da4592dba4ad88b8c5c9f804c56e232b
+source-git-commit: 599aa4c965e331bb2681523d50708a03fc933875
 workflow-type: tm+mt
 source-wordcount: '398'
 ht-degree: 0%
 
 ---
 
-# Utvecklarhandbok för [!DNL Adobe Target]
+# [!DNL Adobe Target] Utvecklarhandbok
 
-**([Visa [!DNL Target] dokumentationsuppdateringar](https://experienceleague.adobe.com/docs/target/using/release-notes/doc-change.html?lang=sv-SE){target=_blank})**
+**([Visa [!DNL Target] dokumentationsuppdateringar](https://experienceleague.adobe.com/docs/target/using/release-notes/doc-change.html){target=_blank})**
 
-Den här *[!DNL Adobe Target]utvecklarhandboken* innehåller resurser och guider för [!DNL Target]-utvecklare, inklusive API- och SDK-dokumentation för implementering och administration av [!DNL Target].
+Den här *[!DNL Adobe Target]-utvecklarhandboken* innehåller resurser och guider för [!DNL Target]-utvecklare, inklusive API- och SDK-dokumentation för implementering och administration av [!DNL Target].
 
 >[!NOTE]
 >
 >Förutom den här guiden finns även följande [!DNL Adobe Target] stödlinjer tillgängliga:
 >
->* [*[!DNL Adobe Target] Business Practitioner Guide *](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=sv-SE){target=_blank}
+>* [*[!DNL Adobe Target] Business Practitioner Guide *](https://experienceleague.adobe.com/docs/target/using/target-home.html){target=_blank}
 >
->* [*[!DNL Adobe Target] Tutorials *](https://experienceleague.adobe.com/docs/target-learn/tutorials/overview.html?lang=sv-SE){target=_blank}
+>* [*[!DNL Adobe Target] självstudiekurser *](https://experienceleague.adobe.com/docs/target-learn/tutorials/overview.html){target=_blank}
 >
->Versionsinformation finns i [Versionsinformation för mål (aktuell)](https://experienceleague.adobe.com/docs/target/using/release-notes/release-notes.html?lang=sv-SE){target=_blank} i *[!DNL Adobe Target]Business Practitioner Guide* .
+>Versionsinformation finns i [Versionsinformation för mål (aktuell)](https://experienceleague.adobe.com/docs/target/using/release-notes/release-notes.html){target=_blank} i *[!DNL Adobe Target]Business Practitioner-handboken*.
 
 ## Komma igång med implementering
 
@@ -34,17 +34,17 @@ Den här *[!DNL Adobe Target]utvecklarhandboken* innehåller resurser och guider
 
 ## Implementering på klientsidan
 
-[**Adobe Experience Platform Web SDK**](/help/dev/implement/client-side/aep-web-sdk.md): Med [!DNL Adobe Experience Platform Web SDK] kan du interagera med de olika tjänsterna i [!DNL Experience Cloud] (inklusive [!DNL Target]) via [!UICONTROL Adobe Experience Edge Network].
+[**Adobe Experience Platform Web SDK**](/help/dev/implement/client-side/aep-web-sdk/aep-web-sdk-overview.md): Med [!DNL Adobe Experience Platform Web SDK] kan du interagera med de olika tjänsterna i [!DNL Experience Cloud] (inklusive [!DNL Target]) via [!UICONTROL Adobe Experience Edge Network].
 
 [**Använd JavaScript-biblioteket at.js som mål**](/help/dev/implement/client-side/overview.md): JavaScript-biblioteket at.js förbättrar sidinläsningstiden för webblöplementeringar, förbättrar säkerheten och erbjuder bättre implementeringsalternativ för ensidiga program.
 
 ## Implementering på serversidan
 
-[**Översikt över mål-SDK**](implement/server-side/server-side-overview.md): Kom igång med [!DNL Adobe Target] SDK:er, inklusive beslut på enheten.
+[**Översikt över SDK**](implement/server-side/server-side-overview.md): Kom igång med [!DNL Adobe Target] SDK:er, inklusive enhetsbeslut.
 
 [**Node.js SDK**](implement/server-side/node-js/overview.md): Så här använder du [!DNL Target] Node.js SDK.
 
-[**Java SDK**](implement/server-side/java/overview.md): Så här använder du Java SDK [!DNL Target] .
+[**Java SDK**](implement/server-side/java/overview.md): Så här använder du [!DNL Target] Java SDK.
 
 [**.NET SDK**](implement/server-side/net/overview.md): Så här använder du [!DNL Target] .NET SDK.
 
@@ -54,15 +54,15 @@ Den här *[!DNL Adobe Target]utvecklarhandboken* innehåller resurser och guider
 
 [**Hybrid-distribution**](implement/hybrid/hybrid-overview.md): Implementera [!DNL Target] med en kombination av implementering på klient- och serversidan.
 
-## Implementering av Recommendations
+## Rekommendationer och implementering
 
-[**Recommendations-implementering**](implement/recommendations/recommendations.md): Planera och implementera [!DNL Adobe Target Recommendations].
+[**Rekommendationer och implementering**](implement/recommendations/recommendations.md): Planera och implementera [!DNL Adobe Target Recommendations].
 
 ## Implementering av mobilappar
 
-[**Översikt över AEP Mobile SDK**](implement/mobile/overview.md): Översikt över hur du implementerar [!DNL Adobe Target] med [!DNL Adobe Experience Platform] Mobile SDK:er.
+[**AEP Mobile SDK - översikt**](implement/mobile/overview.md): Översikt över hur du implementerar [!DNL Adobe Target] med [!DNL Adobe Experience Platform] Mobile SDK:er.
 
-[**AEP Mobile SDK-referens**](https://developer.adobe.com/client-sdks/documentation/): Implementera [!DNL Adobe Target] med [!DNL Adobe Experience Platform] Mobile SDK:er.
+[**AEP Mobile SDK reference**](https://developer.adobe.com/client-sdks/documentation/): Implementera [!DNL Adobe Target] med [!DNL Adobe Experience Platform] Mobile SDK:er.
 
 ## E-postimplementering
 
@@ -84,20 +84,20 @@ Den här *[!DNL Adobe Target]utvecklarhandboken* innehåller resurser och guider
 
 [**[!DNL Target Models API]**](administer/models-api/models-api-overview.md): Hantera blockeringslista för att definiera funktionerna som används i [!DNL Target] maskininlärningsmodeller.
 
-[**Admin Console API:er**](https://developer.adobe.com/umapi/): Hantera användare och produktbehörigheter via API:erna för användarhantering och användarsynkronisering i Adobe.
+[**Admin Console API:er**](https://developer.adobe.com/umapi/): Hantera användare och produktbehörigheter via Adobe API:er för användarhantering och användarsynkronisering.
 
-[**[!DNL Adobe Experience Platform Edge Network Server API]**](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html?lang=sv-SE): Använd API:t [!DNL Adobe Experience Platform Edge Network Server] för en mängd olika användningsfall för datainsamling, personalisering, annonsering och marknadsföring.
+[**[!DNL Adobe Experience Platform Edge Network Server API]**](https://experienceleague.adobe.com/docs/experience-platform/edge-network-server-api/overview.html): Använd API:t [!DNL Adobe Experience Platform Edge Network Server] för en mängd olika användningsfall för datainsamling, personalisering, annonsering och marknadsföring.
 
 ## Resurs
 
-* [Adobe, öppen källkodsrepo](https://github.com/adobe)
-* [JS SDK-målnod, Source](https://github.com/adobe/target-nodejs-sdk)
-* [JS SDK-exempelrepo för målnod](https://github.com/adobe/target-nodejs-sdk-samples)
+* [Adobe öppen källkodsrepo](https://github.com/adobe)
+* [Målnod-JS SDK Source](https://github.com/adobe/target-nodejs-sdk)
+* [JS-exempelrepo för målnod i SDK](https://github.com/adobe/target-nodejs-sdk-samples)
 * [Aktivera Java SDK Source](https://github.com/adobe/target-java-sdk)
 * [Java SDK-exempelrepo](https://github.com/adobe/target-java-sdk-samples) som mål
 * [Målimplementering](./before-implement/prepare-to-implement-target.md)
 * [Måladministration](./before-administer/target-api-overview.md)
 * [Adobe Target Dev Docs GitHub Repo](https://github.com/AdobeDocs/target-developers)
-* [Versionsinformation för Adobe Target](https://experienceleague.adobe.com/docs/target/using/release-notes/release-notes.html?lang=sv-SE)
-* [Adobe Target Business User Guide](https://experienceleague.adobe.com/docs/target/using/target-home.html?lang=sv-SE)
+* [Versionsinformation för Adobe Target](https://experienceleague.adobe.com/docs/target/using/release-notes/release-notes.html)
+* [Adobe Target Business User Guide](https://experienceleague.adobe.com/docs/target/using/target-home.html)
 
