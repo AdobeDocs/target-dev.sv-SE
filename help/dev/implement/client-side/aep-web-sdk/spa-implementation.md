@@ -1,5 +1,5 @@
 ---
-title: Programimplementering på en sida för [!DNL  Adobe Experience Platform Web SDK]
+title: Programimplementering på en sida för [!DNL &#x200B; Adobe Experience Platform Web SDK]
 description: Lär dig hur du skapar en SPA-implementering av  [!DNL Adobe Experience Platform Web SDK]med  [!DNL Target].
 keywords: mål;adobe target;xdm views; views;single page applications;SPA;SPA lifecycle;client-side;AB testing;AB;Experience targeting;XT;VEC
 feature: AEP Web SDK
