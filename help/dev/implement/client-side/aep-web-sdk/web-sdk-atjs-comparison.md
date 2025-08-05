@@ -814,7 +814,7 @@ När det här alternativet är konfigurerat ser nyttolastens format ut så här:
 }
 ```
 
-Nyttolasten kan sedan vidarebefordras till [!DNL Analytics] via [!DNL  Data Insertion API].
+Nyttolasten kan sedan vidarebefordras till [!DNL Analytics] via [!DNL &#x200B; Data Insertion API].
 
 Exempel 2: Konfigurera den i varje `getOffers`-funktion:
 
