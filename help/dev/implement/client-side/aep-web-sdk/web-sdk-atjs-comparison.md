@@ -26,7 +26,7 @@ Med [!DNL Adobe] kan kunder hämta biblioteket direkt från fliken [!DNL Adobe E
 
 Den färdiga versionen finns tillgänglig på ett CDN. Du kan referera till biblioteket på CDN direkt på din sida eller hämta och lagra det på din egen infrastruktur. Den finns i minifierade och ominifierade format. Den ominiatyrversionen är användbar i felsökningssyfte.
 
-Mer information finns i [Installera Web SDK med JavaScript-biblioteket](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/install/library).
+Mer information finns i [Installera Web SDK med JavaScript-biblioteket](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/install/library).
 
 ## Konfigurera biblioteken
 
@@ -72,7 +72,7 @@ window.adobe.target.init(window, document, {
 
 ### Konfigurera Platform Web SDK
 
-Konfigurationen för SDK görs med kommandot [`configure`](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/commands/configure/overview). Kommandot `configure` anropas *alltid* först.
+Konfigurationen för SDK görs med kommandot [`configure`](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/commands/configure/overview). Kommandot `configure` anropas *alltid* först.
 
 ## Så här begär och återger du sidinläsning [!DNL Target] automatiskt
 
@@ -82,7 +82,7 @@ Om du använder at.js 2.x och aktiverar inställningen `pageLoadEnabled,` utlös
 
 ### Använder [!DNL PLatform Web SDK]
 
-Innehåll som skapats i [!DNL Target] [Visual Experience Composer](https://experienceleague.adobe.com/en/docs/target/using/experiences/vec/visual-experience-composer) kan hämtas och återges automatiskt av SDK.
+Innehåll som skapats i [!DNL Target] [Visual Experience Composer](https://experienceleague.adobe.com/sv/docs/target/using/experiences/vec/visual-experience-composer) kan hämtas och återges automatiskt av SDK.
 
 Om du vill begära och automatiskt återge [!DNL Target] erbjudanden använder du kommandot `sendEvent` och ställer in alternativet `renderDecisions` på `true.`. På så sätt tvingas SDK automatiskt att återge anpassat innehåll som är kvalificerat för automatisk återgivning.
 
@@ -182,7 +182,7 @@ alloy("sendEvent", {
 }
 ```
 
-[Läs mer](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)
+[Läs mer](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)
 
 ## Så här begär och *INTE* återger automatiskt sidinläsningsmål
 
@@ -214,7 +214,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[Läs mer](https://experienceleague.adobe.com/en/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/atjs-functions)
+[Läs mer](https://experienceleague.adobe.com/sv/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/atjs-functions)
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -261,7 +261,7 @@ alloy("sendEvent", {
   });
 ```
 
-[Läs mer](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)
+[Läs mer](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)
 
 ## Hur man begär specifika formulärbaserade målmodeller
 
@@ -297,7 +297,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/atjs-functions.html)
+[Läs mer](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/atjs-functions.html?lang=sv-SE)
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -418,7 +418,7 @@ alloy("sendEvent", {
 });
 ```
 
-[Läs mer](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)
+[Läs mer](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)
 
 ## Så här tillämpar du [!DNL Target]-aktiviteterna
 
@@ -435,7 +435,7 @@ adobe.target.getOffers({...})
   .catch(error => console.log("Error", error));
 ```
 
-Läs mer om kommandot `applyOffers` i den [dedikerade dokumentationen](https://experienceleague.adobe.com/en/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2).
+Läs mer om kommandot `applyOffers` i den [dedikerade dokumentationen](https://experienceleague.adobe.com/sv/docs/target-dev/developer/client-side/at-js-implementation/functions-overview/adobe-target-applyoffers-atjs-2).
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -449,7 +449,7 @@ alloy("applyPropositions", {
 });
 ```
 
-Läs mer om kommandot `applyPropositions` i den [dedikerade dokumentationen](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/rendering-personalization-content).
+Läs mer om kommandot `applyPropositions` i den [dedikerade dokumentationen](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content).
 
 ## Spåra händelser
 
@@ -485,7 +485,7 @@ adobe.target.sendNotifications({
 });
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-trackevent.html?lang=sv-SE)
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -603,7 +603,7 @@ alloy("sendEvent", {
 });
 ```
 
-[Läs mer](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/rendering-personalization-content#manual)
+[Läs mer](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content#manual)
 
 **Exempel 3 - Spåra en händelse som utlösts efter en åtgärd**
 
@@ -685,7 +685,7 @@ alloy("sendEvent", {
 
 ## Så här använder du [!UICONTROL Response Tokens]
 
-Personalization-innehåll som returneras från [!DNL Target] innehåller [svarstoken](https://experienceleague.adobe.com/en/docs/target/using/administer/response-tokens). Svarstoken är information om aktivitet, erbjudande, upplevelse, användarprofil, geo-information med mera. Dessa uppgifter kan delas med verktyg från tredje part eller användas för felsökning. Svarstoken kan konfigureras i användargränssnittet [!DNL Target].
+Personalization-innehåll som returneras från [!DNL Target] innehåller [svarstoken](https://experienceleague.adobe.com/sv/docs/target/using/administer/response-tokens). Svarstoken är information om aktivitet, erbjudande, upplevelse, användarprofil, geo-information med mera. Dessa uppgifter kan delas med verktyg från tredje part eller användas för felsökning. Svarstoken kan konfigureras i användargränssnittet [!DNL Target].
 
 ### Använda at.js
 
@@ -699,7 +699,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 }); 
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE)
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -707,7 +707,7 @@ document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
 >
 >Kontrollera att du använder [!DNL Experience Platform Web SDK] version 2.6.0 eller senare.
 
-Svarstoken returneras som en del av `propositions` som visas i resultatet av kommandot `sendEvent`. Varje förslag innehåller en matris på `items,` och varje objekt har ett `meta`-objekt ifyllt med svarstoken om de är aktiverade i [!DNL Target]-administratörens användargränssnitt. [Läs mer](https://experienceleague.adobe.com/en/docs/target/using/administer/response-tokens)
+Svarstoken returneras som en del av `propositions` som visas i resultatet av kommandot `sendEvent`. Varje förslag innehåller en matris på `items,` och varje objekt har ett `meta`-objekt ifyllt med svarstoken om de är aktiverade i [!DNL Target]-administratörens användargränssnitt. [Läs mer](https://experienceleague.adobe.com/sv/docs/target/using/administer/response-tokens)
 
 **Exempel**
 
@@ -878,7 +878,7 @@ Därefter flödar data enligt följande:
 
 ![Diagram som visar arbetsflödet för loggning på serversidan i Analytics](/help/dev/implement/client-side/aep-web-sdk/assets/a4t-server-side-atjs.png)
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4timplementation.html?lang=sv-SE)
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -960,7 +960,7 @@ window.targetGlobalSettings = {
 };
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetgobalsettings.html?lang=sv-SE)
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -1060,7 +1060,7 @@ adobe.target.getOffers({
 .catch(console.error);
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/adobe-target-getoffers-atjs-2.html?lang=sv-SE)
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -1140,7 +1140,7 @@ window.targetPageParams = function() {
 };
 ```
 
-[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html)
+[Läs mer](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/functions-overview/targetpageparams.html?lang=sv-SE)
 
 ### Använder [!DNL Platform Web SDK]
 
@@ -1257,8 +1257,8 @@ I biblioteket at.js visas dessa felsökningsfunktioner:
 
 Du har flera felsökningsfunktioner när du använder [!DNL Platform Web SDK]:
 
-* Använda [Assurance](https://experienceleague.adobe.com/en/docs/experience-platform/assurance/home)
-* [Felsökning för SDK på webben har aktiverats](https://experienceleague.adobe.com/en/docs/experience-platform/assurance/home)
+* Använda [Assurance](https://experienceleague.adobe.com/sv/docs/experience-platform/assurance/home)
+* [Felsökning för SDK på webben har aktiverats](https://experienceleague.adobe.com/sv/docs/experience-platform/assurance/home)
 * Använd [SDK-webbövervakningskopplingar](https://github.com/adobe/alloy/wiki/Monitoring-Hooks)
-* Använd [Adobe Experience Platform Debugger](https://experienceleague.adobe.com/en/docs/experience-platform/debugger/home)
+* Använd [Adobe Experience Platform Debugger](https://experienceleague.adobe.com/sv/docs/experience-platform/debugger/home)
 * Målspårning
