@@ -14,13 +14,13 @@ ht-degree: 0%
 
 `mbox3rdPartyId` i [!DNL Adobe Target] är ditt företags besökar-ID, till exempel medlemskaps-ID:t för ditt företags lojalitetsprogram.
 
-När en besökare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. [Läs mer](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html)
+När en besökare loggar in på ett företags webbplats skapar företaget vanligtvis ett ID som är knutet till besökarens konto, förmånskort, medlemsnummer eller andra tillämpliga identifierare för det företaget. [Läs mer](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/3rd-party-id.html?lang=sv-SE)
 
 ## Använda `mbox3rdPartyId` med [!DNL Platform Web SDK]
 
 ### Steg 1: Konfigurera `Target Third Party ID Namespace`
 
-Konfigurera `Target Third Party ID Namespace` i [Datastream](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/overview) med det ID-namnområde som du vill använda som ett ID för en tredje part i en mbox. [Läs mer om ID-namnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html)
+Konfigurera `Target Third Party ID Namespace` i [Datastream](https://experienceleague.adobe.com/sv/docs/experience-platform/datastreams/overview) med det ID-namnområde som du vill använda som ett ID för en tredje part i en mbox. [Läs mer om ID-namnutrymmen](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=sv-SE)
 
 ![Experience Platform-gränssnitt som visar namnområdesfältet för mål-ID för tredje part.](/help/dev/implement/client-side/aep-web-sdk/assets/mbox3rdpartyid.png)
 
