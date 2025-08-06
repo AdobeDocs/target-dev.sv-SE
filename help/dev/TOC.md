@@ -2,7 +2,7 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: 777feec0cd9b2bd6a9c7167acf1371fa1184af89
+source-git-commit: 8f24ffe82e16de0dbbd86d3baf0e76d826a98a9a
 workflow-type: tm+mt
 source-wordcount: '788'
 ht-degree: 3%
