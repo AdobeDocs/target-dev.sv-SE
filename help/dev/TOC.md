@@ -2,9 +2,9 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: 697822cd7c5afcaac988d61035af56491301dc74
+source-git-commit: 777feec0cd9b2bd6a9c7167acf1371fa1184af89
 workflow-type: tm+mt
-source-wordcount: '789'
+source-wordcount: '788'
 ht-degree: 3%
 
 ---
@@ -45,49 +45,50 @@ ht-degree: 3%
    + [Översikt: implementera Target för webben på klientsidan](implement/client-side/overview.md)
    + Implementering av Adobe Experience Platform Web SDK {#aep}
       + [Implementeringsöversikt för Adobe Experience Platform Web SDK](/help/dev/implement/client-side/aep-web-sdk/aep-web-sdk-overview.md)
-      + [Använd Adobe Target och Platform Web SDK för personalisering](/help/dev/implement/client-side/aep-web-sdk/target-overview.md)
+      + [Använd Adobe Target och Web SDK för personalisering](/help/dev/implement/client-side/aep-web-sdk/target-overview.md)
       + [Programimplementering på en sida](/help/dev/implement/client-side/aep-web-sdk/spa-implementation.md)
       + [Åtkomst till svarstoken](/help/dev/implement/client-side/aep-web-sdk/accessing-response-tokens.md)
-      + [Använda tredje parts-ID i mbox](/help/dev/implement/client-side/aep-web-sdk/using-mbox-3rdpartyid.md)
-      + [Jämföra biblioteket at.js med SDK](/help/dev/implement/client-side/aep-web-sdk/web-sdk-atjs-comparison.md)
-   + Hur at.js fungerar {#at-js}
-      + [at.js Översikt över JavaScript Library](/help/dev/implement/client-side/atjs/how-atjs-works/overview.md)
-      + [at.js - översikt](/help/dev/implement/client-side/atjs/how-atjs-works/how-atjs-works.md)
-      + [Hur at.js hanterar flimmer](/help/dev/implement/client-side/atjs/how-atjs-works/manage-flicker-with-atjs.md)
-      + [at.js-integreringar](/help/dev/implement/client-side/atjs/how-atjs-works/target-atjs-integrations.md)
-   + Så här distribuerar du at.js {#deploy-at-js}
-      + [Så här distribuerar du at.js](implement/client-side/atjs/how-to-deployatjs/how-to-deployatjs.md)
-      + [Implementera mål med Adobe Experience Platform](implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md)
-      + [Implementera mål utan tagghanterare](implement/client-side/atjs/how-to-deployatjs/implement-target-without-a-tag-manager.md)
-      + [Implementera mål med Dynamic Tag Manager (DTM)](implement/client-side/atjs/how-to-deployatjs/implement-target-using-dtm.md)
-      + [Implementera mål för SPA (Single Page Applications)](implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md)
-   + Enhetsbeslut {#on-device-decisioning}
-      + [Översikt över beslut på enheter](implement/client-side/atjs/on-device-decisioning/on-device-decisioning.md)
-      + [Funktioner som stöds](implement/client-side/atjs/on-device-decisioning/supported-features.md)
-      + [Regelartefakt](implement/client-side/atjs/on-device-decisioning/rule-artifact.md)
-      + [Felsökning](implement/client-side/atjs/on-device-decisioning/troubleshooting-on-device-decisioning.md)
-   + Funktionerna at.js {#functions-overview}
-      + [at.js - funktionsöversikt](implement/client-side/atjs/atjs-functions/atjs-functions.md)
-      + [adobe.target.getOffer()](implement/client-side/atjs/atjs-functions/adobe-target-getoffer.md)
-      + [adobe.target.getOffers() - at.js 2.x](implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md)
-      + [adobe.target.applyOffer()](implement/client-side/atjs/atjs-functions/adobe-target-applyoffer.md)
-      + [adobe.target.applyOffers() - at.js 2.x](implement/client-side/atjs/atjs-functions/adobe-target-applyoffers-atjs-2.md)
-      + [adobe.target.triggerView() - at.js 2.x](implement/client-side/atjs/atjs-functions/adobe-target-triggerview-atjs-2.md)
-      + [adobe.target.trackEvent()](implement/client-side/atjs/atjs-functions/adobe-target-trackevent.md)
-      + [mboxCreate() - at.js 1.x](implement/client-side/atjs/atjs-functions/mboxcreate-atjs.md)
-      + [targetGlobalSettings()](implement/client-side/atjs/atjs-functions/targetglobalsettings.md)
-      + [mboxDefine() och mboxUpdate() - at.js 1.x](implement/client-side/atjs/atjs-functions/mboxdefine-mboxupdate-atjs-1x.md)
-      + [targetPageParams()](implement/client-side/atjs/atjs-functions/targetpageparams.md)
-      + [targetPageParamsAll()](implement/client-side/atjs/atjs-functions/targetpageparamsall.md)
-      + [registerExtension() - at.js 1.x](implement/client-side/atjs/atjs-functions/registerextension-atjs-1x.md)
-      + [sendNotifications() - at.js 2.1](implement/client-side/atjs/atjs-functions/adobe-target-sendnotifications-atjs-21.md)
-      + [at.js, anpassade händelser](implement/client-side/atjs/atjs-functions/atjs-custom-events.md)
-      + [Felsöka at.js med Adobe Experience Cloud Debugger](implement/client-side/target-debugging-atjs/target-debugging-atjs.md)
-      + [Använd molnbaserade instanser med Target](implement/client-side/target-debugging-atjs/targeting-using-cloud-based-instances.md)
-   + [at.js Frågor och svar](implement/client-side/atjs/target-atjs-faq.md)
-   + [versionsinformation för at.js](implement/client-side/atjs/target-atjs-versions.md)
-   + [Uppgradera från at.js 1.x till at.js 2.x](implement/client-side/atjs/upgrading-from-atjs-1x-to-atjs-20.md)
-   + [at.js cookies](implement/client-side/atjs/atjs-cookies.md)
+      + [använd mbox3rdPartyId](/help/dev/implement/client-side/aep-web-sdk/using-mbox-3rdpartyid.md)
+      + [Jämför at.js-biblioteket med Platform Web SDK](/help/dev/implement/client-side/aep-web-sdk/web-sdk-atjs-comparison.md)
+   + at.js-implementering {#at-js-implementation}
+      + Hur at.js fungerar {#at-js}
+         + [at.js Översikt över JavaScript Library](/help/dev/implement/client-side/atjs/how-atjs-works/overview.md)
+         + [at.js - översikt](/help/dev/implement/client-side/atjs/how-atjs-works/how-atjs-works.md)
+         + [Hur at.js hanterar flimmer](/help/dev/implement/client-side/atjs/how-atjs-works/manage-flicker-with-atjs.md)
+         + [at.js-integreringar](/help/dev/implement/client-side/atjs/how-atjs-works/target-atjs-integrations.md)
+      + Så här distribuerar du at.js {#deploy-at-js}
+         + [Så här distribuerar du at.js](implement/client-side/atjs/how-to-deployatjs/how-to-deployatjs.md)
+         + [Implementera mål med Adobe Experience Platform](implement/client-side/atjs/how-to-deployatjs/implement-target-using-adobe-launch.md)
+         + [Implementera mål utan tagghanterare](implement/client-side/atjs/how-to-deployatjs/implement-target-without-a-tag-manager.md)
+         + [Implementera mål med Dynamic Tag Manager (DTM)](implement/client-side/atjs/how-to-deployatjs/implement-target-using-dtm.md)
+         + [Implementera mål för SPA (Single Page Applications)](implement/client-side/atjs/how-to-deployatjs/target-atjs-single-page-application.md)
+      + Enhetsbeslut {#on-device-decisioning}
+         + [Översikt över beslut på enheter](implement/client-side/atjs/on-device-decisioning/on-device-decisioning.md)
+         + [Funktioner som stöds](implement/client-side/atjs/on-device-decisioning/supported-features.md)
+         + [Regelartefakt](implement/client-side/atjs/on-device-decisioning/rule-artifact.md)
+         + [Felsökning](implement/client-side/atjs/on-device-decisioning/troubleshooting-on-device-decisioning.md)
+      + Funktionerna at.js {#functions-overview}
+         + [at.js - funktionsöversikt](implement/client-side/atjs/atjs-functions/atjs-functions.md)
+         + [adobe.target.getOffer()](implement/client-side/atjs/atjs-functions/adobe-target-getoffer.md)
+         + [adobe.target.getOffers() - at.js 2.x](implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md)
+         + [adobe.target.applyOffer()](implement/client-side/atjs/atjs-functions/adobe-target-applyoffer.md)
+         + [adobe.target.applyOffers() - at.js 2.x](implement/client-side/atjs/atjs-functions/adobe-target-applyoffers-atjs-2.md)
+         + [adobe.target.triggerView() - at.js 2.x](implement/client-side/atjs/atjs-functions/adobe-target-triggerview-atjs-2.md)
+         + [adobe.target.trackEvent()](implement/client-side/atjs/atjs-functions/adobe-target-trackevent.md)
+         + [mboxCreate() - at.js 1.x](implement/client-side/atjs/atjs-functions/mboxcreate-atjs.md)
+         + [targetGlobalSettings()](implement/client-side/atjs/atjs-functions/targetglobalsettings.md)
+         + [mboxDefine() och mboxUpdate() - at.js 1.x](implement/client-side/atjs/atjs-functions/mboxdefine-mboxupdate-atjs-1x.md)
+         + [targetPageParams()](implement/client-side/atjs/atjs-functions/targetpageparams.md)
+         + [targetPageParamsAll()](implement/client-side/atjs/atjs-functions/targetpageparamsall.md)
+         + [registerExtension() - at.js 1.x](implement/client-side/atjs/atjs-functions/registerextension-atjs-1x.md)
+         + [sendNotifications() - at.js 2.1](implement/client-side/atjs/atjs-functions/adobe-target-sendnotifications-atjs-21.md)
+         + [at.js, anpassade händelser](implement/client-side/atjs/atjs-functions/atjs-custom-events.md)
+         + [Felsöka at.js med Adobe Experience Cloud Debugger](implement/client-side/target-debugging-atjs/target-debugging-atjs.md)
+         + [Använd molnbaserade instanser med Target](implement/client-side/target-debugging-atjs/targeting-using-cloud-based-instances.md)
+      + [at.js Frågor och svar](implement/client-side/atjs/target-atjs-faq.md)
+      + [versionsinformation för at.js](implement/client-side/atjs/target-atjs-versions.md)
+      + [Uppgradera från at.js 1.x till at.js 2.x](implement/client-side/atjs/upgrading-from-atjs-1x-to-atjs-20.md)
+      + [at.js cookies](implement/client-side/atjs/atjs-cookies.md)
    + [Tips för användaragent och klient](implement/client-side/atjs/user-agent-and-client-hints.md)
    + Förstå den globala mbox {#global-mbox}
       + [Förstå den globala mbox-översikten](implement/client-side/atjs/global-mbox/global-mbox-overview.md)
@@ -226,5 +227,3 @@ ht-degree: 3%
       + [Konfigurera datainsamling](/help/dev/patterns/recs-atjs/data-collection.md)
       + [Återge upplevelser](/help/dev/patterns/recs-atjs/render-experiences.md)
       + [Meddela mål](/help/dev/patterns/recs-atjs/notify-target.md)
-
-
