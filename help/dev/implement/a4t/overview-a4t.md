@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Adobe Analytics for Target] (A4T) loggning in i [!DNL Experience Platform Web SDK]
 
-När du använder [!DNL Adobe Target] för personalisering kan du välja vilket system du vill använda för prestandamätning. Med varje [målaktivitet](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html) kan du välja mellan [!DNL Target]-rapportering och Adobe [!DNL Analytics]-rapportering.
+När du använder [!DNL Adobe Target] för personalisering kan du välja vilket system du vill använda för prestandamätning. Med varje [målaktivitet](https://experienceleague.adobe.com/docs/target/using/activities/target-activities-guide.html?lang=sv-SE) kan du välja mellan [!DNL Target]-rapportering och Adobe [!DNL Analytics]-rapportering.
 
 Om du använder [!DNL Analytics]-rapportering måste [!DNL Target] förmedla följande till [!DNL Analytics]:
 
@@ -27,9 +27,9 @@ Om du använder [!DNL Analytics]-rapportering måste [!DNL Target] förmedla fö
 | Loggningsmetod | Beskrivning |
 | --- | --- |
 | Loggning på serversidan [!DNL Analytics] | Alla [!DNL Analytics] träffar som skickas via Edge Network utökas med [!DNL Target] detaljer på serversidan, utan att du behöver gå igenom träffsammanfogningsprocessen. |
-| Loggning på klientsidan [!DNL Analytics] | [!DNL Target] data returneras på klientsidan, vilket gör att du manuellt kan förstärka och skicka data till [!DNL Analytics] med [API:t för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html). |
+| Loggning på klientsidan [!DNL Analytics] | [!DNL Target] data returneras på klientsidan, vilket gör att du manuellt kan förstärka och skicka data till [!DNL Analytics] med [API:t för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html?lang=sv-SE). |
 
-Loggningsmetoden avgörs av om du har [!DNL Adobe Analytics] aktiverat på din konfigurerade [datastream](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/overview):
+Loggningsmetoden avgörs av om du har [!DNL Adobe Analytics] aktiverat på din konfigurerade [datastream](https://experienceleague.adobe.com/sv/docs/experience-platform/datastreams/overview):
 
 ![Beslutsflöde för loggningsmetod](/help/dev/implement/a4t/assets/analytics-logging.png)
 

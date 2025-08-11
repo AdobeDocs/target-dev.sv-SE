@@ -14,13 +14,13 @@ ht-degree: 0%
 
 # Loggning på klientsidan för A4T-data i [!DNL Experience Platform Web SDK]
 
-Med [!DNL Adobe Experience Platform Web SDK] kan du samla in [ Adobe Analytics for Target-data (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) på klientsidan av webbprogrammet.
+Med [!DNL Adobe Experience Platform Web SDK] kan du samla in [ Adobe Analytics for Target-data (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE) på klientsidan av webbprogrammet.
 
-Loggning på klientsidan innebär att relevanta [!DNL Target]-data returneras på klientsidan, vilket gör att du kan samla in data och dela dem med [!DNL Analytics]. Det här alternativet bör vara aktiverat om du tänker skicka data manuellt till Analytics med [API:t för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html).
+Loggning på klientsidan innebär att relevanta [!DNL Target]-data returneras på klientsidan, vilket gör att du kan samla in data och dela dem med [!DNL Analytics]. Det här alternativet bör vara aktiverat om du tänker skicka data manuellt till Analytics med [API:t för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html?lang=sv-SE).
 
 >[!NOTE]
 >
->En metod för att utföra detta med [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html) håller på att utvecklas och kommer att vara tillgänglig inom den närmaste framtiden.
+>En metod för att utföra detta med [AppMeasurement.js](https://experienceleague.adobe.com/docs/analytics/implementation/js/overview.html?lang=sv-SE) håller på att utvecklas och kommer att vara tillgänglig inom den närmaste framtiden.
 
 Det här dokumentet innehåller stegen för konfiguration av A4T-loggning på klientsidan för [!DNL Platform Web SDK] och exempel på implementering för vanliga användningsområden.
 
@@ -28,9 +28,9 @@ Det här dokumentet innehåller stegen för konfiguration av A4T-loggning på kl
 
 I den här självstudiekursen antas att du är bekant med de grundläggande begreppen och processerna som är kopplade till användningen av [!DNL Platform Web SDK] i personaliseringssyfte. Läs följande dokumentation om du behöver en introduktion:
 
-* [Konfigurera SDK för webben](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/commands/configure/overview)
-* [Skickar händelser](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/commands/sendevent/overview)
-* [Återger anpassat innehåll](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)
+* [Konfigurera SDK för webben](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/commands/configure/overview)
+* [Skickar händelser](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/commands/sendevent/overview)
+* [Återger anpassat innehåll](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)
 
 ## Konfigurera [!DNL Analytics]-loggning på klientsidan {#set-up-client-side-logging}
 
@@ -38,13 +38,13 @@ I följande underavsnitt beskrivs hur du aktiverar [!DNL Analytics]-loggning på
 
 ### Aktivera loggning på klientsidan för [!DNL Analytics] {#enable-analytics-client-side-logging}
 
-Om du vill ta hänsyn till att [!DNL Analytics]-loggning på klientsidan är aktiverad för din implementering måste du inaktivera [!DNL Adobe Analytics]-konfigurationen i [datastream](https://experienceleague.adobe.com/en/docs/experience-platform/datastreams/overview).
+Om du vill ta hänsyn till att [!DNL Analytics]-loggning på klientsidan är aktiverad för din implementering måste du inaktivera [!DNL Adobe Analytics]-konfigurationen i [datastream](https://experienceleague.adobe.com/sv/docs/experience-platform/datastreams/overview).
 
 ![Analytics-datastream-konfiguration inaktiverad](/help/dev/implement/a4t/assets/disable-analytics-datastream.png)
 
 ### Hämta [!DNL A4T]-data från SDK och skicka dem till [!DNL Analytics] {#a4t-to-analytics}
 
-För att den här rapporteringsmetoden ska fungera på rätt sätt måste du skicka [!DNL A4T]-relaterade data som hämtats från kommandot [`sendEvent`](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/commands/sendevent/overview) i [!DNL Analytics]-träffen.
+För att den här rapporteringsmetoden ska fungera på rätt sätt måste du skicka [!DNL A4T]-relaterade data som hämtats från kommandot [`sendEvent`](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/commands/sendevent/overview) i [!DNL Analytics]-träffen.
 
 När [!DNL Target] Edge beräknar ett svar på en offert kontrollerar det om [!DNL Analytics]-loggning på klientsidan är aktiverad (till exempel om [!DNL Analytics] är inaktiverad i din datastream). Om loggning på klientsidan är aktiverad lägger systemet till en [!DNL Analytics]-token i varje förslag i svaret.
 
@@ -225,7 +225,7 @@ I följande underavsnitt visas hur du implementerar [!DNL Analytics]-loggning p�
 
 ### [!UICONTROL Form-Based Experience Composer] aktiviteter {#form-based-composer}
 
-Du kan använda [!DNL Platform Web SDK] för att styra körningen av förslag från [ Adobe Target Form-Based Experience Composer ](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) -aktiviteter.
+Du kan använda [!DNL Platform Web SDK] för att styra körningen av förslag från [ Adobe Target Form-Based Experience Composer ](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE) -aktiviteter.
 
 När du begär förslag för ett specifikt beslutsområde innehåller det returnerade förslaget en lämplig [!DNL Analytics]-token. Det bästa sättet är att kedja kommandot [!DNL Experience Platform Web SDK] `sendEvent` och iterera genom de returnerade förslagen för att köra dem när [!DNL Analytics]-tokenen samlas in samtidigt.
 
@@ -465,7 +465,7 @@ alloy("sendEvent", {
 
 ### [!UICONTROL Visual Experience Composer] (VEC) aktiviteter {#visual-experience-composer-acitivties}
 
-Med [!DNL Platform Web SDK] kan du hantera erbjudanden som har skapats med [Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html).
+Med [!DNL Platform Web SDK] kan du hantera erbjudanden som har skapats med [Visual Experience Composer (VEC)](https://experienceleague.adobe.com/docs/target/using/experiences/vec/visual-experience-composer.html?lang=sv-SE).
 
 >[!NOTE]
 >
