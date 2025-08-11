@@ -2,9 +2,9 @@
 user-guide-title: Adobe Target Developer Guide
 breadcrumb-title: Target Developer Guide
 user-guide-description: Lär dig hur du skräddarsyr och personanpassar dina kunders upplevelser för att maximera intäkterna från dina webbplatser och mobilsajter, appar, sociala medier och andra digitala kanaler.
-source-git-commit: 8f24ffe82e16de0dbbd86d3baf0e76d826a98a9a
+source-git-commit: b1b0424bfe61fb8b4e88723e6bb2c565d75f8351
 workflow-type: tm+mt
-source-wordcount: '788'
+source-wordcount: '827'
 ht-degree: 3%
 
 ---
@@ -169,6 +169,10 @@ ht-degree: 3%
       + [Asynkrona begäranden (Python)](implement/server-side/python/asynchronous-requests.md)
       + [Logger (Python)](implement/server-side/python/logger.md)
 + [Hybrid-implementering](implement/hybrid/hybrid-overview.md)
++ Analyser för Target (A4T) med Experience Platform SDK {#a4t}
+   + [Adobe Analytics for Target-loggning (A4T) i Experience Platform Web SDK](/help/dev/implement/a4t/overview-a4t.md)
+   + [Loggning på klientsidan för A4T-data i Experience Platform Web SDK](/help/dev/implement/a4t/client-side-logging.md)
+   + [Logga A4T-data på serversidan i Experience Platform Web SDK](/help/dev/implement/a4t/server-side-a4t.md)
 + [Rekommendationer och implementering](implement/recommendations/recommendations.md)
 + [Rekommendationer - betaversion](/help/dev/implement/recommendations/recommendations-beta.md)
 + Implementering av mobilappar {#mobile-apps}
