@@ -1,19 +1,19 @@
 ---
-title: Integrering med Experience Cloud A4T-rapportering
+title: Integrering med Experience Cloud A4T Reporting
 description: Integrering med Experience Cloud, A4T-rapportering, Analytics for Target-integrering
 keywords: delivery api, server-side, server-side, integration, a4t
 exl-id: 0d09d7a1-528d-4e6a-bc6c-f7ccd61f5b75
 feature: Implement Server-side
-source-git-commit: 09a50aa67ccd5c687244a85caad24df56c0d78f5
+source-git-commit: cbae0f1758fb0dee4837e8c237f8617ecb46eb25
 workflow-type: tm+mt
-source-wordcount: '342'
+source-wordcount: '372'
 ht-degree: 0%
 
 ---
 
-# Analyser för målrapportering (A4T)
+# [!UICONTROL Analytics for Target] (A4T)-rapportering
 
-[!DNL Adobe Target] har stöd för A4T-rapportering för både enhetsbeslut och målaktiviteter på serversidan. Det finns två konfigurationsalternativ för att aktivera A4T-rapportering:
+[!DNL Adobe Target] har stöd för A4T-rapportering för både enhetsbeslut och [!DNL Target]-aktiviteter på serversidan. Det finns två konfigurationsalternativ för att aktivera A4T-rapportering:
 
 * [!DNL Adobe Target] vidarebefordrar automatiskt analysnyttolasten till [!DNL Adobe Analytics], eller
 * Användaren begär analysnyttolasten från [!DNL Adobe Target]. ([!DNL Adobe Target] returnerar [!DNL Adobe Analytics]-nyttolasten till anroparen.)
@@ -25,9 +25,9 @@ ht-degree: 0%
 ## Krav
 
 1. Konfigurera aktiviteten i [!DNL Adobe Target]-gränssnittet med [!DNL Adobe Analytics] som rapportkälla och kontrollera att kontona är aktiverade för A4T.
-1. API-användaren genererar Adobe Marketing Cloud Visitor-ID:t och ser till att detta ID är tillgängligt när Target-begäran körs.
+1. API-användaren genererar Adobe [!UICONTROL Marketing Cloud Visitor ID] och ser till att det här ID:t är tillgängligt när [!DNL Target]-begäran körs.
 
-## [!DNL Adobe Target] vidarebefordrar automatiskt Analytics-nyttolasten
+## [!DNL Adobe Target] vidarebefordrar [!DNL Analytics]-nyttolasten automatiskt
 
 [!DNL Adobe Target] kan automatiskt vidarebefordra analysnyttolasten till [!DNL Adobe Analytics] om följande identifierare anges:
 
@@ -115,7 +115,7 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 ## Användaren hämtar analysnyttolast från [!DNL Adobe Target]
 
-En användare kan hämta [!DNL Adobe Analytics]-nyttolasten för en given mbox och sedan skicka den till [!DNL Adobe Analytics] via [API:t för datainmatning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md). När en [!DNL Adobe Target]-begäran har utlösts skickar du `client_side` till fältet `logging` i begäran. Detta returnerar en nyttolast om den angivna rutan finns i en aktivitet som använder Analytics som rapportkälla.
+En användare kan hämta [!DNL Adobe Analytics]-nyttolasten för en given mbox och sedan skicka den till [!DNL Adobe Analytics] via [API:t för datainmatning](https://github.com/AdobeDocs/analytics-1.4-apis/blob/master/docs/data-insertion-api/index.md). När en [!DNL Adobe Target]-begäran har utlösts skickar du `client_side` till fältet `logging` i begäran. Denna begäran returnerar en nyttolast om den angivna mbox finns i en aktivitet som använder [!DNL Analytics] som rapportkälla.
 
 >[!BEGINTABS]
 
@@ -191,19 +191,23 @@ TargetDeliveryResponse offers = targetClient.getOffers(request);
 
 När du har angett `logging = client_side` får du nyttolasten i mbox-fältet.
 
-Om svaret från Target innehåller något i egenskapen `analytics -> payload` vidarebefordrar du det som det är till [!DNL Adobe Analytics]. [!DNL Adobe Analytics] vet hur den här nyttolasten behandlas. Detta kan göras i en GET-begäran i följande format:
+Om svaret från [!DNL Target] innehåller något i egenskapen `analytics -> payload` vidarebefordrar du det som det är till [!DNL Adobe Analytics]. [!DNL Adobe Analytics] vet hur den här nyttolasten behandlas. Detta kan göras i en GET-begäran i följande format:
 
 ```
-https://{datacollectionhost.sc.omtrdc.net}/b/ss/{rsid}/0/CODEVERSION?pe=tnt&tnta={payload}&mid={mid}&vid={vid}&aid={aid}
+https://{datacollectionhost.sc.omtrdc.net}/b/ss/{rsid}/{content_type_num}/{code_ver}/{session}?pe=tnt&tnta={payload}&c.&a.&target.&sessionId={sessionId}&.target&.a&.c&mid={mid}
 ```
 
-### Frågesträngsparametrar och variabler
+### Fråga strängparametrar och variabler
 
 | Fältnamn | Obligatoriskt | Beskrivning |
 | --- | --- | --- |
 | `rsid` | Ja | Rapportsvitens ID |
+| `content_type_num` | Ja | Alltid inställd på &quot;0&quot; |
+| `code_ver` | Ja | Ställ alltid in på &quot;MOBILE-1.0&quot; |
+| `session` | Ja | Alltid inställd på &quot;0&quot; |
 | `pe` | Ja | Sidhändelse. Alltid inställd på `tnt` |
-| `tnta` | Ja | Analysnyttolasten returnerades av målservern i `analytics -> payload -> tnta` |
+| `tnta` | Ja | [!DNL Analytics] nyttolast returnerades av [!DNL Target]-servern i `analytics -> payload -> tnta` |
+| `sessionId` | Ja | [!DNL Target] sessions-ID för den pågående sessionen |
 | `mid` | Ja | Marketing Cloud Visitor-ID |
 
 ### Obligatoriska rubrikvärden
@@ -212,8 +216,16 @@ https://{datacollectionhost.sc.omtrdc.net}/b/ss/{rsid}/0/CODEVERSION?pe=tnt&tnta
 | --- | --- |
 | Värd | Server för insamling av analysdata (t.ex.: `adobeags421.sc.omtrdc.net`) |
 
-### Exempel på A4T-datainmatning HTTP - Hämta anrop
+### Exempel på infogning av A4T-data HTTP Get call
+
+Icke-URL-kodad version För läsbarhet (format som inte ska användas för API-anrop):
 
 ```
-https://demo.sc.omtrdc.net/b/ss/myCustomRsid/0/MOBILE-1.0?pe=tnt&tnta=285408:0:0|2&mid=2304820394812039
+https://demo.sc.omtrdc.net/b/ss/myCustomRsid/0/MOBILE-1.0/0?tnta=253236:0:0|0,253236:0:0|2,253236:0:0|1,253613:0:0|0,253613:0:0|2,253613:0:0|1&c.&a.&target.&sessionId=45c08980-f4b9-4e11-96db-067d58e49f74&.target&.a&.c&pe=tnt&mid=69170113867710665996968872592584719577
+```
+
+URL-kodad version (format för API-anrop):
+
+```
+https://demo.sc.omtrdc.net/b/ss/myCustomRsid/0/MOBILE-1.0/0?tnta=253236%3A0%3A0%7C0%2C253236%3A0%3A0%7C2%2C253236%3A0%3A0%7C1%2C253613%3A0%3A0%7C0%2C253613%3A0%3A0%7C2%2C253613%3A0%3A0%7C1&c.%26a.%26target.%26sessionId=45c08980-f4b9-4e11-96db-067d58e49f74%26.target%26.a%26.c&pe=tnt&mid=69170113867710665996968872592584719577 
 ```
