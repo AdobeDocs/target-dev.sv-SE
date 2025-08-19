@@ -4,9 +4,9 @@ description: Lär dig hur du använder  [!DNL Adobe Target] [!UICONTROL Bulk Pro
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
 exl-id: 0f38d109-5273-4f73-9488-80eca115d44d
-source-git-commit: bee8752dd212a14f8414879e03565867eb87f6b9
+source-git-commit: 39f0ab4a6b06d0b3415be850487552714f51b4a2
 workflow-type: tm+mt
-source-wordcount: '829'
+source-wordcount: '929'
 ht-degree: 0%
 
 ---
@@ -24,9 +24,13 @@ Med hjälp av [!UICONTROL Bulk Profile Update API] kan du enkelt skicka detaljer
 
 >[!NOTE]
 >
->Version 2 (v2) av [!UICONTROL Bulk Profile Update API] är den aktuella versionen. [!DNL Target] stöder dock fortfarande version 1 (v1).
+>Version 2 (v2) av [!DNL Bulk Profile Update API] är den aktuella versionen. [!DNL Target] har dock fortfarande stöd för version 1 (v1).
+>
+>* **Fristående implementeringar som inte är beroende av `PCID` använder version 2**: Om [!DNL Target]-implementeringen använder [!DNL Experience Cloud ID] (ECID) som en av profilidentifierarna för anonyma besökare får du inte använda `pcId` som nyckel i en version 2 (v2)-batchfil. Användning av `pcId` med version 2 av [!DNL Bulk Profile Update API] är avsedd för fristående [!DNL Target]-implementeringar som inte är beroende av `ECID`.
+>
+>* **Implementeringar som är beroende av `thirdPartID` använder version 1**: Implementeringar som använder `ECID` för profilidentifiering bör använda version 1 (v1) av API:t om du vill använda `pcId` som nyckel i gruppfilen. Om implementeringen använder `thirdPartyId` för profilidentifiering rekommenderas version 2 (v2) med `thirdPartyId` som nyckel.
 
-## Fördelar med API:t för gruppprofilsuppdatering
+## Fördelar med [!UICONTROL Bulk Profile Update API]
 
 * Det finns ingen gräns för antalet profilattribut.
 * Profilattribut som skickas via webbplatsen kan uppdateras via API och tvärtom.
@@ -43,19 +47,19 @@ Med hjälp av [!UICONTROL Bulk Profile Update API] kan du enkelt skicka detaljer
 
 Om du vill uppdatera flera profildata samtidigt skapar du en gruppfil. Gruppfilen är en textfil med värden som avgränsas med kommatecken som liknar följande exempelfil.
 
-``` ```
+``````
 batch=pcId,param1,param2,param3,param4
 123,value1
 124,value1,,,value4
 125,,value2
 126,value1,value2,value3,value4
-``` ```
+``````
 
 >[!NOTE]
 >
 >Parametern `batch=` är obligatorisk och måste anges i början av filen.
 
-Du refererar till den här filen i serveranropet till [!DNL Target] POSTER för att bearbeta filen. Tänk på följande när du skapar gruppfilen:
+Du refererar till den här filen i POST-anropet till [!DNL Target] servrar för att bearbeta filen. Tänk på följande när du skapar gruppfilen:
 
 * Den första raden i filen måste ange kolumnrubriker.
 * Den första rubriken ska antingen vara `pcId` eller `thirdPartyId`. [!UICONTROL Marketing Cloud visitor ID] stöds inte. [!UICONTROL pcId] är ett [!DNL Target]-genererat besökar-ID. `thirdPartyId` är ett ID som anges av klientprogrammet, som skickas till [!DNL Target] via ett mbox-anrop som `mbox3rdPartyId`. Den måste här kallas `thirdPartyId`.
@@ -67,21 +71,21 @@ Du refererar till den här filen i serveranropet till [!DNL Target] POSTER för 
 * Det finns ingen begränsning för hur många attribut du kan överföra. Den totala storleken på externa profildata, som innehåller kundattribut, profil-API, parametrar för in-Mbox-profiler och profilskript, får dock inte överstiga 64 kB.
 * Parametrar och värden är versalkänsliga.
 
-## Begäran om HTTP-POST
+## HTTP POST-begäran
 
-Gör en HTTP-POST-förfrågan till [!DNL Target] edge-servrar för att bearbeta filen. Här följer ett exempel på en HTTP-POST-begäran för filen batch.txt med kommandot curl:
+Gör en HTTP POST-begäran till [!DNL Target] edge-servrar för att bearbeta filen. Här följer ett exempel på en HTTP POST-begäran för filen batch.txt med kommandot curl:
 
-``` ```
+``````
 curl -X POST --data-binary @BATCH.TXT http://CLIENTCODE.tt.omtrdc.net/m2/CLIENTCODE/v2/profile/batchUpdate
-``` ```
+``````
 
 Var:
 
 BATCH.TXT är filnamnet. CLIENTCODE är klientkoden [!DNL Target].
 
-Om du inte känner till din klientkod klickar du på **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** i användargränssnittet för [!DNL Target]. Klientkoden visas i avsnittet [!UICONTROL Account Details].
+Om du inte känner till din klientkod klickar du på [!DNL Target] > **[!UICONTROL Administration]** i användargränssnittet för **[!UICONTROL Implementation]**. Klientkoden visas i avsnittet [!UICONTROL Account Details].
 
-### Inspect svar
+### Granska svaret
 
 Profiles API returnerar batchjobbets överföringsstatus för bearbetning tillsammans med en länk under&quot;batchStatus&quot; till en annan URL som visar det aktuella batchjobbets övergripande status.
 
