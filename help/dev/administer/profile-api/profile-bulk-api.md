@@ -49,13 +49,13 @@ Med hjälp av [!UICONTROL Bulk Profile Update API] kan du enkelt skicka detaljer
 
 Om du vill uppdatera flera profildata samtidigt skapar du en gruppfil. Gruppfilen är en textfil med värden som avgränsas med kommatecken som liknar följande exempelfil.
 
-``````
+``` ```
 batch=pcId,param1,param2,param3,param4
 123,value1
 124,value1,,,value4
 125,,value2
 126,value1,value2,value3,value4
-``````
+``` ```
 
 >[!NOTE]
 >
@@ -77,9 +77,9 @@ Du refererar till den här filen i POST-anropet till [!DNL Target] servrar för 
 
 Gör en HTTP POST-begäran till [!DNL Target] edge-servrar för att bearbeta filen. Här följer ett exempel på en HTTP POST-begäran för filen batch.txt med kommandot curl:
 
-``````
+``` ```
 curl -X POST --data-binary @BATCH.TXT http://CLIENTCODE.tt.omtrdc.net/m2/CLIENTCODE/v2/profile/batchUpdate
-``````
+``` ```
 
 Var:
 
