@@ -4,9 +4,9 @@ description: Lär dig hur du använder  [!DNL Adobe Target] [!UICONTROL Bulk Pro
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
 exl-id: 0f38d109-5273-4f73-9488-80eca115d44d
-source-git-commit: 8cab20a7842b0a05c5b2a845662a7ab5f60393bd
+source-git-commit: dae198fd8ef3fc8473ad31807c146802339b1832
 workflow-type: tm+mt
-source-wordcount: '929'
+source-wordcount: '917'
 ht-degree: 0%
 
 ---
@@ -26,9 +26,11 @@ Med hjälp av [!UICONTROL Bulk Profile Update API] kan du enkelt skicka detaljer
 >
 >Version 2 (v2) av [!DNL Bulk Profile Update API] är den aktuella versionen. [!DNL Target] har dock fortfarande stöd för version 1 (v1).
 >
->* **Fristående implementeringar som inte är beroende av `ECID` använder version 2**: Om [!DNL Target]-implementeringen använder [!DNL Experience Cloud ID] (ECID) som en av profilidentifierarna för anonyma besökare får du inte använda `pcId` som nyckel i en version 2 (v2)-batchfil. Användning av `pcId` med version 2 av [!DNL Bulk Profile Update API] är avsedd för fristående [!DNL Target]-implementeringar som inte är beroende av `ECID`.
+>* Om din [!DNL Target]-implementering använder [!DNL Experience Cloud ID] (ECID) som en av profilidentifierarna för anonyma besökare ska du inte använda `pcId` som nyckel i en version 2 (v2)-batchfil. Användning av `pcId` med v2 av [!DNL Bulk Profile Update API] är endast avsedd för fristående [!DNL Target] implementeringar som inte är beroende av ECID.
 >
->* **Implementeringar som är beroende av `thirdPartID` använder version 1**: Implementeringar som använder `ECID` för profilidentifiering bör använda version 1 (v1) av API:t om du vill använda `pcId` som nyckel i gruppfilen. Om implementeringen använder `thirdPartyId` för profilidentifiering rekommenderas version 2 (v2) med `thirdPartyId` som nyckel.
+>* Om implementeringen använder ECID för profilidentifiering och du vill använda `pcId` som nyckel i gruppfilen använder du version 1 (v1) av API:t.
+>
+>* Om implementeringen använder `thirdPartyId` för profilidentifiering använder du version 2 (v2) av API:t med `thirdPartyId` som nyckel.
 
 ## Fördelar med [!UICONTROL Bulk Profile Update API]
 
@@ -47,13 +49,13 @@ Med hjälp av [!UICONTROL Bulk Profile Update API] kan du enkelt skicka detaljer
 
 Om du vill uppdatera flera profildata samtidigt skapar du en gruppfil. Gruppfilen är en textfil med värden som avgränsas med kommatecken som liknar följande exempelfil.
 
-``` ```
+``````
 batch=pcId,param1,param2,param3,param4
 123,value1
 124,value1,,,value4
 125,,value2
 126,value1,value2,value3,value4
-``` ```
+``````
 
 >[!NOTE]
 >
@@ -75,9 +77,9 @@ Du refererar till den här filen i POST-anropet till [!DNL Target] servrar för 
 
 Gör en HTTP POST-begäran till [!DNL Target] edge-servrar för att bearbeta filen. Här följer ett exempel på en HTTP POST-begäran för filen batch.txt med kommandot curl:
 
-``` ```
+``````
 curl -X POST --data-binary @BATCH.TXT http://CLIENTCODE.tt.omtrdc.net/m2/CLIENTCODE/v2/profile/batchUpdate
-``` ```
+``````
 
 Var:
 
