@@ -276,11 +276,11 @@ Om implementeringen är klar visas utdata som nedan. Den viktiga delen är att a
      avslutning [edge shard: OR-pool.data.adobedc.net] =========✅* utgångsdatum: 20 februari 
     59 206 GMT:59: 
     * utfärdare: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    * ämne: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com======== ✅ edge shard: SYD-pool.data.adobedc.net] =====
+    * ämne: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com======== ✅ edge shard: SYD-pool.data.adobedc.net&rbrack; =====
     * utgångsdatum: 23 feb. :59: 59 2026 GMT.
     * utfärdare: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA25 6 2020 CA1
     * ämne: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com====== ✅ ê [edge shard: VA-pool.data.adobedc.net] ======
-    * utgångsdatum: feb 23:59: 0}59 2026 GMT
+    * utgångsdatum: feb 23:59: 0&rbrace;59 2026 GMT
     * utfärdare: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
     * ämne: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=USA; target.example.com======= ✅ avslutning [edge shard: TYO-pool.data.adobedc.net] =====
     * förfallodatum: 20 feb 23:59:59 2026 GMT
