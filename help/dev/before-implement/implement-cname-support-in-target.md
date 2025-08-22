@@ -4,9 +4,9 @@ description: Arbeta med [!UICONTROL Adobe Client Care] för att implementera st�
 title: Hur använder jag CNAME i Target?
 feature: Privacy & Security
 exl-id: 5709df5b-6c21-4fea-b413-ca2e4912d6cb
-source-git-commit: 1a78a1e2750ae906338e91ff24ac16cdc99323ba
+source-git-commit: 04dfc34bcd3e7efbf73cd167334b440d42cafd1b
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1169'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Instruktioner för hur du arbetar med [!DNL Adobe Client Care] för att implemen
    >
    >Adobe certifikatutfärdare, DigiCert, kan inte utfärda ett certifikat förrän det här steget har slutförts. Därför kan Adobe inte fullfölja din begäran om CNAME-implementering förrän det här steget är klart.
 
-1. [Fyll i det här formuläret](assets/FPC_Request_Form.xlsx) och inkludera det när du [öppnar en Adobe Client Care-biljett som begär CNAME-stöd](https://experienceleague.adobe.com/docs/target/using/cmp-resources-and-contact-information.html?lang=sv-SE&#reference_ACA3391A00EF467B87930A450050077C):
+1. [Fyll i det här formuläret](assets/FPC_Request_Form.xlsx) och inkludera det när du [öppnar en Adobe Client Care-biljett som begär CNAME-stöd](https://experienceleague.adobe.com/docs/target/using/cmp-resources-and-contact-information.html?#reference_ACA3391A00EF467B87930A450050077C):
 
    * [!DNL Adobe Target]-klientkod:
    * SSL-certifikatvärdnamn (exempel: `target.example.com target.example.org`):
@@ -39,8 +39,8 @@ Instruktioner för hur du arbetar med [!DNL Adobe Client Care] för att implemen
    * Om kunden köper certifikatet, även kallat &quot;Bring Your Own Certificate&quot; (BYOC), fyll i dessa ytterligare uppgifter:
       * Certifikatorganisation (exempel: Company Inc):
       * Organisationsenhet för certifikat (valfritt, exempel: Marknadsföring):
-      * Certifikatland (t.ex. USA):
-      * Certifikatstat/region (t.ex. Kalifornien):
+      * Certifikatland (exempel: USA):
+      * Certifikatdeland (exempel: Kalifornien):
       * Certifikatstad (exempel: San Jose):
 
 1. Om Adobe köper certifikatet arbetar Adobe med DigiCert för att köpa och distribuera certifikatet på Adobe produktionsservrar.
@@ -69,9 +69,9 @@ Alla certifikat som köpts av Adobe gäller i ett år. Mer information finns i [
 
 ### Vilka värdnamn ska jag välja? Hur många värdnamn per domän ska jag välja?
 
-CNAME-målimplementeringar kräver endast ett värdnamn per domän på SSL-certifikatet och i kundens DNS. Adobe rekommenderar ett värdnamn per domän. Vissa kunder kräver fler värdnamn per domän för sina egna syften (till exempel testning i mellanlagring), vilket stöds.
+För implementeringar av mål-CNAME krävs bara ett värdnamn per domän i SSL-certifikatet och i kundens DNS. Adobe rekommenderar ett värdnamn per domän. Vissa kunder kräver fler värdnamn per domän för sina egna syften (till exempel testning i mellanlagring), vilket stöds.
 
-De flesta kunder väljer ett värdnamn som `target.example.com`. Adobe rekommenderar att du följer denna praxis, men valet är i slutändan ditt. Begär inte ett värdnamn för en befintlig DNS-post. Om du gör det uppstår en konflikt och fördröjer tiden till lösning av din [!DNL Target] CNAME-begäran.
+De flesta kunder väljer ett värdnamn som `target.example.com`. Adobe rekommenderar att du följer den här metoden, men i slutändan är det ditt val. Begär inte ett värdnamn för en befintlig DNS-post. Om du gör det uppstår en konflikt och det tar längre tid att lösa din [!DNL Target] CNAME-begäran.
 
 ### Jag har redan en CNAME-implementering för Adobe Analytics, kan jag använda samma certifikat eller värdnamn?
 
@@ -91,11 +91,13 @@ När du har ändrat värdnamnet i implementeringskoden för [!DNL Target] (`serv
 
 Alla certifikat är RSA SHA-256 och nycklarna är RSA 2048-bitars som standard. Nyckelstorlekar som är större än 2 048 bitar ska begäras explicit via [!UICONTROL Customer Care].
 
-### Hur kan jag verifiera att min CNAME-implementering är redo för trafik?
+### Hur verifierar jag att CNAME-implementeringen är klar för trafik?
 
-Använd följande uppsättning kommandon (i kommandoradsterminalen för macOS eller Linux med bash och curl >=7.49):
+Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller Linux, med bash och curl >=7.49):
 
-1. Kopiera och klistra in den här bash-funktionen i terminalen, eller klistra in funktionen i bash-startskriptfilen (vanligtvis `~/.bash_profile` eller `~/.bashrc`) så att funktionen är tillgänglig i alla terminalsessioner:
+1. Kopiera och klistra in den här basfunktionen i terminalen, eller klistra in funktionen i den grundläggande startskriptfilen (vanligen `~/.bash_profile` eller `~/.bashrc`) så att funktionen är tillgänglig för alla terminalsessioner:
+
+   +++Se detaljer
 
    ```
    function adobeTargetCnameValidation {
@@ -240,13 +242,15 @@ Använd följande uppsättning kommandon (i kommandoradsterminalen för macOS el
    }
    ```
 
-1. Klistra in det här kommandot (ersätt `target.example.com` det med ditt värdnamn):
+   +++
 
-   ```
-   adobeTargetCnameValidation target.example.com
-   ```
+1. Klistra in det här kommandot (ersätt `target.example.com` med ditt värdnamn):
+
+   ```adobeTargetCnameValidation target.example.com```
 
    Om implementeringen är klar visas utdata som nedan. Den viktiga delen är att alla valideringsstatusrader visar `✅` i stället för `🚫`. Varje CNAME-målserver ska visa `CN=target.example.com`, vilket matchar det primära värdnamnet på det begärda certifikatet (ytterligare SAN-värdnamn på certifikatet skrivs inte ut i dessa utdata).
+
+   +++Se detaljer
 
    ```
    $ adobeTargetCnameValidation target.example.com
@@ -310,6 +314,8 @@ Använd följande uppsättning kommandon (i kommandoradsterminalen för macOS el
        🔎  DNS A records:     https://whatsmydns.net/#A/target.example.com
        🔎  DNS CNAME record:  https://whatsmydns.net/#CNAME/target.example.com 
    ```
+
++++
 
 >[!NOTE]
 >
