@@ -4,9 +4,9 @@ description: Arbeta med [!UICONTROL Adobe Client Care] för att implementera st�
 title: Hur använder jag CNAME i Target?
 feature: Privacy & Security
 exl-id: 5709df5b-6c21-4fea-b413-ca2e4912d6cb
-source-git-commit: f894122217529cb40369c003a3b4ed5419fb0505
+source-git-commit: 353597cbbd3478e9598bd42303619440b3b478fd
 workflow-type: tm+mt
-source-wordcount: '1582'
+source-wordcount: '1580'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Instruktioner för hur du arbetar med [!DNL Adobe Client Care] för att implemen
    >
    >Adobe certifikatutfärdare, DigiCert, kan inte utfärda ett certifikat förrän det här steget har slutförts. Därför kan Adobe inte fullfölja din begäran om CNAME-implementering förrän det här steget är klart.
 
-1. [Fyll i det här formuläret](assets/FPC_Request_Form.xlsx) och inkludera det när du [öppnar en Adobe Client Care-biljett som begär CNAME-stöd](https://experienceleague.adobe.com/docs/target/using/cmp-resources-and-contact-information.html?lang=sv-SE&#reference_ACA3391A00EF467B87930A450050077C):
+1. [Fyll i det här formuläret](assets/FPC_Request_Form.xlsx) och inkludera det när du [öppnar en Adobe Client Care-biljett som begär CNAME-stöd](https://experienceleague.adobe.com/docs/target/using/cmp-resources-and-contact-information.html?#reference_ACA3391A00EF467B87930A450050077C):
 
    * [!DNL Adobe Target]-klientkod:
    * SSL-certifikatvärdnamn (exempel: `target.example.com target.example.org`):
@@ -96,8 +96,6 @@ Alla certifikat är RSA SHA-256 och nycklarna är RSA 2048-bitars som standard. 
 Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller Linux, med bash och curl >=7.49):
 
 1. Kopiera och klistra in den här basfunktionen i terminalen, eller klistra in funktionen i den grundläggande startskriptfilen (vanligen `~/.bash_profile` eller `~/.bashrc`) så att funktionen är tillgänglig för alla terminalsessioner:
-
-   +++ Se detaljer
 
    ```bash {line-numbers="true"}
     function adobeTargetCnameValidation {
@@ -243,8 +241,6 @@ Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller L
    }
    ```
 
-   +++
-
 1. Klistra in det här kommandot (ersätt `target.example.com` med ditt värdnamn):
 
    ```adobeTargetCnameValidation target.example.com```
@@ -276,11 +272,11 @@ Om implementeringen är klar visas utdata som nedan. Den viktiga delen är att a
      avslutning [edge shard: OR-pool.data.adobedc.net] =========✅* utgångsdatum: 20 februari 
     59 206 GMT:59: 
     * utfärdare: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
-    * ämne: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com======== ✅ edge shard: SYD-pool.data.adobedc.net&rbrack; =====
+    * ämne: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com======== ✅ edge shard: SYD-pool.data.adobedc.net] =====
     * utgångsdatum: 23 feb. :59: 59 2026 GMT.
     * utfärdare: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA25 6 2020 CA1
     * ämne: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=target.example.com====== ✅ ê [edge shard: VA-pool.data.adobedc.net] ======
-    * utgångsdatum: feb 23:59: 0&rbrace;59 2026 GMT
+    * utgångsdatum: feb 23:59: 0}59 2026 GMT
     * utfärdare: C=US; O=DigiCert Inc; CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
     * ämne: C=US; ST=California; L=San Jose; O=Adobe Systems Incorporated; CN=USA; target.example.com======= ✅ avslutning [edge shard: TYO-pool.data.adobedc.net] =====
     * förfallodatum: 20 feb 23:59:59 2026 GMT
