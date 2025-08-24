@@ -4,9 +4,9 @@ description: Adobe Target Delivery API Overview
 keywords: leverans-API
 exl-id: e760bddc-b1ae-4b7b-bff2-aba81c6b6d34
 feature: APIs/SDKs
-source-git-commit: ccc27e66207e58dcd33865e5d28a51644e8e1931
+source-git-commit: 413b16ed0b098de6914558fa29b9ca59aaba958e
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '177'
 ht-degree: 0%
 
 ---
@@ -22,21 +22,6 @@ Med [!UICONTROL Adobe Target's Delivery API] kan du:
 * Leverera enhetliga och personaliserade upplevelser till en användare oavsett vilken kanal eller vilka enheter användaren har interagerat med företaget.
 * Cachelagra upplevelser för en användare i en session på servern så att flera API-anrop kan undvikas, vilket ger bättre prestanda.
 * Integrera sömlöst med [!DNL Adobe Experience Cloud] produkter som [!DNL Adobe Analytics], [!DNL Adobe Audience Manager] och [!DNL Experience Cloud ID Service] från serversidan.
-
->[!IMPORTANT]
->
->Var försiktig när du uppdaterar [!DNL Recommendations] [!UICONTROL Catalog] via [!DNL Delivery API]. [!DNL Delivery API] är offentlig, så undvik att använda den för att fylla i klickbara objekt i din rekommendationskatalog. Om du gör det kan innehållet bli ogiltigt och katalogen förorenas.
->
->God praxis:
->
->Använd bara [!DNL Delivery API] för att uppdatera katalogattribut som:
->* Ändra ofta (till exempel pris, aktienivå).
->* Använd ett fördefinierat format som enkelt kan valideras på webbplatsen.
->* Använd den inte för att lägga till eller ändra klickbara objekt eller annat overifierat innehåll.
->
->Vid behov kan du begära kundsupport för att inaktivera kataloguppdateringar via leverans-API:t.
-
-Mer information finns i dokumentationen för [[!UICONTROL Adobe Target Delivery API]](https://developer.adobe.com/target/implement/delivery-api/){target=_blank}.
 
 >[!NOTE]
 >
