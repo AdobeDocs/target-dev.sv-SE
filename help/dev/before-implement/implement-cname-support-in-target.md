@@ -4,7 +4,7 @@ description: Arbeta med [!UICONTROL Adobe Client Care] för att implementera st�
 title: Hur använder jag CNAME i Target?
 feature: Privacy & Security
 exl-id: 5709df5b-6c21-4fea-b413-ca2e4912d6cb
-source-git-commit: 71a8a2d9d324cd31452a4400d76052432efbfdd4
+source-git-commit: 4f28018a55d484f45ebbbce319d580450d3db68b
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -31,12 +31,13 @@ Instruktioner för hur du arbetar med [!DNL Adobe Client Care] för att implemen
    >
    >Adobe certifikatutfärdare, DigiCert, kan inte utfärda ett certifikat förrän det här steget har slutförts. Därför kan Adobe inte fullfölja din begäran om CNAME-implementering förrän det här steget är klart.
 
-1. [Fyll i det här formuläret](assets/FPC_Request_Form.xlsx) och inkludera det när du [öppnar en Adobe Client Care-biljett som begär CNAME-stöd](https://experienceleague.adobe.com/docs/target/using/cmp-resources-and-contact-information.html?lang=sv-SE&#reference_ACA3391A00EF467B87930A450050077C):
+1. [Fyll i det här formuläret](assets/FPC_Request_Form.xlsx) och inkludera det när du [öppnar en Adobe Client Care-biljett som begär CNAME-stöd](https://experienceleague.adobe.com/docs/target/using/cmp-resources-and-contact-information.html?#reference_ACA3391A00EF467B87930A450050077C):
 
    * [!DNL Adobe Target]-klientkod:
    * SSL-certifikatvärdnamn (exempel: `target.example.com target.example.org`):
    * Inköpare av SSL-certifikat (Adobe rekommenderas varmt, se Frågor och svar): Adobe/kund
    * Om kunden köper certifikatet, även kallat &quot;Bring Your Own Certificate&quot; (BYOC), fyll i dessa ytterligare uppgifter:
+
       * Certifikatorganisation (exempel: Company Inc):
       * Organisationsenhet för certifikat (valfritt, exempel: Marknadsföring):
       * Certifikatland (exempel: USA):
@@ -306,3 +307,4 @@ Ersätt `clientcode` med din klientkod och lägg sedan till texten eller bilden 
 
 * QA-läget är inte fast när du har CNAME och at.js 1.x eftersom det baseras på en cookie från tredje part. Du kan komma runt problemet genom att lägga till förhandsgranskningsparametrarna i varje URL som du navigerar till. QA-läget är fast när du har CNAME och at.js 2.x.
 * När du använder CNAME blir det mer sannolikt att storleken på cookie-huvudet för [!DNL Target] anrop ökar. Adobe rekommenderar att kakstorleken hålls under 8 kB.
+
