@@ -334,7 +334,7 @@ Använd följande kommandouppsättning (i kommandoradsterminalen i macOS eller L
 
    >[!NOTE]
    >
-   >Om det här verifieringskommandot misslyckas vid DNS-validering men du redan har gjort de nödvändiga DNS-ändringarna, kan du behöva vänta tills DNS-uppdateringarna har spridit sig helt. DNS-poster har en associerad [TTL (time-to-live)](https://en.wikipedia.org/wiki/Time_to_live#DNS_records) som anger cacheförfallotid för DNS-svar för dessa poster. Därför kan du behöva vänta åtminstone så länge som TTL:erna är klara. Du kan använda kommandot `dig target.example.com` eller [ G Suite-verktygslådan ](https://toolbox.googleapps.com/apps/dig/#CNAME) för att leta upp dina specifika TTL-filer. Information om hur du kontrollerar DNS-spridning över hela världen finns i [whatsmydns.net](https://whatsmydns.net/#CNAME).
+   >Om det här verifieringskommandot misslyckas vid DNS-validering men du redan har gjort de nödvändiga DNS-ändringarna, kan du behöva vänta tills DNS-uppdateringarna har spridit sig helt. DNS-poster har en associerad [TTL (time-to-live)](https://en.wikipedia.org/wiki/Time_to_live#DNS_records) som anger cacheförfallotid för DNS-svar för dessa poster. Därför kan du behöva vänta åtminstone så länge som TTL:erna är klara. Du kan använda kommandot `dig target.example.com` eller [&#x200B; G Suite-verktygslådan &#x200B;](https://toolbox.googleapps.com/apps/dig/#CNAME) för att leta upp dina specifika TTL-filer. Information om hur du kontrollerar DNS-spridning över hela världen finns i [whatsmydns.net](https://whatsmydns.net/#CNAME).
 
 ### Hur använder jag en länk för avanmälan med CNAME?
 
