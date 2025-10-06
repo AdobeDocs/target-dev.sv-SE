@@ -19,7 +19,7 @@ Instruktioner för hur du arbetar med [!DNL Adobe] Client Care för att implemen
 ## Begär CNAME-stöd i [!DNL Target]
 
 1. Bestäm listan med värdnamn som du behöver för ditt SSL-certifikat (se Vanliga frågor och svar nedan).
-1. [Fyll i det här formuläret](/help/dev/implement/assets/FPC_Request_Form.xlsx) och inkludera det när du [öppnar en [!DNL Adobe] kundtjänstbiljett som begär CNAME-stöd](https://experienceleague.adobe.com/en/docs/target/using/cmp-resources-and-contact-information#reference_ACA3391A00EF467B87930A450050077C):
+1. [Fyll i det här formuläret](/help/dev/implement/assets/FPC_Request_Form.xlsx) och inkludera det när du [öppnar en [!DNL Adobe] kundtjänstbiljett som begär CNAME-stöd](https://experienceleague.adobe.com/sv/docs/target/using/cmp-resources-and-contact-information#reference_ACA3391A00EF467B87930A450050077C):
 
    * [!DNL Adobe Target]-klientkod:
    * SSL-certifikatvärdnamn (exempel: `target.example.com target.example.org`):
