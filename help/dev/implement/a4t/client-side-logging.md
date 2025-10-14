@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Loggning på klientsidan för A4T-data i [!DNL Experience Platform Web SDK]
 
-Med [!DNL Adobe Experience Platform Web SDK] kan du samla in [ Adobe Analytics for Target-data (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE) på klientsidan av webbprogrammet.
+Med [!DNL Adobe Experience Platform Web SDK] kan du samla in [&#x200B; Adobe Analytics for Target-data (A4T)](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE) på klientsidan av webbprogrammet.
 
 Loggning på klientsidan innebär att relevanta [!DNL Target]-data returneras på klientsidan, vilket gör att du kan samla in data och dela dem med [!DNL Analytics]. Det här alternativet bör vara aktiverat om du tänker skicka data manuellt till Analytics med [API:t för datainfogning](https://experienceleague.adobe.com/docs/analytics/import/c-data-insertion-api.html?lang=sv-SE).
 
@@ -225,7 +225,7 @@ I följande underavsnitt visas hur du implementerar [!DNL Analytics]-loggning p�
 
 ### [!UICONTROL Form-Based Experience Composer] aktiviteter {#form-based-composer}
 
-Du kan använda [!DNL Platform Web SDK] för att styra körningen av förslag från [ Adobe Target Form-Based Experience Composer ](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE) -aktiviteter.
+Du kan använda [!DNL Platform Web SDK] för att styra körningen av förslag från [&#x200B; Adobe Target Form-Based Experience Composer &#x200B;](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE) -aktiviteter.
 
 När du begär förslag för ett specifikt beslutsområde innehåller det returnerade förslaget en lämplig [!DNL Analytics]-token. Det bästa sättet är att kedja kommandot [!DNL Experience Platform Web SDK] `sendEvent` och iterera genom de returnerade förslagen för att köra dem när [!DNL Analytics]-tokenen samlas in samtidigt.
 

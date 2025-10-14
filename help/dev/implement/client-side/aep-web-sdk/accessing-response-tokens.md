@@ -27,7 +27,7 @@ alloy("sendEvent", {
   });
 ```
 
-I det här exemplet är `result.propositions`, om det finns, en matris som innehåller personaliseringsförslag som är relaterade till händelsen. Mer information om innehållet i [ finns i ](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)Återge anpassat innehåll`result.propositions.`
+I det här exemplet är `result.propositions`, om det finns, en matris som innehåller personaliseringsförslag som är relaterade till händelsen. Mer information om innehållet i [&#x200B; finns i &#x200B;](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/personalization/rendering-personalization-content)Återge anpassat innehåll`result.propositions.`
 
 Anta att du vill samla alla aktivitetsnamn från alla utkast som automatiskt återges av SDK på webben och överföra dem till en enda array. Du kan sedan skicka den enskilda arrayen till en tredje part. I detta fall:
 

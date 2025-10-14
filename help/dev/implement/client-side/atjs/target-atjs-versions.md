@@ -457,7 +457,7 @@ Följande förbättringar och korrigeringar ingår i .js version 1.0:
 * Fel-/felrapportering för anpassade händelser under aktivitetsleverans.
 * Åtgärda prestandaproblem i Microsoft Internet Explorer 11.
 * Korrigera funktionen `getOffer()` som genererar ett fel på vissa webbplatser.
-* Läs in biblioteket [!DNL Target] asynkront. Mer information finns i [at.js Vanliga frågor ](/help/dev/implement/client-side/atjs/target-atjs-faq.md).
+* Läs in biblioteket [!DNL Target] asynkront. Mer information finns i [at.js Vanliga frågor &#x200B;](/help/dev/implement/client-side/atjs/target-atjs-faq.md).
 
 ## at.js Version 0.9.7
 

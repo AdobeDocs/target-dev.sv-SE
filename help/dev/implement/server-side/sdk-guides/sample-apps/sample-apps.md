@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## Java
 
-[Fristående Java-appen Spring Boot ](https://github.com/adobe/target-java-sdk-samples)
+[Fristående Java-appen Spring Boot &#x200B;](https://github.com/adobe/target-java-sdk-samples)
 
 ## .NET
 

@@ -61,7 +61,7 @@ Du kan sedan även lägga till följande alternativ:
 
 ## Använda VEC:t [!UICONTROL Adobe Target]
 
-Om du vill använda VEC med en [!DNL Web SDK]-implementering installerar och aktiverar du [ Firefox ](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://experienceleague.adobe.com/sv/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension) VEC Helper Extension.
+Om du vill använda VEC med en [!DNL Web SDK]-implementering installerar och aktiverar du [&#x200B; Firefox &#x200B;](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome](https://experienceleague.adobe.com/sv/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension) VEC Helper Extension.
 
 Mer information finns i [Hjälptillägg för Visual Experience Composer](https://experienceleague.adobe.com/docs/target/using/experiences/vec/troubleshoot-composer/vec-helper-browser-extension.html?lang=sv-SE) i *Adobe Target-handboken*.
 

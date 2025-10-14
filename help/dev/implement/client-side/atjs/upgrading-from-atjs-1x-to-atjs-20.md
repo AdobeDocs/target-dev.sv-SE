@@ -766,7 +766,7 @@ at.js 2.*x* JSON-nyttolast:
 
 Version skickas som en frågesträngsparameter via versionsparametern.
 
-## Utbildningsvideo: at.js 2.*x* arkitekturdiagram ![Översikt ](../../assets/overview.png)
+## Utbildningsvideo: at.js 2.*x* arkitekturdiagram ![Översikt &#x200B;](../../assets/overview.png)
 
 at.js 2.*x* förbättrar Adobe [!DNL Target] stöd för SPA och kan integreras med andra Experience Cloud-lösningar. Den här videon förklarar hur allt hänger ihop.
 

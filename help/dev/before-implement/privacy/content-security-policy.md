@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # CSP-direktiv (Content Security Policy)
 
-Om du använder [Content Security Policy](https://en.wikipedia.org/wiki/Content_Security_Policy) (CSP) för din [!DNL Adobe Target] -implementering bör du lägga till följande CSP-direktiv när du använder [ at.js 2.1 eller senare](../../implement/client-side/atjs/target-atjs-versions.md):
+Om du använder [Content Security Policy](https://en.wikipedia.org/wiki/Content_Security_Policy) (CSP) för din [!DNL Adobe Target] -implementering bör du lägga till följande CSP-direktiv när du använder [&#x200B; at.js 2.1 eller senare](../../implement/client-side/atjs/target-atjs-versions.md):
 
 * `connect-src` med `*.tt.omtrdc.net` tillåtslista. Nödvändig för att tillåta nätverksbegäran till kanten [!DNL Target].
 * `style-src unsafe-inline`. Krävs för att dölja och flimra kontrollen.

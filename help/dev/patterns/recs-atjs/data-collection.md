@@ -22,7 +22,7 @@ Följ stegen i diagrammet *Datainsamling* för att se till att alla nödvändiga
 
 Datalagret är klart vid sidinläsning eller när datalagret ändras efter sidinläsning.
 
-Om du redan har mappat data under SDK-fasen [initiera ](/help/dev/patterns/recs-atjs/initialize-sdk.md) måste du köra stegen i det här diagrammet om:
+Om du redan har mappat data under SDK-fasen [initiera &#x200B;](/help/dev/patterns/recs-atjs/initialize-sdk.md) måste du köra stegen i det här diagrammet om:
 
 * Ditt datalager har utökats på något sätt på samma sida och du vill skicka dessa ytterligare data till [!DNL Target]
 * Du vill skicka produktkatalogdata till [!DNL Target Recommendations]

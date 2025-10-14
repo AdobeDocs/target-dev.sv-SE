@@ -79,7 +79,7 @@ Target.getSessionId { (id, err) in
 
 ## Testa i webbvyerna
 
-Webbförhandsgranskningslänkar genereras på sidan [!UICONTROL Activity detail] genom att klicka på länken [[!UICONTROL Adobe QA] ](/help/dev/implement/mobile/target-mobile-preview.md) för att visa ett popup-fönster där varje förhandsgranskningslänk för upplevelsen kopieras, ungefär så här:
+Webbförhandsgranskningslänkar genereras på sidan [!UICONTROL Activity detail] genom att klicka på länken [[!UICONTROL Adobe QA] &#x200B;](/help/dev/implement/mobile/target-mobile-preview.md) för att visa ett popup-fönster där varje förhandsgranskningslänk för upplevelsen kopieras, ungefär så här:
 
 ```
 ?at_preview_token=mhFIzJSF7JWb-RsnakpBqi_s83Sl64hZp928VWpkwvI&at_preview_index=1_1&at_preview_listed_activities_only=true

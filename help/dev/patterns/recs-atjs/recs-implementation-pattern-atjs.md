@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # [!DNL Recommendations] implementeringsmönster med översikten at.js
 
-Det här implementeringsmönstret hjälper dig att förstå och skapa din [!DNL Adobe Target Recommendations]-implementering när du använder JavaScript-biblioteket [ at.js](/help/dev/implement/client-side/atjs/how-atjs-works/how-atjs-works.md).
+Det här implementeringsmönstret hjälper dig att förstå och skapa din [!DNL Adobe Target Recommendations]-implementering när du använder JavaScript-biblioteket [&#x200B; at.js](/help/dev/implement/client-side/atjs/how-atjs-works/how-atjs-works.md).
 
 Klicka på bilden för att expandera till helskärm.
 

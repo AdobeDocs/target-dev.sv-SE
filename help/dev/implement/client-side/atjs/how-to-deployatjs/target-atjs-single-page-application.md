@@ -15,7 +15,7 @@ ht-degree: 0%
 
 Traditionella webbplatser arbetade på&quot;sida-till-sida&quot;-navigeringsmodeller, som annars kallas för flersidiga program, där webbplatsdesign var nära kopplad till webbadresser och övergångar mellan olika webbsidor kräver en sidladdning. Moderna webbprogram, som SPA (Single Page Applications), använder i stället en modell som möjliggör snabb användning av webbläsargränssnittsåtergivning, som ofta är oberoende av sidomladdning. De här upplevelserna triggas ofta av kundinteraktioner som rullningar, klick och markörrörelser. I takt med att de moderna webbens paradigmer har utvecklats fungerar inte längre de traditionella generiska eventernas relevans, som sidladdning, för personalisering och experimenterande.
 
-![Traditionell sidlivscykel jämfört med SPA ](assets/trad-vs-spa.png)
+![Traditionell sidlivscykel jämfört med SPA &#x200B;](assets/trad-vs-spa.png)
 
 at.js 2.x innehåller många funktioner som gör det möjligt för ditt företag att utföra personalisering på nästa generations klienttekniker. Den här versionen fokuserar på att förbättra at.js för att få harmonisk interaktion med SPA.
 
@@ -120,7 +120,7 @@ Nu när vi har täckt det som [!DNL Adobe Target] vyer är kan vi utnyttja det h
  <Router history={hashHistory} onUpdate={targetView} >
 ```
 
-**Länk: [Produkter ](https://target.enablementadobe.com/react/demo/#/products)**
+**Länk: [Produkter &#x200B;](https://target.enablementadobe.com/react/demo/#/products)**
 
 Låt oss titta på ett exempel som är lite mer komplicerat. Som marknadsförare vill vi personalisera produktraden genom att ändra etikettfärgen&quot;Price&quot; till röd efter att en användare klickat på knappen Läs in mer.
 

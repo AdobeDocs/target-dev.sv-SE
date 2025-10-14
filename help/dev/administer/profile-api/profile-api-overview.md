@@ -17,7 +17,7 @@ En användarprofil innehåller demografisk information och beteendeinformation o
 
 Profilinformationen för varje besökare lagras antingen i cookies eller i tredjepartsappar.
 
-Om din webbsida implementerar [!DNL Target]-koden ([ at.js](/help/dev/implement/client-side/atjs/how-atjs-works/how-atjs-works.md) eller [Adobe Experience Platform Web SDK](/help/dev/implement/client-side/aep-web-sdk/aep-web-sdk-overview.md)) skickas profilinformationen från cookies till [!DNL Target] med hjälp av profilparametrar. [!DNL Target] identifierar varje besökare unikt via en `pcID` som den genererar i besökarens cookies. Du kan emellertid skicka profilparametrar från en extern app via mbox-anrop med `mbox3rdPartyIds`.
+Om din webbsida implementerar [!DNL Target]-koden ([&#x200B; at.js](/help/dev/implement/client-side/atjs/how-atjs-works/how-atjs-works.md) eller [Adobe Experience Platform Web SDK](/help/dev/implement/client-side/aep-web-sdk/aep-web-sdk-overview.md)) skickas profilinformationen från cookies till [!DNL Target] med hjälp av profilparametrar. [!DNL Target] identifierar varje besökare unikt via en `pcID` som den genererar i besökarens cookies. Du kan emellertid skicka profilparametrar från en extern app via mbox-anrop med `mbox3rdPartyIds`.
 
 Använd profil-API:erna för [!DNL Adobe Target] när du har profildata om dina besökare att skicka till [!DNL Target] som du antingen inte kan eller inte vill skicka som en del av den sidbaserade integrationen med [!DNL Target]. Det kan vara data från ett CRM- eller POS-system (Customer Relationship Management) som inte är tillgängligt på sidan. Eller så kan dessa data vara mer känsliga och inte vettiga att skicka vidare på sidan.
 

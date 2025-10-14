@@ -32,7 +32,7 @@ Anteckningar:
 * Om en av parametrarna inte anges genereras ett undantag.
 * Om modularrayen är tom genereras ett undantag.
 
-Mer information och exempel på hur du använder `[!UICONTROL registerExtension]` finns på sidan [ Adobe Experience Cloud Target atjs Extensions ](https://github.com/Adobe-Marketing-Cloud/target-atjs-extensions) på GitHub.
+Mer information och exempel på hur du använder `[!UICONTROL registerExtension]` finns på sidan [&#x200B; Adobe Experience Cloud Target atjs Extensions &#x200B;](https://github.com/Adobe-Marketing-Cloud/target-atjs-extensions) på GitHub.
 
 ## Metoder för inställningsmodulen
 

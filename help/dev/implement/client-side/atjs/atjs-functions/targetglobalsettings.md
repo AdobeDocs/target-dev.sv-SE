@@ -421,7 +421,7 @@ När inställningarna för `cspScriptNonce` och `cspStyleNonce` har angetts ange
 Du måste ha en hybridintegrering av [!DNL Target].
 
 * **Server-side**: Du måste använda [leverans-API](/help/dev/implement/delivery-api/overview.md) eller [mål-SDK](/help/dev/implement/server-side/sdk-guides/getting-started/getting-started.md).
-* **Klientsidan**: Du måste använda [ at.js version 2.2 eller senare](/help/dev/implement/client-side/atjs/target-atjs-versions.md).
+* **Klientsidan**: Du måste använda [&#x200B; at.js version 2.2 eller senare](/help/dev/implement/client-side/atjs/target-atjs-versions.md).
 
 ### Kodexempel
 

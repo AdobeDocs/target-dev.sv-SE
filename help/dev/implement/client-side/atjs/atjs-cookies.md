@@ -113,7 +113,7 @@ Cookien har flera standardinställningar. Du kan ändra de här inställningarna
 | Kaknamn | mbox. |
 | Cookie-domän | Den andra och den översta nivån i de domäner som du underhåller innehållet från. Eftersom cookie används av ditt företags domän är den en cookie från första part. Exempel: `mycompany.com`. |
 | Serverdomän | `clientcode.tt.omtrdc.net`, använder klientkoden för ditt konto. |
-| Cookie-varaktighet | Cookien finns kvar i besökarens webbläsare två år efter hans eller hennes senaste inloggning.<P>Inställningen `deviceIdLifetime` kan åsidosättas i [ at.js version 2.3.1 eller senare](../atjs/target-atjs-versions.md). Mer information finns i [targetGlobalSettings()](../../../implement/client-side/atjs/atjs-functions/targetglobalsettings.md). |
+| Cookie-varaktighet | Cookien finns kvar i besökarens webbläsare två år efter hans eller hennes senaste inloggning.<P>Inställningen `deviceIdLifetime` kan åsidosättas i [&#x200B; at.js version 2.3.1 eller senare](../atjs/target-atjs-versions.md). Mer information finns i [targetGlobalSettings()](../../../implement/client-side/atjs/atjs-functions/targetglobalsettings.md). |
 | P3P-princip | Cookien publiceras med en P3P-princip, vilket krävs enligt standardinställningen i de flesta webbläsare. En P3P-profil anger för en webbläsare som skickar cookien och hur informationen ska användas. |
 
 Cookien har ett antal värden för att hantera hur besökarna upplever kampanjer:

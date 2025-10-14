@@ -61,7 +61,7 @@ target_client.send_notifications(options)
 | target_location_hint_cookie | dict | Webbplatstipscookie för [!DNL Target] |
 | analytics_details | list[AnalyticsResponse] | [!DNL Analytics] nyttolast, om [!DNL Analytics] används på klientsidan |
 | trace |  | list[dict] | Sammanlagda spårningsdata för alla begärandemrutor/vyer |
-| response_tokens | list[dict] | En lista med [ &#x200B; svarstoken ](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE) |
+| response_tokens | list[dict] | En lista med [&#x200B; &#x200B; svarstoken &#x200B;](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE) |
 | meta | dict | Ytterligare metadata för beslutsfattande som kan användas med enhetsspecifik beslutsfattande |
 
 ## Exempel

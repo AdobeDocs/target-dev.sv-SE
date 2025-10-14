@@ -15,4 +15,4 @@ ht-degree: 0%
 
 [!DNL Adobe Target] erbjuder en unik hybriddistributionsmodell för personalisering, som blandar implementeringar på klient- och serversidan. Den här hybridmodellen tillåter icke-tekniska användare att skapa ett experiment eller en personaliseringsaktivitet med WYSIWYG [!UICONTROL Visual Experience Composer] (VEC) och låta upplevelsen köras, levereras och återges av servern för att ge en högpresterande leverans.
 
-Mer information finns i [Hybrid-distribution i Adobe](https://experienceleague.adobe.com/docs/target-learn/tutorials/implementation/hybrid-deployment.html?lang=sv-SE) i [Adobe Target Tutorials ](https://experienceleague.adobe.com/docs/target-learn/tutorials/overview.html?lang=sv-SE).
+Mer information finns i [Hybrid-distribution i Adobe](https://experienceleague.adobe.com/docs/target-learn/tutorials/implementation/hybrid-deployment.html?lang=sv-SE) i [Adobe Target Tutorials &#x200B;](https://experienceleague.adobe.com/docs/target-learn/tutorials/overview.html?lang=sv-SE).

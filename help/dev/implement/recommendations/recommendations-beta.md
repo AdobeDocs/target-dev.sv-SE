@@ -24,7 +24,7 @@ Information som kan hjälpa dig att planera och implementera [!DNL Adobe Target 
 Innan du konfigurerar din första [!UICONTROL Recommendations]-aktivitet i [!DNL Adobe Target] utför du följande steg:
 
 1. [Implementera [!UICONTROL Target]](#implement-target) på de webbsidor och mobilappsytor som du vill använda för att hämta användarbeteenden och leverera rekommendationer.
-1. [Konfigurera din [!UICONTROL Recommendations] katalog ](#set-up-your-recommendations-catalog) med produkter eller innehåll som du vill rekommendera dina användare.
+1. [Konfigurera din [!UICONTROL Recommendations] katalog &#x200B;](#set-up-your-recommendations-catalog) med produkter eller innehåll som du vill rekommendera dina användare.
 1. [Skicka beteendeinformation och kontext](#pass-behavioral-information-and-context) till [!DNL Target Recommendations] så att den kan leverera personaliserade rekommendationer.
 1. [Konfigurera globala undantag](#configure-global-exclusions).
 1. [Konfigurera [!UICONTROL Recommendations] inställningar](#configure-recommendations-settings).
@@ -32,7 +32,7 @@ Innan du konfigurerar din första [!UICONTROL Recommendations]-aktivitet i [!DNL
 
 ## 1. Implementera [!UICONTROL Target]
 
-[!DNL Target Recommendations] kräver att du implementerar [!DNL Adobe Experience Platform Web SDK] eller at.js 0.9.2 (eller senare). Mer information finns i implementeringsguiderna för [[!UICONTROL Target] på klientsidan ](../client-side/overview.md).
+[!DNL Target Recommendations] kräver att du implementerar [!DNL Adobe Experience Platform Web SDK] eller at.js 0.9.2 (eller senare). Mer information finns i implementeringsguiderna för [[!UICONTROL Target] på klientsidan &#x200B;](../client-side/overview.md).
 
 ## 2. Konfigurera [!UICONTROL Recommendations]-katalogen
 
@@ -192,7 +192,7 @@ I allmänhet är det bäst att bara visa kompatibla villkor. Om du vill att inko
 
 Adobe rekommenderar att du inaktiverar det här alternativet om du använder en tagghanteringslösning.
 
-Mer information om det här alternativet finns i [[!UICONTROL Recommendations] Vanliga frågor ](https://experienceleague.adobe.com/sv/docs/target/using/recommendations/recommendations-faq/recommendations-faq){target=_blank} i *[!DNL Adobe Target]Business Practitioner-handboken*.
+Mer information om det här alternativet finns i [[!UICONTROL Recommendations] Vanliga frågor &#x200B;](https://experienceleague.adobe.com/sv/docs/target/using/recommendations/recommendations-faq/recommendations-faq){target=_blank} i *[!DNL Adobe Target]Business Practitioner-handboken*.
 
 ### [!UICONTROL Product Catalog]
 

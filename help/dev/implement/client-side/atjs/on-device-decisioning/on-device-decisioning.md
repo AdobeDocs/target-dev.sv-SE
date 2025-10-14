@@ -228,7 +228,7 @@ Aktivera [!UICONTROL on-device decisioning]:
 1. Klicka på **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** > **[!UICONTROL Account details]**.
 1. Under **[!UICONTROL Account details]** flyttar du växlingsknappen **[!UICONTROL On-Device Decisioning]** till läget&quot;på&quot;.
 
-   ![[!UICONTROL On-device decisioning] växla ](assets/on-device-decisioning-toggle.png)
+   ![[!UICONTROL On-device decisioning] växla &#x200B;](assets/on-device-decisioning-toggle.png)
 
    Alternativet Inkludera alla befintliga [!UICONTROL on-device decisioning] kvalificerade aktiviteter i artefakten visas om du aktiverar [!UICONTROL on-device decisioning].
 1. (Villkorligt) Skjut växeln till&quot;på&quot;-positionen om du vill att alla dina [!DNL Target]-aktiviteter som kvalificerar för [!UICONTROL on-device decisioning] automatiskt ska inkluderas i artefakten.
@@ -282,7 +282,7 @@ Du kan konfigurera en standardmetod för beslutsfattande för alla [!DNL Target]
 
 ### Anpassad inställning
 
-Om du anger `decisioningMethod` i `window.targetGlobalSettings`, men vill åsidosätta `decisioningMethod` för varje [!DNL Adobe Target]-beslut enligt ditt användningsexempel, kan du göra den här proceduren genom att ange `decisioningMethod` i [ getOffers()](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md) -anropet för At.js2.5.0+.
+Om du anger `decisioningMethod` i `window.targetGlobalSettings`, men vill åsidosätta `decisioningMethod` för varje [!DNL Adobe Target]-beslut enligt ditt användningsexempel, kan du göra den här proceduren genom att ange `decisioningMethod` i [&#x200B; getOffers()](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md) -anropet för At.js2.5.0+.
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffers({ 

@@ -222,7 +222,7 @@ För att [!DNL Target] ska kunna spåra användare korrekt och eftersom cookies 
 
 ## Hur hanterar at.js säkerhetsproblem som XSS- och MITM-attacker?
 
-Kommunikation med Adobe Edge-nätverket, som aktiveras av at.js, sker bara via HTTPS så länge alternativet `secureOnly` är true i funktionen targetGlobalSettings() ([ targetGlobalSettings](/help/dev/implement/client-side/atjs/atjs-functions/targetglobalsettings.md)), annars kan at.js växla mellan HTTP och HTTPS baserat på sidprotokollet.
+Kommunikation med Adobe Edge-nätverket, som aktiveras av at.js, sker bara via HTTPS så länge alternativet `secureOnly` är true i funktionen targetGlobalSettings() ([&#x200B; targetGlobalSettings](/help/dev/implement/client-side/atjs/atjs-functions/targetglobalsettings.md)), annars kan at.js växla mellan HTTP och HTTPS baserat på sidprotokollet.
 
 Följande rubriker används som standard:
 * HTTP Strict Transport Security (HSTS)

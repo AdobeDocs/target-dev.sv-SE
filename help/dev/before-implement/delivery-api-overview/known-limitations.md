@@ -17,7 +17,7 @@ I följande information visas överväganden och kända begränsningar för anv�
 
 * Det finns ingen autentisering för [!DNL Target] leverans-API:er.
 * Detta API bearbetar inte cookies eller omdirigeringsanrop.
-* Både HTTP/1.1- och HTTP/2-rubriknamn är skiftlägeskänsliga, men HTTP/2 använder gemena rubriknamn. Mer information finns i [Hypertext Transfer Protocol version 2 (HTTP/2) ](https://www.rfc-editor.org/rfc/rfc7540#section-8.1.2){target=_blank} -dokumentationen.
+* Både HTTP/1.1- och HTTP/2-rubriknamn är skiftlägeskänsliga, men HTTP/2 använder gemena rubriknamn. Mer information finns i [Hypertext Transfer Protocol version 2 (HTTP/2) &#x200B;](https://www.rfc-editor.org/rfc/rfc7540#section-8.1.2){target=_blank} -dokumentationen.
 
   Om du använder en slutpunkt som dirigerar besökare genom vår nya infrastruktur för belastningsutjämning uppgraderas deras deras anslutningar automatiskt till HTTP/2. Den här uppgraderingsprocessen konverterar begäranrubriker till gemena rubriker så att de inte betraktas som felformaterade.
 

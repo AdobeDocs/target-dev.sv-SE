@@ -15,4 +15,4 @@ ht-degree: 0%
 
 Hantera användare och produktbehörigheter via [!UICONTROL Adobe User Management] och [!UICONTROL User Sync API]s.
 
-Mer information finns i [Hantera användare och produktbehörigheter, API-metoden ](https://developer.adobe.com/umapi/){target=_blank} på webbplatsen *Adobe Developer*.
+Mer information finns i [Hantera användare och produktbehörigheter, API-metoden &#x200B;](https://developer.adobe.com/umapi/){target=_blank} på webbplatsen *Adobe Developer*.

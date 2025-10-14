@@ -71,7 +71,7 @@ Mer information finns i [Implementera tjänsten Experience Cloud för mål](http
 * [Översikt över identitetstjänsten i Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/intro/overview.html?lang=sv-SE){target=_blank}
 * [Om ID-tjänsten](https://experienceleague.adobe.com/docs/id-service/using/intro/about-id-service.html?lang=sv-SE){target=_blank}
 * [Cookies och Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/intro/cookies.html?lang=sv-SE){target=_blank}
-* [Så här begär och anger identitetstjänsten i Experience Cloud ](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=sv-SE){target=_blank}
+* [Så här begär och anger identitetstjänsten i Experience Cloud &#x200B;](https://experienceleague.adobe.com/docs/id-service/using/intro/id-request.html?lang=sv-SE){target=_blank}
 * [Förstå ID-synkronisering och matchningsfrekvenser](https://experienceleague.adobe.com/docs/id-service/using/intro/match-rates.html?lang=sv-SE){target=_blank}
 
 **Åtgärder**
