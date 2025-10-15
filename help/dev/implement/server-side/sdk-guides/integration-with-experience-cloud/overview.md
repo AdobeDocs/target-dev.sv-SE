@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Integrering med [!DNL Experience Cloud] - översikt
 
-[!DNL Adobe Target] SDK:er på serversidan stöder en sömlös integrering med [Adobe Analytics](https://business.adobe.com/products/analytics/adobe-analytics.html) och [Adobe Audience Manager](https://business.adobe.com/products/audience-manager/adobe-audience-manager.html) så att du kan utnyttja kraften i [!DNL Adobe Experience Cloud].
+[!DNL Adobe Target] SDK:er på serversidan stöder en sömlös integrering med [Adobe Analytics](https://business.adobe.com/se/products/analytics/adobe-analytics.html) och [Adobe Audience Manager](https://business.adobe.com/se/products/audience-manager/adobe-audience-manager.html) så att du kan utnyttja kraften i [!DNL Adobe Experience Cloud].
 
 Läs mer om dessa integreringar i referenserna nedan:
 

@@ -17,7 +17,7 @@ Information om EU:s allmänna dataskyddsförordning (GDPR), Kaliforniens konsume
 
 ## Översikt över dataskyddsförordningen och den allmänna dataskyddsförordningen
 
-Den 25 maj 2018 trädde Europeiska unionens allmänna dataskyddsprogram i kraft. Mer information om vad den här förordningen betyder för dig finns i [GDPR och ditt företag](https://business.adobe.com/privacy/general-data-protection-regulation.html).
+Den 25 maj 2018 trädde Europeiska unionens allmänna dataskyddsprogram i kraft. Mer information om vad den här förordningen betyder för dig finns i [GDPR och ditt företag](https://business.adobe.com/se/privacy/general-data-protection-regulation.html).
 
 När Adobe tillhandahåller programvara och tjänster till ett företag fungerar Adobe som databehandlare för alla personuppgifter som behandlas och lagras som en del av tillhandahållandet av dessa tjänster. Som databehandlare behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner (till exempel enligt vad som anges i ditt avtal med Adobe).
 
