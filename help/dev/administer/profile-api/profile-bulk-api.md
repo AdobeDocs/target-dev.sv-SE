@@ -4,9 +4,9 @@ description: Lär dig hur du använder  [!DNL Adobe Target] [!UICONTROL Bulk Pro
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
 exl-id: 0f38d109-5273-4f73-9488-80eca115d44d
-source-git-commit: dae198fd8ef3fc8473ad31807c146802339b1832
+source-git-commit: 38ed32560170e5a8f472aa191bb5a24d4e13cde7
 workflow-type: tm+mt
-source-wordcount: '917'
+source-wordcount: '1078'
 ht-degree: 0%
 
 ---
@@ -49,13 +49,13 @@ Med hjälp av [!UICONTROL Bulk Profile Update API] kan du enkelt skicka detaljer
 
 Om du vill uppdatera flera profildata samtidigt skapar du en gruppfil. Gruppfilen är en textfil med värden som avgränsas med kommatecken som liknar följande exempelfil.
 
-``` ```
+``````
 batch=pcId,param1,param2,param3,param4
 123,value1
 124,value1,,,value4
 125,,value2
 126,value1,value2,value3,value4
-``` ```
+``````
 
 >[!NOTE]
 >
@@ -77,9 +77,9 @@ Du refererar till den här filen i POST-anropet till [!DNL Target] servrar för 
 
 Gör en HTTP POST-begäran till [!DNL Target] edge-servrar för att bearbeta filen. Här följer ett exempel på en HTTP POST-begäran för filen batch.txt med kommandot curl:
 
-``` ```
+``````
 curl -X POST --data-binary @BATCH.TXT http://CLIENTCODE.tt.omtrdc.net/m2/CLIENTCODE/v2/profile/batchUpdate
-``` ```
+``````
 
 Var:
 
@@ -144,3 +144,25 @@ http://mboxedge45.tt.omtrdc.net/m2/demo/profile/batchStatus?batchId=demo-1701473
     <failedUpdates>0</failedUpdates>
 </response>
 ```
+
+## Tydligare hantering av tomma värden i [!DNL Bulk Profile Update API]
+
+När du använder [!DNL Target] [!DNL Bulk Profile Update API] (v1 eller v2) är det viktigt att förstå hur systemet hanterar tomma parameter- eller attributvärden.
+
+### Förväntat beteende
+
+Om du skickar tomma värden (&quot;&quot;, null eller saknade fält) för befintliga parametrar eller attribut återställs eller tas inte dessa värden bort i profilarkivet. Det här är designat.
+
+Tomma värden ignoreras: API:t filtrerar bort tomma värden under bearbetningen för att undvika onödiga eller meningslösa uppdateringar.
+
+**Ingen rensning av befintliga data**: Om en parameter redan har ett värde ändras inte om du skickar ett tomt värde.
+
+**Tomma batchar ignoreras**: Om en batch bara innehåller tomma värden eller null ignoreras den helt och inga uppdateringar tillämpas.
+
+### Ytterligare information
+
+Detta beteende gäller både v1 och v2 för [!DNL Bulk Profile Update API].
+
+Försök att ta bort eller ta bort ett attribut genom att skicka ett tomt värde har ingen effekt.
+
+Stöd för explicit attributborttagning planeras för en framtida version (v3) av API:t, men är för närvarande inte tillgängligt.
