@@ -3,7 +3,7 @@ title: Skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target] med Pyt
 description: Lär dig hur du använder sendNotifications() för att skicka visnings- eller klickmeddelanden till  [!DNL Adobe Target]  för mätning och rapportering.
 feature: APIs/SDKs
 exl-id: 03827b18-a546-4ec8-8762-391fcb3ac435
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '405'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 >
 >När ett `execute`-objekt med obligatoriska parametrar finns i själva begäran, ökas intrycket automatiskt för kvalificerande aktiviteter.
 
-SDK-metoder som automatiskt ökar ett intryck är:
+SDK-metoder som automatiskt ökar intrycket är:
 
 * `get_offers()`
 * `get_attributes()`
@@ -60,8 +60,8 @@ target_client.send_notifications(options)
 | target_cookie | dict | [!DNL Target]-cookie |
 | target_location_hint_cookie | dict | Webbplatstipscookie för [!DNL Target] |
 | analytics_details | list[AnalyticsResponse] | [!DNL Analytics] nyttolast, om [!DNL Analytics] används på klientsidan |
-| trace |  | list[dict] | Sammanlagda spårningsdata för alla begärandemrutor/vyer |
-| response_tokens | list[dict] | En lista med [&#x200B; &#x200B; svarstoken &#x200B;](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html?lang=sv-SE) |
+| trace | list[dict] | Sammanlagda spårningsdata för alla begärandemrutor/vyer |
+| response_tokens | list[dict] | En lista med [ &#x200B; svarstoken ](https://experienceleague.adobe.com/docs/target/using/administer/response-tokens.html) |
 | meta | dict | Ytterligare metadata för beslutsfattande som kan användas med enhetsspecifik beslutsfattande |
 
 ## Exempel

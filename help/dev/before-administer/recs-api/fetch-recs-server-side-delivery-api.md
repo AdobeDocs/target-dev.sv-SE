@@ -6,7 +6,7 @@ kt: 3815
 thumbnail: null
 author: Judy Kim
 exl-id: 9b391f42-2922-48e0-ad7e-10edd6125be6
-source-git-commit: 526445fccee9b778b7ac0d7245338f235f11d333
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '1286'
 ht-degree: 0%
@@ -42,9 +42,9 @@ Följ de här stegen för att använda Delivery API för att leverera Target-upp
 
 ## Skapa en rekommendation med den formulärbaserade Experience Composer
 
-Använd [formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE) om du vill skapa rekommendationer som kan användas med leverans-API:t.
+Använd [formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) om du vill skapa rekommendationer som kan användas med leverans-API:t.
 
-1. Först skapar och sparar du en JSON-baserad design som du kan använda i dina rekommendationer. Exempel-JSON, plus bakgrundsinformation om hur JSON-svar kan returneras när en formulärbaserad aktivitet konfigureras, finns i dokumentationen om [Skapa rekommendationsdesigner](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-design/create-design.html?lang=sv-SE). I det här exemplet heter designen *Simple JSON.*
+1. Först skapar och sparar du en JSON-baserad design som du kan använda i dina rekommendationer. Exempel-JSON, plus bakgrundsinformation om hur JSON-svar kan returneras när en formulärbaserad aktivitet konfigureras, finns i dokumentationen om [Skapa rekommendationsdesigner](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-design/create-design.html). I det här exemplet heter designen *Simple JSON.*
    ![server-side-create-recs-json-design.png](assets/server-side-create-recs-json-design.png)
 
 1. Gå till **[!UICONTROL Activities]** > **[!UICONTROL Create Activity]** > **[!UICONTROL Recommendations]** i Mål och välj sedan **[!UICONTROL Form]**.
@@ -54,7 +54,7 @@ Använd [formulärbaserad disposition](https://experienceleague.adobe.com/docs/t
 1. Välj en egenskap och klicka på **[!UICONTROL Next]**.
 1. Definiera den plats där du vill att användarna ska få rekommendationens svar. I exemplet nedan används en plats med namnet *api_charter*. Välj din JSON-baserade design, som skapades tidigare, med namnet *Simple JSON.*
    ![server-side-create-recs-form.png](assets/server-side-create-recs-form1.png)
-1. Spara och aktivera rekommendationen. Det kommer att generera resultat. [När resultaten är klara](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-activity/previewing-and-launching-your-recommendations-activity.html?lang=sv-SE) kan du hämta dem med leverans-API:t.
+1. Spara och aktivera rekommendationen. Det kommer att generera resultat. [När resultaten är klara](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-activity/previewing-and-launching-your-recommendations-activity.html) kan du hämta dem med leverans-API:t.
 
 ## Använda leverans-API
 
@@ -64,11 +64,10 @@ Syntaxen för [leverans-API](/help/dev/implement/delivery-api/overview.md) är:
 
 1. Observera att klientkoden krävs. Som en påminnelse hittar du din klientkod i Adobe Target genom att gå till **[!UICONTROL Recommendations]** > **[!UICONTROL Settings]**. Observera värdet **Klientkod** i avsnittet **API-token** för rekommendation.
    ![client-code.png](assets/client-code.png)
-1. När du har fått din klientkod konstruerar du ett leverans-API-anrop. Exemplet nedan börjar med **[!UICONTROL Web Batched Mboxes Delivery API Call]** som anges i [Postman-samlingen för leverans](../../implement/delivery-api/overview.md/#section/Getting-Started/Postman-Collection) och gör relevanta ändringar. Exempel:
+1. När du har fått din klientkod konstruerar du ett leverans-API-anrop. Exemplet nedan börjar med **[!UICONTROL Web Batched Mboxes Delivery API Call]** som anges i [Postman-samlingen för leverans](../../implement/delivery-api/overview.md#section/Getting-Started/Postman-Collection) och gör relevanta ändringar. Exempel:
    * objekten **browser** och **address** togs bort från **Body** eftersom de inte krävs för icke-HTML-bruk
    * *api_charter* listas som platsnamn i det här exemplet
    * entity.id anges eftersom den här rekommendationen baseras på innehållets likhet, vilket kräver att en aktuell artikelnyckel skickas till Target.
-
      ![server-side-Delivery-API-call.png](assets/server-side-delivery-api-call2.png)
 Kom ihåg att konfigurera frågeparametrarna korrekt. Ange till exempel `{{CLIENT_CODE}}` efter behov. &lt;!— Q: I den uppdaterade anropssyntaxen listas entity.id som en profileParameter i stället för en mboxParameter som i tidigare versioner. —> &lt;!— Q: Gammal bild ![server-side-create-recs-post.png](assets/server-side-create-recs-post.png) Gammal medföljande text: &quot;Observera att den här rekommendationen baseras på innehåll Liknande produkter baserat på entitet.id som skickas via mboxParameters.&quot; —>
      ![client-code3](assets/client-code3.png)
@@ -116,7 +115,7 @@ I ett [tidigare avsnitt](manage-catalog.md) lärde vi oss att hantera enheter me
 ## Referensdokumentation
 
 * [Dokumentation för Adobe Target Delivery API](/help/dev/implement/delivery-api/overview.md)
-* [Integrera rekommendationer med e-post](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-faq/integrating-recs-email.html?lang=sv-SE)
+* [Integrera rekommendationer med e-post](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-faq/integrating-recs-email.html)
 
 ## Sammanfattning och granskning
 

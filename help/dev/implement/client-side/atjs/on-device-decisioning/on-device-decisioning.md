@@ -4,7 +4,7 @@ description: Lär dig hur du utför [!UICONTROL on-device decisioning] med at.js
 title: Hur fungerar On-device Decisioning med JavaScript-biblioteket at.js?
 feature: at.js
 exl-id: bd0e062f-c259-46f3-adba-e380af058ac8
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '3478'
 ht-degree: 1%
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 # [!UICONTROL On-device decisioning] för at.js
 
-Från och med version 2.5.0 erbjuder at.js [!UICONTROL on-device decisioning]. Med [!UICONTROL On-device decisioning] kan du cachelagra dina [A/B Test](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html?lang=sv-SE) - och [Experience Targeting](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html?lang=sv-SE) (XT)-aktiviteter i webbläsaren för att utföra minnesbaserad beslutsfattande utan någon blockerande nätverksbegäran till Edge Network [!DNL Adobe Target].
+Från och med version 2.5.0 erbjuder at.js [!UICONTROL on-device decisioning]. Med [!UICONTROL On-device decisioning] kan du cachelagra dina [A/B Test](https://experienceleague.adobe.com/docs/target/using/activities/abtest/test-ab.html) - och [Experience Targeting](https://experienceleague.adobe.com/docs/target/using/activities/experience-targeting/experience-target.html) (XT)-aktiviteter i webbläsaren för att utföra minnesbaserad beslutsfattande utan någon blockerande nätverksbegäran till [!DNL Adobe Target] Edge Network.
 
 >[!NOTE]
 >
@@ -28,11 +28,11 @@ Fördelarna med [!UICONTROL on-device decisioning] är:
 * **Leverera blixtsnabba beslut och upplevelser.** Buckling och beslut utförs i minnet och i webbläsaren för att undvika blockering av nätverksbegäranden.
 * **Förbättra programmets prestanda.** Kör experiment och leverera personalisering till kunder och användare utan att kompromissa med slutanvändarupplevelserna.
 * **Förbättra Google Site Quality Score.** I och med att beslut fattas i minnet kan du förbättra Google Site Quality-poängen för ditt onlineföretag så att det blir lättare att identifiera för kunderna.
-* **Lär dig av realtidsanalyser.** Få insikter från aktivitetsprestanda i realtid via [Analytics for Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html?lang=sv-SE) (A4T)-rapportering. Med A4T kan ni styra er strategi vid kritiska ögonblick.
+* **Lär dig av realtidsanalyser.** Få insikter från aktivitetsprestanda i realtid via [Analytics for Target](https://experienceleague.adobe.com/docs/target/using/integrate/a4t/a4t.html) (A4T)-rapportering. Med A4T kan ni styra er strategi vid kritiska ögonblick.
 
 ## Funktioner som stöds
 
-JS SDK [!DNL Adobe Target] ger kunderna flexibilitet att välja mellan prestanda och aktualitet för data för beslut. Med andra ord, om det viktigaste är att leverera det mest relevanta och engagerande personaliserade innehållet via maskininlärning, bör du ringa ett live-serversamtal. Men när prestanda är viktigare bör man fatta beslut på enheten och i minnet. För att [!UICONTROL on-device decisioning] ska fungera, se listan över funktioner som stöds:
+JS-SDK [!DNL Adobe Target] ger kunderna flexibilitet att välja mellan prestanda och aktualitet för data för beslut. Med andra ord, om det viktigaste är att leverera det mest relevanta och engagerande personaliserade innehållet via maskininlärning, bör du ringa ett live-serversamtal. Men när prestanda är viktigare bör man fatta beslut på enheten och i minnet. För att [!UICONTROL on-device decisioning] ska fungera, se listan över funktioner som stöds:
 
 * Typ av aktivitet
 * Målgruppsanpassning
@@ -56,11 +56,11 @@ Med [!UICONTROL on-device decisioning] introducerar [!DNL Target] en ny inställ
 
 Endast på serversidan är den standardmetod för beslut som anges i rutan när at.js 2.5.0+ implementeras och distribueras på dina webbegenskaper.
 
-Om endast serversidan används som standardkonfiguration innebär det att alla beslut fattas i gränsnätverket [!DNL Target], vilket innebär ett blockerande serveranrop. Den här metoden kan innebära inkrementell fördröjning, men den ger också avsevärda fördelar, som att du kan använda [!DNL Target]s maskininlärningsfunktioner som omfattar [Recommendations](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html?lang=sv-SE)-, [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html?lang=sv-SE)- (AP) och [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html?lang=sv-SE) -aktiviteter.
+Om endast serversidan används som standardkonfiguration innebär det att alla beslut fattas i gränsnätverket [!DNL Target], vilket innebär ett blockerande serveranrop. Den här metoden kan innebära inkrementell fördröjning, men den ger också avsevärda fördelar, som att du kan använda [!DNL Target]s maskininlärningsfunktioner som inkluderar [Rekommendationer](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations.html), [Automated Personalization](https://experienceleague.adobe.com/docs/target/using/activities/automated-personalization/automated-personalization.html) (AP) och [Automatiskt mål](https://experienceleague.adobe.com/docs/target/using/activities/auto-target/auto-target-to-optimize.html) -aktiviteter.
 
 Dessutom kan förbättringar av dina personaliserade upplevelser genom att använda användarprofilen för [!DNL Target], som är beständig i olika sessioner och kanaler, ge ett kraftfullt resultat för ditt företag.
 
-Slutligen kan du bara använda Adobe Experience Cloud på serversidan och finjustera målgrupper som kan riktas mot Audience Manager och Adobe Analytics.
+Slutligen kan du bara använda Adobe Experience Cloud på serversidan och finjustera målgrupper som kan riktas mot dem via segmenten Audience Manager och Adobe Analytics.
 
 Följande diagram visar interaktionen mellan din besökare, webbläsaren, at.js 2.5.0+, och [!DNL Adobe Target] Edge-nätverket. Det här flödesdiagrammet fångar nya besökare och returnerar besökare.
 
@@ -72,7 +72,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE&). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />   At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment som implementerats på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | En sidinläsningsbegäran görs som innehåller alla konfigurerade parametrar, t.ex. (ECID, Kund-ID, Anpassade parametrar, Användarprofil osv.) |
@@ -81,7 +81,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 | 7 | Det resulterande innehållet väljs efter att upplevelsen har bestämts från aktiva [!DNL Target]-aktiviteter. |
 | 8 | Med biblioteket at.js döljs motsvarande element på sidan som är kopplade till upplevelsen som måste återges. |
 | 9 | I biblioteket at.js visas brödtexten så att resten av sidan kan läsas in så att besökaren kan se den. |
-| 10 | At.js-biblioteket ändrar DOM för att återge upplevelsen från Edge Network [!DNL Target]. |
+| 10 | At.js-biblioteket ändrar DOM för att återge upplevelsen från [!DNL Target] Edge Network. |
 | 11 | Upplevelsen renderar för besökaren. |
 | 12 | Hela webbsidan läses in. |
 | 13 | Analysdata skickas till datainsamlingsservrar. |
@@ -111,7 +111,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment implementerat på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | I at.js-biblioteket görs en begäran om att hämta JSON-regelartefakten från närmaste Akamai CDN till besökaren. |
@@ -138,7 +138,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment implementerat på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | I biblioteket at.js tolkas JSON-regelartefakten och beslutet i minnet verkställs för att hämta upplevelsen. |
@@ -157,7 +157,7 @@ När du hanterar både [!UICONTROL on-device decisioning]-aktiviteter och aktivi
 
 JSON-regelartefakten innehåller metadata som informerar at.js om en mbox har en aktivitet på serversidan som körs eller en [!UICONTROL on-device decisioning]-aktivitet. Den här beslutsmetoden ser till att aktiviteter som du avser att leverera snabbt utförs via [!UICONTROL on-device decisioning] och för aktiviteter som kräver mer kraftfull ML-driven personalisering utförs dessa aktiviteter via [!DNL Adobe Target] Edge-nätverket.
 
-I följande diagram visas interaktionen mellan besökaren, webbläsaren, kl. 2.5.0+, Akamai CDN och [!DNL Adobe Target] Edge Network för att en ny besökare ska besöka din sida för första gången. Ingången från det här diagrammet är att JSON-regelartefakten hämtas asynkront medan besluten fattas via Edge-nätverket [!DNL Adobe Target].
+Följande diagram visar interaktionen mellan besökaren, webbläsaren, kl. 2.5.0+, Akamai CDN och [!DNL Adobe Target] Edge Network för en ny besökare som besöker din sida för första gången. Ingången från det här diagrammet är att JSON-regelartefakten hämtas asynkront medan besluten fattas via Edge-nätverket [!DNL Adobe Target].
 
 Detta säkerställer att artefaktens storlek, som kan innehålla många aktiviteter, inte påverkar beslutets fördröjning negativt. Om du hämtar JSON-reglerna synkront och fattar beslut efter detta kan det också få negativa effekter på fördröjningen och kan vara inkonsekvent. Därför är hybridmetoden en rekommendation om att alltid göra ett anrop på serversidan för beslut om en ny besökare, och eftersom JSON-regelartefakten cachas parallellt. För efterföljande sidbesök och återbesök görs besluten från cacheminnet och i minnet via JSON-regelartefakten.
 
@@ -173,10 +173,10 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment implementerat på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
-| 4 | En sidinläsningsbegäran görs till Edge Network [!DNL Adobe Target], inklusive alla konfigurerade parametrar som (ECID, Kund-ID, Anpassade parametrar, Användarprofil osv.). |
+| 4 | En sidinläsningsbegäran görs till [!DNL Adobe Target] Edge Network, inklusive alla konfigurerade parametrar som (ECID, Kund-ID, Anpassade parametrar, Användarprofil osv.). |
 | 5 | Samtidigt begär at.js att JSON-regelartefakten ska hämtas från närmaste Akamai CDN till besökaren. |
 | 6 | ([!DNL Adobe Target] Edge Network) Profilskript körs och matas sedan in i profilarkivet. Profile Store begär kvalificerade målgrupper från Audience Library (till exempel målgrupper som delas från Adobe Analytics, Adobe Audience Manager och så vidare). |
 | 7 | Akamai CDN svarar med JSON-regelartefakten. |
@@ -184,7 +184,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 | 9 | Det resulterande innehållet väljs efter att upplevelsen har bestämts från aktiva [!DNL Target]-aktiviteter. |
 | 10 | Med biblioteket at.js döljs motsvarande element på sidan som är kopplade till upplevelsen som måste återges. |
 | 11 | I biblioteket at.js visas brödtexten så att resten av sidan kan läsas in så att besökaren kan se den. |
-| 12 | At.js-biblioteket ändrar DOM för att återge upplevelsen från Edge Network [!DNL Target]. |
+| 12 | At.js-biblioteket ändrar DOM för att återge upplevelsen från [!DNL Target] Edge Network. |
 | 13 | Upplevelsen renderar för besökaren. |
 | 14 | Hela webbsidan läses in. |
 | 15 | Analysdata skickas till datainsamlingsservrar. Målinriktade data matchas mot analysdata via SDID och bearbetas till lagringsplatsen för analysrapporter. Analysdata kan sedan visas både i Analytics-rapporter och i [!DNL Target] via [!UICONTROL Analytics for Target]-rapporter (A4T). |
@@ -203,7 +203,7 @@ Följande lista motsvarar siffrorna i diagrammet:
 
 | Steg | Beskrivning |
 | --- | --- |
-| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=sv-SE). |
+| 1 | Experience Cloud Visitor-ID hämtas från [Adobe Experience Cloud Identity Service](https://experienceleague.adobe.com/docs/id-service/using/home.html). |
 | 2 | At.js-biblioteket läses in synkront och döljer dokumentets brödtext.<br />At.js-biblioteket kan också läsas in asynkront med ett valfritt fördolt fragment implementerat på sidan. |
 | 3 | At.js-biblioteket döljer kroppen för att förhindra flimmer. |
 | 4 | En begäran görs för att hämta en upplevelse. |
@@ -223,12 +223,12 @@ Aktivera [!UICONTROL on-device decisioning]:
 
 >[!NOTE]
 >
->Du måste ha administratörs- eller godkännarrollen [användare](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html?lang=sv-SE) för att kunna aktivera eller inaktivera växlingsknappen för enhetsbeslut.
+>Du måste ha administratörs- eller godkännarrollen [användare](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/user-management.html) för att kunna aktivera eller inaktivera växlingsknappen för enhetsbeslut.
 
 1. Klicka på **[!UICONTROL Administration]** > **[!UICONTROL Implementation]** > **[!UICONTROL Account details]**.
 1. Under **[!UICONTROL Account details]** flyttar du växlingsknappen **[!UICONTROL On-Device Decisioning]** till läget&quot;på&quot;.
 
-   ![[!UICONTROL On-device decisioning] växla &#x200B;](assets/on-device-decisioning-toggle.png)
+   ![[!UICONTROL On-device decisioning] växla ](assets/on-device-decisioning-toggle.png)
 
    Alternativet Inkludera alla befintliga [!UICONTROL on-device decisioning] kvalificerade aktiviteter i artefakten visas om du aktiverar [!UICONTROL on-device decisioning].
 1. (Villkorligt) Skjut växeln till&quot;på&quot;-positionen om du vill att alla dina [!DNL Target]-aktiviteter som kvalificerar för [!UICONTROL on-device decisioning] automatiskt ska inkluderas i artefakten.
@@ -239,7 +239,7 @@ När du har aktiverat växeln för On-Device Decisioning börjar [!DNL Target] g
 
 >[!WARNING]
 >
->Se till att du aktiverar växlingsknappen innan du initierar SDK:n för [!DNL Adobe Target] för att använda [!UICONTROL on-device decisioning]. Regelartefakterna måste först generera och sprida till Akamai CDN:er för att [!UICONTROL on-device decisioning] ska fungera. Spridning kan ta fem till tio minuter innan den första regelartefakten genereras och sprids till Akamai CDN.
+>Se till att du aktiverar växlingsknappen innan du initierar SDK för [!DNL Adobe Target] för att använda [!UICONTROL on-device decisioning]. Regelartefakterna måste först generera och sprida till Akamai CDN:er för att [!UICONTROL on-device decisioning] ska fungera. Spridning kan ta fem till tio minuter innan den första regelartefakten genereras och sprids till Akamai CDN.
 
 ## Hur konfigurerar jag att at.js 2.5.0+ ska använda [!UICONTROL on-device decisioning]?
 
@@ -282,7 +282,7 @@ Du kan konfigurera en standardmetod för beslutsfattande för alla [!DNL Target]
 
 ### Anpassad inställning
 
-Om du anger `decisioningMethod` i `window.targetGlobalSettings`, men vill åsidosätta `decisioningMethod` för varje [!DNL Adobe Target]-beslut enligt ditt användningsexempel, kan du göra den här proceduren genom att ange `decisioningMethod` i [&#x200B; getOffers()](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md) -anropet för At.js2.5.0+.
+Om du anger `decisioningMethod` i `window.targetGlobalSettings`, men vill åsidosätta `decisioningMethod` för varje [!DNL Adobe Target]-beslut enligt ditt användningsexempel, kan du göra den här proceduren genom att ange `decisioningMethod` i [ getOffers()](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md) -anropet för At.js2.5.0+.
 
 ```javascript {line-numbers="true"}
 adobe.target.getOffers({ 

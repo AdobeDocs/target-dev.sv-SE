@@ -4,7 +4,7 @@ description: Läs mer om Target och EU:s allmänna dataskyddsförordning (GDPR),
 title: Hur hanterar Target reglerna för sekretess och dataskydd?
 feature: Privacy & Security
 exl-id: 40bac3c5-8e6f-4a90-ac0c-eddce1dbe6c0
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '2329'
 ht-degree: 0%
@@ -17,11 +17,11 @@ Information om EU:s allmänna dataskyddsförordning (GDPR), Kaliforniens konsume
 
 ## Översikt över dataskyddsförordningen och den allmänna dataskyddsförordningen
 
-Den 25 maj 2018 trädde Europeiska unionens allmänna dataskyddsprogram i kraft. Mer information om vad den här förordningen betyder för dig finns i [GDPR och ditt företag](https://business.adobe.com/se/privacy/general-data-protection-regulation.html).
+Den 25 maj 2018 trädde Europeiska unionens allmänna dataskyddsprogram i kraft. Mer information om vad den här förordningen betyder för dig finns i [GDPR och ditt företag](https://business.adobe.com/privacy/general-data-protection-regulation.html).
 
-När Adobe tillhandahåller programvara och tjänster till ett företag fungerar Adobe som databehandlare för alla personuppgifter som behandlas och lagras som en del av tillhandahållandet av dessa tjänster. Som databehandlare behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner (till exempel enligt vad som anges i ditt avtal med Adobe).
+När Adobe tillhandahåller programvara och tjänster till ett företag fungerar Adobe som databehandlare för alla personuppgifter som bearbetas och lagras som en del av tillhandahållandet av dessa tjänster. Som databehandlare behandlar Adobe personuppgifter i enlighet med ditt företags tillstånd och instruktioner (till exempel enligt vad som anges i ditt avtal med Adobe).
 
-Som personuppgiftsansvariga avgör du vilka personuppgifter som Adobe behandlar och lagrar åt dig. Om du använder Adobe Experience Cloud-lösningar kan Adobe lagra personuppgifter för dig, beroende på vilka lösningar du använder och vilken information du väljer att skicka till ditt Adobe Experience Cloud-konto. En detaljerad lista med exempel finns i [Adobe Experience Cloud sekretess](https://www.adobe.com/privacy/experience-cloud.html#collect).
+Som personuppgiftsansvariga avgör du vilka personuppgifter som Adobe behandlar och lagrar åt dig. Om du använder Adobe Experience Cloud lösningar kan Adobe lagra personuppgifter åt dig, beroende på vilka lösningar du använder och vilken information du väljer att skicka till ditt Adobe Experience Cloud-konto. En detaljerad lista med exempel finns i [Adobe Experience Cloud sekretess](https://www.adobe.com/privacy/experience-cloud.html#collect).
 
 Adobe Experience Cloud tillhandahåller GDPR-förberedda API:er för datakontroller som gör att de kan utföra följande uppgifter:
 
@@ -30,9 +30,9 @@ Adobe Experience Cloud tillhandahåller GDPR-förberedda API:er för datakontrol
 
 Mer information finns i:
 
-* [Översikt över Privacy Servicen Adobe](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=sv-SE)
-* [Privacy Service-API-guide](https://experienceleague.adobe.com/docs/experience-platform/privacy/api/overview.html?lang=sv-SE)
-* [Översikt över användargränssnittet för Privacy Service](https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html?lang=sv-SE)
+* [Adobe Privacy Service - översikt](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html)
+* [Privacy Service API-guide](https://experienceleague.adobe.com/docs/experience-platform/privacy/api/overview.html)
+* [Översikt över användargränssnittet i Privacy Service](https://experienceleague.adobe.com/docs/experience-platform/privacy/ui/overview.html)
 
 ## California Consumer Privacy Act (CCPA) - översikt
 
@@ -73,7 +73,7 @@ Det finns tre scenarier att tänka på när du använder Opt-In:
 
 1. **Target-taggen är förgodkänd via Adobe Experience Platform (eller den registrerade som tidigare godkänt Target):** Target-taggen behålls inte för samtycke och funktioner som förväntat.
 1. **Måltaggen är INTE förgodkänd och `bodyHidingEnabled` är FALSE:** Måltaggen utlöses först efter det att samtycke har samlats in från kunden. Innan samtycke samlas in är endast standardinnehåll tillgängligt. När samtycke har mottagits anropas Target och personaliserat innehåll är tillgängligt för den registrerade (besökaren). Eftersom endast standardinnehåll är tillgängligt före samtycke är det viktigt att använda en lämplig strategi, till exempel en välkomstsida som täcker alla delar av sidan eller innehåll som kan personaliseras. Denna process säkerställer att upplevelsen är enhetlig för den registrerade (besökaren).
-1. **Måltaggen är INTE förgodkänd och `bodyHidingEnabled` är TRUE:** Måltaggen utlöses endast efter att kunden har gett sitt samtycke. Innan samtycke samlas in är endast standardinnehåll tillgängligt. Men eftersom `bodyHidingEnabled` är inställt på true anger `bodyHiddenStyle` vilket innehåll på sidan som är dolt tills Target-taggen aktiveras (eller så avvisar den registrerade deltagande, vilket innebär att standardinnehåll visas). Som standard är `bodyHiddenStyle` inställd på `body { opacity:0;}`, vilket döljer body-taggen HTML. Den rekommenderade sidkonfigurationen är under så att hela sidans innehåll, förutom dialogrutan för hantering av medgivande, döljs genom att sidans innehåll placeras i en behållare och dialogrutan för hantering av medgivande i en separat behållare. Den här inställningen konfigurerar Target så att endast sidinnehållsbehållaren döljs. Se [Privacy Servicen - översikt](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=sv-SE&).
+1. **Måltaggen är INTE förgodkänd och `bodyHidingEnabled` är TRUE:** Måltaggen utlöses endast efter att kunden har gett sitt samtycke. Innan samtycke samlas in är endast standardinnehåll tillgängligt. Men eftersom `bodyHidingEnabled` är inställt på true anger `bodyHiddenStyle` vilket innehåll på sidan som är dolt tills Target-taggen aktiveras (eller så avvisar den registrerade deltagande, vilket innebär att standardinnehåll visas). Som standard är `bodyHiddenStyle` inställd på `body { opacity:0;}`, vilket döljer HTML body-taggen. Adobe rekommenderade sidkonfiguration visas nedan så att hela sidans innehåll, förutom dialogrutan för hantering av samtycke, döljs genom att sidans innehåll placeras i en behållare och dialogrutan för hantering av samtycke i en separat behållare. Den här inställningen konfigurerar Target så att endast sidinnehållsbehållaren döljs. Se [Privacy Service - översikt](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?).
 
    Rekommenderad sidinställning för scenario 3 är:
 
@@ -107,19 +107,19 @@ Det finns tre scenarier att tänka på när du använder Opt-In:
 
 Vanliga frågor och svar om EU:s allmänna dataskyddsförordning (GDPR), Kaliforniens konsumentintegritetslag (CCPA) och andra internationella integritetskrav som är specifika för Target.
 
-### Vilken policy har Adobe för dessa bestämmelser?
+### Vad har Adobe för policy för dessa bestämmelser?
 
 Adobe uppfyller eller genomför redan sina skyldigheter som databehandlare. Adobe har en stark grund för certifierade säkerhets- och integritetskontroller genom design och har gjort produktförbättringar före tidsfristen i maj 2018. Företagskunder ansvarar för att implementera dessa förbättringar och uppdatera nödvändiga policyer och procedurer.
 
 ### Måste mitt företag, Data Controller, skicka en GDPR- eller CCPA-begäran till varje Adobe Experience Cloud-lösning som det använder?
 
-Nej, Adobe tillhandahåller ett centralt sätt att hjälpa datacentralerna att uppfylla sina GDPR- och CCPA-krav. Datakontroller behöver inte gå direkt till varje lösning.
+Nej, Adobe tillhandahåller ett centralt sätt att hjälpa datakontroller att uppfylla sina GDPR- och CCPA-krav. Datakontroller behöver inte gå direkt till varje lösning.
 
-Alla GDPR- och CCPA-begäranden för olika Experience Cloud-lösningar, inklusive Target, sker via ett centralt Adobe-API, som för närvarande kallas GDPR API. API:t slutför sedan begäran i Data Controller-lösningens Experience Cloud-svit.
+Alla GDPR- och CCPA-begäranden i alla Experience Cloud-lösningar, inklusive Target, sker via ett centralt Adobe-API, som för närvarande kallas GDPR API. API:t slutför sedan begäran i Experience Cloud-lösningspaketet för Data Controller.
 
-### Vilken information gör Adobe det möjligt för kunderna att radera som svar på en begäran från en registrerade/användare?
+### Vilken information gör Adobe det möjligt för kunderna att radera som svar på en begäran från en registrerad användare/användare?
 
-Informationen om en enskild besökare i Target finns i målbesökarprofilen. Med Target kan kunderna ta bort alla data som är kopplade till ett ID i sin besökarprofil. Exempel på målarkiv för profildata finns i [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html?lang=sv-SE).
+Informationen om en enskild besökare i Target finns i målbesökarprofilen. Med Target kan kunderna ta bort alla data som är kopplade till ett ID i sin besökarprofil. Exempel på målarkiv för profildata finns i [Besökarprofil](https://experienceleague.adobe.com/docs/target/using/audiences/create-audiences/categories-audiences/visitor-profile.html).
 
 Sammanställda eller anonyma data (t.ex. rapportdata) som inte identifierar en viss individ, eller data som inte är kopplade till en viss individ (t.ex. innehållsdata), omfattas inte av en begäran om att ta bort användare.
 
@@ -131,7 +131,7 @@ Målet stöder följande ID-typer för att hitta en kundprofil:
 
 | Användar-ID | Typ av namnutrymmes-ID | Namnområdes-ID | Definition |
 |--- |--- |--- |--- |
-| Experience Cloud ID (ECID) | Standard | 4 | Adobe Experience Cloud-id, f.d. besökar-ID eller Experience Cloud-ID. Du kan använda JavaScript API för att hitta detta ID (se informationen nedan). |
+| Experience Cloud ID (ECID) | Standard | 4 | Adobe Experience Cloud-id, f.d. besökar-ID eller Experience Cloud-id. Du kan använda JavaScript API för att hitta detta ID (se informationen nedan). |
 | TnT ID/Cookie ID(TNTID) | Standard | 9 | Målidentifieraren anges som en cookie i besökarens webbläsare. Du kan använda JavaScript API för att hitta detta ID (se informationen nedan). |
 | Tredjeparts-ID/CRM-ID (TREDJEPARTYID) | Målspecifik | Ej tillämpligt | Om du tillhandahåller Target tillsammans med din CRM eller annan unik identifieringsinformation för dina kunder. |
 
@@ -147,7 +147,7 @@ Adobe erbjuder för närvarande inte någon lösning för hantering av samtycke,
 
 Target ger support för tillvalsfunktionalitet via Adobe Experience Platform för att stödja er strategi för samtyckeshantering. Med avanmälningsfunktionen kan kunderna styra hur och när Target-taggen aktiveras. Det finns också ett alternativ via Adobe Experience Platform för att förgodkänna Target-taggen. Vi rekommenderar att du använder Adobe Experience Platform för att hantera anmälan. Det finns ytterligare detaljkontroll i Adobe Experience Platform för att dölja vissa delar av sidan före Target-lanseringen som kan vara användbara som en del av er strategi för samtycke.
 
-Mer information om GDPR, CCPA och Adobe Experience Platform finns i [Adobe Privacy JavaScript Library och GDPR](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=sv-SE&). Se även avsnittet *Adobe Target och Adobe Experience Platform opt-in* ovan.
+Mer information om GDPR, CCPA och Adobe Experience Platform finns i [Adobe Privacy JavaScript Library och GDPR](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?). Se även avsnittet *Adobe Target och Adobe Experience Platform opt-in* ovan.
 
 ### Skickar `AdobePrivacy.js` information till GDPR API:t?
 
@@ -211,7 +211,7 @@ Utöver kraven från Central Privacy Service innehåller ett giltigt GDPR- eller
 
 ### Vilket svar skickar Target till GDPR API för en åtkomstbegäran?
 
-Svar på begäran om åtkomst av data innehåller en sammanfattning av målprofilen för besökaren i fråga. Denna retur skickas till Experience Cloud GDPR API, som i sin tur skickar ett svar till datakontroller.
+Svar på begäran om åtkomst av data innehåller en sammanfattning av målprofilen för besökaren i fråga. Denna retur skickas till Experience Cloud GDPR API, som i sin tur skickar ett svar till Data Controllers.
 
 Ett exempel på Target-åtkomst-API-svar kan se ut så här:
 
@@ -286,7 +286,7 @@ Följande tabell innehåller en beskrivning av JSON-fälten för den illustrativ
 | sample_parameter | Många informationsdelar i målprofilen överförs eller tillhandahålls direkt av Data Controller. I det här exemplet överfördes en parameter till målprofilen med hjälp av API:t för profiluppdatering. Mer information finns i [Metoder för att hämta data till målet](/help/dev/before-implement/methods-to-get-data-into-target/methods-to-get-data-into-target.md). |
 | user.ReturnTimeOfDay | I det här standardfältet anges tiden på dagen för en användares senaste besök. |
 | firstSessionStart | Detta standardfält innehåller den tid på dagen då användarens första session påbörjades. |
-| user.sessionCountScript | Många informationsdelar i målprofilen överförs eller tillhandahålls direkt av Data Controller. I det här exemplet ökar ett profilskript antalet sessioner som den här besökaren har gjort på Data Controller-platsen. Mer information finns i [Profilskriptattribut](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/profile-parameters.html?lang=sv-SE). |
+| user.sessionCountScript | Många informationsdelar i målprofilen överförs eller tillhandahålls direkt av Data Controller. I det här exemplet ökar ett profilskript antalet sessioner som den här besökaren har gjort på Data Controller-platsen. Mer information finns i [Profilskriptattribut](https://experienceleague.adobe.com/docs/target/using/audiences/visitor-profiles/profile-parameters.html). |
 
 >[!NOTE]
 >
@@ -294,7 +294,7 @@ Följande tabell innehåller en beskrivning av JSON-fälten för den illustrativ
 
 ### Har Target stöd för IP-förfalskning?
 
-Target har stöd för IP-obehörig åtkomst om du väljer att använda det som en del av GDPR- eller CCPA-implementeringsstrategin. Mer information finns i [Sekretess](privacy.md/#replacement-of-last-octet-of-ip-addresses).
+Target har stöd för IP-obehörig åtkomst om du väljer att använda det som en del av GDPR- eller CCPA-implementeringsstrategin. Mer information finns i [Sekretess](privacy.md#replacement-of-last-octet-of-ip-addresses).
 
 ### Bör jag göra något för att förhindra att mina data delas eller säljs till tredje part?
 

@@ -4,7 +4,7 @@ description: Använd funktionen [!UICONTROL adobe.target.getOffers()] och dess a
 title: Hur använder jag funktionen [!UICONTROL adobe.target.getOffers()]?
 feature: at.js
 exl-id: b96a3018-93eb-49e7-9aed-b27bd9ae073a
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '1317'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Med den här funktionen kan du hämta flera erbjudanden genom att skicka in fler
 | Fältnamn | Obligatoriskt? | Begränsningar | Beskrivning |
 | --- | --- | --- | --- |
 | request > id | Nej |  | Ett av `tntId`, `thirdPartyId` eller `marketingCloudVisitorId` krävs. |
-| Begäran > id > thirdPartyId | Nej | Maximal storlek = 128. |  |  |
+| Begäran > id > thirdPartyId | Nej | Maximal storlek = 128. |  |
 | Request > experienceCloud | Nej |  |  |
 | Request > experienceCloud > analytics | Nej |  | Integrering med Adobe Analytics |
 | Request > experienceCloud > analytics > log | Nej | Följande måste implementeras på sidan:<ul><li>Tjänst för besökar-ID</li><li>Appmeasurement.js</li></ul> | Följande värden stöds:<P>**client_side**: När det anges returneras en analysnyttolast till anroparen som ska användas för att skicka till [!UICONTROL Adobe Analytics] via [!UICONTROL Data Insertion API].<P>**server_side**: Det här är standardvärdet där [!DNL Target] och [!DNL Analytics] backend använder SDID för att knyta ihop anropen i rapporteringssyfte. |
@@ -61,7 +61,7 @@ Med den här funktionen kan du hämta flera erbjudanden genom att skicka in fler
 | Request > execute > pageLoad > order > total | Nej | `>=` 0. | Hämta erbjudanden med angivna ordersummor när sidan läses in. |
 | Request > execute > pageLoad > order > purchaseProductIds | Nej | Inga tomma värden.<P>Varje värde har maxlängden 50.<P>Sammanfogad och avgränsad med komma.<P>Total längd för produkt-ID `<=` 250. | Hämta erbjudanden med angivna produkt-ID:n när sidan läses in. |
 | Request > execute > mboxes | Nej | Maximal storlek = 50.<P>Inga null-element. |  |
-| Request > execute > mboxes>mbox | Ja | Inte tom.<P>Inget &#39;-klickat&#39;-suffix.<P>Maximal storlek = 250.<P>Tillåtna tecken: `'-, ._\/=:;&!@#$%^&*()_+|?~[]{}'` | Namn på mbox. |
+| Request > execute > mboxes>mbox | Ja | Inte tom.<P>Inget &#39;-klickat&#39;-suffix.<P>Maximal storlek = 250.<P>Tillåtna tecken: `'-, ._\/=:;&!@#$%^&*()_+|?~[]{}'`\|Namn på mbox. |
 | Begäran > Kör > mbox>mbox>index | Ja | Inte null.<P>Unik.<P>`>=` 0. | Observera att indexet inte representerar den ordning i vilken rutorna bearbetas. På samma sätt som på en webbsida med flera regionala kryssrutor kan ordningen som de ska bearbetas i inte anges. |
 | Request > execute > mboxes > mbox > parameters | Nej | Högsta antal = 50.<P>Namnet är inte tomt.<P>Namnlängd `<=` 128.<P>Accepterar endast strängvärden.<P>Värdelängd `<=` 5000.<P>Namnet får inte börja med &quot;profile&quot;.<P>Otillåtna namn: &quot;orderId&quot;, &quot;orderTotal&quot;, &quot;productPurchasedId&quot;. | Hämta erbjudanden för en given mbox med de angivna parametrarna. |
 | Request > execute > mboxes>mbox>profileParameters | Nej | Högsta antal = 50.<P>Namnet är inte tomt.<P>Namnlängd `<=` 128.<P>Accepterar endast strängvärden.<P>Värdelängd `<=`256.<P>Namnet får inte börja med &quot;profile&quot;. | Hämta erbjudanden för en given mbox med de angivna profilparametrarna. |

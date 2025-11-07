@@ -3,7 +3,7 @@ title: Initiera .NET SDK med metoden create
 description: Lär dig hur du använder metoden create för att initiera Java SDK och instansiera [!UICONTROL TargetClient] för att ringa till  [!DNL Adobe Target] för experiment och personaliserade upplevelser.
 feature: APIs/SDKs
 exl-id: 501010c3-22f4-49a8-b2ac-c7307232d180
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '350'
 ht-degree: 0%
@@ -16,15 +16,16 @@ ht-degree: 0%
 
 Använd metoden `Create` för att initiera .NET SDK och instansiera [!UICONTROL Target Client] för att anropa [!DNL Adobe Target] för experiment och personaliserade upplevelser.
 
-När du använder .NET Dependency Injection lägger du bara till SDK vid tjänstkonfigurationssteget genom att anropa `services.AddTargetLibrary()` och sedan mata in `ITargetClient targetClient` i appens konstruktor.
+När du använder .NET Dependency Injection lägger du bara till SDK i tjänstkonfigurationssteget genom att anropa `services.AddTargetLibrary()`, och sedan matar du in `ITargetClient targetClient` i appens konstruktor.
 
-Därefter använder du SDK-metoden `Initialize` för att konfigurera SDK och slutför därmed initieringssteget.
+Därefter använder du metoden `Initialize` i SDK för att konfigurera SDK och därmed slutföra initieringssteget.
 
 ## Metod
 
 `TargetClient` skapas med `TargetClient.Create`.
 
-## C\#
+## C\
+#
 
 ```csharp {line-numbers="true"}
 TargetClient TargetClient.Create(TargetClientConfig clientConfig)
@@ -32,7 +33,8 @@ TargetClient TargetClient.Create(TargetClientConfig clientConfig)
 
 `ClientConfig` skapas med ClientConfig.Builder.
 
-## C\#
+## C\
+#
 
 ```csharp {line-numbers="true"}
 TargetClientConfig.Builder TargetClientConfig.Builder()
@@ -47,14 +49,14 @@ TargetClientConfig.Builder TargetClientConfig.Builder()
 | Klient | string | Ja | Ingen | [!UICONTROL Target Client Id] |
 | OrganizationId | string | Ja | Ingen | [!UICONTROL Experience Cloud Organization ID] |
 | Timeout | int | Nej | 10000 | Timeout för alla begäranden i millisekunder |
-| Proxy |  | WebProxy | Nej | null | Proxy för alla [!DNL Target]-begäranden |
+| Proxy | WebProxy | Nej | null | Proxy för alla [!DNL Target]-begäranden |
 | RetryPolicy | Policy | Nej | null | Prova principen igen för alla [!DNL Target]-begäranden |
 | AsyncRetryPolicy | AsyncPolicy | Nej | null | Asynkron återförsöksprincip för alla [!DNL Target]-begäranden |
 | Logger | ILogger | Nej | null | Används för felsökningsloggning av [!DNL Target] begäranden och svar |
 | ServerDomain | string | Nej | `client.tt.omtrdc.net` | Åsidosätter standardvärdnamn |
 | Säker | bool | Nej | true | Avmarkerad för att tillämpa HTTP-schema |
 | DefaultPropertyToken | string | Nej | null | Anger standardegenskapstoken för varje `getOffers`-anrop |
-| TelemetryEnabled | bool | Nej | true | Skicka telemetridata för att förbättra SDK-upplevelsen |
+| TelemetryEnabled | bool | Nej | true | Skicka telemetridata för att förbättra SDK användarupplevelse |
 | DecisioningMethod | DecisioningMethod enum | Nej | ServerSide | Måste anges till OnDevice eller Hybrid för att enhetsbeslut ska kunna aktiveras |
 | OnDeviceDecisioningReady | Åtgärd | Nej | null | Delegera för Ready-händelse för enhetsbeslut (anropas en gång när enhetsbeslut är klart) |
 | ArtifactDownloadSucceeded | Åtgärd | Nej | null | Delegera för slutförd hämtning av artikelfelaktighet på enheter (anropas för varje slutförd artefakt-hämtning) |
@@ -66,7 +68,8 @@ TargetClientConfig.Builder TargetClientConfig.Builder()
 
 ## Exempel
 
-## C\#
+## C\
+#
 
 ```csharp {line-numbers="true"}
 var targetClientConfig = new TargetClientConfig.Builder("acmeclient", "ABCDEF012345677890ABCDEF0@AdobeOrg")

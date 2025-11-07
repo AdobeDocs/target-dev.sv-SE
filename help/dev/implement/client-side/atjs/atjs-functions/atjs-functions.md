@@ -4,7 +4,7 @@ description: Visa en lista över funktioner som kan användas med 1.x- och 2.x-v
 title: Vilka funktioner kan jag använda med at.js?
 feature: at.js
 exl-id: 1efed365-8a74-4c85-bdb1-8daaaf53d642
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '500'
 ht-degree: 0%
@@ -16,12 +16,12 @@ ht-degree: 0%
 Lista över funktioner som kan användas med JavaScript-biblioteket [!DNL Adobe Target] at.js. Klicka på länkarna i kolumnen Funktion för mer information och exempel.
 
 | Funktion | Information |
-| --- | --- | 
+| --- | --- |
 | [[!UICONTROL adobe.target.getOffer(options)]](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-getoffer.md) | Den här funktionen utlöser en begäran om att få ett [!DNL Target]-erbjudande. Använd med `adobe.target.applyOffer()` om du vill bearbeta svaret eller använda din egen hantering av lyckade åtgärder. |
 | [[!UICONTROL adobe.target.getOffers(options)]](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-getoffers-atjs-2.md)<P>(at.js 2.x) | Med den här funktionen kan du hämta flera erbjudanden genom att skicka in flera rutor. Dessutom kan flera erbjudanden hämtas för alla vyer i aktiva aktiviteter.<P>**Obs!** Den här funktionen introducerades med at.js 2.x. Den här funktionen är inte tillgänglig för at.js version 1.*x*. |
 | [[!UICONTROL adobe.target.applyOffer(options)]](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-applyoffer.md) | Den här funktionen används för att tillämpa svarsinnehållet. |
 | [[!UICONTROL adobe.target.applyOffers(options)]](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-applyoffers-atjs-2.md)<P>(at.js 2.x) | Med den här funktionen kan du tillämpa mer än ett erbjudande som har hämtats av [!UICONTROL adobe.target.getOffers()].<P>**Obs!** Den här funktionen introducerades med at.js 2.x. Den här funktionen är inte tillgänglig för at.js version 1.*x*. |
-| [[!UICONTROL adobe.target.triggerView (viewName, options)]](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-triggerview-atjs-2.md)<P>(at.js 2.x) | Den här funktionen kan anropas när en ny sida läses in eller när en komponent på en sida återges på nytt.<P> Den här funktionen bör implementeras för program med en sida (SPA) för att [!UICONTROL Visual Experience Composer] (VEC) ska kunna användas för att skapa [!UICONTROL A/B Test]- och [!UICONTROL Experience Targeting] (XT)-aktiviteter. |
+| [[!UICONTROL adobe.target.triggerView (viewName, options)]](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-triggerview-atjs-2.md)<P>(at.js 2.x) | Den här funktionen kan anropas när en ny sida läses in eller när en komponent på en sida återges på nytt.<P> Den här funktionen bör implementeras för SPA-program (single page applications) för att använda [!UICONTROL Visual Experience Composer] (VEC) för att skapa [!UICONTROL A/B Test] - och [!UICONTROL Experience Targeting] (XT)-aktiviteter. |
 | [[!UICONTROL adobe.target.trackEvent(options)]](/help/dev/implement/client-side/atjs/atjs-functions/adobe-target-trackevent.md) | Den här funktionen utlöser en begäran om att rapportera användaråtgärder, till exempel klickningar och konverteringar. Den levererar inte någon verksamhet som svar. |
 | [[!UICONTROL mboxCreate(mbox,params)]](/help/dev/implement/client-side/atjs/atjs-functions/mboxcreate-atjs.md)<P>(at.js 1.x) | Kör en begäran och tillämpar erbjudandet på närmaste DIV med mboxDefault-klassnamn.<P>**Obs!** Den här funktionen är tillgänglig för at.js version 1.Endast *x*. Den här funktionen har ersatts med versionen av at.js 2.x. Den här funktionen returnerar standardinnehåll om den används med at.js 2.x. |
 | [[!UICONTROL mboxDefine(options)] och [!UICONTROL mboxUpdate(options)]](/help/dev/implement/client-side/atjs/atjs-functions/mboxdefine-mboxupdate-atjs-1x.md)<P>(at.js 1.x) | Definiera och uppdatera en mbox.<P>**Obs!** Den här funktionen är tillgänglig för at.js version 1.Endast *x*. Den här funktionen har ersatts med versionen av at.js 2.x. Den här funktionen returnerar standardinnehåll om den används med at.js 2.x. |

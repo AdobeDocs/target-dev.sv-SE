@@ -3,7 +3,7 @@ title: Använd getOffers() i [!DNL Adobe Target] när du använder Java SDK
 description: Lär dig hur du använder getOffers() för att köra ett beslut och hämta en upplevelse från  [!DNL Adobe Target].
 feature: APIs/SDKs
 exl-id: 9d7bf956-9d6a-4b4f-a401-2e6814f17f3d
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '635'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Objektet `[!UICONTROL TargetDeliveryRequestBuilder]` har följande struktur:
 | Namn | Typ | Obligatoriskt | Beskrivning |
 | --- | --- | --- | --- |
 | kontext | Kontext | Ja | Anger kontexten för begäran |
-| sessionId |  | Sträng | Nej | Används för att länka flera [!DNL Target]-begäranden |
+| sessionId | Sträng | Nej | Används för att länka flera [!DNL Target]-begäranden |
 | thirdPartyId | Sträng | Nej | Ditt företags-ID för användaren som du kan skicka med varje samtal |
 | cookies | Lista | Nej | Lista över cookies som returnerats i en tidigare [!DNL Target]-begäran från samma användare. |
 | customerIds | Karta | Nej | Kund-ID i VisitorId-kompatibelt format |

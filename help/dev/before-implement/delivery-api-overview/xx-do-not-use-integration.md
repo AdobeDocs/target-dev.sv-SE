@@ -1,8 +1,8 @@
 ---
-title: Integration med Experience Cloud
-description: Integration med Experience Cloud
+title: Integrering med Experience Cloud
+description: Integrering med Experience Cloud
 keywords: leverans-API
-source-git-commit: f16903556954d2b1854acd429f60fbf6fc2920de
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '467'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 <!-- The content on this page was originally pulled from the legacy Delivery API doc site, and was subsequently found to be an outdated version of information now found on [Implement > Server-side > Integration > A4T Reporting](../../implement/server-side/sdk-guides/integration-with-experience-cloud/a4t-reporting.md) and [Implement > Server-side > Integration > AAM Segments](../../implement/server-side/sdk-guides/integration-with-experience-cloud/aam-segments.md). Therefore sunsetting this page, but not deleting it from the repo immediately, pending a more thorough examination to avoid inadvertently deleting relevant content. -->
 
 
-# Integration med Experience Cloud
+# Integrering med Experience Cloud
 
 ## Adobe Analytics for Target (A4T)
 
@@ -26,7 +26,7 @@ När ett Target Delivery API-anrop utlöses från servern returnerar Adobe Targe
 Adobe Target kan automatiskt vidarebefordra analysnyttolasten till Adobe Analytics via serversidan om följande identifierare anges:
 
 1. `supplementalDataId` - ID:t som används för att sammanfoga objekt mellan Adobe Analytics och Adobe Target
-1. `trackingServer` - Analaytics-servern Adobe För att Adobe Target och Adobe Analytics ska kunna sammanfoga data på rätt sätt måste samma `supplementalDataId` skickas till både Adobe Target och Adobe Analytics.
+1. `trackingServer` - Adobe Analytics Server För att Adobe Target och Adobe Analytics ska kunna sammanfoga data på rätt sätt måste samma `supplementalDataId` skickas till både Adobe Target och Adobe Analytics.
 
 ```
 curl -X POST \
@@ -189,7 +189,7 @@ https://{datacollectionhost.sc.omtrdc.net}/b/ss/{rsid}/0/CODEVERSION?pe=tnt&tnta
 | `rsid` | Ja | Rapportsvitens ID |
 | `pe` | Ja | Sidhändelse. Alltid inställd på `tnt` |
 | `tnta` | Ja | Analysnyttolasten returnerades av målservern i `analytics` -> `payload` -> `tnta` |
-| `mid` | Marketing Cloud Visitor-ID |
+| `mid` | Marketing Cloud Visitor-ID |  |
 
 ### Obligatoriska rubrikvärden
 
@@ -205,13 +205,13 @@ https://demo.sc.omtrdc.net/b/ss/myCustomRsid/0/MOBILE-1.0?pe=tnt&tnta=285408:0:0
 
 ## Adobe Audience Manager
 
-Adobe Audience Manager (AAM)-segment kan också utnyttjas via Adobe Target Delivery API:er. För att utnyttja AAM ska följande fält anges:
+Adobe Audience Manager (AAM)-segment kan också utnyttjas via Adobe Target Delivery API:er. För att kunna utnyttja AAM-segmenten måste följande fält anges:
 
 | Fältnamn | Obligatoriskt | Beskrivning |
 | --- | --- | --- |
 | `locationHint` | Ja | DCS-platstips används för att avgöra vilken AAM DCS-slutpunkt som ska tryckas för att hämta profilen. Måste vara >= 1. |
 | `marketingCloudVisitorId` | Ja | Marketing Cloud Visitor-ID |
-| `blob` | Ja | AAM används för att skicka ytterligare data till AAM. Får inte vara tom och storleken &lt;= 1024. |
+| `blob` | Ja | AAM Blob används för att skicka ytterligare data till AAM. Får inte vara tom och storleken &lt;= 1024. |
 
 ```
 curl -X POST \

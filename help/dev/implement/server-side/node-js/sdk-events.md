@@ -1,20 +1,20 @@
 ---
 title: Prenumerera på händelser i  [!DNL Adobe Target] Node.js SDK
-description: Lär dig hur du prenumererar på olika händelser som inträffar i Node.js SDK med objektet [!UICONTROL OnDeviceDecisioningHandler].
+description: Lär dig hur du prenumererar på olika händelser som inträffar i Node.js SDK med hjälp av objektet [!UICONTROL OnDeviceDecisioningHandler].
 feature: APIs/SDKs
 exl-id: 40c53840-a560-4819-ae04-f527c36b22fe
-source-git-commit: e5bae1ac9485c3e1d7c55e6386f332755196ffab
+source-git-commit: 67cc93cf697f8d5bca6fedb3ae974e4012347a0b
 workflow-type: tm+mt
 source-wordcount: '163'
 ht-degree: 0%
 
 ---
 
-# SDK-händelser (Node.js)
+# SDK Events (Node.js)
 
 ## Beskrivning
 
-När [SDK](initialize-sdk.md) initieras är objektet `options.events` ett valfritt objekt med händelsenamnstangenter och värden för återanropsfunktionen. Det kan användas för att prenumerera på olika händelser som inträffar i SDK. Händelsen `clientReady` kan till exempel användas med en callback-funktion som anropas när SDK är redo för metodanrop.
+När [SDK](initialize-sdk.md) initieras är `options.events`-objektet ett valfritt objekt med händelsenamnstangenter och callback-funktionsvärden. Det kan användas för att prenumerera på olika händelser inom SDK. Händelsen `clientReady` kan till exempel användas med en callback-funktion som anropas när SDK är redo för metodanrop.
 
 När återanropsfunktionen anropas skickas ett händelseobjekt. Varje händelse har en `type` som motsvarar händelsenamnet. Vissa händelser innehåller ytterligare egenskaper med relevant information.
 
@@ -22,7 +22,7 @@ När återanropsfunktionen anropas skickas ett händelseobjekt. Varje händelse 
 
 | Händelsenamn (typ) | Beskrivning | Ytterligare händelseegenskaper |
 | --- | --- | --- |
-| clientReady | Skickas när artefakten har hämtats och SDK är redo för `getOffers` anrop. Rekommenderas när du använder enhetsspecifik beslutsmetod. |
+| clientReady | Skickas när artefakten har hämtats och SDK är redo för `getOffers` samtal. Rekommenderas när du använder enhetsspecifik beslutsmetod. |  |
 | artifactDownloadSucceeded | Skickas varje gång en ny artefakt hämtas. | artifactPayload, artifactLocation |
 | artifactDownloadFailed | Skickas varje gång en artefakt inte kan hämtas. | artifactLocation, fel |
 
