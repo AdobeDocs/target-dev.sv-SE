@@ -38,9 +38,9 @@ TargetClient.create(options)
 | target_location_hint | str | Nej | Ingen | Platstips för [!DNL Target] |
 | property_token | str | Nej | Ingen | [!DNL Target] egenskapstoken. Om det anges här kommer alla get_offers-anrop att använda det här värdet. |
 | decisioning_method | str | Nej | server-side | Avgör vilken beslutsmetod som ska användas ([på enheten](/help/dev/implement/server-side/sdk-guides/on-device-decisioning/overview.md), på serversidan, hybrid) |
-| polling_interval | int | Nej | 300000 (5 minuter) | Avsökningsintervall för artefakten [för enhetsspecifik avlyssningsregel ](/help/dev/implement/server-side/sdk-guides/on-device-decisioning/rule-artifact-overview.md) (i ms) |
+| polling_interval | int | Nej | 300000 (5 minuter) | Avsökningsintervall för artefakten [för enhetsspecifik avlyssningsregel &#x200B;](/help/dev/implement/server-side/sdk-guides/on-device-decisioning/rule-artifact-overview.md) (i ms) |
 | artifact_location | str | Nej | Ingen | En fullständigt kvalificerad URL till [regeln för enhetsbeslut](/help/dev/implement/server-side/sdk-guides/on-device-decisioning/rule-artifact-overview.md). Åsidosätter internt bestämd plats. |
-| artifact_payload | object | Nej | Ingen | JSON-nyttolasten för [enhetsregelartefakten ](/help/dev/implement/server-side/sdk-guides/on-device-decisioning/rule-artifact-overview.md). Om den anges används den i stället för att begära en från en URL. |
+| artifact_payload | object | Nej | Ingen | JSON-nyttolasten för [enhetsregelartefakten &#x200B;](/help/dev/implement/server-side/sdk-guides/on-device-decisioning/rule-artifact-overview.md). Om den anges används den i stället för att begära en från en URL. |
 | [händelser](sdk-events.md) | dict &lt;str, callable> | Nej | Ingen | Ett valfritt objekt med händelsenamnstangenter och callback-funktionsvärden |
 | environment_id | int | Nej | produktion | Miljö-ID för [!DNL Target] |
 | miljö | str | Nej | produktion | Miljönamnet [!DNL Target] |
