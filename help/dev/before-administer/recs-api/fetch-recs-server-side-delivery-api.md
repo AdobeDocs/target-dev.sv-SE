@@ -42,9 +42,9 @@ Följ de här stegen för att använda Delivery API för att leverera Target-upp
 
 ## Skapa en rekommendation med den formulärbaserade Experience Composer
 
-Använd [formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html) om du vill skapa rekommendationer som kan användas med leverans-API:t.
+Använd [formulärbaserad disposition](https://experienceleague.adobe.com/docs/target/using/experiences/form-experience-composer.html?lang=sv-SE) om du vill skapa rekommendationer som kan användas med leverans-API:t.
 
-1. Först skapar och sparar du en JSON-baserad design som du kan använda i dina rekommendationer. Exempel-JSON, plus bakgrundsinformation om hur JSON-svar kan returneras när en formulärbaserad aktivitet konfigureras, finns i dokumentationen om [Skapa rekommendationsdesigner](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-design/create-design.html). I det här exemplet heter designen *Simple JSON.*
+1. Först skapar och sparar du en JSON-baserad design som du kan använda i dina rekommendationer. Exempel-JSON, plus bakgrundsinformation om hur JSON-svar kan returneras när en formulärbaserad aktivitet konfigureras, finns i dokumentationen om [Skapa rekommendationsdesigner](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-design/create-design.html?lang=sv-SE). I det här exemplet heter designen *Simple JSON.*
    ![server-side-create-recs-json-design.png](assets/server-side-create-recs-json-design.png)
 
 1. Gå till **[!UICONTROL Activities]** > **[!UICONTROL Create Activity]** > **[!UICONTROL Recommendations]** i Mål och välj sedan **[!UICONTROL Form]**.
@@ -54,7 +54,7 @@ Använd [formulärbaserad disposition](https://experienceleague.adobe.com/docs/t
 1. Välj en egenskap och klicka på **[!UICONTROL Next]**.
 1. Definiera den plats där du vill att användarna ska få rekommendationens svar. I exemplet nedan används en plats med namnet *api_charter*. Välj din JSON-baserade design, som skapades tidigare, med namnet *Simple JSON.*
    ![server-side-create-recs-form.png](assets/server-side-create-recs-form1.png)
-1. Spara och aktivera rekommendationen. Det kommer att generera resultat. [När resultaten är klara](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-activity/previewing-and-launching-your-recommendations-activity.html) kan du hämta dem med leverans-API:t.
+1. Spara och aktivera rekommendationen. Det kommer att generera resultat. [När resultaten är klara](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-activity/previewing-and-launching-your-recommendations-activity.html?lang=sv-SE) kan du hämta dem med leverans-API:t.
 
 ## Använda leverans-API
 
@@ -115,7 +115,7 @@ I ett [tidigare avsnitt](manage-catalog.md) lärde vi oss att hantera enheter me
 ## Referensdokumentation
 
 * [Dokumentation för Adobe Target Delivery API](/help/dev/implement/delivery-api/overview.md)
-* [Integrera rekommendationer med e-post](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-faq/integrating-recs-email.html)
+* [Integrera rekommendationer med e-post](https://experienceleague.adobe.com/docs/target/using/recommendations/recommendations-faq/integrating-recs-email.html?lang=sv-SE)
 
 ## Sammanfattning och granskning
 

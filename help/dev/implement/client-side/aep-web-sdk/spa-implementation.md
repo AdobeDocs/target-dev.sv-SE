@@ -61,7 +61,7 @@ Konceptet för [!UICONTROL Views] kan utökas mycket mer än det här scenariot.
 
 [!UICONTROL XDM Views] kan utnyttjas i [!DNL Target] för att marknadsförarna ska kunna köra A/B- och XT-tester på SPA via [!UICONTROL Visual Experience Composer]. För att göra detta måste du utföra följande steg för att slutföra en engångskonfiguration av utvecklare:
 
-1. Installera [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/en/docs/experience-platform/web-sdk/install/overview).
+1. Installera [Adobe Experience Platform Web SDK](https://experienceleague.adobe.com/sv/docs/experience-platform/web-sdk/install/overview).
 2. Identifiera alla [!UICONTROL XDM Views] i ditt enkelsidiga program som du vill anpassa.
 3. När du har definierat [!UICONTROL XDM Views] ska du implementera funktionen `sendEvent()` med `renderDecisions` inställd på `true` och motsvarande [!UICONTROL XDM View] i Single Page-programmet för att leverera A/B- eller XT VEC-aktiviteter. [!UICONTROL XDM View] måste skickas i `xdm.web.webPageDetails.viewName`. I det här steget kan marknadsförare utnyttja [!UICONTROL Visual Experience Composer] för att starta A/B- och XT-tester för dessa XDM.
 
@@ -221,7 +221,7 @@ När du har definierat din [!UICONTROL XDM Views] och implementerat `sendEvent()
 
 >[!NOTE]
 >
->Om du vill använda VEC för ditt SPA måste du installera och aktivera [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome VEC Helper Extension](https://experienceleague.adobe.com/en/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension).
+>Om du vill använda VEC för ditt SPA måste du installera och aktivera [Firefox](https://addons.mozilla.org/en-US/firefox/addon/adobe-target-vec-helper/) eller [Chrome VEC Helper Extension](https://experienceleague.adobe.com/sv/docs/target/using/experiences/vec/troubleshoot-composer/visual-editing-helper-extension).
 
 ### Panelen [!UICONTROL Modifications]
 
