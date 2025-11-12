@@ -4,9 +4,9 @@ description: Lär dig hur du använder  [!DNL Adobe Target] [!UICONTROL Bulk Pro
 feature: APIs/SDKs
 contributors: https://github.com/icaraps
 exl-id: 0f38d109-5273-4f73-9488-80eca115d44d
-source-git-commit: 892de7c241a165b55a5cf85ce8f472ad8e200ac3
+source-git-commit: c2300ad6affdf3c1028e5c52ccaceb577a289227
 workflow-type: tm+mt
-source-wordcount: '1086'
+source-wordcount: '1056'
 ht-degree: 0%
 
 ---
@@ -49,13 +49,13 @@ Med hjälp av [!UICONTROL Bulk Profile Update API] kan du enkelt skicka detaljer
 
 Om du vill uppdatera flera profildata samtidigt skapar du en gruppfil. Gruppfilen är en textfil med värden som avgränsas med kommatecken som liknar följande exempelfil.
 
-``` ```
+``````
 batch=pcId,param1,param2,param3,param4
 123,value1
 124,value1,,,value4
 125,,value2
 126,value1,value2,value3,value4
-``` ```
+``````
 
 >[!NOTE]
 >
@@ -69,7 +69,6 @@ Du refererar till den här filen i POST-anropet till [!DNL Target] servrar för 
 * Parametrarna får endast ha formatet `paramName`. Parametrar visas i [!DNL Target] som `profile.paramName`.
 * Om du använder [!UICONTROL Bulk Profile Update API] v2 behöver du inte ange alla parametervärden för varje `pcId`. Profiler skapas för alla `pcId` eller `mbox3rdPartyId` som inte hittas i [!DNL Target]. Om du använder v1 skapas inte profiler för pcIds som saknas eller mbox3rdPartyIds. Mer information finns i [Hantera tomma värden i  [!DNL Bulk Profile Update API]](#empty) nedan.
 * Batchfilens storlek måste vara mindre än 50 MB. Dessutom bör det totala antalet rader inte överstiga 500 000. Den här gränsen gör att servrarna inte översvämmas av för många förfrågningar.
-* Du kan skicka flera filer. Summan av raderna i alla filer som du skickar en dag får dock inte överstiga en miljon för varje kund.
 * Det finns ingen begränsning för hur många attribut du kan överföra. Den totala storleken på externa profildata, som innehåller kundattribut, profil-API, parametrar för in-Mbox-profiler och profilskript, får dock inte överstiga 64 kB.
 * Parametrar och värden är versalkänsliga.
 
@@ -77,9 +76,9 @@ Du refererar till den här filen i POST-anropet till [!DNL Target] servrar för 
 
 Gör en HTTP POST-begäran till [!DNL Target] edge-servrar för att bearbeta filen. Här följer ett exempel på en HTTP POST-begäran för filen batch.txt med kommandot curl:
 
-``` ```
+``````
 curl -X POST --data-binary @BATCH.TXT http://CLIENTCODE.tt.omtrdc.net/m2/CLIENTCODE/v2/profile/batchUpdate
-``` ```
+``````
 
 Var:
 
