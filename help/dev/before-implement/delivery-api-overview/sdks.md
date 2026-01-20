@@ -15,11 +15,11 @@ ht-degree: 0%
 
 [!DNL Adobe Target] erbjuder [SDK:er på serversidan](../../implement/server-side/server-side-overview.md) för att interagera med [!DNL Target Delivery API] och underlätta [!UICONTROL Target]-integreringen med andra [!DNL Adobe Experience Cloud]-lösningar som [!UICONTROL Adobe Analytics] och [!DNL Adobe Audience Manager].
 
-Med SDK:erna kan du följa vedertagna standarder när du hanterar sessioner och cookies. Vi rekommenderar starkt att du använder ett SDK för att minska komplexiteten och förhindra felaktig användning av API:t.
+Med SDK:erna kan du följa vedertagna standarder när du hanterar sessioner och cookies. Vi rekommenderar att du utnyttjar en SDK för att slippa problem och förhindra felaktig användning av API:t.
 
 ## Node.js SDK
 
-Mer information finns i [Översikt över Node.js SDK](/help/dev/implement/server-side/node-js/overview.md).
+Mer information finns i [Översikt över SDK Node.js](/help/dev/implement/server-side/node-js/overview.md).
 
 [Node.js SDK](https://github.com/adobe/target-nodejs-sdk) har öppen källkod och underhålls i Github, där du kan hitta dokumentation och användningsinstruktioner.
 
@@ -29,7 +29,7 @@ Läs [ChangeLog](https://github.com/adobe/target-nodejs-sdk/blob/main/CHANGELOG.
 
 Mer information finns i [Översikt över Java SDK](/help/dev/implement/server-side/java/overview.md).
 
-[Java SDK](https://github.com/adobe/target-java-sdk) har öppen källkod och hanteras i Github, där du kan hitta dokumentation och användningsinstruktioner.
+[Java SDK](https://github.com/adobe/target-java-sdk) har öppen källkod och underhålls i Github, där du kan hitta dokumentation och användningsinstruktioner.
 
 Läs [ChangeLog](https://github.com/adobe/target-java-sdk/blob/main/CHANGELOG.md) för Java SDK.
 
@@ -37,15 +37,15 @@ Läs [ChangeLog](https://github.com/adobe/target-java-sdk/blob/main/CHANGELOG.md
 
 Mer information finns i [.Net SDK - översikt](/help/dev/implement/server-side/net/overview.md).
 
-[.NET SDK](https://github.com/adobe/target-dotnet-sdk) är öppen källkod och hanteras i Github, där du kan hitta dokumentation och användningsinstruktioner.
+[.NET SDK](https://github.com/adobe/target-dotnet-sdk) har öppen källkod och underhålls i Github, där du kan hitta dokumentation och användningsinstruktioner.
 
-Information om .NET SDK [versioner](https://github.com/adobe/target-dotnet-sdk/releases)
+Information om .NET SDK [Releases](https://github.com/adobe/target-dotnet-sdk/releases)
 
 ## Python SDK
 
 Mer information finns i [Python SDK](/help/dev/implement/server-side/python/overview.md).
 
-[Python SDK](https://github.com/adobe/target-python-sdk) har öppen källkod och underhålls i Github, där du kan hitta dokumentation och användningsinstruktioner.
+[Python SDK](https://github.com/adobe/target-python-sdk) har en öppen källkod och underhålls i Github, där du kan hitta dokumentation och användningsinstruktioner.
 
 Läs [Change](https://github.com/adobe/target-python-sdk/blob/master/CHANGELOG.md) för Python SDK.
 
